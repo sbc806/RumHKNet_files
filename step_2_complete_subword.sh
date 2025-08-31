@@ -16,7 +16,7 @@ source TEST/bin/activate
 
 cd ../sbc806/LucaPCycle/src/data_process/V3
 
-# python rumhknet_subword_step_2.py --func corpus --outfile ../../../subword/step_2/step_2_all_sequences_corpus.txt
+python rumhknet_subword_step_2.py --func corpus --outfile ../../../subword/step_2/step_2_all_sequences_corpus.txt
 
 python rumhknet_subword_step_2.py --func learn_bpe --num_symbols=30000 --infile ../../../subword/step_2/step_2_all_sequences_corpus.txt --outfile ../../../subword/step_2/step_2_all_sequences_corpus_codes_30000.txt --verbose
 
