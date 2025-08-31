@@ -16,12 +16,12 @@ source TEST/bin/activate
 
 cd ../sbc806/LucaPCycle/src/data_process/V3
 
-# python rumhknet_subword_step_2.py --func corpus --outfile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus.txt
+# python rumhknet_subword_step_2.py --func corpus --outfile ../../../subword/step_2/step_2_all_sequences_corpus.txt
 
-python rumhknet_subword_step_2.py --func learn_bpe --num_symbols=30000 --infile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus.txt --outfile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_codes_30000.txt --verbose
+python rumhknet_subword_step_2.py --func learn_bpe --num_symbols=30000 --infile ../../../subword/step_2/step_2_all_sequences_corpus.txt --outfile ../../../subword/step_2/step_2_all_sequences_corpus_codes_30000.txt --verbose
 
-python rumhknet_subword_step_2.py --func apply_bpe --infile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus.txt --codes_file ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_codes_30000.txt --outfile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_token_30000.txt
+python rumhknet_subword_step_2.py --func apply_bpe --infile ../../../subword/step_2/step_2_all_sequences_corpus.txt --codes_file ../../../subword/step_2/step_2_all_sequences_corpus_codes_30000.txt --outfile ../../../subword/step_2/step_2_all_sequences_corpus_token_30000.txt
 
-python rumhknet_subword_step_2.py --func get_vocab --infile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_token_30000.txt --outfile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_subword_vocab_30000_ori.txt
+python rumhknet_subword_step_2.py --func get_vocab --infile ../../../subword/step_2/step_2_all_sequences_corpus_token_30000.txt --outfile ../../../subword/step_2/step_2_all_sequences_corpus_subword_vocab_30000_ori.txt
 
-python rumhknet_subword_step_2.py --func subword_vocab_2_token_vocab --infile ../../../subword/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_subword_vocab_30000_ori.txt --outfile ../../../vocab/extra_p_2_class_v3_kinases_only/step_2_all_sequences_corpus_subword_vocab_30000.txt
+python rumhknet_subword_step_2.py --func subword_vocab_2_token_vocab --infile ../../../subword/step_2/step_2_all_sequences_corpus_subword_vocab_30000_ori.txt --outfile ../../../vocab/step_2/step_2_all_sequences_corpus_subword_vocab_30000.txt
