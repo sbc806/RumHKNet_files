@@ -12,7 +12,7 @@ label_information={"K07679": "0", "K13587": "1", "K11527": "2", "K07636": "3", "
 family_information=pd.read_csv("../../dataset_information/133 histine kinases(Sheet1) (1).csv")
 
 other_families_ko=[]
-for family_type in enumerate(family_information["Two-component system families"]):
+for i, family_type in enumerate(family_information["Two-component system families"]):
   if family_type =="Other families":
     ko_category=family_information["KO number"].iloc[i]
     other_families_ko.append(ko_category)
