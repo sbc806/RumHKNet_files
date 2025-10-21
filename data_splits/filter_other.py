@@ -17,7 +17,7 @@ print("KO number for Other families:",other_families_ko)
 other_families_label=[]
 for ko in other_families_ko:
   other_families_label.append(label_information[ko])
-splits=["train","dev,"test"]
+splits=["train","dev","test"]
 for split in splits:
   dir=split
   csv_file=dir+".csv"
