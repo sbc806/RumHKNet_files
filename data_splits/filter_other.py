@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 dir_path = "../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3/protein/multi_class"
-
+save_path = "../../kinases_dataset/step_3_no_other_families/protein/multi_class"
 with open(os.path.join(dir_path,"label.json"),"r") as f:
   label_information=json.load(dir_path)
 family_information=pd.read_csv("../../dataset_information/133 histine kinases(Sheet1).csv")
@@ -29,7 +29,7 @@ for split in splits:
   other_family_rows=split_df["label"].isin(other_families_label)
   filtered_df=split_df[~other_family_rows]
 
-  print(f"Original size of {split}: {split_df.shape}")
+  print(f"Original shape of {split}: {split_df.shape}")
   print(f"Filtered shape of {split}: {filtered_df.shape}")
   filtered_df.to_csv(os.path.join(save_path,f"{split}/{split}.csv")
   print()
