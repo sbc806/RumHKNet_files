@@ -31,7 +31,7 @@ for split in splits:
 
   print(f"Original shape of {split}: {split_df.shape}")
   print(f"Filtered shape of {split}: {filtered_df.shape}")
-  filtered_df.to_csv(os.path.join(save_path,f"{split}/{split}.csv")
+  filtered_df.to_csv(os.path.join(save_path,f"{split}/{split}.csv"))
   print()
   
 
