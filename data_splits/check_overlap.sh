@@ -16,7 +16,7 @@ module load gcc arrow/19.0.1
 cd /home/schen123/projects/def-guanuofa/schen123/kinases/virtual_environments
 source TEST/bin/activate
 
-
+cd /home/schen123/projects/def-guanuofa/schen123/kinases/RumHKNet_files/data_splits
 python -u check_overlap.py
 
 
