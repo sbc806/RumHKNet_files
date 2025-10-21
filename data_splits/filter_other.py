@@ -5,6 +5,7 @@ import pandas as pd
 dir_path = "../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3/protein/multi_class"
 save_path = "../../sbc806/RumHKNet/kinases_dataset/step_3_no_other_families/protein/multi_class"
 with open(os.path.join(dir_path,"label.json"),"r") as f:
+  print(dir_path)
   label_information=json.loads(dir_path)
 family_information=pd.read_csv("../../dataset_information/133 histine kinases(Sheet1).csv")
 
