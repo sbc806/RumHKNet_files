@@ -109,7 +109,7 @@ for each_data in all_data:
 print("Total number of sequences:", total_sequences)
 print()
 
-histdine_sequences = [seq_data["seq"] for seq_data in histidine_data]
+histidine_sequences = [seq_data["seq"] for seq_data in histidine_data]
 non_kinase_sequences = [seq_data["seq"] for seq_data in non_kinase_data]
 other_kinase_sequences = [seq_data["seq"] for seq_data in other_kinase_data]
 
