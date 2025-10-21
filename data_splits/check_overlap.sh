@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --account=def-guanuofa
-#SBATCH --cpus-per-node=1
 #SBATCH --mem=64G
 #SBATCH --time=7-0
 #SBATCH --job-name=check-overlap
