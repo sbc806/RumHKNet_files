@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=def-guanuofa
-#SBATCH --mem=64G
+#SBATCH --mem-per-cpu=64G
 #SBATCH --time=7-0
 #SBATCH --job-name=check-overlap
 #SBATCH --output=output/check_overlap_%j.out
