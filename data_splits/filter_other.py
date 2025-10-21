@@ -12,7 +12,7 @@ for family_type in enumerate(family_information["Two-component system familes"])
   if family_type =="Other families":
     ko_category=family_information["KO number"].iloc[i]
     other_families_ko.append(ko_category)
-print("KO number for Other families:",other_families_ko")
+print("KO number for Other families:",other_families_ko)
 
 other_families_label=[]
 for ko in other_families_ko:
