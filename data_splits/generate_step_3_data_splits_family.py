@@ -160,7 +160,7 @@ print("Total number of sequences:", total_sequences)
 print()
 
 train_proportion = 0.8
-save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_family_filtered"
+save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_family_filtered/protein/multi_class"
 datasets = generate_dataset(all_data, train_proportion, save_path=save_path)
 
 with open(os.path.join(save_path, "label.txt"), 'w') as f:
