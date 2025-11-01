@@ -112,6 +112,16 @@ histidine_kinases_file = "Final_Histidine_Kinase_668191.fasta"
 histidine_kinases_labels_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/Histidine_Kinases_limei.csv"
 
 histidine_kinases_df = pd.read_csv(histidine_kinases_labels_path)
+
+family_label = {}
+family_file_lines = []
+count = 0
+for i in range(0, len(histidine_kinases_df)):
+    family = histidine_kinases_df["Two-component system families"].iloc[i]
+    if family != "Other families":
+        family_label[family] = count
+        count = count + 1
+print(f"Number of family categories excluding Other families: {len(family_label)}")
 ko_category_label = {}
 label_file_lines = ["label"]
 for i in range(0, len(histidine_kinases_df)):
