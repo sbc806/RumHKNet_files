@@ -114,21 +114,25 @@ histidine_kinases_labels_path = "/home/schen123/projects/def-guanuofa/schen123/k
 histidine_kinases_df = pd.read_csv(histidine_kinases_labels_path)
 
 family_label = {}
-family_file_lines = []
+label_file_lines = []
 count = 0
 for i in range(0, len(histidine_kinases_df)):
     family = histidine_kinases_df["Two-component system families"].iloc[i]
     if family != "Other families":
         family_label[family] = count
+        label_file_lines.append(str(family_label[family]))
         count = count + 1
 print(f"Number of family categories excluding Other families: {len(family_label)}")
+print()
+
 ko_category_label = {}
-label_file_lines = ["label"]
+# label_file_lines = ["label"]
 for i in range(0, len(histidine_kinases_df)):
     ko_category = histidine_kinases_df["KO number"].iloc[i]
+    family = histidine_kinases_df["Two-component system families"].iloc[i]
     if ko_category not in ko_category_label:
-        ko_category_label[ko_category] = i
-        label_file_lines.append(str(ko_category_label[ko_category]))
+        ko_category_label[ko_category] = family
+        # label_file_lines.append(str(ko_category_label[ko_category]))
     else:
         print(f"Error. {ko_category} appears more than once.")
 print(f"Number of KO categories: {len(ko_category_label)}")
@@ -160,7 +164,10 @@ with open(os.path.join(save_path, "label.txt"), 'w') as f:
     for i, line in enumerate(label_file_lines):
         f.write(line + "\n")
 
-with open(os.path.join(save_path, "label.json"), 'w') as f:
+with open(os.path.join(save_path, "family_label.json"), 'w') as f:
+    json.dump(family_label, f)
+
+with open(os.path.join(save_path, "ko_category_label.json"), 'w') as f:
     json.dump(ko_category_label, f)
 
 train = pd.read_csv(os.path.join(save_path, "train/train.csv"))
