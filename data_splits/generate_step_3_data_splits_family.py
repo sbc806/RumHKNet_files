@@ -116,8 +116,11 @@ histidine_kinases_file = "Final_Histidine_Kinase_668191.fasta"
 histidine_kinases_labels_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/Histidine_Kinases_limei.csv"
 
 histidine_kinases_df = pd.read_csv(histidine_kinases_labels_path)
-print(np.unique(histidine_kinases_df["Two-component system families"]))
+
+for i, row in enumerate(histidine_kinases_df):
+    print(i, row["Two-component system familes"])
 print()
+
 family_label = {}
 label_file_lines = []
 count = 0
