@@ -141,7 +141,7 @@ for i in range(0, len(histidine_kinases_df)):
 print(f"Number of KO categories: {len(ko_category_label)}")
 print()
 
-histidine_data = parse_histidine_kinases_fasta(os.path.join(kinases_path, histidine_kinases_file), "histidine_kinase_", ko_category_label)
+histidine_data = parse_histidine_kinases_fasta(os.path.join(kinases_path, histidine_kinases_file), "histidine_kinase_", ko_category_label, family_label)
 
 all_data = histidine_data
 
@@ -160,7 +160,7 @@ print("Total number of sequences:", total_sequences)
 print()
 
 train_proportion = 0.8
-save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_data_splits"
+save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_family_filtered"
 datasets = generate_dataset(all_data, train_proportion, save_path=save_path)
 
 with open(os.path.join(save_path, "label.txt"), 'w') as f:
