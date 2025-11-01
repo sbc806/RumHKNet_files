@@ -36,7 +36,7 @@ def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", ko_label_informa
                                     "seq": sequence,
                                     "label": label}
         if label is not None:
-            if ko_category not in fasta_data:
+            if family_category not in fasta_data:
                 fasta_data[family_category] = [individual_row_information]
             else:
                 fasta_data[family_category].append(individual_row_information)
