@@ -118,7 +118,7 @@ histidine_kinases_labels_path = "/home/schen123/projects/def-guanuofa/schen123/k
 histidine_kinases_df = pd.read_csv(histidine_kinases_labels_path)
 
 for i in range(0,len(histidine_kinases_df)):
-    print(i, histidine_kinases_df["Two-component system familes"].iloc[i])
+    print(i, histidine_kinases_df["Two-component system families"].iloc[i])
 print()
 
 family_label = {}
