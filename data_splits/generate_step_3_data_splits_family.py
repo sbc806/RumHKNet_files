@@ -128,7 +128,7 @@ label_file_lines = []
 count = 0
 for i in range(0, len(histidine_kinases_df)):
     family = histidine_kinases_df["Two-component system families"].iloc[i]
-    if family != "Other families" or isinstance(family, float):
+    if family != "Other families" and not isinstance(family, float):
         if family not in family_label:
             family_label[family] = count
             label_file_lines.append(str(family_label[family]))
