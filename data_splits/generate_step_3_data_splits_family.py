@@ -17,15 +17,17 @@ def parse_fasta(fasta_path, seq_id_prefix="", label=None):
         fasta_data.append(fasta_individual)
     return fasta_data
 
-def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", label_information=None):
+def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", ko_label_information=None, family_label_information=None):
     fasta_data = {}
     fasta_content = SeqIO.parse(open(fasta_path), 'fasta')
     for i, fasta in enumerate(fasta_content):
         name, sequence = fasta.id, str(fasta.seq)
         ko_category = name.split("_")[0]
 
-        if label_information is not None:
-            label = label_information[ko_category]
+        if ko_label_information is not None and family_label_information is not None:
+            family_label = ko_label_information[ko_category]
+            if family_label in family_label_information:
+                label = family_label_information[family_label]
         else:
             label = None
 
@@ -33,10 +35,11 @@ def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", label_informatio
                                     "seq_type": "prot",
                                     "seq": sequence,
                                     "label": label}
-        if ko_category not in fasta_data:
-            fasta_data[ko_category] = [individual_row_information]
-        else:
-            fasta_data[ko_category].append(individual_row_information)
+        if label is not None:
+            if ko_category not in fasta_data:
+                fasta_data[family_category] = [individual_row_information]
+            else:
+                fasta_data[family_category].append(individual_row_information)
     return fasta_data
 
 
