@@ -118,6 +118,7 @@ histidine_kinases_labels_path = "/home/schen123/projects/def-guanuofa/schen123/k
 histidine_kinases_df = pd.read_csv(histidine_kinases_labels_path)
 
 print(np.where(histidine_kinases_df["Two-component system families"].isna()))
+print(histidine_kinases_df[np.where(histidine_kinases_df["Two-component system families"].isna())[0]])
 for i in range(0,len(histidine_kinases_df)):
     print(i, histidine_kinases_df["Two-component system families"].iloc[i])
 print()
@@ -127,7 +128,7 @@ label_file_lines = []
 count = 0
 for i in range(0, len(histidine_kinases_df)):
     family = histidine_kinases_df["Two-component system families"].iloc[i]
-    if family != "Other families":
+    if family != "Other families" or isinstance(family, float):
         if family not in family_label:
             family_label[family] = count
             label_file_lines.append(str(family_label[family]))
