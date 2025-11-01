@@ -122,9 +122,10 @@ count = 0
 for i in range(0, len(histidine_kinases_df)):
     family = histidine_kinases_df["Two-component system families"].iloc[i]
     if family != "Other families":
-        family_label[family] = count
-        label_file_lines.append(str(family_label[family]))
-        count = count + 1
+        if family not in family_label:
+            family_label[family] = count
+            label_file_lines.append(str(family_label[family]))
+            count = count + 1
 print(f"Number of family categories excluding Other families: {len(family_label)}")
 print()
 
