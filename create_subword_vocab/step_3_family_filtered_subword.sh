@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=def-guanuofa
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=12G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=30G
 #SBATCH --time=1-0
 #SBATCH --job-name=step-3-family-filtered-subword
 #SBATCH --output=data_process_output/step_3_family_filtered_subword_%j.out
