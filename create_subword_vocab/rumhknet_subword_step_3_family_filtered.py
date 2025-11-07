@@ -145,7 +145,7 @@ def generate_corpus_1(save_filepath, rate=0.2):
             wfp.write(item[2] + "\n")
 
 def generate_corpus(save_filepath, rate=0.2):
-    dir_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/sbc806/LucaPCycle/kinases_dataset/extra_p_133_class_v3/protein/multi_class"
+    dir_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/sbc806/LucaPCycle/kinases_dataset/step_3_family_filtered/protein/multi_class"
     train_filepath = os.path.join(dir_path, "train/train.csv")
     dev_filepath = os.path.join(dir_path, "dev/dev.csv")
     test_filepath = os.path.join(dir_path, "test/test.csv")
