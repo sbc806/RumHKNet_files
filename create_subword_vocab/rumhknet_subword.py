@@ -44,7 +44,7 @@ def get_args():
                                                                                          ],
                         help="subword running type.")
     '''For corpus'''
-    parser.add_argument("--sequencesfile", type=str, default=None, help="sequences directory path")
+    parser.add_argument("--sequencesdir", type=str, default=None, help="sequences directory path")
     
     '''For Learn and Apply'''
     parser.add_argument("--infile",  type=str, default=None, help="corpus")
@@ -153,7 +153,7 @@ if __name__ == "__main__":
             print("Warning: output dir %s not exists, created!" % dir_path)
             os.makedirs(dir_path)
     if args.func == "corpus":
-        generate_corpus(sequences_filepath=args.sequencesfile, save_filepath=args.outfile, rate=0.2)
+        generate_corpus(dir_path=args.sequencesdir, save_filepath=args.outfile, rate=0.2)
     elif args.func == "learn_bpe":
         if ".fa" in args.infile:
             # transform fasta to corpus
