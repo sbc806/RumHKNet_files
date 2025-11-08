@@ -44,6 +44,8 @@ def get_args():
                                                                                          ],
                         help="subword running type.")
     '''For corpus'''
+    parser.add_argument("--sequencesfile", type=str, default=None, help="sequences filepath")
+    
     '''For Learn and Apply'''
     parser.add_argument("--infile",  type=str, default=None, help="corpus")
     parser.add_argument("--outfile",  type=str, default=None, help="output filepath")
