@@ -66,8 +66,7 @@ def get_args():
     return args
 
 
-def generate_corpus(save_filepath, rate=0.2):
-    dir_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/sbc806/LucaPCycle/kinases_dataset/extra_p_2_class_v3/protein/binary_class"
+def generate_corpus(dir_path, save_filepath, rate=0.2):
     train_filepath = os.path.join(dir_path, "train/train.csv")
     dev_filepath = os.path.join(dir_path, "dev/dev.csv")
     test_filepath = os.path.join(dir_path, "test/test.csv")
