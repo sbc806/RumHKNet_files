@@ -14,7 +14,7 @@ module load gcc arrow/19.0.1
 cd /home/schen123/projects/def-guanuofa/schen123/kinases/virtual_environments
 source TEST/bin/activate
 
-cd ../RumHKNet_files/create_subword_vocab
+cd ../sbc806/LucaPCycle/src/data_process/V3
 
 python rumhknet_subword_step_3_family_filtered.py --func corpus --outfile ../../subword/step_3_family_filtered/step_3_all_sequences_corpus.txt
 
