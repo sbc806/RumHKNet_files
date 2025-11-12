@@ -30,9 +30,9 @@ def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", ko_label_informa
             if family_category in family_label_information:
                 label = family_label_information[family_category]
             else:
-                label = None
+                label = -1
         else:
-            label = None
+            label = -1
 
         individual_row_information = {"seq_id": seq_id_prefix+str(i),
                                     "seq_type": "prot",
@@ -169,19 +169,7 @@ for each_data in all_data:
 print("Total number of sequences:", total_sequences)
 print()
 
-train_proportion = 0.8
-save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_family_filtered/protein/multi_class"
-datasets = generate_dataset(all_data, train_proportion, save_path=save_path)
-
-with open(os.path.join(save_path, "label.txt"), 'w') as f:
-    for i, line in enumerate(label_file_lines):
-        f.write(line + "\n")
-
-with open(os.path.join(save_path, "family_label.json"), 'w') as f:
-    json.dump(family_label, f)
-
-with open(os.path.join(save_path, "ko_category_label.json"), 'w') as f:
-    json.dump(ko_category_label, f)
+save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/extra_p133_class_v3/protein/multi_class"
 
 train = pd.read_csv(os.path.join(save_path, "train/train.csv"))
 dev = pd.read_csv(os.path.join(save_path, "dev/dev.csv"))
