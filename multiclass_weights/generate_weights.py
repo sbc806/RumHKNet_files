@@ -3,7 +3,7 @@ import pandas as pd
 
 
 train_multiclass = pd.read_csv("/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/histidine_kinases_dataset_preprocessed/train/train.csv")
-print(train_multiclass["label"].value_counts())
+print("Number of counts per label:", train_multiclass["label"].value_counts())
 for i in range(0,133):
     total=len(train_multiclass)
     count=train_multiclass["label"].value_counts()[i]
@@ -11,5 +11,5 @@ for i in range(0,133):
     new_weight=None
     if np.floor(total/133/count) == 0:
         new_weight=1/5
-    print(total/133/count,np.floor(total/133/count),new_weight)
+    print(total/133/0.2/count,np.floor(total/133/0.2/count),total/133/count,np.floor(total/133/count),new_weight,total/(count*133))
     print()
