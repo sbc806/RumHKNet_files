@@ -178,5 +178,5 @@ for i, split in enumerate(splits):
         split_batch.append(batch)
     split_batch_df = pd.concat((split, pd.DataFrame({"batch": split_batch})), axis=1)
     split_batch_df.to_csv(os.path.join(save_batch_path, split_names[i]), index=False)
-    print(split_batch)
+    print(split_batch_df)
     print()
