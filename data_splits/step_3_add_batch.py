@@ -21,6 +21,7 @@ def parse_fasta(fasta_path, seq_id_prefix="", label=None):
 def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", ko_label_information=None, family_label_information=None):
     fasta_data = {}
     fasta_content = SeqIO.parse(open(fasta_path), 'fasta')
+    sequences = []
     for i, fasta in enumerate(fasta_content):
         name, sequence = fasta.id, str(fasta.seq)
         ko_category = name.split("_")[0]
@@ -38,11 +39,9 @@ def parse_histidine_kinases_fasta(fasta_path, seq_id_prefix="", ko_label_informa
                                     "seq_type": "prot",
                                     "seq": sequence,
                                     "label": label}
-        if label is not None:
-            if family_category not in fasta_data:
-                fasta_data[family_category] = [individual_row_information]
-            else:
-                fasta_data[family_category].append(individual_row_information)
+        fasta_data[seq_id_prefix+str(i)] = individual_row_information
+        sequences.append(sequence)
+    print("Number of unique sequences:", np.unique(sequences).shape)
     return fasta_data
 
 
