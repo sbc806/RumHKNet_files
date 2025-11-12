@@ -5,6 +5,7 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument("dir_path", type=str)
+args = parser.parse_args()
 
 dir_path = args.dir_path
 train_path = os.path.join(dir_path, "train/traincsv")
