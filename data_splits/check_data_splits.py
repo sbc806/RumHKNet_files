@@ -1,3 +1,26 @@
 import argparse
 
+parser = argparse.ArgumentPrarser()
+parser.add_argument("dir_path", type=str, required=True)
+
+dir_path = args.dir_path
+train_path = os.path.join(dir_path, "train/traincsv")
+dev_path = os.path.join(dev_path, "dev/dev.csv")
+test_path = os.path.join(test_path, "test/test.csv")
+
+train_df = pd.read_csv(train_path)
+dev_df = pd.read_csv(dev_path)
+test_path = pd.read_csv(test_path)
+
+full_df = pd.concat((train_df, dev_df, test_df), axis=0)
+
+print("Total number of sequences:", len(full_df))
+print("Number of unique sequences:", np.unique(full_df["seq"]).shape)
+
+split_dfs = [train_df, dev_df, test_df]
+for i, each_df in enumerate(split_dfs):
+  print(f"Number of samples in {split_names[i]}: {len(each_df)}")
+  labels = each_df["label"]
+  print(f"Labels for {split_names[i]}: {np.unique(labels)}")
+
 
