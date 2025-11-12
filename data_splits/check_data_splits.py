@@ -9,8 +9,8 @@ args = parser.parse_args()
 
 dir_path = args.dir_path
 train_path = os.path.join(dir_path, "train/traincsv")
-dev_path = os.path.join(dev_path, "dev/dev.csv")
-test_path = os.path.join(test_path, "test/test.csv")
+dev_path = os.path.join(dir_path, "dev/dev.csv")
+test_path = os.path.join(dir_path, "test/test.csv")
 
 train_df = pd.read_csv(train_path)
 dev_df = pd.read_csv(dev_path)
