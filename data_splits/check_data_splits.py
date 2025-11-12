@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 parser = argparse.ArgumentParser()
-parser.add_argument("dir_path", type=str, required=True)
+parser.add_argument("dir_path", type=str)
 
 dir_path = args.dir_path
 train_path = os.path.join(dir_path, "train/traincsv")
