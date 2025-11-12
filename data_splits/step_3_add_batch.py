@@ -160,18 +160,23 @@ train = pd.read_csv(os.path.join(save_path, "train/train.csv"))
 dev = pd.read_csv(os.path.join(save_path, "dev/dev.csv"))
 test = pd.read_csv(os.path.join(save_path, "test/test.csv"))
 
+print(train)
+print(dev)
+print(test)
+print()
+
 splits = [train, dev, test]
+save_batch_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class"
 split_names = ["train/train.csv", "dev/dev.csv", "test/test.csv"]
 for i, split in enumerate(splits):
-    for i in range(0, len(split)):
+    split_batch = []
+    for j in range(0, len(split)):
         seq_id = split["seq_id"].iloc[j]
         seq = split["seq"].iloc[j]
         batch = histidine_data[seq_id]["label"]
         assert seq == histidine_data[seq_id]["seq"]
         split_batch.append(batch)
-    split_batch = pd.concat((split, split_batch), axis=1)
-    split_batch.to_csv(os.path.join(save_batch_path, split_names[i]), index=False)
-
-print(train)
-print(dev)
-print(test)
+    split_batch_df = pd.concat((split, split_batch), axis=1)
+    split_batch_df.to_csv(os.path.join(save_batch_path, split_names[i]), index=False)
+    print(split_batch)
+    print()
