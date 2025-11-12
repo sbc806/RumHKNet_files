@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=def-guanuofa
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=30G
+#SBATCH --mem=128G
 #SBATCH --time=1-0
 #SBATCH --job-name=step-3-family-filtered-subword
 #SBATCH --output=data_process_output/step_3_family_filtered_subword_%j.out
@@ -16,7 +16,7 @@ source TEST/bin/activate
 
 cd ../sbc806/LucaPCycle/src/data_process/V3
 
-python rumhknet_subword_step_3_family_filtered.py --func corpus --outfile ../../../../../subword/step_3_family_filtered/step_3_all_sequences_corpus.txt
+# python rumhknet_subword_step_3_family_filtered.py --func corpus --outfile ../../../../../subword/step_3_family_filtered/step_3_all_sequences_corpus.txt
 
 python rumhknet_subword_step_3_family_filtered.py --func learn_bpe --num_symbols=30000 --infile ../../../../../subword/step_3_family_filtered/step_3_all_sequences_corpus.txt --outfile ../../../../../subword/step_3_family_filtered/step_3_all_sequences_corpus_codes_30000.txt --verbose
 
