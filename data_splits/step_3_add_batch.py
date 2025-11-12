@@ -154,25 +154,23 @@ histidine_data = parse_histidine_kinases_fasta(os.path.join(kinases_path, histid
 
 all_data = histidine_data
 
-total_sequences = 0
-for each_data in all_data:
-    num_sequences_individual = len(all_data[each_data])
-    total_sequences = total_sequences + num_sequences_individual
-    minimum_individual = get_minimum_sequence_data(all_data[each_data])
-    maximum_individual = get_maximum_sequence_data(all_data[each_data])
-    print(each_data)
-    print("Number of sequences:", num_sequences_individual)
-    print("Minimum sequence_size:", len(minimum_individual["seq"]))
-    print("Maximum sequence size:", len(maximum_individual["seq"]))
-    print()
-print("Total number of sequences:", total_sequences)
-print()
-
-save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/extra_p133_class_v3/protein/multi_class"
+save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/extra_p_133_class_v3/protein/multi_class"
 
 train = pd.read_csv(os.path.join(save_path, "train/train.csv"))
 dev = pd.read_csv(os.path.join(save_path, "dev/dev.csv"))
 test = pd.read_csv(os.path.join(save_path, "test/test.csv"))
+
+splits = [train, dev, test]
+split_names = ["train/train.csv", "dev/dev.csv", "test/test.csv"]
+for i, split in enumerate(splits):
+    for i in range(0, len(split)):
+        seq_id = split["seq_id"].iloc[j]
+        seq = split["seq"].iloc[j]
+        batch = histidine_data[seq_id]["label"]
+        assert seq == histidine_data[seq_id]["seq"]
+        split_batch.append(batch)
+    split_batch = pd.concat((split, split_batch), axis=1)
+    split_batch.to_csv(os.path.join(save_batch_path, split_names[i]), index=False)
 
 print(train)
 print(dev)
