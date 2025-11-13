@@ -26,7 +26,7 @@ fasta_dir_path = args.fasta_dir_path
 split_dfs = [train_df, dev_df, test_df, full_df]
 split_names = ["train", "dev", "test", "full"]
 for i, each_df in enumerate(split_dfs):
-  with open('{split_names}.fasta', 'w') as f:
+  with open(os.path.join(fasta_dir_path, '{split_names}.fasta'), 'w') as f:
     for j in range(0, len(each_df)):
       f.write(">"+each_df["seq_id"].iloc[j]+"\n")
       f.write(each_df["seq"].iloc[j])
