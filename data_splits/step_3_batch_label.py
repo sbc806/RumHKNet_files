@@ -20,7 +20,7 @@ test_df=pd.read_csv(os.path.join(dir_path,"test/test.csv"))
 save_path="../../kinases_dataset/step_3_11_family/protein/multi_class"
 dfs=[train_df,dev_df,test_df]
 names=["train/train.csv","dev/dev.csv","test/test.csv"]
-for i, df in enuemrate(dfs):
+for i, df in enumerate(dfs):
   for j in range(0,len(df)):
     class_label=df["label"].iloc[j]
     ko_category=label_ko_category[str(class_label)]
