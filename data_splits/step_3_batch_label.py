@@ -9,7 +9,7 @@ with open(os.path.join(dir_path,"label.json"),"r") as f:
 label_ko_category={}
 for ko_category in ko_category_label:
   label_ko_category[ko_category_label[ko_category]]=ko_category
-with open(os.path.join("../../kinases_dataset/step_3_family_filtered/protein/multi_class/family_label.json","r") as f:
+with open(os.path.join("../../kinases_dataset/step_3_family_filtered/protein/multi_class/family_label.json"),"r") as f:
   family_label=json.load(f)
 with open(os.path.join("../../kinases_dataset/step_3_family_filtered/protein/multi_class/ko_category_label.json"),"r") as f:
   ko_category_family=json.load(f)
