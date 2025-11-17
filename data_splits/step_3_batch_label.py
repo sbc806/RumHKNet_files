@@ -24,3 +24,6 @@ for df in dfs:
     else:
       family_label="10"
     df["label"].iloc[i]=family_label
+  print(df)
+  print(np.unique(df["label"]))
+  print()
