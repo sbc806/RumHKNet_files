@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 dir_path="../../kinases_dataset/extra_p_133_class_v3/protein/multi_class"
-with open(os.path.join(dir_path,"label.json","r")) as f:
+with open(os.path.join(dir_path,"label.json"),"r") as f:
   ko_category_label=json.load(f)
 label_ko_category={}
 for ko_category in ko_category_label:
