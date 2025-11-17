@@ -30,6 +30,8 @@ for i, df in enuemrate(dfs):
     else:
       sequence_family_label=10
     df.loc[j,"label"]=int(sequence_family_label)
+  df.to_csv(os.path.join(save_path,names[i]),index=False)
   print(df)
   print(np.unique(df["label"]))
+  print(pd.read_csv(os.path.join(save_path,names[i]))
   print()
