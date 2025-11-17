@@ -22,11 +22,12 @@ for df in dfs:
   for i in range(0,len(df)):
     class_label=df["label"].iloc[i]
     ko_category=label_ko_category[str(class_label)]
-    if ko_category in ko_category_family:
-      family_label=ko_category_family[ko_category]
+    family=ko_category_family[ko_category]
+    if family in family_label:
+      sequence_family_label=int(family_label[family])
     else:
-      family_label=10
-    df.loc[i,"label"]=int(family_label)
+      sequence_family_label=10
+    df.loc[i,"label"]=int(sequence_family_label)
   print(df)
   print(np.unique(df["label"]))
   print()
