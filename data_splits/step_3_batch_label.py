@@ -33,5 +33,5 @@ for i, df in enuemrate(dfs):
   df.to_csv(os.path.join(save_path,names[i]),index=False)
   print(df)
   print(np.unique(df["label"]))
-  print(pd.read_csv(os.path.join(save_path,names[i]))
+  print(pd.read_csv(os.path.join(save_path,names[i])))
   print()
