@@ -17,17 +17,19 @@ train_df=pd.read_csv(os.path.join(dir_path,"train/train.csv"))
 dev_df=pd.read_csv(os.path.join(dir_path,"dev/dev.csv"))
 test_df=pd.read_csv(os.path.join(dir_path,"test/test.csv"))
 
+save_path="../../kinases_dataset/step_3_11_family/protein/multi_class"
 dfs=[train_df,dev_df,test_df]
-for df in dfs:
-  for i in range(0,len(df)):
-    class_label=df["label"].iloc[i]
+names=["train/train.csv","dev/dev.csv","test/test.csv"]
+for i, df in enuemrate(dfs):
+  for j in range(0,len(df)):
+    class_label=df["label"].iloc[j]
     ko_category=label_ko_category[str(class_label)]
     family=ko_category_family[ko_category]
     if family in family_label:
       sequence_family_label=int(family_label[family])
     else:
       sequence_family_label=10
-    df.loc[i,"label"]=int(sequence_family_label)
+    df.loc[j,"label"]=int(sequence_family_label)
   print(df)
   print(np.unique(df["label"]))
   print()
