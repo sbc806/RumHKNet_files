@@ -24,7 +24,7 @@ for df in dfs:
       family_label=ko_category_family[ko_category]
     else:
       family_label=10
-    df["label"].iloc[i]=family_label
+    df.loc[i,"label"]=family_label
   print(df)
   print(np.unique(df["label"]))
   print()
