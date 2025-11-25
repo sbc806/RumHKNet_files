@@ -23,21 +23,21 @@ for i in range(0, args.num_fasta):
   split_df = df[i*split_size: i*split_size+split_size]
   if args.num_fasta > 1:
       extension = f"_{i}"
-  for j in range(0, len(split_df)):
-    with open(os.path.join(fasta_dir_path, f'{split_name}{extension}.fasta'), 'w') as f:
-      f.write(">"+split_df["seq_id"].iloc[j]+"\n")
-      f.write(split_df["seq"].iloc[j])
-      if j < len(split_df)-1:
-        f.write("\n")
+  # for j in range(0, len(split_df)):
+    # with open(os.path.join(fasta_dir_path, f'{split_name}{extension}.fasta'), 'w') as f:
+      # f.write(">"+split_df["seq_id"].iloc[j]+"\n")
+      # f.write(split_df["seq"].iloc[j])
+      # if j < len(split_df)-1:
+        # f.write("\n")
 
 full_df = pd.concat(all_dfs, axis=0)
 print("Total number of sequences:", len(full_df))
 print("Number of unique sequences:", np.unique(full_df["seq"]).shape)
 
 small_df = df[0:5]
-for i in range(0, len(small_df)):
-  with open(os.path.join(fasta_dir_path, f'{split_name}_five_sequences.fasta'), 'w') as f:
-    f.write(">"+small_df["seq_id"].iloc[i]+"\n")
-    f.write(small_df["seq"].iloc[i])
-    if i < len(split_df)-1:
-      f.write("\n")
+# for i in range(0, len(small_df)):
+  # with open(os.path.join(fasta_dir_path, f'{split_name}_five_sequences.fasta'), 'w') as f:
+    # f.write(">"+small_df["seq_id"].iloc[i]+"\n")
+    # f.write(small_df["seq"].iloc[i])
+    # if i < len(split_df)-1:
+      # f.write("\n")
