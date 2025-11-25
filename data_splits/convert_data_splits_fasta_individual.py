@@ -21,6 +21,8 @@ print("Split size:", split_size)
 extension = ""
 for i in range(0, args.num_fasta):
   split_df = df[i*split_size: i*split_size+split_size]
+  if args.num_fasta-1==i:
+    split_df=df[i*split_size:]
   if args.num_fasta > 1:
       extension = f"_{i}"
   split_df.to_csv(os.path.join(fasta_dir_path, f'{split_name}{extension}.csv'), index=False)
