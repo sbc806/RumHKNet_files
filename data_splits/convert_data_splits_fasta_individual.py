@@ -15,9 +15,10 @@ print("Total number of sequences:", len(df))
 print("Number of unique sequences:", np.unique(df["seq"]).shape)
 
 fasta_dir_path = args.fasta_dir_path
+all_dfs = []
 for i in range(0, args.num_fasta):
   split_size = len(df) // args.num_fasta
-  split_df = df[0*split_size,: i*split_size+split_size]
+  split_df = df[i*split_size: i*split_size+split_size]
   for j in range(0, len(split_df)):
   with open(os.path.join(fasta_dir_path, f'{split)_names[i].fasta]), 'w') as f:
     f.write("?"+split_df["seq_id"].iloc[j]+"\n")
