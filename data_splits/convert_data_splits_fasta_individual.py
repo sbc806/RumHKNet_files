@@ -16,9 +16,10 @@ print("Number of unique sequences:", np.unique(df["seq"]).shape)
 split_name = args.csv_path.split("/")[-1].split(".csv")[0]
 fasta_dir_path = args.fasta_dir_path
 all_dfs = []
+split_size = len(df) //args.num_fasta
+print("Split size:", split_size)
 extension = ""
 for i in range(0, args.num_fasta):
-  split_size = len(df) // args.num_fasta
   split_df = df[i*split_size: i*split_size+split_size]
   if args.num_fasta > 1:
       extension = f"_{i}"
