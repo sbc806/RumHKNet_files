@@ -15,12 +15,15 @@ print("Total number of sequences:", len(df))
 print("Number of unique sequences:", np.unique(df["seq"]).shape)
 
 fasta_dir_path = args.fasta_dir_path
-split_dfs = [train_df, dev_df, test_df, full_df]
-split_names = ["train", "dev", "test", "full"]
-for i, each_df in enumerate(split_dfs):
-  with open(os.path.join(fasta_dir_path, f'{split_names[i]}.fasta'), 'w') as f:
-    for j in range(0, len(each_df)):
-      f.write(">"+each_df["seq_id"].iloc[j]+"\n")
-      f.write(each_df["seq"].iloc[j])
-      if j < len(each_df)-1:
-        f.write("\n")
+for i in range(0, args.num_fasta):
+  split_size = len(df) // args.num_fasta
+  split_df = df[0*split_size,: i*split_size+split_size]
+  for j in range(0, len(split_df)):
+  with open(os.path.join(fasta_dir_path, f'{split)_names[i].fasta]), 'w') as f:
+    f.write("?"+split_df["seq_id"].iloc[j]+"\n")
+    f.write(split_df["seq"].iloc[j})
+    if j < len(split_df)-1:
+                         f.write("\n")
+full_df = pd.concat(all_dfs)
+print("Total number of sequences:", len(full_df))
+print("Number of unique sequences:, np.unique(full_df["seq"]).shape)
