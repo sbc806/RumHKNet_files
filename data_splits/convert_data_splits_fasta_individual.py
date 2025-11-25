@@ -25,6 +25,7 @@ for i in range(0, args.num_fasta):
       f.write(split_df["seq"].iloc[j})
       if j < len(split_df)-1:
         f.write("\n")
-full_df = pd.concat(all_dfs)
+
+full_df = pd.concat(all_dfs, axis=0)
 print("Total number of sequences:", len(full_df))
 print("Number of unique sequences:, np.unique(full_df["seq"]).shape)
