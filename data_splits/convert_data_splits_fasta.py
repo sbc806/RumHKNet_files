@@ -6,7 +6,6 @@ import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument("--dir_path", type=str)
 parser.add_argument("--fasta_dir_path", type=str)
-parser.add_argument("--num_fasta", type=int, default=1)
 args = parser.parse_args()
 
 dir_path = args.dir_path
