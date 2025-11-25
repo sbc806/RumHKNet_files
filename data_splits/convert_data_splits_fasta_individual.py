@@ -32,7 +32,7 @@ for i in range(0, args.num_fasta):
 
 full_df = pd.concat(all_dfs, axis=0)
 print("Total number of sequences:", len(full_df))
-print("Number of unique sequences:, np.unique(full_df["seq"]).shape)
+print("Number of unique sequences:", np.unique(full_df["seq"]).shape)
 
 small_df = df[0:5]
 for i in range(0, len(small_df)):
