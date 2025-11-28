@@ -25,6 +25,7 @@ def stack_csvs(files):
     dfs.append(df)
   return pd.concat(dfs)
 df_07=stack_csvs(threshold_files["07"])
+df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
 print(df_07)
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
@@ -32,7 +33,7 @@ train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
 print("Number of xamples in training set:",len(train_df))
 print(train_df)
-print("Number of common rows:",np.sum(train_df.reset_index(drop=True)["seq_id"]==df_07.reset_index(drop=True)["seq_id"]))
+print("Number of common rows:",np.sum(train_df["seq_id"]==df_07["seq_id"]))
 
 thresholds=[0.2,0.35,0.5,0.7,0.9]
 for threshold in thresholds:
