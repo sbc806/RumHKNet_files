@@ -32,13 +32,16 @@ df_07=stack_csvs(threshold_files["07"])
 df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
 print(df_07)
+"""
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/extra_p_2_class_v133/protein/multi_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
 print("Number of xamples in training set:",len(train_df))
 print(train_df)
-print("Number of common rows:",np.sum(train_df["seq_id"]==df_07["seq_id"]))
-
+for threshold in threshold_df:
+  df=threshold_df[threshold]
+  print("Number of common rows:",np.sum(train_df["seq_id"]==df["seq_id"]))
+"""
 thresholds=[0.2,0.35,0.5,0.7,0.9]
 for threshold in thresholds:
   predictions=df_07["prob"]>=threshold
