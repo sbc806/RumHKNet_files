@@ -24,6 +24,10 @@ def stack_csvs(files):
     df=pd.read_csv(f)
     dfs.append(df)
   return pd.concat(dfs)
+threshold_df={}
+for threshold in threshold_files:
+  threshold_df[threshold]=stack_csvs(threshold_files[threshold])
+"""
 df_07=stack_csvs(threshold_files["07"])
 df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
@@ -43,3 +47,4 @@ for threshold in thresholds:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
+"""
