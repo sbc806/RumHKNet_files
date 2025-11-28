@@ -32,4 +32,13 @@ train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
 print("Number of xamples in training set:",len(train_df))
 print(train_df)
-print("Number of common rows:",np.sum(train_df["seq_id"]==df_07["seq_id"]))
+print("Number of common rows:",np.sum(train_df["seq_id"].values==df_07["seq_id"]).values)
+
+thresholds=[0.2,0.35,0.5,0.7,0.9]
+for threshold in thresholds:
+  predictions=df_07["prob"]>=threshold
+  labels=train_df["label"]
+  correct=np.sum(predictions==labels)
+  total=len(labels)
+  accuracy=correct/total
+  print("Threshold:",threshold,"Accuracy:",accuracy)
