@@ -8,7 +8,7 @@ prediction_csv=os.listdir(predictions_dir)
 prediction_csv_filtered=[ f for f in prediction_csv if "five_sequences" not in f]
 threshold_files={}
 for f in prediction_csv_filtered:
-  threshold=prediction_csv_filtered.split(".csv")[0].split("_")[-1]
+  threshold=f.split(".csv")[0].split("_")[-1]
   if threshold in threshold_files:
     threshold_files[threshold].append(f)
   else:
