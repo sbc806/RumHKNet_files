@@ -11,4 +11,14 @@ for f in prediction_csv_filtered:
   if threshold int rehshold_files:
     threshold_files[threshold].append(f)
   else:
-  threshold
+    threshold_files[threshold]=[f]
+
+for threshold in threshold_files:
+  threshold_files[threshold]=sorted(threshold_files[threshold])
+
+def stack_csvs(files):
+  dfs=[]
+  for f in files:
+    df=pd.read_csv(f)
+    dfs.append(df)
+  return pd.concat(dfs)
