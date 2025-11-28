@@ -29,4 +29,4 @@ split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/step_1_non
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
 print("Number of xamples in training set:",len(train_df))
-print("Number of common rows:",np.sum(train_df["seq_id"]==df_07["seq_id"]]))
+print("Number of common rows:",np.sum(train_df["seq_id"]==df_07["seq_id"]))
