@@ -24,7 +24,7 @@ def stack_csvs(files):
     dfs.append(df)
   return pd.concat(dfs)
 df_07=stack_csvs(threshold_files["07"])
-
+print("Number of examples:",len(df_07))
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
