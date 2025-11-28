@@ -3,7 +3,7 @@ import os as os
 import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
-predictions_dir=os.path.join(dir_path,"predictions/predicted_results/step_1/both")
+predictions_dir_path=os.path.join(dir_path,"predictions/predicted_results/step_1/both")
 prediction_csv=os.listdir(predictions_dir)
 prediction_csv_filtered=[ f for f in prediction_csv if "five_sequences" not in f]
 threshold_files={}
@@ -11,7 +11,7 @@ for f in prediction_csv_filtered:
   threshold=f.split(".csv")[0].split("_")[-1]
   print(threshold)
   if threshold in threshold_files:
-    threshold_files[threshold].append(f)
+    threshold_files[threshold].append(os.path.join(predictions_dir_path,f))
   else:
     threshold_files[threshold]=[f]
 
