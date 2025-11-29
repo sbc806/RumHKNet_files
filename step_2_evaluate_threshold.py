@@ -36,6 +36,7 @@ print(df_07)
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
+labels=train_df["label"]
 print("Number of examples in training set:",len(train_df))
 print(train_df)
 for threshold in threshold_df:
