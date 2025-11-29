@@ -2,7 +2,7 @@ import numpy as np
 import os as os
 import pandas as pd
 
-dir_path="/home/schen123/scratch/kinases"
+dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 predictions_dir_path=os.path.join(dir_path,"predictions/predicted_results/step_2/both")
 prediction_csv=os.listdir(predictions_dir_path)
 prediction_csv_filtered=[ f for f in prediction_csv if "five_sequences" not in f]
