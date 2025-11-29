@@ -47,13 +47,13 @@ for threshold in threshold_df:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Correct:",correct,"Total:",total)
-"""
+df_02=threshold_df["02"]
 thresholds=[0.2,0.35,0.5,0.7,0.9]
 for threshold in thresholds:
-  predictions=df_07["prob"]>=threshold
+  predictions=df_02["prob"]>=threshold
   labels=train_df["label"]
   correct=np.sum(predictions==labels)
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
-"""
+
