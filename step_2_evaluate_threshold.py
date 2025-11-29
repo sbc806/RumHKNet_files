@@ -48,7 +48,8 @@ for threshold in threshold_df:
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Correct:",correct,"Total:",total)
 df_02=threshold_df["02"]
-thresholds=[0.2,0.35,0.5,0.7,0.9]
+print(df_02)
+thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
   predictions=df_02["prob"]>=threshold
   labels=train_df["label"]
