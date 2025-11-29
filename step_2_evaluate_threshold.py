@@ -26,7 +26,7 @@ def stack_csvs(files):
   return pd.concat(dfs)
 threshold_df={}
 for threshold in threshold_files:
-  threshold_df[threshold]=stack_csvs(threshold_files[threshold])
+  threshold_df[threshold]=stack_csvs(threshold_files[threshold]).reset_index(drop=True)
 """
 df_07=stack_csvs(threshold_files["07"])
 df_07=df_07.reset_index(drop=True)
