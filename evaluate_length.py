@@ -87,13 +87,9 @@ histidine_kinase_file = "Final_Histidine_Kinase_668191.fasta"
 non_kinase_file = "Non_Kinase_527009.fasta"
 other_kinase_file = "Final_other_kinase_760926.fasta"
 
-histidine_data = parse_fasta(os.path.join(kinases_path, histidine_kinase_file), "histidine_kinase_", 1)
-non_kinase_data = parse_fasta(os.path.join(kinases_path, non_kinase_file), "non_kinase_", 0)
-other_kinase_data = parse_fasta(os.path.join(kinases_path, other_kinase_file), "other_kinase_", 1)
+histidine_data = parse_fasta(os.path.join(kinases_path, histidine_kinase_file), "histidine_kinase_", None)
 
-all_data = {"Histidine_kinase": histidine_data,
-            "Non_kinase": non_kinase_data,
-            "Other_kinase": other_kinase_data}
+all_data = {"Histidine_kinase": sequence_data}
 
 total_sequences = 0
 for each_data in all_data:
@@ -109,14 +105,4 @@ for each_data in all_data:
 print("Total number of sequences:", total_sequences)
 print()
 
-train_proportion = 0.8
-save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_1_data_splits"
-datasets = generate_dataset(all_data, train_proportion, save_path=save_path)
 
-train = pd.read_csv(os.path.join(save_path, "train/train.csv"))
-dev = pd.read_csv(os.path.join(save_path, "dev/dev.csv"))
-test = pd.read_csv(os.path.join(save_path, "test/test.csv"))
-
-print(train)
-print(dev)
-print(test)
