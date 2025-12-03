@@ -14,7 +14,7 @@ for i in range(0,10000):
   for j in range(0,len(dfs)):
     probs.append(dfs[j]["prob"].iloc[i])
     if j==0:
-      preds.append(new_preds.iloc[i]
+      preds.append(new_preds.iloc[i])
     else:
       preds.append(dfs[j]["pred"].iloc[i])
   print(seq_id,probs,preds)
