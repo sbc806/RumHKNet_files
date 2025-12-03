@@ -103,4 +103,5 @@ ranges=[(3432,10000),(10000,20000),(20000,30000),(30000,40000)]
 for each_range in ranges:
     start=each_range[0]
     end=each_range[1]
-    contained=sequence_df["seq_length"]>start&sequence_df["seq_length"]<=end
+    contained=(sequence_df["seq_length"]>start)&(sequence_df["seq_length"]<=end)
+    print(f"{np.sum(contained)} sequences with length in {each_range}")
