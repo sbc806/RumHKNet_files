@@ -90,12 +90,17 @@ other_kinase_file = "Final_other_kinase_760926.fasta"
 
 histidine_data = parse_fasta("/home/schen123/scratch/clustered_rep_seq95.fasta", "seq_", None)
 
-all_data = {"Histidine_kinase": sequence_data}
-
+# all_data = {"Histidine_kinase": sequence_data}
+sequence_df=pd.DataFrame(histidine_data)
+total_sequences=len(sequence_df)
 print("Total number of sequences:", total_sequences)
 print("Minimum sequence length:", np.min(sequence_df["seq_length"]))
-print("Maximum sequence length:", np.max(sequence_df["seq_length"])
-print("Average sequence length:", np.mean(sequence_df["seq_length"])
+print("Maximum sequence length:", np.max(sequence_df["seq_length"]))
+print("Average sequence length:", np.mean(sequence_df["seq_length"]))
 print()
 
-
+ranges=[(3432,10000),(10000,20000),(20000,30000),(30000,40000)]
+for each_range in ranges:
+    start=each_range[0]
+    end=each_range[1]
+    contained=sequence_df["seq_length"]>start&sequence_df["seq_length"]<=end
