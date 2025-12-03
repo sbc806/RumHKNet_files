@@ -17,3 +17,6 @@ for i in range(0,num_sequences):
 df_v2=pd.DataFrame({"seq_id":seq_id,"seq_type":["prot" for i in range(0,num_sequences)],"seq":seq})
 print(df_v2)
 df_v2.to_csv(os.path.join(save_path,"sequences_34551_v2.csv"),index=False)
+df_v3=pd.DataFrame({"seq_id":seq_id,"seq":seq})
+print(df_v3)
+df_v3.to_csv(os.path.join(save_path,"sequences_34551_v3.csv"),index=False)
