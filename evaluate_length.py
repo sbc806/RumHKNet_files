@@ -12,8 +12,7 @@ def parse_fasta(fasta_path, seq_id_prefix="", label=None):
         fasta_individual = {"seq_id": seq_id_prefix+str(i),
                         "seq_type": "prot",
                         "seq": sequence,
-                        "seq_length": len(sequence),
-                        "label": label}
+                        "seq_length": len(sequence)}
         fasta_data.append(fasta_individual)
     return fasta_data
 
