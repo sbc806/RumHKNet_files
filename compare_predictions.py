@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both"
-result_names=["train_0_predicted_02.csv","train_0_10000_new_predicted_03_3432_v3.csv","train_0_100000_new_predicted_03_3432_v3.csv"]
+result_names=["train_0_predicted_03.csv","train_0_10000_new_predicted_03_3432_v3.csv","train_0_100000_new_predicted_03_3432_v3.csv"]
 dfs=[]
 for f_name in result_names:
   dfs.append(pd.read_csv(os.path.join(dir_path,f_name)))
