@@ -12,6 +12,7 @@ def parse_fasta(fasta_path, seq_id_prefix="", label=None):
         fasta_individual = {"seq_id": seq_id_prefix+str(i),
                         "seq_type": "prot",
                         "seq": sequence,
+                        "seq_length": len(sequence),
                         "label": label}
         fasta_data.append(fasta_individual)
     return fasta_data
@@ -91,18 +92,10 @@ histidine_data = parse_fasta("/home/schen123/scratch/clustered_rep_seq95.fasta",
 
 all_data = {"Histidine_kinase": sequence_data}
 
-total_sequences = 0
-for each_data in all_data:
-    num_sequences_individual = len(all_data[each_data])
-    total_sequences = total_sequences + num_sequences_individual
-    minimum_individual = get_minimum_sequence_data(all_data[each_data])
-    maximum_individual = get_maximum_sequence_data(all_data[each_data])
-    print(each_data)
-    print("Number of sequences:", num_sequences_individual)
-    print("Minimum sequence_size:", len(minimum_individual["seq"]))
-    print("Maximum sequence size:", len(maximum_individual["seq"]))
-    print()
 print("Total number of sequences:", total_sequences)
+print("Minimum sequence length:", np.min(sequence_df["seq_length"]))
+print("Maximum sequence length:", np.max(sequence_df["seq_length"])
+print("Average sequence length:", np.mean(sequence_df["seq_length"])
 print()
 
 
