@@ -9,7 +9,7 @@ desired_length=34551
 seq_id=[]
 seq=[]
 for i in range(0,num_sequences):
-  sequence=''.join(random.choices(string.ascii_uppercase,k=desired_length)
+  sequence=''.join(random.choices(string.ascii_uppercase,k=desired_length))
   seq_id.append(seq_id)
   seq.append(sequence)
 df=pd.DataFrame({"seq_id":seq_id,"seq":seq})
