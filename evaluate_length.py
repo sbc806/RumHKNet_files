@@ -87,7 +87,7 @@ histidine_kinase_file = "Final_Histidine_Kinase_668191.fasta"
 non_kinase_file = "Non_Kinase_527009.fasta"
 other_kinase_file = "Final_other_kinase_760926.fasta"
 
-histidine_data = parse_fasta(os.path.join(kinases_path, histidine_kinase_file), "histidine_kinase_", None)
+histidine_data = parse_fasta("/home/schen123/scratch/clustered_rep_seq95.fasta", "seq_", None)
 
 all_data = {"Histidine_kinase": sequence_data}
 
