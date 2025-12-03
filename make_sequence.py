@@ -14,6 +14,6 @@ for i in range(0,num_sequences):
   sequence="M"*desired_length
   seq_id.append("fake_seq_"+str(i))
   seq.append(sequence)
-df=pd.DataFrame({"seq_id":seq_id,"seq":seq})
-print(df)
-df.to_csv(os.path.join(save_path,"sequences_34551.csv"),index=False)
+df_v2=pd.DataFrame({"seq_id":seq_id,"seq_type":["prot" for i in range(0,num_sequences)],"seq":seq})
+print(df_v2)
+df_v2.to_csv(os.path.join(save_path,"sequences_34551_v2.csv"),index=False)
