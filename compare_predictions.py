@@ -1,5 +1,8 @@
 import os
+import numpy as np
 import pandas as pd
+
+np.set_printoptions(legacy='1.25')
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both"
 result_names=["train_0_predicted_02.csv","train_0_10000_new_predicted_03_3432_v3.csv","train_0_100000_new_predicted_03_3432_v3.csv"]
