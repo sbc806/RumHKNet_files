@@ -5,7 +5,7 @@ import string
 
 save_path="../predictions/predictions_dataset/step_1"
 
-num_sequences=150
+num_sequences=1000
 desired_length=1500
 seq_id=[]
 seq=[]
