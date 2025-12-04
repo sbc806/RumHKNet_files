@@ -92,7 +92,7 @@ other_kinase_file = "Final_other_kinase_760926.fasta"
 
 # all_data = {"Histidine_kinase": sequence_data}
 # sequence_df=pd.DataFrame(histidine_data)
-total_sequences=pd.DataFrame("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/train_0_100000.csv")
+sequence_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/train_0_100000.csv")
 total_sequences=len(sequence_df)
 print("Total number of sequences:", total_sequences)
 print("Minimum sequence length:", np.min(sequence_df["seq_length"]))
