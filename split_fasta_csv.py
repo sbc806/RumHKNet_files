@@ -21,6 +21,6 @@ for i in range(0,total_length):
   if i == total_length-1:
     selected_df=df_small_seq[start:]
   all_dfs.append(selected_df)
-  selected_df.to_csv(f"../clustered_rep_seq95_small_{i}.csv",index=False)
+  selected_df.to_csv(f"../predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95_small_{i}.csv",index=False)
 df_small_seq_1=pd.concat(all_dfs)
 print(np.sum(df_small_seq["seq_id"]==df_small_seq_1["seq_id"]))
