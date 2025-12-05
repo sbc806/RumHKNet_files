@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 
-csv_path = "../predictions/predictions_dataset/step_1/clustered_rep_seq95.csv"
+csv_path = "../predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"
 df=pd.read_csv(csv_path)
 split_size=2450000
 df_large_seq=df[df["seq_length"]>1500].iloc[:,[0,2]]
