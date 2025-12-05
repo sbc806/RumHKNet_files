@@ -10,7 +10,7 @@ def parse_fasta(fasta_path, seq_id_prefix="", label=None):
     fasta_content = SeqIO.parse(open(fasta_path), 'fasta')
     for i, fasta in enumerate(fasta_content):
         name, sequence = fasta.id, str(fasta.seq)
-        fasta_individual = {"seq_id": seq_id_prefix+str(i),
+        fasta_individual = {"seq_id": name,
                         "seq_type": "prot",
                         "seq": sequence,
                         "seq_length": len(sequence)}
@@ -113,3 +113,4 @@ print("Number of sequences >1500:",np.sum(sequence_df["seq_length"]>1500))
 print("Number of sequences <=1500:",np.sum(sequence_df["seq_length"]<=1500))
 
 sequence_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/clustered_rep_seq95.csv",index=False)
+print(np.unique(sequence_df["seq_id"].shape))
