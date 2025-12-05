@@ -88,11 +88,11 @@ histidine_kinase_file = "Final_Histidine_Kinase_668191.fasta"
 non_kinase_file = "Non_Kinase_527009.fasta"
 other_kinase_file = "Final_other_kinase_760926.fasta"
 
-# histidine_data = parse_fasta("/home/schen123/scratch/clustered_rep_seq95.fasta", "seq_", None)
+histidine_data = parse_fasta("/home/schen123/scratch/clustered_rep_seq95.fasta", "seq_", None)
 
 # all_data = {"Histidine_kinase": sequence_data}
 # sequence_df=pd.DataFrame(histidine_data)
-sequence_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/train_0_100000.csv")
+# sequence_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/train_0_100000.csv")
 sequence_df["seq_length"]=sequence_df["seq"].str.len()
 total_sequences=len(sequence_df)
 print("Total number of sequences:", total_sequences)
@@ -107,3 +107,5 @@ for each_range in ranges:
     end=each_range[1]
     contained=(sequence_df["seq_length"]>start)&(sequence_df["seq_length"]<=end)
     print(f"{np.sum(contained)} sequences with length in {each_range}")
+print("Number pf sequencces:",np.sum(sequence_df["seq_length"]>=1500))
+print("Number of sequencdes:",np.sum(sequence_df["seq_length"]<1500))
