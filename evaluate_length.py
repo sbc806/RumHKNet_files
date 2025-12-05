@@ -111,3 +111,5 @@ print("Number of sequences >=1500:",np.sum(sequence_df["seq_length"]>=1500))
 print("Number of sequences <1500:",np.sum(sequence_df["seq_length"]<1500))
 print("Number of sequences >1500:",np.sum(sequence_df["seq_length"]>1500))
 print("Number of sequences <=1500:",np.sum(sequence_df["seq_length"]<=1500))
+
+sequence_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/clustered_rep_seq95.csv",index=False)
