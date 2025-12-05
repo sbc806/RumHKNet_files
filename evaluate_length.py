@@ -107,5 +107,7 @@ for each_range in ranges:
     end=each_range[1]
     contained=(sequence_df["seq_length"]>start)&(sequence_df["seq_length"]<=end)
     print(f"{np.sum(contained)} sequences with length in {each_range}")
-print("Number pf sequencces:",np.sum(sequence_df["seq_length"]>=1500))
-print("Number of sequencdes:",np.sum(sequence_df["seq_length"]<1500))
+print("Number of sequences >=1500:",np.sum(sequence_df["seq_length"]>=1500))
+print("Number of sequences <1500:",np.sum(sequence_df["seq_length"]<1500))
+print("Number of sequences >1500:",np.sum(sequence_df["seq_length"]>1500))
+print("Number of sequences <=1500:",np.sum(sequence_df["seq_length"]<=1500))
