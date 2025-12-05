@@ -13,7 +13,7 @@ df_large_seq.to_csv("../clustered_rep_seq95_large.csv",index=False)
 
 total_length=len(df_small_seq)//split_size+1
 all_dfs=[]
-for i in range(0,total_length)):
+for i in range(0,total_length):
   start=i*split_size
   end=start+split_size
   selected_df=df_small_seq
