@@ -10,7 +10,7 @@ df_small_seq=df[df["seq_length"]<=1500].iloc[:,[0,2]]
 print(df_large_seq.shape,df_large_seq.columns)
 print(df_small_seq.shape,df_small_seq.columns)
 
-df_large_seq.to_csv("../clustered_rep_seq95_large.csv",index=False)
+df_large_seq.to_csv("../predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95_large.csv",index=False)
 
 total_length=len(df_small_seq)//split_size+1
 all_dfs=[]
