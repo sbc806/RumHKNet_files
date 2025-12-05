@@ -1,11 +1,12 @@
 import os
+import numpy as np
 import pandas as pd
 
 csv_path = "../clustered_rep_seq95.csv"
 df=pd.read_csv(csv_path)
 split_size=2450000
-df_large_seq=df[df["seq_length"]>1500].iloc[:,0:2]
-df_small_seq=df[df["seq_length"]<=1500].iloc[:,0:2]
+df_large_seq=df[df["seq_length"]>1500].iloc[:,[0,2]]
+df_small_seq=df[df["seq_length"]<=1500].iloc[:,[0,2]]
 print(df_large_seq.shape,df_large_seq.columns)
 print(df_small_seq.shape,df_small_seq.columns)
 
