@@ -38,6 +38,7 @@ for i in i_df:
     print(latest_row)
     print(df_i[latest_row-1:latest_row-1+2]
     selected_df=df_i[latest_row]
+    print(len(selected_df))
     print(selected_df)
     new_file_name=f"clustered_rep_seq95_small_{i}_remaining.csv"
     selected_df.to_csv(os.path.join(dataset_path,new_file_name),index=False)
