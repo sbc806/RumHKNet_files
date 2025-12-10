@@ -35,11 +35,11 @@ for i in i_df:
   if len(df_i)<2450000:
     print(i)
     file_name=f"clustered_rep_seq95_small_{i}.csv"
-    dataset=pd.read_csv(os.path.join(dataset_path,file_name))
+    dataset_i=pd.read_csv(os.path.join(dataset_path,file_name))
     latest_row=len(df_i)
     print(latest_row)
     print(df_i.iloc[latest_row-1:latest_row-1+2])
-    selected_df=df_i.iloc[latest_row:]
+    selected_df=dataset_i.iloc[latest_row:]
     print(len(selected_df))
     print(selected_df)
     new_file_name=f"clustered_rep_seq95_small_{i}_remaining.csv"
