@@ -38,7 +38,7 @@ for i in i_df:
     dataset_i=pd.read_csv(os.path.join(dataset_path,file_name))
     latest_row=len(df_i)
     print(latest_row)
-    print(df_i.iloc[latest_row-1:latest_row-1+2])
+    print(df_i.iloc[latest_row-1:latest_row-1+3])
     selected_df=dataset_i.iloc[latest_row:]
     print(len(selected_df))
     print(selected_df)
