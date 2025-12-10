@@ -22,7 +22,7 @@ for i in range(0,28):
   df_i=get_predictions_df(predictions_path,i)
   print(i)
   if df_i is not None:
-    print(len(df_i))
+    print(len(df_i)np.unique(df_i["label"]))
     print(df_i)
   else:
     print("None")
