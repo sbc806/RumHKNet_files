@@ -7,7 +7,7 @@ predictions_path="../predictions/predicted_results/step_1/both/clustered"
 def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
   selected_files=[f for f in prediction_files if "small_"+str(i) in f]
-  selected_files=sorted(selected_files)
+  selected_files=sorted(selected_files,lambda x:int(x.split(".csv")[0].split("_")[-1]))
   print(selected_files)
   df=None
   for f in selected_files:
