@@ -38,8 +38,8 @@ for i in i_df:
     dataset=pd.read_csv(os.path.join(dataset_path,file_name))
     latest_row=len(df_i)
     print(latest_row)
-    print(df_i[latest_row-1:latest_row-1+2])
-    selected_df=df_i[latest_row]
+    print(df_i.iloc[latest_row-1:latest_row-1+2])
+    selected_df=df_i.iloc[latest_row:]
     print(len(selected_df))
     print(selected_df)
     new_file_name=f"clustered_rep_seq95_small_{i}_remaining.csv"
