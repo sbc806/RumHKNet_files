@@ -3,6 +3,7 @@ import os
 import pandas as pd
 
 
+dataset_path="../predictions/predictions_dataset/step_1/clustered"
 predictions_path="../predictions/predicted_results/step_1/both/clustered"
 
 def get_predictions_df(predictions_path,i):
@@ -24,7 +25,7 @@ for i in range(0,28):
   df_i=get_predictions_df(predictions_path,i)
   print(i)
   if df_i is not None:
-    print(len(df_i),np.unique(df_i["pred"]))
+    print("Number of predictions:",len(df_i),"Prediction labels:",np.unique(df_i["pred"]))
     print(df_i)
     i_df[i]=df_i
   else:
