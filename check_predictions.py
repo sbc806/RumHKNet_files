@@ -10,7 +10,7 @@ def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
   selected_files=[f for f in prediction_files if "small_"+str(i)+"_"in f]
   selected_files=sorted(selected_files,key=lambda x:int(x.split(".csv")[0].split("_")[-1]))
-  print(selected_files)
+  # print(selected_files)
   df=None
   for f in selected_files:
     current_df=pd.read_csv(os.path.join(predictions_path,f))
@@ -25,7 +25,11 @@ for i in range(0,28):
   df_i=get_predictions_df(predictions_path,i)
   print(i)
   if df_i is not None:
-    print("Number of predictions:",len(df_i),"Prediction labels:",np.unique(df_i["pred"]))
+    file_name=f"clustered_rep_seq95_small_{i}.csv"
+    dataset_i=pd.read_csv(os.path.join(dataset_path,file_name))
+    print("Number of predictions:",len(df_i))
+    print("Number of seq_id in common between dataset and predictions:",np.sum(dataset_i["seq_id"]==df_i["seq_id"]))
+    print("Prediction labels:",np.unique(df_i["pred"]))
     print(df_i)
     i_df[i]=df_i
   else:
