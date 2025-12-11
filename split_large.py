@@ -10,5 +10,5 @@ print(large_df_sorted)
 print(large_df_sorted["seq"].str.len())
 large_df_sorted_subset=large_df_sorted.iloc[-1250:]
 print(large_df_sorted_subset)
-print(large_df_sorted_subset.str.len())
+print(large_df_sorted_subset["seq"].str.len())
 large_df_sorted_subset.to_csv("../predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95_large_last_1250.csv",index=False)
