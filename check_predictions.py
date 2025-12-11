@@ -29,6 +29,8 @@ for i in range(0,28):
   else:
     print("None")
   print()
+
+"""
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
 for i in i_df:
   df_i=i_df[i]
@@ -45,3 +47,4 @@ for i in i_df:
     new_file_name=f"clustered_rep_seq95_small_{i}_remaining.csv"
     selected_df.to_csv(os.path.join(dataset_path,new_file_name),index=False)
     print()
+"""
