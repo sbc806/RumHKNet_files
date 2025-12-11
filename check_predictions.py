@@ -26,7 +26,7 @@ for i in range(0,28):
   print(i)
   if df_i is not None:
     file_name=f"clustered_rep_seq95_small_{i}.csv"
-    dataset_i=pd.read_csv(os.path.join(dataset_path,file_name))
+    dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
     print("Number of predictions:",len(df_i))
     print("Number of seq_id in common between dataset and predictions:",np.sum(dataset_i["seq_id"].values==df_i["seq_id"].values))
     print("Prediction labels:",np.unique(df_i["pred"]))
