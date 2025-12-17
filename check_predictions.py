@@ -68,6 +68,7 @@ for i in range(0,28):
     df_kinases=fasta_i
   else:
     df_kinases=pd.concat([df_kinases,fasta_i])
+df_kinases.to_csv(os.path.join(predictions_path,f"clustered_rep_seq95_small_kinases.csv"),index=False)
 print("Number of total kinases:",num_kinases)  
 """
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
