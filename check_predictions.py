@@ -21,6 +21,7 @@ def get_predictions_df(predictions_path,i):
   return df
 
 i_df={}
+seq_ids=np.array([])
 for i in range(0,28):
   dir_i="small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
@@ -38,9 +39,12 @@ for i in range(0,28):
     print("Prediction labels:",np.unique(df_i["pred"]))
     print(df_i)
     i_df[i]=df_i
+    seq_ids=np.hstack((seq_ids,df_i["seq_id"]))
   else:
     print("None")
   print()
+
+print("Number of sequences <= 1500:",seq_ids.shape)
 
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
@@ -52,7 +56,7 @@ def df_to_fasta(df,fasta_path):
       if i < len(df)-1:
         f.write("\n")
         
-for i in range(0,0+1):
+for i in range(0,28):
   df_i=i_df[i]
   df_i=df_i[df_i.iloc[:,3]==1]
   print(f"Number of histidine kinase predicted for {i}:",len(df_i))
