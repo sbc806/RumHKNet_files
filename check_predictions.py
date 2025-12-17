@@ -55,14 +55,15 @@ def df_to_fasta(df,fasta_path):
       f.write(seq)
       if i < len(df)-1:
         f.write("\n")
-        
+num_kinases=0 
 for i in range(0,28):
   df_i=i_df[i]
   df_i=df_i[df_i.iloc[:,3]==1]
+  num_kinases=num_kinases+len(df_i)
   print(f"Number of kinases predicted for {i}:",len(df_i))
   fasta_i_path=os.path.join(predictions_path,f"clustered_rep_seq95_small_kinases.fasta")
   fasta_i=df_to_fasta(df_i,fasta_i_path,)
-  
+print("Number of total kinases:",num_kinases)  
 """
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
 for i in i_df:
