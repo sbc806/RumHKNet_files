@@ -65,9 +65,9 @@ for i in range(0,28):
   fasta_i_path=os.path.join(predictions_path,f"clustered_rep_seq95_small_kinases.fasta")
   fasta_i=df_to_fasta(df_i,fasta_i_path)
   if df_kinases is None:
-    df_kinases=fasta_i
+    df_kinases=df_i
   else:
-    df_kinases=pd.concat([df_kinases,fasta_i])
+    df_kinases=pd.concat([df_kinases,df_i])
 df_kinases.to_csv(os.path.join(predictions_path,f"clustered_rep_seq95_small_kinases.csv"),index=False)
 print("Number of total kinases:",num_kinases)  
 """
