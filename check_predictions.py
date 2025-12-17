@@ -47,7 +47,7 @@ def df_to_fasta(df,fasta_path):
     for i in range(0,len(df)):
       seq_id=df["seq_id"].iloc[i]
       seq=df["seq"].iloc[i]
-      f.write(seq_id+"\n")
+      f.write(">"+seq_id+"\n")
       f.write(seq)
       if i < len(df)-1:
         f.write("\n")
