@@ -42,6 +42,11 @@ for i in range(0,28):
     print("None")
   print()
 
+for i in range(0,0+1):
+  df_i=i_df[i]
+  
+  fasta_i=df_to_fasta(fasta_i_path,df_i)
+  
 """
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
 for i in i_df:
