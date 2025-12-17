@@ -42,9 +42,21 @@ for i in range(0,28):
     print("None")
   print()
 
+def df_to_fasta(df,fasta_path):
+  with open(fasta_path,"a") as f:
+    for i in range(0,len(df)):
+      seq_id=df["seq_id"].iloc[i]
+      seq=df["seq"].iloc[i]
+      f.write(seq_id+"\n")
+      f.write(seq)
+      if i < len(df)-1:
+        f.write("\n")
+        
 for i in range(0,0+1):
   df_i=i_df[i]
-  
+  df_i=df_i[df_i.iloc[:,3]==1]
+  print(f"Number of histidine kinase predicted for {i}:",len(df_i))
+  fasta_i_path=os.path.join(predictions_path,"clustered_rep_seq95_small_0_histidine.fasta")
   fasta_i=df_to_fasta(fasta_i_path,df_i)
   
 """
