@@ -8,7 +8,7 @@ split_size=2450000
 df_large_seq=df[df["seq_length"]>1500].iloc[:,[0,2]]
 df_small_seq=df[df["seq_length"]<=1500].iloc[:,[0,2]]
 print(len(df))
-print(np.unique(df["seq"].shape))
+print(np.unique(df["seq"]).shape)
 print(df_large_seq.shape,df_large_seq.columns)
 print(df_small_seq.shape,df_small_seq.columns)
 """
