@@ -22,6 +22,7 @@ def get_predictions_df(predictions_path,i):
 
 i_df={}
 seq_ids=np.array([])
+seqs=np.array([])
 for i in range(0,28):
   dir_i="small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
@@ -40,12 +41,14 @@ for i in range(0,28):
     print(df_i)
     i_df[i]=df_i
     seq_ids=np.hstack((seq_ids,df_i["seq_id"]))
+    seqs=np.hstack((seqs,df_i["seq"]))
   else:
     print("None")
   print()
 
-print("Number of sequences <= 1500:",seq_ids.shape)
-
+print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
+print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
+      
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
