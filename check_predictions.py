@@ -20,6 +20,7 @@ def get_predictions_df(predictions_path,i):
       df=pd.concat([df,current_df])
   return df
 
+small_dfs=[]
 i_df={}
 seq_ids=np.array([])
 seqs=np.array([])
@@ -35,6 +36,7 @@ for i in range(0,28):
   if df_i is not None:
     file_name=f"clustered_rep_seq95_small_{i}.csv"
     dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
+    small_dfs.append(dataset_i)
     print("Number of predictions:",len(df_i))
     print("Number of seq_id in common between dataset and predictions:",np.sum(dataset_i["seq_id"].values==df_i["seq_id"].values))
     print("Prediction labels:",np.unique(df_i["pred"]))
@@ -46,6 +48,8 @@ for i in range(0,28):
     print("None")
   print()
 
+complete_small_df=pd.concat(small_dfs)
+print("Number of shared seq_id:",np.sum(small_df["seq_od"].values==
 print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
 print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
       
