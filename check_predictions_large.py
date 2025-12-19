@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 
@@ -23,3 +24,13 @@ print("Labels:",np.unique(large_sorted_predictions["label"]))
 large_sorted_predictions_kinase=large_sorted_predictions[large_sorted_predictions["label"]==1].iloc[:,0:2]
 print("Number of kinases for sequences with length > 1500:",len(large_sorted_predictions_kinase))
 large_sorted_predictions_kinase.to_csv("../predictions/predictions_dataset/step_2/clustered/clustered_rep_seq95_large_sorted_kinase.csv",index=False)
+
+def df_to_fasta(df):
+  for i in range(0,len(df):
+    seq_id=df["seq_id"].iloc[i]
+    seq=df["seq"].iloc[i]
+    with open("../predictions/predictions_dataset/step_2/clustered/clustered_rep_seq95_large_sorted_kinases.fasta","a") as f:
+      f.write(seq_id+"\n")
+      f.write(seq)
+      if i<len(df)-1:
+        f.write("\n")
