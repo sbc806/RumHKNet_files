@@ -13,8 +13,8 @@ print("Number of unique seq:",np.unique(large_df["seq"]).shape)
 large_df_length=large_df["seq"].str.len()
 large_df_sorted=large_df.iloc[np.argsort(large_df_length)]
 
-predictions_part_1=pd.read_csv(os.path.join(predicted_results_dir_path,"clustered_rep_seq95_large_sorted_predicted_03_part_1.csv"))
-predictions_part_2=pd.read_csv(os.path.join(predicted_results_dir_path,"clustered_rep_seq95_large_sorted_predicted_03_part_2.csv"))
+predictions_part_1=pd.read_csv(os.path.join(predicted_results_dir_path,"large/clustered_rep_seq95_large_sorted_predicted_03_part_1.csv"))
+predictions_part_2=pd.read_csv(os.path.join(predicted_results_dir_path,"large/clustered_rep_seq95_large_sorted_predicted_03_part_2.csv"))
 large_sorted_predictions=pd.concat([predictions_part_1,predictions_part_2])
 print("Number of predictions:",len(large_sorted_predictions))
 print("Number of shared seq_id:",np.sum(large_df_sorted["seq_id"].values==large_sorted_predictions["seq_id"].values))
