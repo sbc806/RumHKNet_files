@@ -48,8 +48,6 @@ for i in range(0,28):
     print("None")
   print()
 
-complete_small_df=pd.concat(small_dfs)
-print("Number of shared seq_id:",np.sum(small_df["seq_od"].values==
 print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
 print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
       
@@ -76,6 +74,7 @@ for i in range(0,28):
   else:
     df_kinases=pd.concat([df_kinases,df_i])
 df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","clustered_rep_seq95_small_kinase.csv"),index=False)
+complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==df_kinases["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==df_kinases["seq"].values))
 print("Number of total kinases:",num_kinases)  
