@@ -77,7 +77,7 @@ for i in range(0,28):
     df_kinases=pd.concat([df_kinases,df_i])
 df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","clustered_rep_seq95_small_kinase.csv"),index=False)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==df_kinases["seq_id"].values))
-print("Number of shared seq:",np.sum(complete_small_df["seq"].values==df_kinases]"seq"].values))
+print("Number of shared seq:",np.sum(complete_small_df["seq"].values==df_kinases["seq"].values))
 print("Number of total kinases:",num_kinases)  
 """
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
