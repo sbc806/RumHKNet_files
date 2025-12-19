@@ -26,8 +26,8 @@ print("Number of shared seq:",np.sum(large_df_sorted["seq"].isin(large_sorted_pr
 print("Labels:",np.unique(large_sorted_predictions["label"]))
 print(large_sorted_predictions)
 print()
-seq_id_different=np.where(large_df_sorted["seq_id"]!=large_sorted_predictions["seq_id"])
-seq_different=np.where(large_df_sorted["seq"]!=large_sorted_predictions["seq"])
+seq_id_different=np.where(large_df_sorted["seq_id"].values!=large_sorted_predictions["seq_id"].values)
+seq_different=np.where(large_df_sorted["seq"].values!=large_sorted_predictions["seq"].values)
 print(seq_id_different)
 print(seq_different)
 for i in range(0,len(seq_id_different)):
