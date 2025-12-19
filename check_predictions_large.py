@@ -31,7 +31,7 @@ def df_to_fasta(df):
     seq_id=df["seq_id"].iloc[i]
     seq=df["seq"].iloc[i]
     with open("../predictions/predictions_dataset/step_2/clustered/clustered_rep_seq95_large_sorted_kinase.fasta","a") as f:
-      f.write(seq_id+"\n")
+      f.write(">"+seq_id+"\n")
       f.write(seq)
       if i<len(df)-1:
         f.write("\n")
