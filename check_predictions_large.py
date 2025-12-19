@@ -9,10 +9,12 @@ large_df=pd.read_csv(os.path.join(predictions_dataset_dir_path,"clustered_rep_se
 print("Number of sequences with length > 1500:",len(large_df))
 print("Number of unique seq_id:",np.unique(large_df["seq_id"]).shape)
 print("Number of unique seq:",np.unique(large_df["seq"]).shape)
+print()
 
 large_df_length=large_df["seq"].str.len()
 large_df_sorted=large_df.iloc[np.argsort(large_df_length)]
-print(len(large_df_sorted).shape)
+print(len(large_df_sorted))
+print()
 
 predictions_part_1=pd.read_csv(os.path.join(predicted_results_dir_path,"large/clustered_rep_seq95_large_sorted_predicted_03_part_1.csv"))
 predictions_part_2=pd.read_csv(os.path.join(predicted_results_dir_path,"large/clustered_rep_seq95_large_sorted_predicted_03_part_2.csv"))
@@ -22,7 +24,17 @@ print(np.unique(large_sorted_predictions["seq_id"].values).shape,np.unique(large
 print("Number of shared seq_id:",np.sum(large_df_sorted["seq_id"].isin(large_sorted_predictions["seq_id"].values)))
 print("Number of shared seq:",np.sum(large_df_sorted["seq"].isin(large_sorted_predictions["seq"].values)))
 print("Labels:",np.unique(large_sorted_predictions["label"]))
-
+print(large_sorted_predictions)
+print()
+seq_id_different=np.where(large_df_sorted["seq_id"]!=large_sorted_predictions["seq_id"])
+seq_different=np.where(large_df_sorted["seq"]!=large_sorted_predictions["seq"])
+print(seq_id_different)
+print(seq_different)
+for i in range(0,len(seq_id_different)):
+  print(large_df_sorted["seq_id"].iloc[i],large_sorted_predictions["seq_id"].iloc[i])
+for i in range(0,len(seq_different)):
+  print(len(large_df_sorted["seq"].iloc[i]),len(large_sorted_predictions["seq"].iloc[i]))
+print()
 large_sorted_predictions_kinase=large_sorted_predictions[large_sorted_predictions["label"]==1].iloc[:,0:2]
 print("Number of kinases for sequences with length > 1500:",len(large_sorted_predictions_kinase))
 print(large_sorted_predictions_kinase)
