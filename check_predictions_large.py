@@ -18,7 +18,8 @@ large_sorted_predictions=pd.concat([predictions_part_1,predictions_part_2])
 print("Number of predictions:",len(large_sorted_predictions))
 print("Number of shared seq_id:",np.sum(large_df_sorted["seq_id"].values==large_sorted_predictions["seq_id"].values))
 print("Number of shared seq:",np.sum(large_df_sorted["seq"].values==large_sorted_predictions["seq"].values))
+print("Labels:",np.unique(large_sorted_predictions["label"]))
 
-large_sorted_predictions_kinase=large_sorted_predictions[large_sorted_predictions["label"]==1]
+large_sorted_predictions_kinase=large_sorted_predictions[large_sorted_predictions["label"]==1].iloc[:,0:2]
 print("Number of kinases for sequences with length > 1500:",len(large_sorted_predictions_kinase))
 large_sorted_predictions_kinase.to_csv("../predictions/predictions_dataset/step_2/clustered/clustered_rep_seq95_large_sorted_kinase.csv",index=False)
