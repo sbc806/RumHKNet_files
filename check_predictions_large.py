@@ -11,7 +11,7 @@ print("Number of unique seq_id:",np.unique(large_df["seq_id"]).shape)
 print("Number of unique seq:",np.unique(large_df["seq"]).shape)
 
 large_df_length=large_df["seq"].str.len()
-large_df_sorted=large_df[np.argsort(large_df_length)]
+large_df_sorted=large_df.iloc[np.argsort(large_df_length)]
 
 predictions_part_1=pd.read_csv(os.path.join(predicted_results_dir_path,"clustered_rep_seq95_large_sorted_predicted_03_part_1.csv"))
 predictions_part_2=pd.read_csv(os.path.join(predicted_results_dir_path,"clustered_rep_seq95_large_sorted_predicted_03_part_2.csv"))
