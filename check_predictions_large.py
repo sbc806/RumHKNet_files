@@ -17,6 +17,7 @@ predictions_part_1=pd.read_csv(os.path.join(predicted_results_dir_path,"large/cl
 predictions_part_2=pd.read_csv(os.path.join(predicted_results_dir_path,"large/clustered_rep_seq95_large_sorted_predicted_03_part_2.csv"))
 large_sorted_predictions=pd.concat([predictions_part_1,predictions_part_2])
 print("Number of predictions:",len(large_sorted_predictions))
+print(np.unique(large_sorted_predictions["seq_id"].values).shape,np.unique(large_sorted_predictions["seq"].values).shape)
 print("Number of shared seq_id:",np.sum(large_df_sorted["seq_id"].values==large_sorted_predictions["seq_id"].values))
 print("Number of shared seq:",np.sum(large_df_sorted["seq"].values==large_sorted_predictions["seq"].values))
 print("Labels:",np.unique(large_sorted_predictions["label"]))
