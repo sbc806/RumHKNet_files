@@ -26,6 +26,7 @@ print("Number of shared seq:",np.sum(large_df_sorted["seq"].isin(large_sorted_pr
 print("Labels:",np.unique(large_sorted_predictions["label"]))
 print(large_sorted_predictions)
 print()
+"""
 seq_id_different=np.where(large_df_sorted["seq_id"].values!=large_sorted_predictions["seq_id"].values)
 seq_different=np.where(large_df_sorted["seq"].values!=large_sorted_predictions["seq"].values)
 print(seq_id_different)
@@ -35,6 +36,7 @@ for i in seq_id_different[0]:
 for i in seq_different[0]:
   print(len(large_df_sorted["seq"].iloc[i]),len(large_sorted_predictions["seq"].iloc[i]))
 print()
+"""
 large_sorted_predictions_kinase=large_sorted_predictions[large_sorted_predictions["label"]==1].iloc[:,0:2]
 print("Number of kinases for sequences with length > 1500:",len(large_sorted_predictions_kinase))
 print(large_sorted_predictions_kinase)
