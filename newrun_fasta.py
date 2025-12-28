@@ -14,7 +14,7 @@ print(df)
 num_splits=len(df)//2450000+1
 num_rows=0
 for i in range(0,num_splits):
-  sart=i*num_splits
+  start=i*num_splits
   end=i*num_splits+2450000
   df_subset=df[start:end]
   num_rows=num_rows+len(df_subset)
