@@ -30,6 +30,7 @@ for i in range(0,num_splits):
   start=i*num_splits
   end=i*num_splits+2450000
   df_subset=df_1[start:end]
+  print(df_subset)
   if end > len(df_1):
     end=len(df_1)
   num_rows=num_rows+len(df_subset)
