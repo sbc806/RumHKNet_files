@@ -14,6 +14,14 @@ df=pd.DataFrame(seq_records)
 """
 df=pd.read_csv("../predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv")
 print(df)
+df_1=df[df["seq"].str.len()<=1500]
+df_2=df[df"seq"].str.len()>1500]
+print(df_1)
+print(df_2)
+sorted_1=np.argsort(df_1["seq"].str.len())
+sorted_2=np.argsort(df_2["seq"].str.len())
+sorted_df_1=df_1[sorted_1]
+sorted_df_2=df_2[sorted_2]
 """
 num_splits=len(df)//2450000+1
 num_rows=0
