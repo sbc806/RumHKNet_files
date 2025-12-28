@@ -25,5 +25,5 @@ for i in range(0,num_splits):
   df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_{i}.csv",index=False)
 print(num_rows)
 """
-print(np.maximum(df["seq"].str.len()))
+print(max(df["seq"].str.len().values))
 print(np.unique(df["seq"]).shape)
