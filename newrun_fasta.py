@@ -15,7 +15,7 @@ df=pd.DataFrame(seq_records)
 df=pd.read_csv("../predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv")
 print(df)
 df_1=df[df["seq"].str.len()<=1500]
-df_2=df[df"seq"].str.len()>1500]
+df_2=df[df["seq"].str.len()>1500]
 print(df_1)
 print(df_2)
 sorted_1=np.argsort(df_1["seq"].str.len())
