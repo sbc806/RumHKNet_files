@@ -11,7 +11,7 @@ for i, fasta in enumerate(fasta_content):
 
 df=pd.DataFrame(seq_records)
 """
-df=pd.read_csv("../predictions/predictions_dataset/step_1/newrun_seqs.csv")
+df=pd.read_csv("../predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv")
 print(df)
 """
 num_splits=len(df)//2450000+1
