@@ -11,4 +11,12 @@ for i, fasta in enumerate(fasta_content):
 
 df=pd.DataFrame(seq_records)
 print(df)
-df.to_csv("../predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv",index=False)
+num_splits=len(df)//2450000+1
+num_rows=0
+for i in range(0,num_splits):
+  sart=i*num_splits
+  end=i*num_splits+2450000
+  df_subset=df[start:end]
+  num_rows=num_rows+len(df_subset)
+  df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_{i}.csv",index=False)
+print(num_rows)
