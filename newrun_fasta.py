@@ -28,7 +28,7 @@ num_splits=len(df_1)//2450000+1
 num_rows=0
 for i in range(0,num_splits):
   start=i*2450000
-  end=i*2450000+2450000
+  end=start+2450000
   print(start,end)
   df_subset=df_1[start:end]
   if end > len(df_1):
