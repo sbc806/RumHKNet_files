@@ -1,3 +1,4 @@
+import numpy as np
 import os as os
 import pandas as pd
 from Bio import SeqIO
