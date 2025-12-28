@@ -29,10 +29,11 @@ num_rows=0
 for i in range(0,num_splits):
   start=i*num_splits
   end=i*num_splits+2450000
+  
   df_subset=df_1[start:end]
-  print(df_subset)
   if end > len(df_1):
-    end=len(df_1)
+    df_subset=df_1[start:]
+  print(df_subset)
   num_rows=num_rows+len(df_subset)
   df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_small_{i}.csv",index=False)
 print(num_rows)
