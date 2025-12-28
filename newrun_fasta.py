@@ -22,7 +22,8 @@ sorted_1=np.argsort(df_1["seq"].str.len())
 sorted_2=np.argsort(df_2["seq"].str.len())
 sorted_df_1=df_1.iloc[sorted_1]
 sorted_df_2=df_2.iloc[sorted_2]
-
+print(sorted_df_1)
+print(sorted_df_2)
 num_splits=len(sorted_df_1)//2450000+1
 num_rows=0
 for i in range(0,num_splits):
