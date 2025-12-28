@@ -1,7 +1,7 @@
 import os as os
 import pandas as pd
 from Bio import SeqIO
-
+"""
 fasta_content=SeqIO.parse(open("../newrun_seqs.fasta"),'fasta')
 seq_records=[]
 for i, fasta in enumerate(fasta_content):
@@ -10,7 +10,10 @@ for i, fasta in enumerate(fasta_content):
   seq_records.append(seq_record)
 
 df=pd.DataFrame(seq_records)
+"""
+df=pd.read_csv("../predictions/predictions_dataset/step_1/newrun_seqs.csv")
 print(df)
+"""
 num_splits=len(df)//2450000+1
 num_rows=0
 for i in range(0,num_splits):
@@ -20,4 +23,6 @@ for i in range(0,num_splits):
   num_rows=num_rows+len(df_subset)
   df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_{i}.csv",index=False)
 print(num_rows)
+"""
+print(np.maximum(df["seq"].str.len()))
 print(np.unique(df["seq"]).shape)
