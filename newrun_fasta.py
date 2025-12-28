@@ -20,18 +20,18 @@ print(df_1)
 print(df_2)
 sorted_1=np.argsort(df_1["seq"].str.len())
 sorted_2=np.argsort(df_2["seq"].str.len())
-sorted_df_1=df_1[sorted_1]
-sorted_df_2=df_2[sorted_2]
-"""
-num_splits=len(df)//2450000+1
+sorted_df_1=df_1.iloc[sorted_1]
+sorted_df_2=df_2.iloc[sorted_2]
+
+num_splits=len(sorted_df_1)//2450000+1
 num_rows=0
 for i in range(0,num_splits):
   start=i*num_splits
   end=i*num_splits+2450000
-  df_subset=df[start:end]
+  df_subset=sorted_df_1[start:end]
   num_rows=num_rows+len(df_subset)
-  df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_{i}.csv",index=False)
+  df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_small_{i}.csv",index=False)
 print(num_rows)
-"""
+sorted_df_2.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_large.csv",index=False)
 print(max(df["seq"].str.len().values))
 print(np.unique(df["seq"]).shape)
