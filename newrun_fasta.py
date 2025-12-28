@@ -20,3 +20,4 @@ for i in range(0,num_splits):
   num_rows=num_rows+len(df_subset)
   df_subset.to_csv(f"../predictions/predictions_dataset/step_1/clustered/newrun_seqs_{i}.csv",index=False)
 print(num_rows)
+print(np.unique(df["seq"]).shape)
