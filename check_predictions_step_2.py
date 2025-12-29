@@ -28,7 +28,7 @@ small_dfs=[]
 i_df={}
 seq_ids=np.array([])
 seqs=np.array([])
-for i in range(0,28):
+for i in range(0,4):
   dir_i="small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
   df_i=get_predictions_df(predictions_path_i,i)
