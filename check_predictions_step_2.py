@@ -64,7 +64,7 @@ def df_to_fasta(df,fasta_path):
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
-for i in range(0,28):
+for i in range(0,4):
   df_i_full=i_df[i]
   df_i=df_i_full[df_i_full.iloc[:,3]==1]
   num_kinases=num_kinases+len(df_i)
