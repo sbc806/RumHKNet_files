@@ -12,7 +12,7 @@ predictions_path="../predictions/predicted_results/step_1/both/clustered"
 
 def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
-  selected_files=[f for f in prediction_files if "small_"+str(i)+"_"in f]
+  selected_files=[f for f in prediction_files if "small_kinase_"+str(i)+"_"in f]
   selected_files=sorted(selected_files,key=lambda x:int(x.split(".csv")[0].split("_")[-1]))
   print(len(selected_files))
   df=None
@@ -32,13 +32,10 @@ for i in range(0,28):
   dir_i="small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
   df_i=get_predictions_df(predictions_path_i,i)
-  dir_remaining_i="small_"+str(i)+"_remaining"
-  if dir_remaining_i in os.listdir(predictions_path):
-    df_i_remaining=get_predictions_df(os.path.join(predictions_path,dir_remaining_i),i)
-    df_i=pd.concat([df_i,df_i_remaining])
+  
   print(i)
   if df_i is not None:
-    file_name=f"clustered_rep_seq95_small_{i}.csv"
+    file_name=f"clustered_rep_seq95_small_kinase_{i}.csv"
     dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
     small_dfs.append(dataset_i)
     print("Number of predictions:",len(df_i))
