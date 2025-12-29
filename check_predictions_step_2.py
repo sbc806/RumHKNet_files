@@ -87,6 +87,8 @@ large_df=pd.read_csv(os.path.join(dataset_path,"clustered_rep_seq95_large_sorted
 large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"),header=None)
 print("Number of shared seq_id:",np.sum(large_df.iloc[:,0].values==large_df_predicted.iloc[:,0].values))
 print("Number of shared seq:",np.sum(large_df.iloc[:,1].values==large_df_predicted.iloc[:,1].values))
+print("Number of unique seq_id:",np.unique(large_df_predicted.iloc[:,0].values).shape)
+print("Number of unique seq:",np.unique(large_df_predicted.iloc[:,1].values).shape)
 large_df_predicted.columns=["seq_id","seq","prob","label"]
 print(large_df_predicted)
 large_histidine_df_predicted=large_df_predicted[large_df_predicted.iloc[:,3]==1]
