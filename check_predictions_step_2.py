@@ -84,7 +84,7 @@ print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_p
 print("Number of total histidine kinases:",num_kinases)  
 
 large_df=pd.read_csv(os.path.join(dataset_path,"clustered_rep_seq95_large_sorted_kinase.csv"))
-large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"))
+large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"),header=False)
 print("Number of shared seq_id:",np.sum(large_df.iloc[:,0].values==large_df_predicted.iloc[:,0].values))
 print("Number of shared seq:",np.sum(large_df.iloc[:,1].values==large_df_predicted[:,1].values))
 large_df_predicted.columns=["seq_id","seq","prob","label"]
