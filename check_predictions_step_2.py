@@ -87,6 +87,8 @@ large_df=pd.read_csv(os.path.join(dataset_path,"clustered_rep_seq95_large_sorted
 large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"))
 print("Number of shared seq_id:",np.sum(large_df.iloc[:,0].values==large_df_predicted.iloc[:,0].values))
 print("Number of shared seq:",np.sum(large_df.iloc[:,1].values==large_df_predicted[:,1].values))
+large_df_predicted.columns=["seq_id","seq","prob","label"]
+print(large_df_predicted)
 large_histidine_df_predicted=large_df_predicted[large_df_predicted.iloc[:,3]==1]
 print("Number of histidine kinases predicted for sequences with length >1500:",len(large_histidine_df_predicted))
 fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_large_histidine_kinase.fasta")
