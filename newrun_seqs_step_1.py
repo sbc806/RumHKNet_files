@@ -93,7 +93,7 @@ print(num_splits)
 num_rows=0
 for i in range(0,num_splits):
   start=i*split_size
-  end-i*split_size+split_size
+  end=i*split_size+split_size
   df_kinases_i=df_kinases.iloc[start:end]
   num_rows=num_rows+len(df_kinases_i)
 print("Total number of rows:",num_rows)
