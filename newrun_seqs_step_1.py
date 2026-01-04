@@ -38,7 +38,7 @@ for i in range(0,7):
     df_i=pd.concat([df_i,df_i_remaining])
   print(i)
   if df_i is not None:
-    file_name=f"clustered_rep_seq95_small_{i}.csv"
+    file_name=f"newrun_seqs_small_{i}.csv"
     dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
     small_dfs.append(dataset_i)
     print("Number of predictions:",len(df_i))
@@ -67,7 +67,7 @@ def df_to_fasta(df,fasta_path):
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
-for i in range(0,28):
+for i in range(0,7):
   df_i_full=i_df[i]
   df_i=df_i_full[df_i_full.iloc[:,3]==1]
   num_kinases=num_kinases+len(df_i)
@@ -80,7 +80,7 @@ for i in range(0,28):
   else:
     complete_predictions_df=pd.concat([complete_predictions_df,df_i_full])
     df_kinases=pd.concat([df_kinases,df_i])
-df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","newrun_seqs_small_kinase.csv"),index=False)
+# df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","newrun_seqs_small_kinase.csv"),index=False)
 complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
