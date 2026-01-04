@@ -32,7 +32,7 @@ for i in range(0,7):
   dir_i="newrun_seqs_small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
   df_i=get_predictions_df(predictions_path_i,i)
-  dir_remaining_i="small_"+str(i)+"_remaining"
+  dir_remaining_i="newrun_seqs_small_"+str(i)+"_remaining"
   if dir_remaining_i in os.listdir(predictions_path):
     df_i_remaining=get_predictions_df(os.path.join(predictions_path,dir_remaining_i),i)
     df_i=pd.concat([df_i,df_i_remaining])
