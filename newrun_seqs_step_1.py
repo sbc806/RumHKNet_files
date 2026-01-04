@@ -28,8 +28,8 @@ small_dfs=[]
 i_df={}
 seq_ids=np.array([])
 seqs=np.array([])
-for i in range(0,28):
-  dir_i="small_"+str(i)
+for i in range(0,7):
+  dir_i="newrun_seqs_small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
   df_i=get_predictions_df(predictions_path_i,i)
   dir_remaining_i="small_"+str(i)+"_remaining"
@@ -72,7 +72,7 @@ for i in range(0,28):
   df_i=df_i_full[df_i_full.iloc[:,3]==1]
   num_kinases=num_kinases+len(df_i)
   print(f"Number of kinases predicted for {i}:",len(df_i))
-  fasta_i_path=os.path.join("../predictions/predictions_dataset/step_2/clustered",f"clustered_rep_seq95_small_kinase.fasta")
+  # fasta_i_path=os.path.join("../predictions/predictions_dataset/step_2/clustered",f"newrun_seqs_small_kinase.fasta")
   fasta_i=df_to_fasta(df_i,fasta_i_path)
   if df_kinases is None:
     complete_predictions_df=df_i_full
@@ -80,7 +80,7 @@ for i in range(0,28):
   else:
     complete_predictions_df=pd.concat([complete_predictions_df,df_i_full])
     df_kinases=pd.concat([df_kinases,df_i])
-df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","clustered_rep_seq95_small_kinase.csv"),index=False)
+df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","newrun_seqs_small_kinase.csv"),index=False)
 complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
