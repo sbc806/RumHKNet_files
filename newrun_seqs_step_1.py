@@ -88,7 +88,7 @@ print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_p
 print("Number of total kinases:",num_kinases)  
 
 split_size=1350000
-num_splits=len(df_kinases)/split_size+1
+num_splits=len(df_kinases)//split_size+1
 print(num_splits)
 num_rows=0
 for i in range(0,num_splits):
