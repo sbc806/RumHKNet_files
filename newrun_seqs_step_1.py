@@ -28,7 +28,7 @@ small_dfs=[]
 i_df={}
 seq_ids=np.array([])
 seqs=np.array([])
-for i in range(0,7):
+for i in range(0,8):
   dir_i="newrun_seqs_small_"+str(i)
   predictions_path_i=os.path.join(predictions_path,dir_i)
   df_i=get_predictions_df(predictions_path_i,i)
@@ -67,13 +67,13 @@ def df_to_fasta(df,fasta_path):
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
-for i in range(0,7):
+for i in range(0,8):
   df_i_full=i_df[i]
   df_i=df_i_full[df_i_full.iloc[:,3]==1]
   num_kinases=num_kinases+len(df_i)
   print(f"Number of kinases predicted for {i}:",len(df_i))
-  # fasta_i_path=os.path.join("../predictions/predictions_dataset/step_2/clustered",f"newrun_seqs_small_kinase.fasta")
-  fasta_i=df_to_fasta(df_i,fasta_i_path)
+  fasta_i_path=os.path.join("../predictions/predictions_dataset/step_2/clustered",f"newrun_seqs_small_kinase.fasta")
+  # fasta_i=df_to_fasta(df_i,fasta_i_path)
   if df_kinases is None:
     complete_predictions_df=df_i_full
     df_kinases=df_i
@@ -85,6 +85,18 @@ complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 print("Number of total kinases:",num_kinases)  
+
+split_size=1350000
+num_splits=len(df_kinases)/split_size+1
+print(num_splits)
+num_rows=0
+for i in range(0,num_splits):
+  start=i*split_size
+  end-i*split_size+split_size
+  df_kinases_i=df_kinases.iloc[start:end]
+  num_rows=num_rows+len(df_kinases_i)
+print("Total number of rows:",num_rows)
+
 """
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
 for i in i_df:
