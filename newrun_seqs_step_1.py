@@ -95,7 +95,7 @@ for i in range(0,num_splits):
   start=i*split_size
   end=i*split_size+split_size
   df_kinases_i=df_kinases.iloc[start:end]
-  df_kins_i.to_csv(os.path.join(f"../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_{i}.csv"),index=False)
+  df_kinases_i.to_csv(os.path.join(f"../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_{i}.csv"),index=False)
   num_rows=num_rows+len(df_kinases_i)
 print("Total number of rows:",num_rows)
 
