@@ -84,6 +84,16 @@ print("Number of total kinases:",num_kinases)
 large_path=os.path.join(predictions_path,"large")
 large_df=None
 for f in os.listdir(large_path):
+  df=pd.read_csv(os.path.join(large_path,f))
+  if f is None:
+    large_df=df
+  else
+    large_df=pd.concat(large_df,df)
+print("Number of sequences > 1500:",len(large_df))
+print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
+all_df=pd.concat([complete_small_df,large_df])
+predictions_information(all_df)
+
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -155,6 +165,7 @@ print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
 # kinase_large_df.to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+
 
 
 
