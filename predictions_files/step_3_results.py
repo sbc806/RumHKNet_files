@@ -20,6 +20,9 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
+other_label={}
+
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
   other_label=json.load(f)
@@ -39,6 +42,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
