@@ -128,7 +128,7 @@ print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
-selected=[0,1,2,3,4,6,7]
+selected=[0,1,2,3,4,5,6,7]
 for i in selected:
   df_i_full=i_df[i]
   df_i=df_i_full[df_i_full.iloc[:,3]==1]
@@ -157,6 +157,7 @@ print("Number of kinases with length > 1500:",len(kinase_large_df))
 
 all_df=pd.concat([complete_small_df,kinase_large_df])
 predictions_information(all_df)
+
 
 
 
