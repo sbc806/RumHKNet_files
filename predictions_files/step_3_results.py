@@ -36,10 +36,14 @@ ko_family={}
 for i in range(0,len(histidine_information_df)):
   ko=histidine_information_df.iloc[i,0]
   family=histidine_information_df.iloc[i,5]
+  if np.isnan(family):
+    print(ko)
+    family="Other families"
   ko_family[ko]=family
 
 
-print(ko_family)
+print("ko_family:",ko_family,len(ko_family))
+print("Number of families:",np.unique(ko_family.values()).shape)
 with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
@@ -73,6 +77,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
