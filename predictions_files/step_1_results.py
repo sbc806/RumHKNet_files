@@ -155,8 +155,9 @@ print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
 
-all_df=pd.concat([complete_small_df,kinase_large_df])
+all_df=pd.concat([complete_small_df,large_df])
 predictions_information(all_df)
+
 
 
 
