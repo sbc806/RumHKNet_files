@@ -1,3 +1,4 @@
+import json
 import os as os
 import pandas as pd
 import numpy as np
@@ -28,4 +29,5 @@ large_histidine_df_new=add_label(large_histidine_df,other_label)
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinase_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")))
+
 
