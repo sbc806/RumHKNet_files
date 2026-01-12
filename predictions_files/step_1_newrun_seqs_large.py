@@ -13,4 +13,5 @@ length=df["seq"].str.len()>=12211
 print(np.sum(length))
 
 df_12211=df[length].iloc[:,0:2]
+print(df_12211)
 df_12211.to_csv(os.path.join(dataset_path,"newrun_seqs_large_12211.csv"),index=False)
