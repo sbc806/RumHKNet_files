@@ -25,3 +25,4 @@ print(np.unique(df["seq"]).shape)
 print(np.unique(df["seq_id"]).shape)
 kinase_df=df[df.iloc[:,3]==1]
 print(len(kinase_df))
+kinase_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"))
