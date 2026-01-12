@@ -18,7 +18,7 @@ print(df_12211)
 
 df_1=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_0_predicted_03.csv"))
 df_2=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_1_predicted_03.csv"))
-df_12211=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_12211_predcted_03.csv"))
+df_12211=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_12211_predicted_03.csv"))
 df_12211_not=df[~length]
 df=pd.concat([df_12211,df_12211_not])
 print(np.unique(df["seq"]).shape)
