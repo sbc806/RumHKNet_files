@@ -12,3 +12,8 @@ def predictions_information(df):
   print("Number of unique seq_id:",unique_seq_id.shape)
   print("Number of unique seq:",unique_seq.shape)
 
+  lengths=df["seq"].str.len()
+  lengths_small=lengths<=1500
+  lengths_large=lengths>1500
+  print("Number of sequences with length <= 1500:",np.sum(lengths_small))
+  print("Number of sequences with length > 1500:",np.sum(lengths_large))
