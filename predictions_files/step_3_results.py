@@ -48,7 +48,7 @@ with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/prot
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 while len(other_label)!=11:
-  for i in range(0,step_3_train_df)):
+  for i in range(0,len(step_3_train_df)):
     seq_id=step_3_train_df.iloc[i]["seq_id"]
     location=np.where(train_df["seq_id"]=="seq_id")[0]
     assert len(location)==1
@@ -77,6 +77,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
