@@ -18,6 +18,13 @@ def predictions_information(df):
   print("Number of sequences with length <= 1500:",np.sum(lengths_small))
   print("Number of sequences with length > 1500:",np.sum(lengths_large))
 
+def reverse_dict(original):
+  reversed={}
+  for each_key in original:
+    each_value=original[each_key]
+    reversed[each_value]=each_key
+  return reversed
+  
 def add_label(df,other_label):
   pred=df.iloc[:,0:3]
   print(pred)
@@ -26,3 +33,4 @@ def add_label(df,other_label):
     pred_other.append(other_label[str(each_pred)])
   df["pred_other"]=pred_other
   return df
+
