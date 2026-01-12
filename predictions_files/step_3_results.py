@@ -23,6 +23,11 @@ predictions_information(large_histidine_df)
 
 other_label={}
 train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
+dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
+test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
+histidine_full_df=pd.concat([train_df,dev_df,test_df])
+print("Number of histidine kinases:",len(histidine_full_df))
+
 histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
 print(histidine_information_df.columns)
 while len(other_label)!=11:
@@ -49,6 +54,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
