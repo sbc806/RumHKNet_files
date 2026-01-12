@@ -38,6 +38,7 @@ for i in range(0,len(histidine_information_df)):
   family=histidine_information_df.iloc[i,5]
   ko_family[ko]=family
 
+
 print(ko_family)
 
 while len(other_label)!=11:
@@ -45,7 +46,12 @@ while len(other_label)!=11:
     seq_id=row["seq_id"]
     location=np.where(train_df["seq_id"]=="seq_id"])[0]
     assert len(location)==1
-    
+    ko_number=train_df["label"].iloc[location]
+    ko=ko_label[ko_number]
+    family=ko_family[ko]
+    family_number=row["label"]
+    other_label[family]=family_number
+print(other_label)
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
   other_label=json.load(f)
@@ -65,6 +71,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
