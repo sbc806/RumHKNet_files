@@ -7,7 +7,7 @@ def make_df(dir_path):
   files=os.listdir(dir_path)
   dfs=[]
   for f in files:
-    df=pd.read_csv(os.path.join(f))
+    df=pd.read_csv(os.path.join(dir_path,f))
     dfs.append(df)
   return pd.concat(dfs)
 
@@ -19,3 +19,4 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
