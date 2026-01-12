@@ -19,7 +19,7 @@ def get_predictions_df(predictions_path,i):
     else:
       df=pd.concat([df,current_df])
   return df
-
+"""
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -93,7 +93,7 @@ print("Number of sequences > 1500:",len(large_df))
 print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
 all_df=pd.concat([complete_small_df,large_df])
 predictions_information(all_df)
-
+"""
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -157,6 +157,7 @@ print("Number of kinases with length > 1500:",len(kinase_large_df))
 
 all_df=pd.concat([complete_small_df,kinase_large_df])
 predictions_information(all_df)
+
 
 
 
