@@ -113,15 +113,6 @@ for i in range(0,8):
 print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
 print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
       
-def df_to_fasta(df,fasta_path):
-  with open(fasta_path,"a") as f:
-    for i in range(0,len(df)):
-      seq_id=df["seq_id"].iloc[i]
-      seq=df["seq"].iloc[i]
-      f.write(">"+seq_id+"\n")
-      f.write(seq)
-      if i < len(df)-1:
-        f.write("\n")
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
@@ -162,6 +153,7 @@ print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
 # kinase_large_df.to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+
 
 
 
