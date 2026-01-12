@@ -1,7 +1,7 @@
 import os as os
 import pandas as pd
 import numpy as np
-from predictions_helpers import predictions_information
+from predictions_helpers import predictions_information, reverse_dict, g
 
 def make_df(dir_path):
   files=os.listdir(dir_path)
@@ -19,4 +19,5 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
