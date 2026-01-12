@@ -30,15 +30,16 @@ large_histidine_df_new=add_label(large_histidine_df,other_label)
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
-print(small_histidine_df.columns)
-print(large_histidine_df.columns)
+print(small_histidine_df["pred"])
+print(large_histidine_df["top1_label"])
 small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
-small_histidine_df_batch["batch"]=small_histidine_df["label"]
+small_histidine_df_batch["batch"]=small_histidine_df["pred"]
 print(small_histidine_df_batch)
 
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
-large_histidine_df_batch["batch"]=large_histidine_df["label"]
+large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
