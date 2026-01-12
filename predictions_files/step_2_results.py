@@ -2,9 +2,7 @@ import os as os
 import pandas as pd
 import numpy as np
 
-import numpy as np
-import os
-import pandas as pd
+from predictions_helpers import predictions_information
 
 
 dataset_path="../../predictions/predictions_dataset/step_2/clustered"
@@ -117,5 +115,6 @@ print("Number of histidine kinases > 1500:",len(histidine))
 large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+
 
 
