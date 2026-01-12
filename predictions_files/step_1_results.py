@@ -3,8 +3,8 @@ import os
 import pandas as pd
 from predictions_helpers import predictions_information
 
-dataset_path="../predictions/predictions_dataset/step_1/clustered"
-predictions_path="../predictions/predicted_results/step_1/both/clustered"
+dataset_path="../../predictions/predictions_dataset/step_1/clustered"
+predictions_path="../../predictions/predicted_results/step_1/both/clustered"
 
 def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
@@ -157,6 +157,7 @@ print("Number of kinases with length > 1500:",len(kinase_large_df))
 
 all_df=pd.concat([complete_small_df,kinase_large_df])
 predictions_information(all_df)
+
 
 
 
