@@ -87,7 +87,7 @@ for f in os.listdir(large_path):
   df=pd.read_csv(os.path.join(large_path,f))
   if f is None:
     large_df=df
-  else
+  else:
     large_df=pd.concat(large_df,df)
 print("Number of sequences > 1500:",len(large_df))
 print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
@@ -157,6 +157,7 @@ print("Number of kinases with length > 1500:",len(kinase_large_df))
 
 all_df=pd.concat([complete_small_df,kinase_large_df])
 predictions_information(all_df)
+
 
 
 
