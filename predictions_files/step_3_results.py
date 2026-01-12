@@ -21,7 +21,7 @@ predictions_information(small_histidine_df)
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
 
-other_label=json.load("../../sbc806/RumHKNet/kinases_dataset/step_11_family/protein/multi_class/label.json")
+other_label=json.loads("../../sbc806/RumHKNet/kinases_dataset/step_11_family/protein/multi_class/label.json")
 small_histidine_df_new=add_label(small_histidine_df,other_label)
 
 large_histidine_df_new=add_label(large_histidine_df,other_label)
@@ -29,5 +29,6 @@ large_histidine_df_new=add_label(large_histidine_df,other_label)
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")))
 print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinase_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")))
+
 
 
