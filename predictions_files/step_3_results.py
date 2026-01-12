@@ -36,7 +36,7 @@ ko_family={}
 for i in range(0,len(histidine_information_df)):
   ko=histidine_information_df.iloc[i,0]
   family=histidine_information_df.iloc[i,5]
-  if np.isnan(family):
+  if isinstance(family,float):
     print(ko)
     family="Other families"
   ko_family[ko]=family
@@ -77,6 +77,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
