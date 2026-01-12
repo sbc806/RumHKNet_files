@@ -81,7 +81,9 @@ complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 print("Number of total kinases:",num_kinases)
-
+large_path=os.path.join(predictions_path,"large")
+large_df=None
+for f in os.listdir(large_path):
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -153,6 +155,7 @@ print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
 # kinase_large_df.to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+
 
 
 
