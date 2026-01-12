@@ -149,7 +149,7 @@ print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_p
 print("Number of total kinases:",num_kinases)  
 
 
-
+"""
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
 print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
@@ -157,7 +157,7 @@ print("Number of kinases with length > 1500:",len(kinase_large_df))
 
 all_df=pd.concat([complete_small_df,large_df])
 predictions_information(all_df)
-
+"""
 
 
 newrun_seqs_small_0=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_0.csv")
@@ -172,6 +172,7 @@ print(np.sum(contained))
 not_contained_df=complete_small_df[~contained].iloc[:,0:2]
 print(len(contained_df))
 not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_remaining.csv",index=False)
+
 
 
 
