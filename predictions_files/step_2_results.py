@@ -70,7 +70,7 @@ for i in range(0,4):
   num_kinases=num_kinases+len(df_i)
   print(f"Number of histidine kinases predicted for {i}:",len(df_i))
   fasta_i_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_small_histidine_kinase.fasta")
-  fasta_i=df_to_fasta(df_i,fasta_i_path)
+  # fasta_i=df_to_fasta(df_i,fasta_i_path)
   if df_kinases is None:
     complete_predictions_df=df_i_full
     df_kinases=df_i
@@ -96,3 +96,4 @@ print("Number of histidine kinases predicted for sequences with length >1500:",l
 fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_large_histidine_kinase.fasta")
 # fasta_large=df_to_fasta(large_histidine_df_predicted,fasta_large_path)
 # large_histidine_df_predicted.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered/clustered_rep_seq95_large_histidine_kinase.csv"),index=False)
+
