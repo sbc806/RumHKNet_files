@@ -22,7 +22,14 @@ large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq9
 predictions_information(large_histidine_df)
 
 other_label={}
-
+train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
+histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
+print(histidine_information_df.columns)
+while len(other_label)!=11:
+  for row in histidine_information_df:
+    seq_id=row["seq"]
+    location=np.where(histidine_information_df["seq_id"]=="seq_id"])[0]
+    assert len(location)==1
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
   other_label=json.load(f)
@@ -42,6 +49,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
