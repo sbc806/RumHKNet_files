@@ -170,8 +170,10 @@ print(np.unique(seq_id).shape)
 contained=complete_small_df["seq_id"].isin(seq_id)
 print(np.sum(contained))
 not_contained_df=complete_small_df[~contained].iloc[:,0:2]
-print(len(contained_df))
+print(len(not_contained_df))
+print(not_contained_df)
 not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_remaining.csv",index=False)
+
 
 
 
