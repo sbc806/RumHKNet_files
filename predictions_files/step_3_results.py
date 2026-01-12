@@ -46,7 +46,7 @@ print("ko_label:",ko_label)
 while len(other_label)!=11:
   for row in step_3_train_df:
     seq_id=row["seq_id"]
-    location=np.where(train_df["seq_id"]=="seq_id"])[0]
+    location=np.where(train_df["seq_id"]=="seq_id")[0]
     assert len(location)==1
     ko_number=train_df["label"].iloc[location]
     ko=ko_label[ko_number]
@@ -73,6 +73,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
