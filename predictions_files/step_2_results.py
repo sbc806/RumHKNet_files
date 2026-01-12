@@ -97,3 +97,23 @@ fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/cluster
 # fasta_large=df_to_fasta(large_histidine_df_predicted,fasta_large_path)
 # large_histidine_df_predicted.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered/clustered_rep_seq95_large_histidine_kinase.csv"),index=False)
 
+small_dfs=[]
+i_df={}
+for i in range(0,2):
+  dir=f"newrun_seqs_small_kinase_{i}"
+  df=get_predictions_df(os.path.join(predictions_path,dir))
+  small_dfs.append(df)
+  i_df[i]=df
+complete_small_df=pd.concat(small_dfs)
+predictions_information(complete_small_df)
+histidine=complete_small_df.iloc[:,3]==1
+print("Number of histidine kinases <= 1500:",len(histidine))
+small_histidine_df=complete_small_df[histidine].iloc[:,0:2]
+small_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_small_histidine_kinase.csv"),index=False)
+large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"),index=False)
+predictions_information(large_df)
+histidine=large_df.iloc[:,3]==1
+print("Number of histidine kinases > 1500:",len(histidine))
+large_histidine_df=large_df[histidine].iloc[:,0:2]
+print(large_histidine_df)
+large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
