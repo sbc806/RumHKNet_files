@@ -82,32 +82,6 @@ print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==comp
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 print("Number of total kinases:",num_kinases)
 
-import os
-import pandas as pd
-import numpy as np
-
-import numpy as np
-import os
-import pandas as pd
-
-
-dataset_path="../predictions/predictions_dataset/step_1/clustered"
-predictions_path="../predictions/predicted_results/step_1/both/clustered"
-
-def get_predictions_df(predictions_path,i):
-  prediction_files=os.listdir(predictions_path)
-  selected_files=[f for f in prediction_files if "small_"+str(i)+"_"in f]
-  selected_files=sorted(selected_files,key=lambda x:int(x.split(".csv")[0].split("_")[-1]))
-  print(len(selected_files))
-  df=None
-  for f in selected_files:
-    current_df=pd.read_csv(os.path.join(predictions_path,f))
-    if df is None:
-      df=current_df
-    else:
-      df=pd.concat([df,current_df])
-  return df
-
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -188,6 +162,7 @@ print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
 # kinase_large_df.to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+
 
 
 
