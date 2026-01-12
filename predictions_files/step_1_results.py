@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import pandas as pd
-
+from predictions_helpers import predictions_information
 
 dataset_path="../predictions/predictions_dataset/step_1/clustered"
 predictions_path="../predictions/predicted_results/step_1/both/clustered"
@@ -142,29 +142,22 @@ for i in selected:
   else:
     complete_predictions_df=pd.concat([complete_predictions_df,df_i_full])
     df_kinases=pd.concat([df_kinases,df_i])
-# df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered","newrun_seqs_small_kinase.csv"),index=False)
+
 complete_small_df=pd.concat(small_dfs)
 print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 print("Number of total kinases:",num_kinases)  
 
-split_size=1350000
-num_splits=len(df_kinases)//split_size+1
-print(num_splits)
-num_rows=0
-for i in range(0,num_splits):
-  start=i*split_size
-  end=i*split_size+split_size
-  df_kinases_i=df_kinases.iloc[start:end]
-  # df_kinases_i.to_csv(os.path.join(f"../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_{i}.csv"),index=False)
-  num_rows=num_rows+len(df_kinases_i)
-print("Total number of rows:",num_rows)
+
 
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
 print(large_df)
 kinase_large_df=large_df[large_df.iloc[:,3]==1]
 print("Number of kinases with length > 1500:",len(kinase_large_df))
-# kinase_large_df.to_csv(os.path.join("../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+
+all_df=pd.concat([complete_small_df,kinase_large_df])
+predictions_information(all_df)
+
 
 
 
