@@ -17,3 +17,12 @@ def predictions_information(df):
   lengths_large=lengths>1500
   print("Number of sequences with length <= 1500:",np.sum(lengths_small))
   print("Number of sequences with length > 1500:",np.sum(lengths_large))
+
+def add_label(df,other_label):
+  pred=df.iloc[:,0:3]
+  print(pred)
+  pred_other=[]
+  for each_pred in pred:
+    pred_other.append(other_label[str(each_pred)])
+  df["pred_other"]=pred_other
+  return df
