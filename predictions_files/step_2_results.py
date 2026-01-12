@@ -12,7 +12,7 @@ def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
   selected_files=[f for f in prediction_files if "small_kinase_"+str(i)+"_"in f]
   selected_files=sorted(selected_files,key=lambda x:int(x.split(".csv")[0].split("_")[-1]))
-  print(len(selected_files))
+  print("Length:",len(selected_files))
   df=None
   for f in selected_files:
     current_df=pd.read_csv(os.path.join(predictions_path,f))
@@ -115,6 +115,7 @@ print("Number of histidine kinases > 1500:",len(histidine))
 large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+
 
 
 
