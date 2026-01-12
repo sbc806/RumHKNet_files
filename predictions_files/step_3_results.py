@@ -32,9 +32,9 @@ step_3_train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_fam
 histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
 print(histidine_information_df.columns)
 while len(other_label)!=11:
-  for row in histidine_information_df:
-    seq_id=row["seq"]
-    location=np.where(histidine_information_df["seq_id"]=="seq_id"])[0]
+  for row in step_3_train_df:
+    seq_id=row["seq_id"]
+    location=np.where(train_df["seq_id"]=="seq_id"])[0]
     assert len(location)==1
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
@@ -55,6 +55,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
