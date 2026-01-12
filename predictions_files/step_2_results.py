@@ -101,7 +101,7 @@ small_dfs=[]
 i_df={}
 for i in range(0,2):
   dir=f"newrun_seqs_small_kinase_{i}"
-  df=get_predictions_df(os.path.join(predictions_path,dir))
+  df=get_predictions_df(os.path.join(predictions_path,dir),i)
   small_dfs.append(df)
   i_df[i]=df
 complete_small_df=pd.concat(small_dfs)
@@ -117,4 +117,5 @@ print("Number of histidine kinases > 1500:",len(histidine))
 large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+
 
