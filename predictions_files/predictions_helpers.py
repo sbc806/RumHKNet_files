@@ -1,3 +1,4 @@
+import numpy as np
 import os as os
 import pandas as pd
 
@@ -10,3 +11,4 @@ def predictions_information(df):
   print("Number of seq:",len(seq))
   print("Number of unique seq_id:",unique_seq_id.shape)
   print("Number of unique seq:",unique_seq.shape)
+
