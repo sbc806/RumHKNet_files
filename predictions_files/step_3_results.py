@@ -27,9 +27,9 @@ small_histidine_df_new=add_label(small_histidine_df,other_label)
 
 large_histidine_df_new=add_label(large_histidine_df,other_label)
 """
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")))
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")))
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinase_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")))
+print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["label"]))
+print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["label"]))
+print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinase_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["label"]))
 
 small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
 small_histidine_df_batch["batch"]=small_histidine_df["pred"]
@@ -38,6 +38,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["pred"]
 print(large_histidine_df_batch)
+
 
 
 
