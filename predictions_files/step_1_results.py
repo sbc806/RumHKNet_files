@@ -164,7 +164,7 @@ newrun_seqs_small_0=pd.read_csv("../../predictions/predictions_dataset/step_2/cl
 newrun_seqs_small_1=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_1.csv")
 
 print(len(newrun_seqs_small_0)+len(newrun_seqs_small_1))
-seq_id=np.stack([newrun_seqs_small_0["seq_id"].values,newrun_seqs_small_1["seq_id"].values])
+seq_id=np.concat([newrun_seqs_small_0["seq_id"].values,newrun_seqs_small_1["seq_id"].values])
 print(seq_id.shape)
 print(np.unique(seq_id).shape)
 contained=complete_small_df["seq_id"].isin(seq_id)
@@ -173,6 +173,7 @@ not_contained_df=complete_small_df[~contained].iloc[:,0:2]
 print(len(not_contained_df))
 print(not_contained_df)
 not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_remaining.csv",index=False)
+
 
 
 
