@@ -24,3 +24,4 @@ df=pd.concat([df_12211,df_12211_not])
 print(np.unique(df["seq"]).shape)
 print(np.unique(df["seq_id"]).shape)
 kinase_df=df[df.iloc[:,3]==1]
+print(len(kinase_df))
