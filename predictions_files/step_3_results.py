@@ -53,17 +53,17 @@ for i in range(0,len(histidine_information_df)):
     print(ko+" has nan for family")
     family="Other families"
   ko_family[ko]=family
-
+print("Contained:",np.sum(step_3_full_df["seq_id"].isin(histidine_full_df["seq_id"].values)))
 
 print("ko_family:",ko_family,len(ko_family))
-print("Number of families:",np.unique(np.array(ko_family.values())).shape)
+print("Number of families:",np.unique(np.array(list(ko_family.values()))).shape)
 with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 while len(other_label)!=11:
   for i in range(0,len(step_3_full_df)):
     seq_id=step_3_full_df.iloc[i]["seq_id"]
-    location=np.where(histidine_full_df["seq_id"].values=="seq_id")[0]
+    location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
     print(location)
     assert len(location)==1
     ko_number=histidine_full_df["label"].iloc[location]
@@ -91,6 +91,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
