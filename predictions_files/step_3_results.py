@@ -66,13 +66,14 @@ for each_family in np.unique(step_3_full_df["label"]):
   step_3_selected_df=step_3_full_df[step_3_full_df["label"]==each_family]
   seq_id=step_3_selected_df.iloc[0]["seq_id"]
   location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
-  # print(location)
+  print(each_family,seq_id,location)
   assert len(location)==1
   ko_number=histidine_full_df["label"].iloc[location[0]]
   ko=label_ko[str(ko_number)]
   family=ko_family[ko]
-  family_number=step_3_full_df.iloc[i]["label"]
-  other_label[family]=family_number
+  print(ko_number,ko,family)
+  other_label[family]=each_family
+  print()
 print(other_label)
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
@@ -99,8 +100,9 @@ print("newrun_seqs")
 small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
 predictions_information(small_histidine_df)
 
-large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_large_histidine_kinase_predicted_03.csv"))
+large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
