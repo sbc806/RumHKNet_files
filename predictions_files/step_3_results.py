@@ -42,6 +42,7 @@ step_3_dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_famil
 step_3_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
 step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_test_df])
 print("Number of histidine kinases for step 3:",len(step_3_full_df))
+print(step_3_full_df.columns)
 histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
 print(histidine_information_df.columns)
 
@@ -100,6 +101,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
