@@ -72,7 +72,7 @@ for each_family in np.unique(step_3_full_df["label"]):
   ko=label_ko[str(ko_number)]
   family=ko_family[ko]
   print(ko_number,ko,family)
-  other_label[family]=each_family
+  other_label[family]=int(each_family)
   print()
 print(other_label)
 
@@ -107,6 +107,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
