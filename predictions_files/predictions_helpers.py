@@ -30,8 +30,9 @@ def add_label(df,other_label):
   print(pred)
   pred_other=[]
   for each_pred in pred:
-    pred_other.append(other_label[str(each_pred)])
+    pred_other.append(other_label[each_pred])
   df["pred_other"]=pred_other
   return df
+
 
 
