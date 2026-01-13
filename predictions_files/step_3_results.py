@@ -62,8 +62,8 @@ with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/prot
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
-for each_family in np.unique(step_3_full_df["batch"]):
-  step_3_selected_df=step_3_full_df[step_3_full_df["batch"]==each_family]
+for each_family in np.unique(step_3_full_df["label"]):
+  step_3_selected_df=step_3_full_df[step_3_full_df["label"]==each_family]
   seq_id=step_3_selected_df.iloc[0]["seq_id"]
   location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
   # print(location)
@@ -101,6 +101,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
