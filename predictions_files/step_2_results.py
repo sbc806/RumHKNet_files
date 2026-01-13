@@ -114,6 +114,7 @@ predictions_information(complete_small_df)
 histidine=complete_small_df.iloc[:,3]==1
 print("Number of histidine kinases <= 1500:",len(histidine))
 small_histidine_df=complete_small_df[histidine].iloc[:,0:2]
+print(small_histidine_df)
 small_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_small_histidine_kinase.csv"),index=False)
 
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
@@ -123,6 +124,7 @@ print("Number of histidine kinases > 1500:",len(histidine))
 large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+
 
 
 
