@@ -61,17 +61,16 @@ with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/prot
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
-while len(other_label)!=11:
-  for i in range(0,len(step_3_full_df)):
-    seq_id=step_3_full_df.iloc[i]["seq_id"]
-    location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
-    # print(location)
-    assert len(location)==1
-    ko_number=histidine_full_df["label"].iloc[location[0]]
-    ko=label_ko[str(ko_number)]
-    family=ko_family[ko]
-    family_number=step_3_full_df.iloc[i]["label"]
-    other_label[family]=family_number
+for i in range(0,len(step_3_full_df)):
+  seq_id=step_3_full_df.iloc[i]["seq_id"]
+  location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
+  # print(location)
+  assert len(location)==1
+  ko_number=histidine_full_df["label"].iloc[location[0]]
+  ko=label_ko[str(ko_number)]
+  family=ko_family[ko]
+  family_number=step_3_full_df.iloc[i]["label"]
+  other_label[family]=family_number
 print(other_label)
 """
 with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
@@ -92,6 +91,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
