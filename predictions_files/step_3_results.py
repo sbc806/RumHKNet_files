@@ -68,7 +68,7 @@ while len(other_label)!=11:
     print(location)
     assert len(location)==1
     ko_number=histidine_full_df["label"].iloc[location[0]]
-    ko=label_ko[ko_number]
+    ko=label_ko[str(ko_number)]
     family=ko_family[ko]
     family_number=row["label"]
     other_label[family]=family_number
@@ -92,6 +92,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
