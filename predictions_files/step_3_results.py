@@ -38,6 +38,10 @@ histidine_full_df=pd.concat([train_df,dev_df,test_df])
 print("Number of histidine kinases:",len(histidine_full_df))
 
 step_3_train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
+step_3_dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
+step_3_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
+step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_full_df])
+print("Number of histidine kinases for step 3:",len(step_3_full_df))
 histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
 print(histidine_information_df.columns)
 
@@ -52,7 +56,7 @@ for i in range(0,len(histidine_information_df)):
 
 
 print("ko_family:",ko_family,len(ko_family))
-print("Number of families:",np.unique(ko_family.values()))
+print("Number of families:",np.unique(ko_family.values()).shape)
 with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
@@ -87,6 +91,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
