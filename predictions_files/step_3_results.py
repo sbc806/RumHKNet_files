@@ -21,6 +21,15 @@ predictions_information(small_histidine_df)
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
 
+# Want to piar family to KO
+# TGet full dataset of histidne kinases used for training, train, dev, and test
+# Connect number label to ko category
+
+# Subetp, connect ko category to afmily
+
+# After, ogo through family labels
+# Match seq_id, get numerical batcko label then actual ko label then get family label
+
 other_label={}
 train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
 dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
@@ -37,7 +46,7 @@ for i in range(0,len(histidine_information_df)):
   ko=histidine_information_df.iloc[i,0]
   family=histidine_information_df.iloc[i,5]
   if isinstance(family,float):
-    print(ko)
+    print(ko+" has nan for family")
     family="Other families"
   ko_family[ko]=family
 
@@ -78,6 +87,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
