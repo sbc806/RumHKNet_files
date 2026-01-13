@@ -75,26 +75,31 @@ for each_family in np.unique(step_3_full_df["label"]):
   other_label[family]=each_family
   print()
 print(other_label)
-"""
-with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
-  other_label=json.load(f)
-small_histidine_df_new=add_label(small_histidine_df,other_label)
 
+with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
+  other_label=json.dump(f)
+
+
+small_histidine_df_new=add_label(small_histidine_df,other_label)
+print(small_histidine_df_new)
 large_histidine_df_new=add_label(large_histidine_df,other_label)
-"""
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
-print(np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+print(large_histidine_df_new)
+
+print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
 print(small_histidine_df["pred"])
 print(large_histidine_df["top1_label"])
 small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
 small_histidine_df_batch["batch"]=small_histidine_df["pred"]
+small_histidine_df_batch[small_histidine_df_batch["batch"]==10]=-1
 print(small_histidine_df_batch)
-
+print(np.unique(small_histidine_df_batch["batch"]))
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
+large_histidine_df_batch[large_histidine_df_batch["batch"]==10]=-1
 print(large_histidine_df_batch)
-
+print(np.unique(large_histidine_df_batch["batch"]))
 
 print("newrun_seqs")
 small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
@@ -102,6 +107,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
