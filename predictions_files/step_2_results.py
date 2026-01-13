@@ -22,6 +22,7 @@ def get_predictions_df(predictions_path,i):
       df=pd.concat([df,current_df])
   return df
 
+"""
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -49,7 +50,8 @@ for i in range(0,4):
 
 print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
 print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
-      
+"""
+
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
@@ -59,6 +61,8 @@ def df_to_fasta(df,fasta_path):
       f.write(seq)
       if i < len(df)-1:
         f.write("\n")
+
+"""
 complete_predictions_df=None
 df_kinases=None
 num_kinases=0 
@@ -94,10 +98,12 @@ print("Number of histidine kinases predicted for sequences with length >1500:",l
 fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_large_histidine_kinase.fasta")
 # fasta_large=df_to_fasta(large_histidine_df_predicted,fasta_large_path)
 # large_histidine_df_predicted.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered/clustered_rep_seq95_large_histidine_kinase.csv"),index=False)
+"""
 
+desired=[i for i in range(0,2)]+['remaining']
 small_dfs=[]
 i_df={}
-for i in range(0,2):
+for i in desired:
   dir=f"newrun_seqs_small_kinase_{i}"
   df=get_predictions_df(os.path.join(predictions_path,dir),i)
   small_dfs.append(df)
@@ -117,6 +123,7 @@ large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
 """
+
 
 
 
