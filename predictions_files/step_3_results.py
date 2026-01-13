@@ -94,6 +94,12 @@ large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
 
 
+print("newrun_seqs")
+small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
+predictions_information(small_histidine_df)
+
+large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_large_histidine_kinase_predicted_03.csv"))
+predictions_information(large_histidine_df)
 
 
 
