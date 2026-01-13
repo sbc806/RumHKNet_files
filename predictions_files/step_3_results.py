@@ -12,7 +12,7 @@ def make_df(dir_path):
     dfs.append(df)
   return pd.concat(dfs)
 
-
+print("clustered_rep_seq95")
 dataset_path="../../predictions/predictions_dataset/step_3/clustered"
 predictions_path="../../predictions/predicted_results/step_3/both/clustered"
 small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
@@ -61,8 +61,9 @@ with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/prot
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
-for i in range(0,len(step_3_full_df)):
-  seq_id=step_3_full_df.iloc[i]["seq_id"]
+for each_family in np.unique(step_full_df["batch"]):
+  step_3_selected_df=step_3_full_df[step_3_full_df["batch"]==each_family]
+  seq_id=step_3_selected_df.iloc[0]["seq_id"]
   location=np.where(histidine_full_df["seq_id"]==seq_id)[0]
   # print(location)
   assert len(location)==1
@@ -91,6 +92,7 @@ print(small_histidine_df_batch)
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
 print(large_histidine_df_batch)
+
 
 
 
