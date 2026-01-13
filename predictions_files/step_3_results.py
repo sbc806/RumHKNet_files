@@ -92,12 +92,12 @@ print(small_histidine_df["pred"])
 print(large_histidine_df["top1_label"])
 small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
 small_histidine_df_batch["batch"]=small_histidine_df["pred"]
-small_histidine_df_batch[(small_histidine_df_batch["batch"]==10).values,"batch"]=-1
+small_histidine_df_batch.loc[np.where(small_histidine_df_batch["batch"]==10)[0],"batch"]=-1
 print(small_histidine_df_batch)
 print(np.unique(small_histidine_df_batch["batch"]))
 large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
 large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
-large_histidine_df_batch[(large_histidine_df_batch["batch"]==10).values,"batch"]=-1
+large_histidine_df_batch.loc[np.where(large_histidine_df_batch["batch"]==10)[0],"batch"]=-1
 print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 
@@ -107,6 +107,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
