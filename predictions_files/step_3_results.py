@@ -80,9 +80,9 @@ with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_
   json.dump(other_label,f)
 
 
-small_histidine_df_new=add_label(small_histidine_df,reverse_dict(other_label))
+small_histidine_df_new=add_label(small_histidine_df,reverse_dict(other_label)).reset_index()
 print(small_histidine_df_new)
-large_histidine_df_new=add_label(large_histidine_df,reverse_dict(other_label))
+large_histidine_df_new=add_label(large_histidine_df,reverse_dict(other_label)).reset_index()
 print(large_histidine_df_new)
 
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
@@ -107,6 +107,7 @@ predictions_information(small_histidine_df)
 
 large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
 predictions_information(large_histidine_df)
+
 
 
 
