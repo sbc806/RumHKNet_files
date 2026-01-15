@@ -182,7 +182,8 @@ newrun_seqs_kinase_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
 step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df])
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
-# df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
