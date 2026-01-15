@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import pandas as pd
-from ../predictions_helpers import predictions_information
+from ..predictions_helpers import predictions_information
 
 dataset_path="../../../predictions/predictions_dataset/step_1/clustered"
 predictions_path="../../../predictions/predicted_results/step_1/both/clustered"
@@ -181,6 +181,7 @@ step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df]
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 # df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
