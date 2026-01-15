@@ -68,7 +68,7 @@ complete_small_df=pd.concat(small_dfs)
 # print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 # print("Number of total kinases:",num_kinases)
 predictions_information(complete_small_df)
-num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
+num_small_kinases=np.sum(complete_small_df.iloc[:,2]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
 large_path=os.path.join(predictions_path,"large")
 large_df=None
@@ -79,7 +79,7 @@ for f in os.listdir(large_path):
   else:
     large_df=pd.concat([large_df,df])
 predictions_information(large_df)
-num_large_kinases=np.sum(large_df.iloc[:,3]==1)
+num_large_kinases=np.sum(large_df.iloc[:,2]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # print("Number of sequences > 1500:",len(large_df))
 # print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
@@ -140,7 +140,7 @@ complete_small_df=pd.concat(small_dfs)
 # print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 # print("Number of total kinases:",num_kinases)  
 predictions_information(complete_small_df)
-num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
+num_small_kinases=np.sum(complete_small_df.iloc[:,2]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
 
 
@@ -151,7 +151,7 @@ large_df_all=pd.concat([large_df_0,large_df_1])
 not_contained=~large_df_all["seq_id"].isin(large_df_12211["seq_id"].values)
 large_df_all_1=pd.concat([large_df_all[~not_contained],large_df_12211])
 predictions_information(large_df_all_1)
-num_large_kinases=np.sum(large_df_all_1.iloc[:,3])
+num_large_kinases=np.sum(large_df_all_1.iloc[:,2]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # print(large_df)
 # kinase_large_df=large_df[large_df.iloc[:,3]==1]
@@ -183,6 +183,7 @@ step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df]
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 # df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
