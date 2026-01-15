@@ -106,7 +106,7 @@ for i in range(0,8):
     # print("Number of predictions:",len(df_i))
     # print("Number of seq_id in common between dataset and predictions:",np.sum(dataset_i["seq_id"].values==df_i["seq_id"].values))
     # print("Prediction labels:",np.unique(df_i["pred"]))
-    print(df_i)
+    # print(df_i)
     i_df[i]=df_i
     seq_ids=np.hstack((seq_ids,df_i["seq_id"]))
     seqs=np.hstack((seqs,df_i["seq"]))
@@ -183,6 +183,7 @@ step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df]
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 # df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
