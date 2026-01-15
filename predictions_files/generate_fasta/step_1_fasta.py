@@ -65,6 +65,9 @@ complete_small_df=pd.concat(small_dfs)
 # print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
 # print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
 # print("Number of total kinases:",num_kinases)
+predictions_information(complete_small_df)
+num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
+print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
 large_path=os.path.join(predictions_path,"large")
 large_df=None
 for f in os.listdir(large_path):
@@ -73,6 +76,9 @@ for f in os.listdir(large_path):
     large_df=df
   else:
     large_df=pd.concat([large_df,df])
+predictions_information(large_df)
+num_large_kinases=np.sum(large_df.iloc[:,3]==1)
+print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # print("Number of sequences > 1500:",len(large_df))
 # print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
 all_df=pd.concat([complete_small_df,large_df])
@@ -159,6 +165,7 @@ print("not contained:",len(not_contained_df))
 print(not_contained_df)
 not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_remaining.csv",index=False)
 """
+
 
 
 
