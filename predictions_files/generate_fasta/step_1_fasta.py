@@ -149,7 +149,7 @@ large_df_1=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_1_predic
 large_df_12211=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_12211_predicted_03.csv"))
 large_df_all=pd.concat([large_df_0,large_df_1])
 not_contained=~large_df_all["seq_id"].isin(large_df_12211["seq_id"].values)
-large_df_all_1=pd.concat([large_df_all[~not_contained],large_df_12211])
+large_df_all_1=pd.concat([large_df_all[not_contained],large_df_12211])
 predictions_information(large_df_all_1)
 num_large_kinases=np.sum(large_df_all_1.iloc[:,3]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
@@ -183,6 +183,7 @@ step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df]
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
