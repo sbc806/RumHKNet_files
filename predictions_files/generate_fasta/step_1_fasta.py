@@ -157,8 +157,8 @@ print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # kinase_large_df=large_df[large_df.iloc[:,3]==1]
 # print("Number of kinases with length > 1500:",len(kinase_large_df))
 
-all_df=pd.concat([complete_small_df,large_df])
-predictions_information(all_df)
+newrun_seqs_all_df=pd.concat([complete_small_df,large_df])
+predictions_information(newrun_seqs_all_df)
 """
 
 
@@ -183,6 +183,7 @@ step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df]
 predictions_information(step_1_kinase_df)
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 # df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
