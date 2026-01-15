@@ -35,8 +35,8 @@ for i in range(0,4):
   print(i)
   if df_i is not None:
     file_name=f"clustered_rep_seq95_small_kinase_{i}.csv"
-    dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
-    small_dfs.append(dataset_i)
+    # dataset_i=pd.read_csv(os.path.join(dataset_path,file_name)).iloc[:len(df_i)]
+    small_dfs.append(df_i)
     # print("Number of predictions:",len(df_i))
     # print("Number of seq_id in common between dataset and predictions:",np.sum(dataset_i["seq_id"].values==df_i["seq_id"].values))
     # print("Prediction labels:",np.unique(df_i["pred"]))
@@ -52,8 +52,8 @@ for i in range(0,4):
 # print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
 complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
-num_small_kinases=np.sum(complete_small_df.iloc[:,2])
-print("Number of histidine kinases <= 1500:",num_small_kinases)
+num_small_histidine_kinases=np.sum(complete_small_df.iloc[:,2])
+print("Number of histidine kinases <= 1500:",num_small_histidine_kinases)
 
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
@@ -102,6 +102,11 @@ fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/cluster
 # fasta_large=df_to_fasta(large_histidine_df_predicted,fasta_large_path)
 # large_histidine_df_predicted.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered/clustered_rep_seq95_large_histidine_kinase.csv"),index=False)
 """
+large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"),header=None)
+large_df_predicted.columns=["seq_id","seq","prob","label"]
+predictions_information(large_df_predicted)
+num_large_histidine_kinases=np.sum(large_df_predicted.iloc[:,3]==1)
+print("Number of histidine kinases > 1500:",num_large_histidine_kinases)
 
 desired=[i for i in range(0,2)]+['remaining']
 small_dfs=[]
@@ -127,6 +132,7 @@ print("Number of histidine kinases > 1500:",np.sum(histidine))
 large_histidine_df=large_df[histidine].iloc[:,0:2]
 print(large_histidine_df)
 # large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+
 
 
 
