@@ -149,6 +149,7 @@ large_df_all=pd.concat([large_df_0,large_df_1])
 not_contained=~large_df_all["seq_id"].isin(large_df_12211["seq_id"].values)
 large_df_all_1=pd.concat([large_df_all[~not_contained],large_df_12211])
 predictions_information(large_df_all_1)
+num_large_kinases=np.sum(large_df_all_1.iloc[:,3])
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # print(large_df)
 # kinase_large_df=large_df[large_df.iloc[:,3]==1]
@@ -174,6 +175,12 @@ print("not contained:",len(not_contained_df))
 print(not_contained_df)
 not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_remaining.csv",index=False)
 """
+clustered_rep_seq95_kinase_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
+newrun_seqs_kinase_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
+step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df])
+predictions_information(step_1_kinase_df)
+step_1_fasta_path=os.path.join(predictions_path,"step_1_kinase_clustered_newrun.fasta")
+# df_to_fasta(step_1_kinase_df,step_1_fasta_path)
 
 
 
