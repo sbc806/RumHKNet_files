@@ -15,8 +15,8 @@ def make_df(dir_path):
   return pd.concat(dfs)
 
 print("clustered_rep_seq95")
-dataset_path="../../predictions/predictions_dataset/step_3/clustered"
-predictions_path="../../predictions/predicted_results/step_3/both/clustered"
+dataset_path="../../../predictions/predictions_dataset/step_3/clustered"
+predictions_path="../../../predictions/predicted_results/step_3/both/clustered"
 clustered_small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
 predictions_information(clustered_small_histidine_df)
 
@@ -33,7 +33,7 @@ predictions_information(clustered_large_histidine_df)
 # Match seq_id, get numerical batcko label then actual ko label then get family label
 
 other_label={}
-train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
+train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
 dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
 test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
 histidine_full_df=pd.concat([train_df,dev_df,test_df])
@@ -138,6 +138,7 @@ step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_d
 predictions_information(step_3_histidine_df)
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
