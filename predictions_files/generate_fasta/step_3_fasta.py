@@ -125,15 +125,18 @@ print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 """
 newrun_small_histidine_df_new=add_label(newrun_small_histidine_df,reverse_dict(other_label))
-predictions_information(newrun_histidine_df_new)
+print(newrun_histidine_df_new)
 newrun_large_histidine_df_new=add_label(newrun_large_histidine_df,reverse_dict(other_label))
-
+print(newrun_large_histidine_df_new)
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
+
+print()
 
 step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
 predictions_information(step_3_histidine_df)
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
