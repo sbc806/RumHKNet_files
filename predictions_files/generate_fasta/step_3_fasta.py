@@ -82,11 +82,11 @@ with open("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/mul
   json.dump(other_label,f)
 
 clustered_small_histidine_df_selected=clustered_small_histidine_df.iloc[:,0:2]
-clustered_small_histidine_df_selected["pred"]=clustered_small_histidine_df.iloc[:,3]
+clustered_small_histidine_df_selected["pred"]=clustered_small_histidine_df["pred"]
 clustered_small_histidine_df_new=add_label(clustered_small_histidine_df_selected,reverse_dict(other_label))
 print(clustered_small_histidine_df_new.columns)
 clustered_large_histidine_df_selected=clustered_large_histidine_df.iloc[:,0:2]
-clustered_large_histidine_df_selected["pred"]=clustered_large_histidine_df.iloc[:,3]
+clustered_large_histidine_df_selected["pred"]=clustered_large_histidine_df["top1"]
 clustered_large_histidine_df_new=add_label(clustered_large_histidine_df_selected,reverse_dict(other_label))
 print(clustered_large_histidine_df_new.columns)
 
@@ -132,14 +132,14 @@ print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 """
 newrun_small_histidine_df_selected=newrun_small_histidine_df.iloc[:,0:2]
-newrun_small_histidine_df_selected["pred"]=newrun_small_histidine_df.iloc[:,3]
+newrun_small_histidine_df_selected["pred"]=newrun_small_histidine_df["pred"]
 newrun_small_histidine_df_new=add_label(newrun_small_histidine_df_selected,reverse_dict(other_label))
 print(newrun_small_histidine_df_new.columns)
 newrun_large_histidine_df_selected=newrun_large_histidine_df.iloc[:,0:2]
-newrun_large_histidine_df_selected["pred"]=newrun_large_histidine_df.iloc[:,3]
+newrun_large_histidine_df_selected["pred"]=newrun_large_histidine_df["top1"]
 newrun_large_histidine_df_new=add_label(newrun_large_histidine_df_selected,reverse_dict(other_label))
 print(newrun_large_histidine_df_new.columns)
-newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
+newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df_new])
 print(newrun_histidine_all_df)
 print()
 def df_to_fasta(df,fasta_path):
@@ -159,6 +159,7 @@ print(np.unique(step_3_histidine_df.iloc[:,2]))
 print(np.unique(step_3_histidine_df.iloc[:,3]))
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
