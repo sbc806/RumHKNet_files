@@ -6,8 +6,8 @@ sys.path.append("..")
 from predictions_helpers import predictions_information
 
 
-dataset_path="../../predictions/predictions_dataset/step_2/clustered"
-predictions_path="../../predictions/predicted_results/step_2/both/clustered"
+dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
+predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
 
 def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
@@ -160,6 +160,7 @@ predictions_information(step_2_histidine_df)
 print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
 # df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+
 
 
 
