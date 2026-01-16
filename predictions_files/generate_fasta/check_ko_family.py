@@ -61,18 +61,25 @@ for each_family in np.unique(step_3_full_df["label"]):
   print()
 print(other_label)
 
-with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
-  json.dump(other_label,f)
+# with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
+  # json.dump(other_label,f)
 
+for each_label in np.unique(histidine_full_df["label"].values):
+  ko=label_ko[str(each_label)]
+  family=ko_family[ko]
+  family_label=other_label[family]
+  ko_rows=histidine_full_df[histidine_full_df["label"]==each_label]
+  family_rows_contained=step_3_full_df["seq_id"].isin(ko_rows["seq_id"].values)
+  family_rows=step_3_full_df[family_rows_contained]
+  family_label_dataset=np.unique(family_rows["label"])
+  assert len(family_label_dataset) == 1
+  assert family_label==family_label_dataset
 
-small_histidine_df_new=add_label(small_histidine_df,reverse_dict(other_label))
-print(small_histidine_df_new)
-large_histidine_df_new=add_label(large_histidine_df,reverse_dict(other_label))
-print(large_histidine_df_new)
 
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+
 
 
 
