@@ -34,18 +34,18 @@ predictions_information(clustered_large_histidine_df)
 
 other_label={}
 train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
-dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
-test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
+dev_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
+test_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
 histidine_full_df=pd.concat([train_df,dev_df,test_df])
 # print("Number of histidine kinases:",len(histidine_full_df))
 
-step_3_train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
-step_3_dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
-step_3_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
+step_3_train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
+step_3_dev_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
+step_3_test_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
 step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_test_df])
 # print("Number of histidine kinases for step 3:",len(step_3_full_df))
 # print(step_3_full_df.columns)
-histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
+histidine_information_df=pd.read_csv("../../../Histidine_Kinases_limei.csv")
 # print(histidine_information_df.columns)
 
 ko_family={}
@@ -60,7 +60,7 @@ print("Contained:",np.sum(step_3_full_df["seq_id"].isin(histidine_full_df["seq_i
 
 print("ko_family:",ko_family,len(ko_family))
 print("Number of families:",np.unique(np.array(list(ko_family.values()))).shape)
-with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+with open("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
@@ -78,7 +78,7 @@ for each_family in np.unique(step_3_full_df["label"]):
   print()
 print(other_label)
 
-with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
+with open("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
 
 
@@ -138,6 +138,7 @@ step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_d
 predictions_information(step_3_histidine_df)
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
