@@ -84,6 +84,9 @@ clustered_small_histidine_df_new=add_label(clustered_small_histidine_df,reverse_
 print(clustered_small_histidine_df_new)
 clustered_large_histidine_df_new=add_label(clustered_large_histidine_df,reverse_dict(other_label))
 print(clustered_large_histidine_df_new)
+
+clustered_histidine_all_df=pd.concat([clustered_small_histidine_df_new,clustered_large_histidine_df_new])
+predictions_information(clustered_histidine_all_df)
 """
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
@@ -104,11 +107,11 @@ print(np.unique(large_histidine_df_batch["batch"]))
 
 
 print("newrun_seqs")
-small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
-predictions_information(small_histidine_df)
+newrun_small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
+predictions_information(newrun_small_histidine_df)
 
-large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
-predictions_information(large_histidine_df)
+newrun_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
+predictions_information(newrun_large_histidine_df)
 """
 small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
 small_histidine_df_batch["batch"]=small_histidine_df["pred"]
@@ -121,14 +124,16 @@ large_histidine_df_batch.iloc[np.where(large_histidine_df_batch["batch"]==10)[0]
 print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 """
-small_histidine_df_new=add_label(small_histidine_df,reverse_dict(other_label))
-predictions_information(histidine_df_new)
+newrun_small_histidine_df_new=add_label(newrun_small_histidine_df,reverse_dict(other_label))
+predictions_information(newrun_histidine_df_new)
 newrun_large_histidine_df_new=add_label(newrun_large_histidine_df,reverse_dict(other_label))
 
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
 
 step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
-
+predictions_information(step_3_histidine_df)
+step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
+# df_to_fasta(step_3_histidine_df,step_3_fasta_path)
 
 
 
