@@ -26,13 +26,14 @@ def reverse_dict(original):
   return reversed
   
 def add_label(df,other_label):
-  pred=df.iloc[:,3]
+  pred=df["pred"]
   print(pred)
   pred_other=[]
   for each_pred in pred:
     pred_other.append(other_label[each_pred])
   df["pred_other"]=pred_other
   return df
+
 
 
 
