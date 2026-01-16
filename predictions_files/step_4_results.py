@@ -5,6 +5,7 @@ import numpy as np
 dataset_path="../../predictions/predictions_dataset/step_4/clustered"
 predictions_path="../../predictions/predicted_results/step_4/both/clustered"
 
+print("clustered_rep_seq95")
 small_dir_0_path=os.path.join(predictions_path,"small_histidine_kinase_batch_0")
 small_dfs=[]
 for f in os.listdir(small_dir_0_path):
@@ -20,5 +21,6 @@ predictions_information(complete_large_df)
 print("newrun_seqs")
 complete_large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_batch_predicted_03.csv"))
 predictions_information(complete_large_df)
+
 
 
