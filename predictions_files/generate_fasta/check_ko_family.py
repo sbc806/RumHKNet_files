@@ -80,7 +80,7 @@ for each_label in np.unique(histidine_full_df["label"].values):
   print("each_label,ko,family,family_label,family_label_dataset:",each_label,ko,family,family_label,family_label_dataset)
   batch_unique=np.unique(ko_rows["batch"])
   assert len(batch_unique)==1
-  if bath_unique[0]<0:
+  if batch_unique[0]<0:
     assert family_label_dataset[0]==10
   else:
     assert batch_unique[0]==family_label_dataset[0]
@@ -89,6 +89,7 @@ print()
 print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+
 
 
 
