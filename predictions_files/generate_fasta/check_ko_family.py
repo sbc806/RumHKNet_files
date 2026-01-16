@@ -63,6 +63,7 @@ print(other_label)
 
 # with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   # json.dump(other_label,f)
+print()
 
 for each_label in np.unique(histidine_full_df["label"].values):
   ko=label_ko[str(each_label)]
@@ -75,10 +76,11 @@ for each_label in np.unique(histidine_full_df["label"].values):
   assert len(family_label_dataset) == 1
   assert family_label==family_label_dataset
 
-
+print()
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+
 
 
 
