@@ -22,7 +22,8 @@ def get_predictions_df(predictions_path,i):
       df=pd.concat([df,current_df])
   return df
 
-
+print("clustered_rep_seq95")
+print()
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -141,6 +142,7 @@ predictions_information(newrun_seqs_all_df)
 
 clustered_rep_seq95_hisitidine_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
 newrun_seqs_histidine_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
+
 
 
 
