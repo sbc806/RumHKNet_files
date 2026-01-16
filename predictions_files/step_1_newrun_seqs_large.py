@@ -27,5 +27,5 @@ print(np.unique(df["seq_id"]).shape)
 kinase_df=df[df.iloc[:,3]==1]
 print("Total number of kinases:",len(kinase_df))
 predictions_information(df)
-df.to_csv(os.path.join(predictions_path,"newrun_seqs_large_0_1_12211_predicted_03.csv"))
+df.to_csv(os.path.join(predictions_path,"newrun_seqs_large_0_1_12211_predicted_03.csv"),index=False)
 # kinase_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
