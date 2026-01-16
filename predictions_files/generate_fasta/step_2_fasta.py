@@ -55,6 +55,7 @@ complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
 num_small_histidine_kinases=np.sum(complete_small_df.iloc[:,2])
 print("Number of histidine kinases <= 1500:",num_small_histidine_kinases)
+print()
 
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
@@ -108,10 +109,15 @@ large_df_predicted.columns=["seq_id","seq","prob","label"]
 predictions_information(large_df_predicted)
 num_large_histidine_kinases=np.sum(large_df_predicted.iloc[:,3]==1)
 print("Number of histidine kinases > 1500:",num_large_histidine_kinases)
+print()
 
+large_df_predicted.columns=complete_small_df.columns
 clustered_rep_seq95_all_df=pd.concat([complete_small_df,large_df_predicted])
 predictions_information(clustered_rep_seq95_all_df)
+print()
 
+print("newrun_seqs")
+print()
 desired=[i for i in range(0,2)]+['remaining']
 small_dfs=[]
 i_df={}
@@ -123,11 +129,14 @@ for i in desired:
   i_df[i]=df
 complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
+
+
 histidine=complete_small_df.iloc[:,3]==1
 print("Number of histidine kinases <= 1500:",np.sum(histidine))
 # small_histidine_df=complete_small_df[histidine].iloc[:,0:2]
 # print(small_histidine_df)
 # small_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_small_histidine_kinase.csv"),index=False)
+print()
 
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
 predictions_information(large_df)
@@ -136,12 +145,16 @@ print("Number of histidine kinases > 1500:",np.sum(histidine))
 # large_histidine_df=large_df[histidine].iloc[:,0:2]
 # print(large_histidine_df)
 # large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
+print()
 
+large_df.columns=complete_small_df.columns
 newrun_seqs_all_df=pd.concat([complete_small_df,large_df])
 predictions_information(newrun_seqs_all_df)
+print()
 
 clustered_rep_seq95_hisitidine_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
 newrun_seqs_histidine_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
+
 
 
 
