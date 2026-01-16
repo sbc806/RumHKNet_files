@@ -133,11 +133,17 @@ print(newrun_large_histidine_df_new.columns)
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
 
 print()
+def df_to_fasta(df,fasta_path):
+  swith open(fasta_path,"a") as f:
+    for i in range(0,len(df)):  
+      seq_id=df["seq_id"].iloc[i]
+      seq=df["seq"].iloc[i]
 
 step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
 predictions_information(step_3_histidine_df)
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
