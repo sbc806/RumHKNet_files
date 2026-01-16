@@ -131,8 +131,12 @@ large_histidine_df_batch.iloc[np.where(large_histidine_df_batch["batch"]==10)[0]
 print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 """
+newrun_small_histidine_df_selected=newrun_small_histidine_df.iloc[:,0:2]
+newrun_small_histidine_df_selected["pred"]=newrun_small_histidine_df.iloc[:,3]
 newrun_small_histidine_df_new=add_label(newrun_small_histidine_df_selected,reverse_dict(other_label))
 print(newrun_small_histidine_df_new.columns)
+newrun_large_histidine_df_selected=newrun_large_histidine_df.iloc[:,0:2]
+newrun_large_histidine_df_selected["pred"]=newrun_large_histidine_df.iloc[:,3]
 newrun_large_histidine_df_new=add_label(newrun_large_histidine_df_selected,reverse_dict(other_label))
 print(newrun_large_histidine_df_new.columns)
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
@@ -155,6 +159,7 @@ print(np.unique(step_3_histidine_df.iloc[:,3]))
 print(np.unique(step_3_histidine_df.iloc[:,-1]))
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 # df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
