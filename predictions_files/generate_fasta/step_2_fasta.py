@@ -159,7 +159,8 @@ step_2_histidine_df=pd.concat([clustered_rep_seq95_histidine_df,newrun_seqs_hist
 predictions_information(step_2_histidine_df)
 print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
-# df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+
 
 
 
