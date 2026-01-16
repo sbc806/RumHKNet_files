@@ -15,11 +15,11 @@ def make_df(dir_path):
 print("clustered_rep_seq95")
 dataset_path="../../predictions/predictions_dataset/step_3/clustered"
 predictions_path="../../predictions/predicted_results/step_3/both/clustered"
-small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
-predictions_information(small_histidine_df)
+clustered_small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
+predictions_information(clustered_small_histidine_df)
 
-large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
-predictions_information(large_histidine_df)
+clustered_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
+predictions_information(clustered_large_histidine_df)
 
 # Want to piar family to KO
 # TGet full dataset of histidne kinases used for training, train, dev, and test
@@ -80,10 +80,10 @@ with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_
   json.dump(other_label,f)
 
 
-small_histidine_df_new=add_label(small_histidine_df,reverse_dict(other_label))
-print(small_histidine_df_new)
-large_histidine_df_new=add_label(large_histidine_df,reverse_dict(other_label))
-print(large_histidine_df_new)
+clustered_small_histidine_df_new=add_label(clustered_small_histidine_df,reverse_dict(other_label))
+print(clustered_small_histidine_df_new)
+clustered_large_histidine_df_new=add_label(clustered_large_histidine_df,reverse_dict(other_label))
+print(clustered_large_histidine_df_new)
 """
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
@@ -128,6 +128,7 @@ newrun_large_histidine_df_new=add_label(newrun_large_histidine_df,reverse_dict(o
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
 
 step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
+
 
 
 
