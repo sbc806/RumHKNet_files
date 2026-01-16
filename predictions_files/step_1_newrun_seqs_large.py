@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import os as os
+from predictions_helpers import predictions_information
 
 dataset_path="../../predictions/predictions_dataset/step_1/clustered"
 predictions_path="../../predictions/predicted_results/step_1/both/clustered"
@@ -25,4 +26,6 @@ print(np.unique(df["seq"]).shape)
 print(np.unique(df["seq_id"]).shape)
 kinase_df=df[df.iloc[:,3]==1]
 print("Total number of kinases:",len(kinase_df))
-kinase_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
+predictions_information(df)
+df.to_csv(os.path.join(predictions_path,"newrun_seqs_large_0_1_12211_predicted_03.csv"))
+# kinase_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_large_kinase.csv"),index=False)
