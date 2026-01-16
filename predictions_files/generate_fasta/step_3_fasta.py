@@ -138,7 +138,7 @@ def df_to_fasta(df,fasta_path):
     for i in range(0,len(df)):  
       seq_id=df["seq_id"].iloc[i]
       seq=df["seq"].iloc[i]
-      label=df.iloc[:,-3].iloc[i]
+      label=df.iloc[:,3].iloc[i]
       label_other=df.iloc[:,-1].iloc[i]
       f.write(f">{seq_id},{label},{label_other}")
       f.write(seq)
@@ -146,8 +146,11 @@ def df_to_fasta(df,fasta_path):
         f.write("\n")
 step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
 predictions_information(step_3_histidine_df)
+print(np.unique(step_3_histidine_df.iloc[:,3]))
+print(np.unique(step_3_histidine_df.iloc[:,-1]))
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
