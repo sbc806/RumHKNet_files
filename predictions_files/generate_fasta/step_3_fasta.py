@@ -91,6 +91,7 @@ clustered_large_histidine_df_new=add_label(clustered_large_histidine_df_selected
 print(clustered_large_histidine_df_new.columns)
 
 clustered_histidine_all_df=pd.concat([clustered_small_histidine_df_new,clustered_large_histidine_df_new])
+print(clustered_histidine_all_df)
 predictions_information(clustered_histidine_all_df)
 """
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
@@ -130,12 +131,12 @@ large_histidine_df_batch.iloc[np.where(large_histidine_df_batch["batch"]==10)[0]
 print(large_histidine_df_batch)
 print(np.unique(large_histidine_df_batch["batch"]))
 """
-newrun_small_histidine_df_new=add_label(newrun_small_histidine_df,reverse_dict(other_label))
+newrun_small_histidine_df_new=add_label(newrun_small_histidine_df_selected,reverse_dict(other_label))
 print(newrun_small_histidine_df_new.columns)
-newrun_large_histidine_df_new=add_label(newrun_large_histidine_df,reverse_dict(other_label))
+newrun_large_histidine_df_new=add_label(newrun_large_histidine_df_selected,reverse_dict(other_label))
 print(newrun_large_histidine_df_new.columns)
 newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df])
-
+print(newrun_histidine_all_df)
 print()
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
@@ -153,7 +154,8 @@ predictions_information(step_3_histidine_df)
 print(np.unique(step_3_histidine_df.iloc[:,3]))
 print(np.unique(step_3_histidine_df.iloc[:,-1]))
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
-df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+# df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
