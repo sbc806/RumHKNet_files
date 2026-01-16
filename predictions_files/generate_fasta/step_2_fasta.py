@@ -154,6 +154,12 @@ print()
 
 clustered_rep_seq95_hisitidine_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
 newrun_seqs_histidine_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
+step_2_histidine_df=pd.concat([clustered_rep_seq95_histidine_df,newrun_seqs_histidine_df])
+predicitons_information(step_2_histidine_df)
+print()
+
+step_2_fasta_path="../../../RumHKNet_fasta/"
+df_to_fasta(step_2_histidine_df,step_2_fasta_path)
 
 
 
