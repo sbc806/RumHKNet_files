@@ -23,13 +23,13 @@ ko_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_
 histidine_full_df=pd.concat([ko_train_df,ko_dev_df,ko_test_df])
 print("Number of histidine kinases:",len(histidine_full_df))
 
-step_3_train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
-step_3_dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
-step_3_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
+step_3_train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
+step_3_dev_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
+step_3_test_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
 step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_test_df])
 print("Number of histidine kinases for step 3:",len(step_3_full_df))
 print(step_3_full_df.columns)
-histidine_information_df=pd.read_csv("../../Histidine_Kinases_limei.csv")
+histidine_information_df=pd.read_csv("../../../Histidine_Kinases_limei.csv")
 print(histidine_information_df.columns)
 
 ko_family={}
@@ -45,7 +45,7 @@ print()
 
 print("ko_family:",ko_family,len(ko_family))
 print("Number of families:",np.unique(np.array(list(ko_family.values()))).shape)
-with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+with open("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
@@ -79,9 +79,10 @@ for each_label in np.unique(histidine_full_df["label"].values):
   assert family_label==family_label_dataset
 
 print()
-print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
-print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
-print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
+
 
 
 
