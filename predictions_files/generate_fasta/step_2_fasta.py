@@ -54,7 +54,7 @@ for i in range(0,4):
 # print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
 complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
-num_small_histidine_kinases=np.sum(complete_small_df.iloc[:,2])
+num_small_histidine_kinases=np.sum(complete_small_df.iloc[:,3]==1)
 print("Number of histidine kinases <= 1500:",num_small_histidine_kinases)
 print()
 
@@ -160,6 +160,7 @@ predictions_information(step_2_histidine_df)
 print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
 # df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+
 
 
 
