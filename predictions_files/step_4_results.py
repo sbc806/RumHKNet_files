@@ -1,6 +1,7 @@
 import os as os
 import pandas as pd
 import numpy as np
+from predictions_helpers import predictions_information
 
 dataset_path="../../predictions/predictions_dataset/step_4/clustered"
 predictions_path="../../predictions/predicted_results/step_4/both/clustered"
@@ -21,6 +22,7 @@ predictions_information(complete_large_df)
 print("newrun_seqs")
 complete_large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_batch_predicted_03.csv"))
 predictions_information(complete_large_df)
+
 
 
 
