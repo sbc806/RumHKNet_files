@@ -1,7 +1,8 @@
 import os as os
 import pandas as pd
 import numpy as np
-
+import sys
+sys.path.append("..")
 from predictions_helpers import predictions_information
 
 
@@ -159,6 +160,7 @@ predictions_information(step_2_histidine_df)
 print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
 # df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+
 
 
 
