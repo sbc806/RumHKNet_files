@@ -22,6 +22,9 @@ def get_predictions_df(predictions_path,i):
       df=pd.concat([df,current_df])
   return df
 
+print("clustered_rep_seq95")
+print()
+
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -70,6 +73,8 @@ complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
 num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
+print()
+
 large_path=os.path.join(predictions_path,"large")
 large_df=None
 for f in os.listdir(large_path):
@@ -81,11 +86,16 @@ for f in os.listdir(large_path):
 predictions_information(large_df)
 num_large_kinases=np.sum(large_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
+print()
+
 # print("Number of sequences > 1500:",len(large_df))
 # print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
 clustered_rep_seq95_all_df=pd.concat([complete_small_df,large_df])
 predictions_information(clustered_rep_seq95_all_df)
+print()
 
+print("newrun_seqs")
+print()
 small_dfs=[]
 i_df={}
 seq_ids=np.array([])
@@ -142,7 +152,7 @@ complete_small_df=pd.concat(small_dfs)
 predictions_information(complete_small_df)
 num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
-
+print()
 
 large_df_0=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_0_predicted_03.csv"))
 large_df_1=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_1_predicted_03.csv"))
@@ -156,9 +166,11 @@ print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 # print(large_df)
 # kinase_large_df=large_df[large_df.iloc[:,3]==1]
 # print("Number of kinases with length > 1500:",len(kinase_large_df))
+print()
 
 newrun_seqs_all_df=pd.concat([complete_small_df,large_df])
 predictions_information(newrun_seqs_all_df)
+print()
 """
 
 
@@ -181,8 +193,10 @@ clustered_rep_seq95_kinase_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all
 newrun_seqs_kinase_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
 step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df])
 predictions_information(step_1_kinase_df)
+print()
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
-df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+# df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
