@@ -87,7 +87,7 @@ clustered_small_histidine_df_new=add_label(clustered_small_histidine_df_selected
 print(clustered_small_histidine_df_new.columns)
 clustered_large_histidine_df_selected=clustered_large_histidine_df.iloc[:,0:2]
 clustered_large_histidine_df_selected["pred"]=clustered_large_histidine_df.iloc[:,3]
-clustered_large_histidine_df_new=add_label(clustered_large_histidine_df,reverse_dict(other_label))
+clustered_large_histidine_df_new=add_label(clustered_large_histidine_df_selected,reverse_dict(other_label))
 print(clustered_large_histidine_df_new.columns)
 
 clustered_histidine_all_df=pd.concat([clustered_small_histidine_df_new,clustered_large_histidine_df_new])
@@ -154,6 +154,7 @@ print(np.unique(step_3_histidine_df.iloc[:,3]))
 print(np.unique(step_3_histidine_df.iloc[:,-1]))
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
