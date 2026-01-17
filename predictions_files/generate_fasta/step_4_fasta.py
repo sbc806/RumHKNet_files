@@ -64,8 +64,8 @@ predictions_information(newrun_all_df)
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
-      seq=df.iloc[i]
-      seq_id["seq_id"].iloc[i]
+      seq=df["seq"].iloc[i]
+      seq_id=df["seq_id"].iloc[i]
       pred=df.iloc[:,2].iloc[i]
       pred_other=df.iloc[:,3].iloc[i]
       f.write(">{seq_id},{seq},{pred},{pred_other}\n")
@@ -79,6 +79,7 @@ print(np.unique(step_4_df.iloc[:,3]))
 predictions_information(step_4_df)
 step_4_fasta_path="../../../RumHKNet_fasta/step_4_histidine_kinase_batch_clustered_newrun.fasta"
 df_to_fasta(step_4_df,step_4_fasta_path)
+
 
 
 
