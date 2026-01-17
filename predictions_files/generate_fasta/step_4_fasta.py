@@ -27,6 +27,17 @@ clustered_large_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq9
 print(clustered_large_df.columns)
 predictions_information(clustered_large_df)
 
+clustered_complete_small_df_selected=clustered_complete_small_df.iloc[:,0:2]
+clustered_complete_small_df_selected["pred"]=clustered_complete_small_df.iloc[:,3]
+clustered_large_df_selected=clustered_large_df.iloc[:,0:2]
+clustered_large_df_selected["pred"]=clustered_large_df.iloc[:,3]
+
+with open("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+  ko_label=json.load(f)
+clustered_complete_small_df_new=add_label(clustered_complete_small_df_selected,reverse_dict(ko_label))
+clustered_large_df_new=add_label(clustered_large_df_selected,reverse_dict(ko_label))
+clustered_all_df=pd.concat([clustered_complete_small_df_new,clustered_large_df_new])
+predictions_information(clustered_all_df)
 dir_path=os.path.join(predictions_path,"newrun_seqs_small_histidine_kinase_batch")
 small_dfs=[]
 for f in os.listdir(dir_path):
@@ -65,6 +76,7 @@ def df_to_fasta(df,fasta_path):
 step_4_df=pd.concat([clustered_all_df,newrun_all_df])
 step_4_fasta_path="../../../RumHKNet_fasta/step_4_histidine_kinase_batch_clustered_newrun.fasta")
 df_to_fasta(step_4_df,step_4_fasta_path)
+
 
 
 
