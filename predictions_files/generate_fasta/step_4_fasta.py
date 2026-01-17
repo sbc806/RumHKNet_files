@@ -78,7 +78,8 @@ print(np.unique(step_4_df.iloc[:,2]))
 print(np.unique(step_4_df.iloc[:,3]))
 predictions_information(step_4_df)
 step_4_fasta_path="../../../RumHKNet_fasta/step_4_histidine_kinase_batch_clustered_newrun.fasta"
-# df_to_fasta(step_4_df,step_4_fasta_path)
+df_to_fasta(step_4_df,step_4_fasta_path)
+
 
 
 
