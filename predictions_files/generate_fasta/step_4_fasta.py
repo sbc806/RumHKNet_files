@@ -1,4 +1,4 @@
-import osd as os
+import os as os
 import pandas as pd
 import numpy as np
 import sys
@@ -38,3 +38,4 @@ predictions_information(newrun_complete_small_df)
 newrun_large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_batch_predicted_03.csv"))
 print(newrun_large_df.columns)
 predictions_information(newrun_large_df)
+
