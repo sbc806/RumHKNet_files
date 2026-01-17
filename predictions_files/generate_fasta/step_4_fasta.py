@@ -1,9 +1,10 @@
+import json
 import os as os
 import pandas as pd
 import numpy as np
 import sys
 sys.path.append("..")
-from predictions_helpers import predictions_information
+from predictions_helpers import predictions_information, reverse_dict, add_label
 
 dataset_path="../../../predictions/predictions_results/step_4/clustered"
 predictions_path="../../../predictions/predicted_results/step_4/both/clustered"
@@ -42,8 +43,13 @@ newrun_complete_small_df_selected=newrun_complete_small_df.iloc[:,0:2]
 newrun_complete_small_df_selected["pred"]=newrun_complete_small_df.iloc[:,3]
 newrun_large_df_selected=newrun_large_df.iloc[:,0:2]
 newrun_large_df_selected["pred"]=newrun_large_df.iloc[:,3]
-newrun_complete_small_df_new=add_label(newrun_complete_small_df_selected)
-newrun_large_df_new=add_label(newrun_large_df_selected)
+
+with open("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+  ko_label=json.load(f)
+newrun_complete_small_df_new=add_label(newrun_complete_small_df_selected,reverse_dict(ko_label))
+newrun_large_df_new=add_label(newrun_large_df_selected,reverse_dict(ko_label))
+newrun_all_df=pd.concat([newrun_complete_small_df_new,newrun_large_df_new])
+
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
@@ -59,5 +65,6 @@ def df_to_fasta(df,fasta_path):
 step_4_df=pd.concat([clustered_all_df,newrun_all_df])
 step_4_fasta_path="../../../RumHKNet_fasta/step_4_histidine_kinase_batch_clustered_newrun.fasta")
 df_to_fasta(step_4_df,step_4_fasta_path)
+
 
 
