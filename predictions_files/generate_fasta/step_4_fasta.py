@@ -20,9 +20,9 @@ for f in os.listdir(dir_1_path):
   small_dfs.append(df)
   
 clustered_complete_small_df=pd.concat(small_dfs)
-print(clustered_complete_small_df)
+print(clustered_complete_small_df.columns)
 predictions_information(clustered_complete_small_df)
-clustered_large_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep95_seq_large_histidine_kinase_batch_predicted_03.csv"))
+clustered_large_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_batch_predicted_03.csv"))
 print(clustered_large_df.columns)
 predictions_information(clustered_large_df)
 
@@ -38,5 +38,6 @@ predictions_information(newrun_complete_small_df)
 newrun_large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_batch_predicted_03.csv"))
 print(newrun_large_df.columns)
 predictions_information(newrun_large_df)
+
 
 
