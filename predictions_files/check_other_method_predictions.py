@@ -6,8 +6,8 @@ from predictions_helpers import predictions_information
 predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
 clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
 new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
-predictions_information(clustered_df)
-predictions_information(new_seqs_df)
+# predictions_information(clustered_df)
+# predictions_information(new_seqs_df)
 
 total_ko=pd.read_csv("../../histidine_other_software/total_KO.txt",header=None)
 total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.txt",header=None)
@@ -23,6 +23,7 @@ for each_method in other_methods:
   print(len(new_seqs_df),len(each_method_df),np.sum(contained_2))
   each_method_df[contained_1].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_shared.txt",index=False)
   each_method_df[contained_2].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
+
 
 
 
