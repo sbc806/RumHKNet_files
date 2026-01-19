@@ -1,0 +1,14 @@
+import numpy as np
+import os as os
+import pandas as pd
+from predictions_helpers import predictions_information
+
+predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
+clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
+new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
+predictions_information(clustered_df)
+predictions_information(new_seqs_df)
+new_df=fasta_to_df("../../new/clustered95_RBAGs.fasta")
+print("Number of sequences in common between clustered_rep_seq95 and newrun_seqs:",clustered_df["seq_id"].isin(new_seqs_df["seq_id"].values))
+print("Number of sequences in common between clustered_rep_seq95 and new:", np/sum(clustered_df["seq_id"].isin(new_df["seq_id"].values)))
+print("Number of sequences in common between newrun_seqs and new:",np.sum(newrun_seqs["seq_id"].isin(new_df["seq_id"].values)))
