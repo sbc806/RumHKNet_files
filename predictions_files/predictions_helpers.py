@@ -34,6 +34,10 @@ def add_label(df,other_label):
   df["pred_other"]=pred_other
   return df
 
+def get_probs(full_df,desired_seq_id):
+  selected_df=full_df[full_df["seq_id"].isin(desired_seq_id[0])]
+  print(len(selected_df),len(desired_seq_id))
+  return selected_df
 
 
 
