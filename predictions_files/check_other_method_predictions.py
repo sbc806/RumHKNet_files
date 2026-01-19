@@ -9,8 +9,8 @@ new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv")
 predictions_information(clustered_df)
 predictions_information(new_seqs_df)
 """
-total_ko=pd.read_csv("../../histidine_other_methods/total_KO.txt",header=None)
-total_blastp3050=pd.read_csv("../../histidine_other_methods/total_blastp3050.txt",header=None)
+total_ko=pd.read_csv("../../histidine_other_software/total_KO.txt",header=None)
+total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.txt",header=None)
 print(total_ko)
 print(total_blastp3050)
 
@@ -20,4 +20,5 @@ for each_method in other_methods:
   contained_2=each_method.isin(new_seqs_df["seq_id"])
   print(len(clustered_df),len(each_method),np.sum(contained_1))
   print(len(new_seqs_df),len(each_method),np.sum(contained_2))
+
 
