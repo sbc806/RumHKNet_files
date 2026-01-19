@@ -30,7 +30,7 @@ total_blastp3050_clustered=pd.read_csv("../../histidine_other_software/total_bla
 total_blastp3050_newrun=pd.read_csv("../../histidine_other_software/total_blastp3050_newrun_seqs_shared.txt",header=None)
 print(len(total_ko_clustered),len(total_ko_newrun))
 print(len(total_blastp3050_clustered),len(total_blastp_3050_newrun))
-"""
+
 print("clustered_rep_seq95")
 print()
 small_dfs=[]
@@ -84,6 +84,7 @@ clustered_rep_seq95_all_df=pd.concat([complete_small_df,large_df_predicted])
 predictions_information(clustered_rep_seq95_all_df)
 print()
 
+total_ko_selected_df=
 print("newrun_seqs")
 print()
 desired=[i for i in range(0,2)]+['remaining']
@@ -122,6 +123,7 @@ step_2_histidine_df=pd.concat([clustered_rep_seq95_histidine_df,newrun_seqs_hist
 predictions_information(step_2_histidine_df)
 print()
 """
+
 
 
 
