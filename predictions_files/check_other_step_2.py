@@ -133,10 +133,11 @@ print(len(newrun_seqs_all_df),len(total_ko_newrun),len(total_ko_newrun_selected_
 bins,counts=np.histogram(total_ko_newrun_selected_df["prob"],bins=10)
 print(bins,counts)
 print("total_blastp3050")
-total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_blastp3050_newrun["seq_id"].values]
+total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_blastp3050_newrun["seq_id"].values)]
 print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
 bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
 print(bins,counts)
+
 
 
 
