@@ -90,7 +90,7 @@ print(len(clustered_rep_seq95_all_df),len(total_ko_clustered),len(total_ko_clust
 bins,counts=np.histogram(total_ko_clustered_selected_df["prob"],bins=10)
 print(bins,counts)
 print("total_blast3050")
-total_blastp3050_clustered_selected_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all["seq_id"].isin(total_blastp3050_clustered["seq_id"].values)]
+total_blastp3050_clustered_selected_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df["seq_id"].isin(total_blastp3050_clustered["seq_id"].values)]
 print(len(clustered_rep_seq95_all_df),len(total_blastp3050_clustered),len(total_blastp3050_clustered_selected_df))
 bins,counts=np.histogram(total_blastp3050_clustered_selected_df["prob"],bins=10)
 print(bins,counts)
@@ -137,6 +137,7 @@ total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_i
 print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
 bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
 print(bins,counts)
+
 
 
 
