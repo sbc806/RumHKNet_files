@@ -107,7 +107,7 @@ for i in desired:
   small_dfs.append(df)
   i_df[i]=df
 complete_small_df=pd.concat(small_dfs)
-predictions_information(complete_small_df)
+# predictions_information(complete_small_df)
 
 
 histidine=complete_small_df.iloc[:,3]==1
@@ -116,7 +116,7 @@ print("Number of histidine kinases <= 1500:",np.sum(histidine))
 print()
 
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
-predictions_information(large_df)
+# predictions_information(large_df)
 histidine=large_df.iloc[:,3]==1
 print("Number of histidine kinases > 1500:",np.sum(histidine))
 
@@ -124,15 +124,19 @@ print()
 
 large_df.columns=complete_small_df.columns
 newrun_seqs_all_df=pd.concat([complete_small_df,large_df])
-predictions_information(newrun_seqs_all_df)
+# predictions_information(newrun_seqs_all_df)
 print()
 
-clustered_rep_seq95_histidine_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
-newrun_seqs_histidine_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
-step_2_histidine_df=pd.concat([clustered_rep_seq95_histidine_df,newrun_seqs_histidine_df])
-predictions_information(step_2_histidine_df)
-print()
-
+print("total_KO")
+total_ko_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_ko["seq_id"].values)]
+print(len(newrun_seqs_all_df),len(total_ko_newrun),len(total_ko_newrun_selected_df))
+bins,counts=np.histogram(total_ko_newrun_selected_df["prob"],bins=10)
+print(bins,counts)
+print("total_blastp3050")
+total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_blastp3050_newrun["seq_id"].values]
+print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
+bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
+print(bins,counts)
 
 
 
