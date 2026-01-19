@@ -17,7 +17,7 @@ print(total_blastp3050)
 other_methods={"total_KO":total_ko,"total_blastp3050":total_blastp3050}
 for each_method in other_methods:
   each_method_df=other_methods[each_method]
-  
+  """
   contained_1=each_method_df.isin(clustered_df["seq_id"].values)
   contained_2=each_method_df.isin(new_seqs_df["seq_id"].values)
   print(len(clustered_df),len(each_method_df),np.sum(contained_1))
@@ -27,9 +27,11 @@ for each_method in other_methods:
   """
   contained_3=clustered_df["seq_id"].isin(total_ko[0])
   contained_4=newrun_seqs_df["seq_id"].isin(total_blastp3050[0])
-  print(len(clustered_df),len(each_method_df),np.sum(contained_3))
-  print(len(new_seqs_df),len(each_method_df),np.sum(contained_4))
-  """
+  print(len(clustered_df),len(each_method_df),np.sum(contained_3),np.where(~contained_3))
+  print(len(new_seqs_df),len(each_method_df),np.sum(contained_4),np.where(~contained_4))
+  clustered_df[contained_3].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_shared.txt",index=False)
+  newrun_seqs_df[contained_4].to_csv(f"../../hsitidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
+
 
 
 
