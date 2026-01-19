@@ -1,6 +1,7 @@
 import os as os
 import numpy as np
 import pandas as pd
+from predictions_helpers import predictions_information
 
 total_ko_clustered_rep_seq95=pd.read_csv("../../histidine_other_software/total_KO_clustered_rep_seq95_shared.txt")
 total_ko_newrun_seqs=pd.read_csv("../../histidine_other_software/total_KO_newrun_seqs_shared.txt")
@@ -21,6 +22,7 @@ bins,counts=np.histogram(total_blastp3050_clustered_rep_seq95["prob"],bins=10)
 print(bins,counts)
 bins,counts=np.histogram(total_blastp3050_newrun_seqs["prob"],bins=10)
 print(bins,counts)
+
 
 
 
