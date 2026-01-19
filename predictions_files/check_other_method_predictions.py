@@ -13,3 +13,10 @@ total_ko=pd.read_csv("../../histidine_other_methods/total_KO.txt",header=None)
 total_blastp3050=pd.read_csv("../../histidine_other_methods/total_blastp3050.txt",header=None)
 print(total_ko)
 print(total_blastp3050)
+
+other_methods=[total_ko,total_blast3050]
+for each_method in other_methods:
+  contained_1=each_method.isin(clustered_df["seq_id"])
+  contained_2=each_method.isin(new_seqs_df["seq_id"])
+  print(len(clustered_df),len(each_method),np.sum(contained_1))
+  print(len(new_seqs_df),len(each_method),np.sum(contained_2))
