@@ -24,12 +24,12 @@ def get_predictions_df(predictions_path,i):
   return df
 
 
-total_ko_clustered=pd.read_csv("../../histidine_other_software/total_KO_clustered_rep_seq95_shared.txt",header=None)
-total_ko_newrun=pd.read_csv("../../histidine_other_software/total_KO_newrun_seqs_shared.txt",header=None)
-total_blastp3050_clustered=pd.read_csv("../../histidine_other_software/total_blastp3050_clustered_rep_seq95_shared.txt",header=None)
-total_blastp3050_newrun=pd.read_csv("../../histidine_other_software/total_blastp3050_newrun_seqs_shared.txt",header=None)
+total_ko_clustered=pd.read_csv("../../histidine_other_software/total_KO_clustered_rep_seq95_shared.txt")
+total_ko_newrun=pd.read_csv("../../histidine_other_software/total_KO_newrun_seqs_shared.txt")
+total_blastp3050_clustered=pd.read_csv("../../histidine_other_software/total_blastp3050_clustered_rep_seq95_shared.txt")
+total_blastp3050_newrun=pd.read_csv("../../histidine_other_software/total_blastp3050_newrun_seqs_shared.txt")
 print(len(total_ko_clustered),len(total_ko_newrun))
-print(len(total_blastp3050_clustered),len(total_blastp_3050_newrun))
+print(len(total_blastp3050_clustered),len(total_blastp3050_newrun))
 
 print("clustered_rep_seq95")
 print()
@@ -137,6 +137,7 @@ total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_i
 print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
 bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
 print(bins,counts)
+
 
 
 
