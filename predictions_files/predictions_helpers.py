@@ -41,8 +41,11 @@ def get_probs(full_df,desired_seq_id):
 
 
 def fasta_to_df(fasta_path):
-  fasta_records={}
+  all_fasta=[]
   fasta_content=SeqIO.parse(open(fasta_path),"fasta")
   for i, fasta in enumerate(fasta_content):
+    seq_id,seq=fasta.id,fasta.seq
+    all_fasta.append({"seq_id":seq_id,"seq":seq})
+  return pd.DataFrame(all_fasta)
 
 
