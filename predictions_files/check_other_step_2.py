@@ -87,12 +87,12 @@ clustered_rep_seq95_all_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df
 print("total_KO")
 total_ko_clustered_selected_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df["seq_id"].isin(total_ko_clustered["seq_id"].values)]
 print(len(clustered_rep_seq95_all_df),len(total_ko_clustered),len(total_ko_clustered_selected_df))
-bins,counts=np.histogram(total_ko_clustered_selected_df["prob"],bins=10)
+bins,counts=np.histogram(total_ko_clustered_selected_df["prob"],bins=3)
 print(bins,counts)
 print("total_blast3050")
 total_blastp3050_clustered_selected_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df["seq_id"].isin(total_blastp3050_clustered["seq_id"].values)]
 print(len(clustered_rep_seq95_all_df),len(total_blastp3050_clustered),len(total_blastp3050_clustered_selected_df))
-bins,counts=np.histogram(total_blastp3050_clustered_selected_df["prob"],bins=10)
+bins,counts=np.histogram(total_blastp3050_clustered_selected_df["prob"],bins=3)
 print(bins,counts)
 
 print("newrun_seqs")
@@ -124,19 +124,21 @@ print()
 
 large_df.columns=complete_small_df.columns
 newrun_seqs_all_df=pd.concat([complete_small_df,large_df])
-# predictions_information(newrun_seqs_all_df)
+predictions_information(newrun_seqs_all_df)
+
 print()
 newrun_seqs_all_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==0]
 print("total_KO")
 total_ko_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_ko_newrun["seq_id"].values)]
 print(len(newrun_seqs_all_df),len(total_ko_newrun),len(total_ko_newrun_selected_df))
-bins,counts=np.histogram(total_ko_newrun_selected_df["prob"],bins=10)
+bins,counts=np.histogram(total_ko_newrun_selected_df["prob"],bins=3)
 print(bins,counts)
 print("total_blastp3050")
 total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_id"].isin(total_blastp3050_newrun["seq_id"].values)]
 print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
-bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
+bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=3)
 print(bins,counts)
+
 
 
 
