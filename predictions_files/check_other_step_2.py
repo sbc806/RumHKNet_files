@@ -6,8 +6,8 @@ sys.path.append("..")
 from predictions_helpers import predictions_information
 
 
-dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
-predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
+dataset_path="../../predictions/predictions_dataset/step_2/clustered"
+predictions_path="../../predictions/predicted_results/step_2/both/clustered"
 
 def get_predictions_df(predictions_path,i):
   prediction_files=os.listdir(predictions_path)
@@ -137,6 +137,7 @@ total_blastp3050_newrun_selected_df=newrun_seqs_all_df[newrun_seqs_all_df["seq_i
 print(len(newrun_seqs_all_df),len(total_blastp3050_newrun),len(total_blastp3050_newrun_selected_df))
 bins,counts=np.histogram(total_blastp3050_newrun_selected_df["prob"],bins=10)
 print(bins,counts)
+
 
 
 
