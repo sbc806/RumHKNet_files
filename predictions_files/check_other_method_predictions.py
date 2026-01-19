@@ -26,11 +26,12 @@ for each_method in other_methods:
   each_method_df[contained_2].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
   """
   contained_3=clustered_df["seq_id"].isin(total_ko[0])
-  contained_4=newrun_seqs_df["seq_id"].isin(total_blastp3050[0])
+  contained_4=new_seqs_df["seq_id"].isin(total_blastp3050[0])
   print(len(clustered_df),len(each_method_df),np.sum(contained_3),np.where(~contained_3))
   print(len(new_seqs_df),len(each_method_df),np.sum(contained_4),np.where(~contained_4))
   clustered_df[contained_3].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_shared.txt",index=False)
-  new_seqs_df[contained_4].to_csv(f"../../hsitidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
+  new_seqs_df[contained_4].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
+
 
 
 
