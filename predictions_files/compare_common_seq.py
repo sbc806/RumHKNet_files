@@ -60,8 +60,9 @@ get_information(new_df,total_ko,clustered_df,newrun_df,"total_KO")
 get_information(new_df,total_blastp3050,clustered_df,newrun_df,"total_blastp3050")
               
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
-new_only=(~new_df["seq_id"].isin(total_KO[0])&(~new_df["seq_id"].isin(total_blastp3050[0])&(~new_df["seq_id"].isin(clustered_df["seq_id"].values)&(~new_df["seq_id"].isin(newrun_df["seq_id"].values)
+new_only=(~new_df["seq_id"].isin(total_KO[0]))&(~new_df["seq_id"].isin(total_blastp3050[0]))&(~new_df["seq_id"].isin(clustered_df["seq_id"].values))&(~new_df["seq_id"].isin(newrun_df["seq_id"].values))
 new_df[new_only].to_csv("../../new/clustered_RBAGs_only.csv",index=False)
+
 
 
 
