@@ -1,6 +1,7 @@
 import numpy as np
 import os as os
 import pandas as pd
+from Bio import SeqIO
 
 def predictions_information(df):
   seq_id=df["seq_id"]
@@ -47,5 +48,6 @@ def fasta_to_df(fasta_path):
     seq_id,seq=fasta.id,fasta.seq
     all_fasta.append({"seq_id":seq_id,"seq":seq})
   return pd.DataFrame(all_fasta)
+
 
 
