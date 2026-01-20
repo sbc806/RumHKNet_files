@@ -4,9 +4,10 @@ import pandas as pd
 
 from predictions_helpers import predictions_information, fasta_to_df
 
-new_df=fasta_to_df("../../new/clustered95_RBAGs.fasta")
-print(new_df)
-new_df.to_csv("../../new/clustered95_RBAGs.csv",index=False)
+# new_df=fasta_to_df("../../new/clustered95_RBAGs.fasta")
+# print(new_df)
+# new_df.to_csv("../../new/clustered95_RBAGs.csv",index=False)
+new_df=pd.read_csv("../../new/clustered95_RBAGs.csv")
 predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
 clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
 new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
@@ -25,6 +26,7 @@ print(np.sum(contained_1),np.sum(contained_2),np.sum(extra))
 new_df[extra].to_csv("../../predictions/predictions_dataset/new_extra.csv",index=False)
 total_ko=pd.read_csv("../../histidine_other_software/total_KO.txt",header=None)
 total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.txt",header=None)
+
 
 
 
