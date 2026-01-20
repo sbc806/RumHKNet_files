@@ -45,9 +45,10 @@ def fasta_to_df(fasta_path):
   all_fasta=[]
   fasta_content=SeqIO.parse(open(fasta_path),"fasta")
   for i, fasta in enumerate(fasta_content):
-    seq_id,seq=fasta.id,fasta.seq
+    seq_id,seq=fasta.id,str(fasta.seq)
     all_fasta.append({"seq_id":seq_id,"seq":seq})
   return pd.DataFrame(all_fasta)
+
 
 
 
