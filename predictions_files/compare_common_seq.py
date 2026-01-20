@@ -58,7 +58,9 @@ get_information(new_df,total_ko,clustered_df,newrun_df,"total_KO")
 # Seuqneces in new and totalKO and clustered_rep_seq95
 # Sequences in new and total blastp3050 and not in newrun_seqs
 get_information(new_df,total_blastp3050,clustered_df,newrun_df,"total_blastp3050")
+              
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
+
 
 
 
