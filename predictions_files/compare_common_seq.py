@@ -32,7 +32,7 @@ print(len(total_blastp3050),np.unique(total_blastp3050[0]).shape)
 
 def get_information(df,method_df,clustered_df,newrun_df,method):
   common_1=df["seq_id"].isin(method_df[0])
-  df[common_1].to_csv(f"../../new_{method}_shared.csv")
+  df[common_1].to_csv(f"../../new_{method}_shared.csv",index=False)
   df_1=df[common_1]
   
   common_2=df_1["seq_id"].isin(clustered_df["seq_id"].values)
@@ -55,6 +55,7 @@ def get_information(df,method_df,clustered_df,newrun_df,method):
 # Sequences in new and total blastp3050 and not in newrun_seqs
 
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
+
 
 
 
