@@ -36,13 +36,15 @@ def get_information(df,method_df,clustered_df,newrun_df,method):
   df_1=df[common_1]
   
   common_2=df_1["seq_id"].isin(clustered_df["seq_id"].values)
-  df_1[common_2].to_csv(f"../../new_{method}_clustered_.csv",index=False)
+  df_1[common_2].to_csv(f"../../new_{method}_clustered.csv",index=False)
   
   common_3=df_1["seq_id"].isin(newrun_df["seq_id"].values)
-  df_1[common_3].to_csv(f"../../new_{method}_clustered.csv",index=False)
+  df_1[common_3].to_csv(f"../../new_{method}_newrun.csv",index=False)
   print(np.sum(common_3))
   
   not_common=(~df_1["seq_id"].isin(clustered_df["seq_id"].values)&(~df_1["seq_id"].isin(newrun_df["seq_id"].values))
+  df_1[not_common].to_csv(f"../../new_{method}_not_clustered_not_newrun.csv",index=False)
+  
   print(np.sum(common_1),np.sum(common_2),np.sum(common_3),np.sum(not_common))
 
               
@@ -55,6 +57,7 @@ def get_information(df,method_df,clustered_df,newrun_df,method):
 # Sequences in new and total blastp3050 and not in newrun_seqs
 
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
+
 
 
 
