@@ -30,16 +30,18 @@ total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.tx
 print(len(total_ko),np.unique(total_ko[0]).shape)
 print(len(total_blastp3050),np.unique(total_blastp3050[0]).shape)
 
-def get_information(df,method_df,clustered_df,newrun_df):
+def get_information(df,method_df,clustered_df,newrun_df,method):
   common_1=df["seq_id"].isin(method_df[0])
-  print(np.sum(common_1))
-  df[common_1].to_csv("../../new_{method}_shared.csv")
+  df[common_1].to_csv(f"../../new_{method}_shared.csv")
   df_1=df[common_1]
+  
   common_2=df_1["seq_id"].isin(clustered_df["seq_id"].values)
   df_1[common_2].to_csv(f"../../new_{method}_clustered_.csv",index=False)
+  
   common_3=df_1["seq_id"].isin(newrun_df["seq_id"].values)
   df_1[common_3].to_csv(f"../../new_{method}_clustered.csv",index=False)
   print(np.sum(common_3))
+  
   not_common=(df_1["seq_id"].isin(clustered_df["seq_id"].values)&(~df_1["seq_id"].isin(newrun_df["seq_id"].values))
   print(np.sum(common_1),np.sum(common_2),np.sum(common_3),np.sum(not_common))
 
@@ -53,6 +55,7 @@ def get_information(df,method_df,clustered_df,newrun_df):
 # Sequences in new and total blastp3050 and not in newrun_seqs
 
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
+
 
 
 
