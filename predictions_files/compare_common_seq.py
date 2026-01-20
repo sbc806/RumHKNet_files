@@ -18,7 +18,13 @@ predictions_information(new_seqs_df)
 print("Number of sequences in common between clustered_rep_seq95 and newrun_seqs:",np.sum(clustered_df["seq_id"].isin(new_seqs_df["seq_id"].values)))
 print("Number of sequences in common between clustered_rep_seq95 and new:", np.sum(clustered_df["seq_id"].isin(new_df["seq_id"].values)))
 print("Number of sequences in common between newrun_seqs and new:",np.sum(newrun_seqs["seq_id"].isin(new_df["seq_id"].values)))
-
+contained_1=new_df["seq_id"].isin(clustered_rep_seq95_df["seq_id"].values)
+contained_2=new_df["seq_id"].isin(newrun_seqs["seq_id"].values)
+extra=~contained_1&~contained_2
+print(np.sum(contained_1),np.sum(contained_2),np.sum(extra))
+new_df[extra].to_csv("../../predictions/predictions_dataset/new_extra.csv",index=False)
+total_ko=pd.read_csv("../../histidine_other_software/total_KO.txt",header=None)
+total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.txt",header=None)
 
 
 
