@@ -43,7 +43,7 @@ def get_information(df,method_df,clustered_df,newrun_df,method):
   df_1[common_3].to_csv(f"../../new/clustered95_RBAGs_{method}_newrun_shared.csv",index=False)
   print(np.sum(common_3))
   
-  not_common=(~df_1["seq_id"].isin(clustered_df["seq_id"].values)&(~df_1["seq_id"].isin(newrun_df["seq_id"].values)
+  not_common=(~df_1["seq_id"].isin(clustered_df["seq_id"].values))&(~df_1["seq_id"].isin(newrun_df["seq_id"].values))
   df_1[not_common].to_csv(f"../../new/clustered95_RBAGs_{method}_not_clustered_not_newrun.csv",index=False)
   
   print(np.sum(common_1),np.sum(common_2),np.sum(common_3),np.sum(not_common))
@@ -62,6 +62,7 @@ get_information(new_df,total_blastp3050,clustered_df,newrun_df,"total_blastp3050
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
 new_only=(~new_df["seq_id"].isin(total_KO[0])&(~new_df["seq_id"].isin(total_blastp3050[0])&(~new_df["seq_id"].isin(clustered_df["seq_id"].values)&(~new_df["seq_id"].isin(newrun_df["seq_id"].values)
 new_df[new_only].to_csv("../../new/clustered_RBAGs_only.csv",index=False)
+
 
 
 
