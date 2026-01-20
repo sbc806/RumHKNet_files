@@ -19,6 +19,7 @@ newrun_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.cs
 print("Number of sequences in common between clustered_rep_seq95 and newrun_seqs:",np.sum(clustered_df["seq_id"].isin(newrun_seqs_df["seq_id"].values)))
 print("Number of sequences in common between clustered_rep_seq95 and new:", np.sum(clustered_df["seq_id"].isin(new_df["seq_id"].values)))
 print("Number of sequences in common between newrun_seqs and new:",np.sum(newrun_seqs_df["seq_id"].isin(new_df["seq_id"].values)))
+
 contained_1=new_df["seq_id"].isin(clustered_rep_seq95_df["seq_id"].values)
 contained_2=new_df["seq_id"].isin(newrun_seqs_df["seq_id"].values)
 extra=~contained_1&~contained_2
@@ -36,6 +37,7 @@ total_blastp3050=pd.read_csv("../../histidine_other_software/total_blastp3050.tx
 # Sequences in new and total blastp3050 and not in newrun_seqs
 
 # Seuqneces not in clustered_rep_seq95, newrun_seqs, exclusive totalKO, and total blastp3050
+
 
 
 
