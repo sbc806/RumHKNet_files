@@ -67,44 +67,7 @@ def df_to_fasta(df,fasta_path):
       f.write(seq)
       if i < len(df)-1:
         f.write("\n")
-
-"""
-complete_predictions_df=None
-df_kinases=None
-num_kinases=0 
-for i in range(0,4):
-  df_i_full=i_df[i]
-  df_i=df_i_full[df_i_full.iloc[:,3]==1]
-  num_kinases=num_kinases+len(df_i)
-  print(f"Number of histidine kinases predicted for {i}:",len(df_i))
-  fasta_i_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_small_histidine_kinase.fasta")
-  # fasta_i=df_to_fasta(df_i,fasta_i_path)
-  if df_kinases is None:
-    complete_predictions_df=df_i_full
-    df_kinases=df_i
-  else:
-    complete_predictions_df=pd.concat([complete_predictions_df,df_i_full])
-    df_kinases=pd.concat([df_kinases,df_i])
-# df_kinases.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered","clustered_rep_seq95_small_histidine_kinase.csv"),index=False)
-complete_small_df=pd.concat(small_dfs)
-print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
-print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
-print("Number of total histidine kinases:",num_kinases)  
-
-large_df=pd.read_csv(os.path.join(dataset_path,"clustered_rep_seq95_large_sorted_kinase.csv"))
-large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"),header=None)
-print("Number of shared seq_id:",np.sum(large_df.iloc[:,0].values==large_df_predicted.iloc[:,0].values))
-print("Number of shared seq:",np.sum(large_df.iloc[:,1].values==large_df_predicted.iloc[:,1].values))
-print("Number of unique seq_id:",np.unique(large_df_predicted.iloc[:,0].values).shape)
-print("Number of unique seq:",np.unique(large_df_predicted.iloc[:,1].values).shape)
-large_df_predicted.columns=["seq_id","seq","prob","label"]
-print(large_df_predicted)
-large_histidine_df_predicted=large_df_predicted[large_df_predicted.iloc[:,3]==1]
-print("Number of histidine kinases predicted for sequences with length >1500:",len(large_histidine_df_predicted))
-fasta_large_path=os.path.join("../predictions/predictions_dataset/step_3/clustered",f"clustered_rep_seq95_large_histidine_kinase.fasta")
-# fasta_large=df_to_fasta(large_histidine_df_predicted,fasta_large_path)
-# large_histidine_df_predicted.iloc[:,0:2].to_csv(os.path.join("../predictions/predictions_dataset/step_3/clustered/clustered_rep_seq95_large_histidine_kinase.csv"),index=False)
-"""
+        
 large_df_predicted=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_kinase_predicted_03.csv"),header=None)
 large_df_predicted.columns=["seq_id","seq","prob","label"]
 predictions_information(large_df_predicted)
@@ -134,18 +97,12 @@ predictions_information(complete_small_df)
 
 histidine=complete_small_df.iloc[:,3]==1
 print("Number of histidine kinases <= 1500:",np.sum(histidine))
-# small_histidine_df=complete_small_df[histidine].iloc[:,0:2]
-# print(small_histidine_df)
-# small_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_small_histidine_kinase.csv"),index=False)
 print()
 
 large_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_kinase_predicted_03.csv"))
 predictions_information(large_df)
 histidine=large_df.iloc[:,3]==1
 print("Number of histidine kinases > 1500:",np.sum(histidine))
-# large_histidine_df=large_df[histidine].iloc[:,0:2]
-# print(large_histidine_df)
-# large_histidine_df.to_csv(os.path.join("../../predictions/predictions_dataset/step_3/clustered/newrun_seqs_large_histidine_kinase.csv"),index=False)
 print()
 
 large_df.columns=complete_small_df.columns
@@ -160,6 +117,7 @@ predictions_information(step_2_histidine_df)
 print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
 df_to_fasta(step_2_histidine_df,step_2_fasta_path)
+
 
 
 
