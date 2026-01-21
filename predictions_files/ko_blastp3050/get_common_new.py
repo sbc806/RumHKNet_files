@@ -14,6 +14,7 @@ print(len(total_blastp3050))
 print(np.unique(new_seqs["seq_id"]).shape)
 print(np.unique(total_ko[0]).shape)
 print(np.unique(total_blastp3050[0]).shape)
+print(np.sum(total_ko.isin(total_blastp3050[0])))
 
 contained_total_ko=new_seqs["seq_id"].isin(total_ko[0])
 print(np.sum(contained_total_ko))
@@ -24,6 +25,7 @@ print(np.sum(contained_total_blastp3050))
 new_seqs[contained_total_blastp3050].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared.csv",index=False)
 
 np.sum(contained_total_ko&contained_total_blastp3050)
+
 
 
 
