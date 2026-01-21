@@ -9,7 +9,7 @@ total_ko=pd.read_csv("../../../histidine_other_software/total_KO.txt",header=Non
 total_blastp3050=pd.read_csv("../../../histidine_other_software/total_blastp3050.txt",header=None)
 
 print(len(total_ko))
-print(total_blastp3050))
+print(len(total_blastp3050))
 
 print(np.unique(new_seqs["seq_id"]).shape)
 print(np.unique(total_ko[0]).shape)
@@ -24,5 +24,6 @@ print(np.sum(contained_total_blastp3050))
 new_seqs[contained_total_blastp3050].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared.csv",index=False)
 
 np.sum(contained_total_ko&contained_total_blastp3050)
+
 
 
