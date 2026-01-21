@@ -43,13 +43,14 @@ new_ko_shared[smaller].to_csv("../../../predictions/predictions_dataset/step_2/c
 new_ko_shared[~smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared_large.csv",index=False)
 """
 
-new_blastp3050_shared=pd.read_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared.csv")
+new_blastp3050_shared=pd.read_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared.csv")
 print(new_blastp3050_shared)
 predictions_information(new_blastp3050_shared)
 smaller=new_blastp3050_shared["seq"].str.len()<=1500
 print(np.sum(smaller))
 new_blastp3050_shared[smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_small.csv",index=False)
 new_blastp3050_shared[~smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_large.csv",index=False)
+
 
 
 
