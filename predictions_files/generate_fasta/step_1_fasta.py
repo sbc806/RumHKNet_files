@@ -52,10 +52,7 @@ for i in range(0,28):
   else:
     print("None")
   print()
-
-# print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
-# print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
-      
+  
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
@@ -67,9 +64,6 @@ def df_to_fasta(df,fasta_path):
         f.write("\n")
 
 complete_small_df=pd.concat(small_dfs)
-# print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
-# print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
-# print("Number of total kinases:",num_kinases)
 predictions_information(complete_small_df)
 num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
@@ -88,8 +82,6 @@ num_large_kinases=np.sum(large_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
 print()
 
-# print("Number of sequences > 1500:",len(large_df))
-# print("Number of kinases for sequences > 1500:",np.sum(large_df.iloc[:,3]==1))
 large_df.columns=complete_small_df.columns
 clustered_rep_seq95_all_df=pd.concat([complete_small_df,large_df])
 predictions_information(clustered_rep_seq95_all_df)
@@ -173,24 +165,7 @@ large_df_all_1.columns=complete_small_df.columns
 newrun_seqs_all_df=pd.concat([complete_small_df,large_df_all_1])
 predictions_information(newrun_seqs_all_df)
 print()
-"""
 
-
-newrun_seqs_small_0=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_0.csv")
-newrun_seqs_small_1=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_1.csv")
-small_kinase_df=complete_predictions_df[complete_predictions_df.iloc[:,3]==1]
-print(small_kinase_df)
-print(len(newrun_seqs_small_0)+len(newrun_seqs_small_1))
-seq_id=np.concat([newrun_seqs_small_0["seq_id"].values,newrun_seqs_small_1["seq_id"].values])
-print(seq_id.shape)
-print(np.unique(seq_id).shape)
-contained=small_kinase_df["seq_id"].isin(seq_id)
-print("contained:",np.sum(contained))
-not_contained_df=small_kinase_df[~contained].iloc[:,0:2]
-print("not contained:",len(not_contained_df))
-print(not_contained_df)
-not_contained_df.to_csv("../../predictions/predictions_dataset/step_2/clustered/newrun_seqs_small_kinase_remaining.csv",index=False)
-"""
 clustered_rep_seq95_kinase_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
 newrun_seqs_kinase_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
 step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df])
@@ -198,6 +173,7 @@ predictions_information(step_1_kinase_df)
 print()
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
