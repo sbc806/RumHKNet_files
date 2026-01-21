@@ -139,13 +139,21 @@ newrun_seqs_all_df=pd.concat([complete_small_df,large_df_all_1])
 predictions_information(newrun_seqs_all_df)
 print()
 
-clustered_rep_seq95_kinase_df=clustered_rep_seq95_all_df[clustered_rep_seq95_all_df.iloc[:,3]==1]
-newrun_seqs_kinase_df=newrun_seqs_all_df[newrun_seqs_all_df.iloc[:,3]==1]
+clustered95_rbags=pd.read_csv("../../../new/clustered95_RBAGs.csv")
+contained_1=clustered_rep_seq95_all_df["seq_id"].isin(clustered95_rbags["seq_id"].values)
+clustered_rep_seq95_new_df=clustered_rep_seq95_all_df[contained_1
+
+contained_2=newrun_seqs_all_df["seq_id"].isin(clustered95_rbags["seq_id"].values)
+newrun_seqs_new_df=newrun_seqs_all_df[contained_2]
+
+clustered_rep_seq95_kinase_df=clustered_rep_seq95_new_df[clustered_rep_seq95_new_df.iloc[:,3]==1]
+newrun_seqs_kinase_df=newrun_seqs_new_df[newrun_seqs_new_df.iloc[:,3]==1]
 step_1_kinase_df=pd.concat([clustered_rep_seq95_kinase_df,newrun_seqs_kinase_df])
 predictions_information(step_1_kinase_df)
 print()
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
