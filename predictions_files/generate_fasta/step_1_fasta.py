@@ -116,32 +116,8 @@ for i in range(0,8):
   else:
     print("None")
   print()
-"""
-print("Number of sequences <= 1500:",np.unique(seq_ids).shape)
-print("Number of unique sequences <= 1500:",np.unique(seqs).shape)
-      
-complete_predictions_df=None
-df_kinases=None
-num_kinases=0 
-selected=[0,1,2,3,4,5,6,7]
-for i in selected:
-  df_i_full=i_df[i]
-  df_i=df_i_full[df_i_full.iloc[:,3]==1]
-  num_kinases=num_kinases+len(df_i)
-  print(f"Number of kinases predicted for {i}:",len(df_i))
-  fasta_i_path=os.path.join("../predictions/predictions_dataset/step_2/clustered",f"newrun_seqs_small_kinase.fasta")
-  # fasta_i=df_to_fasta(df_i,fasta_i_path)
-  if df_kinases is None:
-    complete_predictions_df=df_i_full
-    df_kinases=df_i
-  else:
-    complete_predictions_df=pd.concat([complete_predictions_df,df_i_full])
-    df_kinases=pd.concat([df_kinases,df_i])
-"""
+
 complete_small_df=pd.concat(small_dfs)
-# print("Number of shared seq_id:",np.sum(complete_small_df["seq_id"].values==complete_predictions_df["seq_id"].values))
-# print("Number of shared seq:",np.sum(complete_small_df["seq"].values==complete_predictions_df["seq"].values))
-# print("Number of total kinases:",num_kinases)  
 predictions_information(complete_small_df)
 num_small_kinases=np.sum(complete_small_df.iloc[:,3]==1)
 print("Number of predicted kinases for sequences <= 1500:",num_small_kinases)
@@ -156,9 +132,6 @@ large_df_all_1=pd.concat([large_df_all[not_contained],large_df_12211])
 predictions_information(large_df_all_1)
 num_large_kinases=np.sum(large_df_all_1.iloc[:,3]==1)
 print("Number of predicted kinases for sequences > 1500:",num_large_kinases)
-# print(large_df)
-# kinase_large_df=large_df[large_df.iloc[:,3]==1]
-# print("Number of kinases with length > 1500:",len(kinase_large_df))
 print()
 
 large_df_all_1.columns=complete_small_df.columns
@@ -173,6 +146,7 @@ predictions_information(step_1_kinase_df)
 print()
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun.fasta")
 df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
