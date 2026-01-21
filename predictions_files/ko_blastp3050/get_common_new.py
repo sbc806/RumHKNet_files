@@ -48,8 +48,11 @@ print(new_blastp3050_shared)
 predictions_information(new_blastp3050_shared)
 smaller=new_blastp3050_shared["seq"].str.len()<=1500
 print(np.sum(smaller))
-new_blastp3050_shared[smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_small.csv",index=False)
+end=600000
+new_blastp3050_shared[smaller][0:end].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_small_0.csv",index=False)
+new_blastp3050_shared[smaller][end:].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_small_1.csv",index=False)
 new_blastp3050_shared[~smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared_large.csv",index=False)
+
 
 
 
