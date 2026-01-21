@@ -39,7 +39,8 @@ predictions_information(new_ko_shared)
 smaller=new_ko_shared["seq"].str.len()<=1500
 print(np.sum(smaller))
 new_ko_shared[smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared_small.csv",index=False)
-new_ko_large[~smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared_large.csv",index=False)
+new_ko_shared[~smaller].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared_large.csv",index=False)
+
 
 
 
