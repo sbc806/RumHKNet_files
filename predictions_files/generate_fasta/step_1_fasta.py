@@ -152,7 +152,7 @@ print(len(clustered95_rbags),len(clustered_rep_seq95_new_df),len(newrun_seqs_new
 step_1_entire_predictions_df=pd.concat([clustered_rep_seq95_new_df,newrun_seqs_new_df])
 predictions_information(step_1_entire_predictions_df)
 print(np.sum(step_1_entire_predictions_df.iloc[:,3]==1))
-step_1_entire_predictions_df.to_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
+step_1_entire_predictions_df.to_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv",index=False)
 
 clustered_rep_seq95_kinase_df=clustered_rep_seq95_new_df[clustered_rep_seq95_new_df.iloc[:,3]==1]
 newrun_seqs_kinase_df=newrun_seqs_new_df[newrun_seqs_new_df.iloc[:,3]==1]
@@ -161,6 +161,7 @@ predictions_information(step_1_kinase_df)
 print()
 step_1_fasta_path=os.path.join("../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags.fasta")
 df_to_fasta(step_1_kinase_df,step_1_fasta_path)
+
 
 
 
