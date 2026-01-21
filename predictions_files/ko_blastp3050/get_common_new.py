@@ -17,11 +17,12 @@ print(np.unique(total_blastp3050[0]).shape)
 
 contained_total_ko=new_seqs["seq_id"].isin(total_ko[0])
 print(np.sum(contained_total_ko))
-new_seqs[contained_total_ko].to_csv("../../predictions/predictions_dataset/step_2/clustered/new_ko_shared.csv",index=False)
+new_seqs[contained_total_ko].to_csv("../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_ko_shared.csv",index=False)
 
 contained_total_blastp3050=new_seqs["seq_id"].isin(total_blastp3050[0])
 print(np.sum(contained_total_blastp3050))
-new_seqs[contained_total_blastp3050].to_csv("../../../predictions/predictions_dataset/step_2/clustered/new_blastp3050_shared.csv",index=False)
+new_seqs[contained_total_blastp3050].to_csv("../../../predictions/predictions_dataset/step_2/clustered/2025_01_20_new_blastp3050_shared.csv",index=False)
 
 np.sum(contained_total_ko&contained_total_blastp3050)
+
 
