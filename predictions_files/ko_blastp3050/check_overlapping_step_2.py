@@ -73,6 +73,11 @@ for each_interval in intervals:
   selected_rows=get_interval(total_blastp3050_df,min_prob,max_prob)  
   print(min_prob,max_prob,len(selected_rows))
 
+print(np.histogram(total_ko_df.iloc[:,2],bins=10))
+print(np.histogram(total_blastp3050_df.iloc[:,2],bins=10))
+
+print(total_ko_df["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values))
+print(total_blastp3050["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values))
 
 
 
