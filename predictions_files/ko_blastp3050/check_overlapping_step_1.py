@@ -9,6 +9,7 @@ dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
 predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
 
 step_1_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
+step_1_predicted_rbag_kinase_df=step_1_predicted_rbag_df[step_1_predicted_rbag_df.iloc[:,3]==1]
 # step_2_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
 # step_2_predicted_rbag_histidine_df=step_2_predicted_rbag_df[step_2_predicted_rbag_df.iloc[:,3]==1]
 
@@ -49,10 +50,11 @@ total_blastp3050_large_df.columns=total_blastp3050_small_df.columns
 total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_df])
 predictions_information(total_blastp3050_df)
 
-predictions_information(step_2_predicted_rbag_df)
+# predictions_information(step_1_predicted_rbag_df)
 
 print()
-print("Number of histidine kinases predicted in step 2 using RumHKNet and threshold 0.3:",np.sum(step_2_predicted_rbag_df.iloc[:,3]==1))
+print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.3:",np.sum(step_1_predicted_rbag_df.iloc[:,3]==1))
+print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.2:",np.sum(step_2_predicted_rbag_df.iloc[:,2]>=0.2))
 print("Number of histidine kinases in common with total_KO:",np.sum(step_2_predicted_rbag_histidine_df["seq_id"].isin(total_ko_df["seq_id"].values)))
 print("Number of histidine kinases in common with total_blastp3050:",np.sum(step_2_predicted_rbag_histidine_df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
 print()
@@ -80,6 +82,7 @@ print(np.histogram(total_blastp3050_df["prob_step_1"],bins=10))
 print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
 print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
   
+
 
 
 
