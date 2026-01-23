@@ -52,6 +52,10 @@ predictions_information(total_blastp3050_df)
 
 # predictions_information(step_1_predicted_rbag_df)
 
+step_1_predicted_rbag_df.index=step_1_predicted_rbag_df["seq_id"].values
+total_ko_df["prob_step_1"]=step_1_predicted_rbag_df[total_ko_df["seq_id"].values]["prob"]
+total_blastp3050_df["prob_step_1"]=step_1_predicted_rbag_df[total_blastp3050_df["seq_id"].values]["prob"]
+
 print()
 print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.3:",np.sum(step_1_predicted_rbag_df.iloc[:,3]==1))
 print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.2:",np.sum(step_1_predicted_rbag_df.iloc[:,2]>=0.2))
@@ -64,7 +68,7 @@ intervals=[[0.0,0.1],[0.1,0.2],[0.2,0.3],[0.3,0.4],[0.4,0.5],[0.5,0.6],[0.6,0.7]
 for each_interval in intervals:
   min_prob=each_interval[0]
   max_prob=each_interval[1]
-  selected_rows=get_interval(total_ko_df,min_prob,max_prob)
+  selected_rows=get_interval(total_ko_df,min_prob,max_prob,column="prob_step_1")
   print(min_prob,max_prob,len(selected_rows))
 
 print()
@@ -73,7 +77,7 @@ print("total_blastp3050")
 for each_interval in intervals:
   min_prob=each_interval[0]
   max_prob=each_interval[1]
-  selected_rows=get_interval(total_blastp3050_df,min_prob,max_prob)  
+  selected_rows=get_interval(total_blastp3050_df,min_prob,max_prob,column="prob_step_1")  
   print(min_prob,max_prob,len(selected_rows))
 
 print(np.histogram(total_ko_df["prob_step_1"],bins=10))
@@ -82,6 +86,7 @@ print(np.histogram(total_blastp3050_df["prob_step_1"],bins=10))
 print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
 print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
   
+
 
 
 
