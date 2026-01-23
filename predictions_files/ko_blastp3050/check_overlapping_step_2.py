@@ -25,13 +25,13 @@ print("total_blastp3050")
 total_blastp3050_small_dir_path_0=os.path.join(predictions_path,'total_blastp3050_small_kinase_0')
 total_blastp3050_small_dir_path_1=os.path.join(predictions_path,'total_blastp3050_small_kinase_1')
 total_blastp3050_small_dfs=[]
-for f in os.listdir(total_blastp3050_small_dir_path_0):
+for f in os.listdir(total_blastp3050_small_dir_path_0)[:-1]:
   df=pd.read_csv(os.path.join(total_blastp3050_small_dir_path_0,f))
-  print(f,df)
+  # print(f,df)
   total_blastp3050_small_dfs.append(df)
 for f in os.listdir(total_blastp3050_small_dir_path_1):
   df=pd.read_csv(os.path.join(total_blastp3050_small_dir_path_1,f))
-  print(f,df)
+  # print(f,df)
   total_blastp3050_small_dfs.append(df)
 
 total_blastp3050_large_path=os.path.join(predictions_path,"2025_01_20_new_blastp3050_shared_large_predicted_03.csv")
@@ -48,6 +48,7 @@ total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_
 predictions_information(total_blastp3050_df)
 
 predictions_information(step_2_predicted_rbag_df)
+
 
 
 
