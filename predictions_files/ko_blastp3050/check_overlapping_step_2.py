@@ -43,4 +43,5 @@ total_blastp3050_large_df.columns=total_blastp3050_small_df.columns
 total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_df])
 predictions_information(total_blastp3050_df)
 
-predictions_information(step_2_rbag_predicted_df)
+predictions_information(step_2_predicted_rbag_df)
+
