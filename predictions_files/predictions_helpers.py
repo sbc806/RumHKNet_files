@@ -49,11 +49,12 @@ def fasta_to_df(fasta_path):
     all_fasta.append({"seq_id":seq_id,"seq":seq})
   return pd.DataFrame(all_fasta)
 
-def get_interval(df,min_prob,max_prob):
-  min_rows=df.iloc[:,2]>min_prob
-  max_rows=df.iloc[:,2]<=max_prob
+def get_interval(df,min_prob,max_prob,column="prob"):
+  min_rows=df[column]>min_prob
+  max_rows=df[column]<=max_prob
   selected_rows=df[min_rows&max_rows]
   return selected_rows
+
 
 
 
