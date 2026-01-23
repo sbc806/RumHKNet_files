@@ -121,7 +121,7 @@ contained_2=newrun_seqs_all_df["seq_id"].isin(step_1_kinase_prediction_df["seq_i
 print("contained_2:",np.sum(contained_2))
 newrun_seqs_new_df=newrun_seqs_all_df[contained_2]
 
-print(len(step_1_prediction_df), len(clustered_rep_seq95_new_df),len(newrun_seqs_new_df),len(clustered_rep_seq95_new_df)+len(newrun_seqs_new_df))
+print(len(step_1_kinase_prediction_df), len(clustered_rep_seq95_new_df),len(newrun_seqs_new_df),len(clustered_rep_seq95_new_df)+len(newrun_seqs_new_df))
 step_2_histidine_kinase_prediction_df=pd.concat([clustered_rep_seq95_new_df,newrun_seqs_new_df])
 predictions_information(step_2_histidine_kinase_prediction_df)
 print(np.sum(step_2_histidine_kinase_prediction_df.iloc[:,3]==1))
@@ -138,6 +138,7 @@ df_to_fasta(step_2_histidine_df,step_2_fasta_path)
 print(step_2_histidine_kinase_prediction_df.columns)
 print(np.sum(step_2_histidine_kinase_prediction_df.iloc[:,2]>=0.3),0.3)
 print(np.sum(step_2_histidine_kinase_prediction_df.iloc[:,2]>=0.2),0.2)
+
 
 
 
