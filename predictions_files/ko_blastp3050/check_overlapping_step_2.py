@@ -3,7 +3,7 @@ import os as os
 import numpy as np
 import sys
 sys.path.append("..")
-from predictions_helpers import predictions_information
+from predictions_helpers import predictions_information, get_interval
 
 dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
 predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
@@ -72,6 +72,7 @@ for each_interval in intervals:
   max_prob=each_interval[1]
   selected_rows=get_interval(total_blastp3050_df,min_prob,max_prob)  
   print(min_prob,max_prob,len(selected_rows))
+
 
 
 
