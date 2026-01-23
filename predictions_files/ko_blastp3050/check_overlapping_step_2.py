@@ -13,7 +13,7 @@ step_2_rbag_predicted_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_new
 print("total_KO")
 total_ko_small_dir_paths=os.path.join(predictions_path,"total_ko_small_kinase")
 total_ko_small_dfs=[]
-for f in os.lsitdir(total_ko_small_dir_path):
+for f in os.listdir(total_ko_small_dir_path):
   df=pd.read_csv(os.path.join(total_ko_small_dir_path,f))
   total_ko_small_dfs.apepnd(df)
 
@@ -42,3 +42,4 @@ tottal_blastp3050_small_df=pd.concat(total_blastp3050_small_dfs)
 total_blastp3050_large_df.columns=total_blastp3050_small_df.columns
 total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_df])
 predictions_information(total_blastp3050_df)
+
