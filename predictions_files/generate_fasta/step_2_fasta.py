@@ -132,6 +132,10 @@ print()
 step_2_fasta_path="../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun.fasta"
 df_to_fasta(step_2_histidine_df,step_2_fasta_path)
 
+print(step_1_prediction_df.columns)
+print(np.sum(step_1_prediction_df.iloc[:,2]>=0.3),0.3)
+print(np.sum(step_1_prediction_df.iloc[:,2]>=0.2),0.2)
+
 
 
 
