@@ -114,7 +114,7 @@ print(large_histidine_df["top1_label"])
 
 
 print("newrun_seqs")
-newrun_small_histidine_df=make_df(os.path.join(predictions_path,"newrun_small_histidine_kinase"))
+newrun_small_histidine_df=make_df(os.path.join(predictions_path,"newrun_seqs_small_histidine_kinase"))
 predictions_information(newrun_small_histidine_df)
 
 newrun_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
@@ -172,6 +172,7 @@ step_3_histidine_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_
 # step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun_rbags.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
