@@ -113,10 +113,12 @@ step_1_prediction_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_
 print(step_1_prediction_df)
 step_1_kinase_prediction_df=step_1_prediction_df[step_1_prediction_df.iloc[:,3]==1]
 
-contained_1=clustered_rep_seq95_all_df["seq_id"].isin(step_1_kinase_prediction_df["seq_id"])
+contained_1=clustered_rep_seq95_all_df["seq_id"].isin(step_1_kinase_prediction_df["seq_id"].values)
+print("contained_1:",np.sum(contained_1))
 clustered_rep_seq95_new_df=clustered_rep_seq95_all_df[contained_1]
 
-contained_2=newrun_seqs_all_df["seq_id"].isin(step_1_kinase_prediction_df["seq_id"])
+contained_2=newrun_seqs_all_df["seq_id"].isin(step_1_kinase_prediction_df["seq_id"].values)
+print("contained_2:",np.sum(contained_2))
 newrun_seqs_new_df=newrun_seqs_all_df[contained_2]
 
 print(len(step_1_prediction_df), len(clustered_rep_seq95_new_df),len(newrun_seqs_new_df),len(clustered_rep_seq95_new_df)+len(newrun_seqs_new_df))
@@ -136,6 +138,7 @@ df_to_fasta(step_2_histidine_df,step_2_fasta_path)
 print(step_2_histidine_kinase_prediction_df.columns)
 print(np.sum(step_2_histidine_kinase_prediction_df.iloc[:,2]>=0.3),0.3)
 print(np.sum(step_2_histidine_kinase_prediction_df.iloc[:,2]>=0.2),0.2)
+
 
 
 
