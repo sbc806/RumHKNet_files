@@ -77,8 +77,8 @@ for each_interval in intervals:
 print(np.histogram(total_ko_df.iloc[:,2],bins=10))
 print(np.histogram(total_blastp3050_df.iloc[:,2],bins=10))
 
-print(total_ko_df["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values))
-print(total_blastp3050_df["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values))
+print(np.sum(total_ko_df["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values)))
+print(np.sum(total_blastp3050_df["seq_id"].isin(step_2_predicted_rbag_df["seq_id"].values)))
 
 print()
 print("total_ko")
@@ -86,6 +86,7 @@ for each_interval in intervals:
   min_prob=each_interval[0]
   max_prob=each_interval[1]
   
+
 
 
 
