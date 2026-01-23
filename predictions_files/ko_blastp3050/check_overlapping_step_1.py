@@ -54,7 +54,7 @@ predictions_information(total_blastp3050_df)
 
 print()
 print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.3:",np.sum(step_1_predicted_rbag_df.iloc[:,3]==1))
-print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.2:",np.sum(step_2_predicted_rbag_df.iloc[:,2]>=0.2))
+print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.2:",np.sum(step_1_predicted_rbag_df.iloc[:,2]>=0.2))
 print("Number of kinases in common with total_KO:",np.sum(step_1_predicted_rbag_kinase_df["seq_id"].isin(total_ko_df["seq_id"].values)))
 print("Number of kinases in common with total_blastp3050:",np.sum(step_1_predicted_rbag_kinase_df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
 print()
@@ -82,6 +82,7 @@ print(np.histogram(total_blastp3050_df["prob_step_1"],bins=10))
 print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
 print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
   
+
 
 
 
