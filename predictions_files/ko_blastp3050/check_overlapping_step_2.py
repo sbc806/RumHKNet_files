@@ -9,6 +9,7 @@ dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
 predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
 
 step_2_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
+step_2_predicted_rbag_histidine_df=step_2_predicted_rbag_df[step_2_predicted_rbag_df.iloc[:,3]==1]
 
 print("total_KO")
 total_ko_small_dir_path=os.path.join(predictions_path,"total_ko_small_kinase")
@@ -49,6 +50,11 @@ predictions_information(total_blastp3050_df)
 
 predictions_information(step_2_predicted_rbag_df)
 
+print()
+print("Number of histidine kinases predicted in step 2 using RumHKNet and threshold 0.3:",np.sum(step_2_predicted_rbag_df.iloc[:,3]==1))
+print("Number of histidine kinases in common with total_KO:",np.sum(step_2_predicted_rbag_histidine_df["seq_id"].isin(total_ko_df["seq_id"].values)))
+print("Number of histidine kinases in common with total_blastp3050:",np.sum(step_2_predicted_rbag_histidine_df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
+print()
 
 
 
