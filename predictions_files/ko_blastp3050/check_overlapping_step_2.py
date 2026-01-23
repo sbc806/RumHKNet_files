@@ -8,7 +8,7 @@ from predictions_helpers import predictions_information
 dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
 predictions_path="../../../predictions/predicted_results/step_2/clustered/both"
 
-step_2_rbag_predicted_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
+step_2_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
 
 print("total_KO")
 total_ko_small_dir_paths=os.path.join(predictions_path,"total_ko_small_kinase")
@@ -44,4 +44,5 @@ total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_
 predictions_information(total_blastp3050_df)
 
 predictions_information(step_2_predicted_rbag_df)
+
 
