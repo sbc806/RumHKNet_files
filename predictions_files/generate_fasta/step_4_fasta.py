@@ -73,15 +73,24 @@ def df_to_fasta(df,fasta_path):
       if i<len(df)-1:
         f.write("\n")
 
-step_4_df=pd.concat([clustered_all_df,newrun_all_df])
+# step_4_df=pd.concat([clustered_all_df,newrun_all_df])
+
 step_2_predicred_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
 step_2_predicted_rbag_histidine_df=step_2_predicted_rbag_df[step_2_predicted_rbag_df.iloc[:,3]==1]
-contained_1=step_4_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
+
+contained_1=clustered_all_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
+clustered_new_df=custered_all_df[contained_1]
+contained_2=newrun_all_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
+newrun_new_df=newrun_all_df[contained_2]
+print(len(step_2_predicted_rbag_histidine_df),len(clustered_new_df),len(newrun_new_df),len(clustered_new_df)+len(newrun_new_df))
+
+step_4_df=pd.concat([clustered_new_df,newrun_new_df])
 print(np.unique(step_4_df.iloc[:,2]))
 print(np.unique(step_4_df.iloc[:,3]))
 predictions_information(step_4_df)
 step_4_fasta_path="../../../RumHKNet_fasta/step_4_histidine_kinase_batch_clustered_newrun.fasta"
 df_to_fasta(step_4_df,step_4_fasta_path)
+
 
 
 
