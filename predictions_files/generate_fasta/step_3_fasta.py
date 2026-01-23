@@ -162,7 +162,7 @@ contained_1=clustered_histidine_all_df["seq_id"].isin(step_2_predicted_rbag_hist
 clustered_histidine_new_df=clustered_histidine_all_df[contained_1]
 contained_2=newrun_histidine_all_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
 newrun_histidine_new_df=newrun_histidine_all_df[contained_2]
-print(np.sum(step_2_predicted_rbag_histidine_df),len(clustered_histidine_new_df),len(newrun_histidine_new_df),len(clustered_histidine_new_df)+len(newrun_histidine_new_df))
+print(len(step_2_predicted_rbag_histidine_df),len(clustered_histidine_new_df),len(newrun_histidine_new_df),len(clustered_histidine_new_df)+len(newrun_histidine_new_df))
 
 step_3_histidine_df=pd.concat([clustered_histidine_new_df,newrun_histidine_new_df])
 predictions_information(step_3_histidine_df)
@@ -172,6 +172,7 @@ step_3_histidine_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_
 # step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun_rbags.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
+
 
 
 
