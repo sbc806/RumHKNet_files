@@ -40,12 +40,13 @@ total_ko_large_df.columns=total_ko_small_df.columns
 total_ko_df=pd.concat([total_ko_small_df,total_ko_large_df])
 predictions_information(total_ko_df)
 
-tottal_blastp3050_small_df=pd.concat(total_blastp3050_small_dfs)
+total_blastp3050_small_df=pd.concat(total_blastp3050_small_dfs)
 total_blastp3050_large_df.columns=total_blastp3050_small_df.columns
 total_blastp3050_df=pd.concat([total_blastp3050_small_df,total_blastp3050_large_df])
 predictions_information(total_blastp3050_df)
 
 predictions_information(step_2_predicted_rbag_df)
+
 
 
 
