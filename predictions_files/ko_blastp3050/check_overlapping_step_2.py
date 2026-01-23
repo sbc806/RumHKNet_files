@@ -56,6 +56,21 @@ print("Number of histidine kinases in common with total_KO:",np.sum(step_2_predi
 print("Number of histidine kinases in common with total_blastp3050:",np.sum(step_2_predicted_rbag_histidine_df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
 print()
 
+prin("total_KO")
+intervals=[[0.0,0.1],[0.1,0.2],[0.2,0.3],[0.3,0.4],[0.4,0.5],[0.5],[0.6,0.7],[0.7,0.8],[0.8,0.9],[0.9,1.0]]
+for each_interval_in eintervals:
+min=each_interval[0]
+  max=each)interval[1]
+print(min_prob,max_prob,len(selected_rows))
+
+print()
+print("total_blastp3050")
+
+for each_interval in intervals:
+  min_prob=each_interval[0]
+  max_prob=each_interval[1]
+  selected_rows=get_interval(total_blastp3050_df,min_prob,max_prob)  
+  print(min_prob,max_prob,len(selected_rows))
 
 
 
