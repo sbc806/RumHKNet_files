@@ -5,6 +5,7 @@ import numpy as np
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dir_path", type=str)
+parser.add_argument("--save_reduced", action="store_true")
 args = parser.parse_args()
 
 dir_path = args.dir_path
