@@ -88,6 +88,10 @@ print(np.histogram(total_blastp3050_df["prob_step_1"],bins=10))
 print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
 print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)))
   
+step_1_predicted_rbag_02_df=step_1_predicted_rbag_df[step_1_predicted_rbag_df.iloc[:,2]>=0.2]
+not_contained=~step_1_predicted_rbag_02_df["seq_id"].isin(step_1_predicted_rbag_df["seq_id"].values)
+print("Number of kinases not contained:",np.sum(not_contained))
+step_1_predicted_rbag_02_df.to_csv("../../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv",index=False)
 
 
 
