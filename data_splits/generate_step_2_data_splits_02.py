@@ -17,10 +17,11 @@ for i in range(0,num_splits):
   start=i*split_size
   end=start+split_size
   step_1_rbag_02_small_df_i=step_1_rbag_02_small_df[start:end]
-  step_1_rbag_02_small_df_i.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_small_{i}.csv",index=False)
+  # step_1_rbag_02_small_df_i.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_small_{i}.csv",index=False)
   dfs.append(step_1_rbag_02_small_df_i)
 print(len(step_1_rbag_02_small_df),len(pd.concat(dfs)))
-step_1_rbag_02_large_df.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_large.csv",index=False)
+# step_1_rbag_02_large_df.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_large.csv",index=False)
+
 
 
 
