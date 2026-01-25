@@ -32,7 +32,7 @@ for i, each_df in enumerate(split_dfs):
   if "batch" in each_df.columns:
     batches = each_df["batch"]
     print(f"Batches for {split_names[i]}: {np.unique(batches)}")
-
+  print(each_df["seq"].str.len())
 if args.save_reduced:
   print(dev_df)
   dev_reduced_df = dev_df[["seq_id","seq"]]
