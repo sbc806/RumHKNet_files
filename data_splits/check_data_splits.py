@@ -6,6 +6,7 @@ import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument("--dir_path", type=str)
 parser.add_argument("--save_reduced", action="store_true")
+parser.add_argument("--save_path", type=str)
 args = parser.parse_args()
 
 dir_path = args.dir_path
@@ -32,4 +33,7 @@ for i, each_df in enumerate(split_dfs):
     batches = each_df["batch"]
     print(f"Batches for {split_names[i]}: {np.unique(batches)}")
 
-
+if args.save_reduced:
+  dev_reduced_df = dev_df[:,["seq_id","seq"]]
+  print(dev_reduced_df)
+  dev_reduced_df.to_csv(args.save_path, index=False)
