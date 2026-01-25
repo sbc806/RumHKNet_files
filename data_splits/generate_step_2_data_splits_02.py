@@ -6,6 +6,7 @@ sys.path.append("..")
 from predictions_files.predictions_helpers import predictions_information
 
 step_1_rbag_02_df=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv")
+print(step_1_rbag_02_df)
 predictions_information(step_1_rbag_02_df)
 step_1_rbag_02_small_df=step_1_rbag_02_df[step_1_rbag_02_df["seq"].str.len()<=1500]
 step_1_rbag_02_large_df=step_1_rbag_02_df[step_1_rbag_02_df["seq"].str.len()>1500]
@@ -21,6 +22,7 @@ for i in range(0,num_splits):
   dfs.append(step_1_rbag_02_small_df_i)
 print(len(step_1_rbag_02_small_df),len(pd.concat(dfs)))
 # step_1_rbag_02_large_df.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_large.csv",index=False)
+
 
 
 
