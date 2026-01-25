@@ -1,8 +1,12 @@
 import os as os
 import pandas as pd
 import numpy as np
+import sys
+sys.path.append("..")
+from predictions_files.predictions_helpers import predictions_information
 
 step_1_rbag_02_df=pd.read_csv("../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv")
+predictions_nformation(step_1_rbag_02_df)
 split_size=900000
 num_splits=len(step_1_rbag_02_df)//split_size+1
 dfs=[]
@@ -13,6 +17,7 @@ for i in range(0,num_splits):
   step_1_rbag_02_df_i.to_csv(f"../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained_{i}.csv",index=False)
   dfs.append(step_1_rbag_02_df_i)
 print(len(step_1_rbag_02_df),len(pd.concat(dfs)))
+
 
 
 
