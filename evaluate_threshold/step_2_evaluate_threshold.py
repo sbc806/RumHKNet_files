@@ -26,7 +26,7 @@ for threshold in thresholds:
   threshold_f=[]
   for f in prediction_csv:
     pattern=rf"train_\d_predicted_{threshold}.csv"
-    if re.match(pattern,f):
+    if re.search(pattern,f):
       threshold_f.append(f)
   threshold_f.append(os.path.join(predictions_dir_path,f))
   threshold_files[threshold]=sorted(threshold_f)
@@ -37,9 +37,9 @@ def stack_csvs(files):
     df=pd.read_csv(f)
     dfs.append(df)
   return pd.concat(dfs)
-threshold_df={}
-for threshold in threshold_files:
-  threshold_df[threshold]=stack_csvs(threshold_files[threshold]).reset_index(drop=True)
+# threshold_df={}
+# for threshold in threshold_files:
+  # threshold_df[threshold]=stack_csvs(threshold_files[threshold]).reset_index(drop=True)
 """
 df_07=stack_csvs(threshold_files["07"])
 df_07=df_07.reset_index(drop=True)
