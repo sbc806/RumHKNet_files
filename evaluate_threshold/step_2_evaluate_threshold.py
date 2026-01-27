@@ -76,6 +76,13 @@ df_07=df_07.reset_index(drop=True)
 df_09=stack_csvs(threshold_files["09"])
 df_0=df_09.reset_index(drop=True)
 print(len(df_02),len(df_035),len(df_05),len(df_07),len(df_09))
+all_dfs=[df_02,df_035,df_05,df_07,df_09]
+for i in range(0,len(all_dfs)-1):
+  for j in range(0,len(all_dfs)):
+    df_i=all_dfs[i]
+    df_j=all_dfs[j]
+    difference=df_i["prob"]-df_j["prob"]
+    print(i,j,len(df_i),len(df_j)
 print()
 print("Training accuracy")
 print(df_02)
