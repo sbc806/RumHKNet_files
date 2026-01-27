@@ -88,6 +88,13 @@ df_07=stack_csvs(threshold_files["07"])
 df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
 print(df_07)
+
+df_02=stack_csvs(threshold_files["02"])
+df_02=df_02.reset_index(drop=True)
+
+df_05=stack_csvs(threshold_files["05"])
+df_05=df_05.reset_index(drop=True)
+
 split_dir_path=os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
