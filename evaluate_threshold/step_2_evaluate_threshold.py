@@ -47,7 +47,7 @@ print("Number of examples:",len(df_07))
 print(df_07)
 """
 
-split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class")
+split_dir_path=os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
 """
@@ -93,7 +93,7 @@ step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_dir_path,"extra_p_2
 print(step_2_dev_predicted_df)
 print(step_2_dev_df)
 print("Number of examples in validation set:",len(step_2_dev_df))
-print("Number of examples in common:",lennp.sum(step_2_dev_df["seq_id"]==step_2_dev_predicted_df["seq_id"]))
+print("Number of examples in common:",np.sum(step_2_dev_df["seq_id"]==step_2_dev_predicted_df["seq_id"]))
 for threshold in thresholds:
   predictions=step_2_dev_predicted_df["prob"]>=threshold
   labels=step_2_dev_df["label"]
