@@ -94,7 +94,7 @@ print(df_02)
 print(train_df)
 print("Number of examples in training set:",len(train_df))
 print("Number of examples in common:",np.sum(train_df["seq_id"]==df_02["seq_id"]))
-thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
+thresholds=[0.1,0.2,0.25,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
   predictions=df_02["prob"]>=threshold
   labels=train_df["label"]
