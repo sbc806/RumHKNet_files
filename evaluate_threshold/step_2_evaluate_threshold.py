@@ -28,7 +28,6 @@ for threshold in thresholds:
   for f in prediction_csv:
     pattern=rf"train_\d_predicted_{threshold}.csv"
     if re.search(pattern,f):
-      threshold_f.append(f)
       threshold_f.append(os.path.join(predictions_dir_path,f))
   threshold_files[threshold]=sorted(threshold_f)
   print(threshold,threshold_files[threshold])
