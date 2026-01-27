@@ -103,7 +103,7 @@ for threshold in thresholds:
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
 print()
-"""
+
 print("Validation accuracy")
 step_2_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class/dev/dev.csv"))
 step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_dir_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
@@ -118,4 +118,4 @@ for threshold in thresholds:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
-"""
+
