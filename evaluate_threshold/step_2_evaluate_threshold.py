@@ -64,7 +64,7 @@ for threshold in threshold_df:
   print("Threshold:",threshold,"Accuracy:",accuracy,"Correct:",correct,"Total:",total)
 """
 
-print("Training accuracy")
+# print("Training accuracy")
 df_02=stack_csvs(threshold_files["02"])
 df_035=stack_csvs(threshold_files["035"])
 df_05=stack_csvs(threshold_files["05"])
@@ -72,6 +72,7 @@ df_07=stack_csvs(threshold_files["07"])
 df_09=stack_csvs(threshold_files["09"])
 print(len(df_02),len(df_035),len(df_05),len(df_07),len(df_09))
 print()
+print("Training accuracy")
 print(df_02)
 thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
