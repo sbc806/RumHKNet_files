@@ -46,6 +46,7 @@ df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
 print(df_07)
 """
+"""
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
@@ -60,6 +61,7 @@ for threshold in threshold_df:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Correct:",correct,"Total:",total)
+"""
 
 print("Training accuracy")
 df_02=threshold_df["02"]
@@ -73,6 +75,7 @@ for threshold in thresholds:
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
 print()
+
 print("Validation accuracy")
 step_2_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class/dev/dev.csv"))
 step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
