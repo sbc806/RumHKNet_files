@@ -112,7 +112,7 @@ for threshold in thresholds:
   correct=np.sum(predictions.values==labels.values)
   total=len(labels)
   accuracy=correct/total
-  print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall":,recall_score(labels.values,predictions.values))
+  print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
 print()
 
 print("Validation accuracy")
