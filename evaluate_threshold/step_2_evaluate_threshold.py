@@ -46,10 +46,11 @@ df_07=df_07.reset_index(drop=True)
 print("Number of examples:",len(df_07))
 print(df_07)
 """
-"""
+
 split_dir_path=os.path.join(dir_path,"sbc806/RumHKNet/kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
+"""
 labels=train_df["label"]
 print("Number of examples in training set:",len(train_df))
 print(train_df)
@@ -73,6 +74,9 @@ print(len(df_02),len(df_035),len(df_05),len(df_07),len(df_09))
 print()
 print("Training accuracy")
 print(df_02)
+print(train_df)
+print("Number of examples in training set:",len(train_df))
+print("Number of examples in common:",np.sum(train_df["seq_id"]==df_02["seq_id"]))
 thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
   predictions=df_02["prob"]>=threshold
