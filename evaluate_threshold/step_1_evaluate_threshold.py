@@ -97,7 +97,14 @@ df_05=stack_csvs(threshold_files["05"])
 df_05=df_05.reset_index(drop=True)
 
 print(len(df_07),len(df_02),len(df_05))
-
+all_df_0=[threshold_files["02"][0],threshood_files["05"][0],threshold_files["07"][1]]
+for i in range(0,len(all_df_0)-1):
+  for j in range(i+1,len(all_df_0)):
+    df_i=pd.read_csv(all_df_0[i])
+    df_j=pd.read_csv(all_df_0[j])
+    difference=df_i["prob"]-df_j["prob"]
+    print(np.mean(difference),np.min(difference),np.max(difference))
+    
 split_dir_path=os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
