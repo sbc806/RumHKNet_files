@@ -131,6 +131,11 @@ print()
 print("Validation accuracy")
 step_1_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class/dev/dev.csv"))
 step_1_non_kinases_preprocessed_dev_predicted_df=pd.read_csv(os.path.join(predictions_dir_path,"step_1_non_kinases_preprocessed_dev_predicted_03_v2.csv"))
+print(step_1_non_kinases_preprocessed_dev_predicted_df)
+print("Number of examples in validation set:",len(step_1_dev_df))
+print(step_1_dev_df)
+print("Number of common rows:",np.sum(step_1_dev_df["seq_id"]==step_1_non_kinases_preprocessed_dev_predicted_df["seq_id"]))
+
 for threshold in thresholds:
   predictions=step_1_non_kinases_preprocessed_dev_predicted_df["prob"]>=threshold
   labels=step_1_dev_df["label"]
