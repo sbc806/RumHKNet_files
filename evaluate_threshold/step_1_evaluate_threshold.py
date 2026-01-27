@@ -108,7 +108,7 @@ for i in range(0,len(all_df_0)-1):
     difference_argmin=np.argmin(difference)
     difference_argmax=np.argmax(difference)
     print(df_i.iloc[difference_argmin]["prob"],df_j.iloc[difference_argmin]["prob"])
-    print(df_i.iloc[dfference_argmax]["prob"],df_j.iloc[difference_argmax]["prob"])
+    print(df_i.iloc[difference_argmax]["prob"],df_j.iloc[difference_argmax]["prob"])
 print()
 
 split_dir_path=os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
