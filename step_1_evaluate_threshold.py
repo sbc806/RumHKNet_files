@@ -20,6 +20,7 @@ for f in prediction_csv_filtered:
 for threshold in threshold_files:
   threshold_files[threshold]=sorted(threshold_files[threshold])
 """
+print("Training accuracy")
 thresholds=["02","05","07"]
 threshold_files={}
 for threshold in thresholds:
