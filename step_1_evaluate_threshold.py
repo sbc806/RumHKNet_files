@@ -23,10 +23,10 @@ for threshold in threshold_files:
 thresholds=["02","05","07"]
 threshold_files={}
 for threshold in thresholds:
-  threshold_files=[]
+  threshold_f=[]
   for f in prediction_csv:
     if re.search(rf"train_\d_predicted_{threshold}.csv"):
-      threshold_files.append(os.path.join(predictions_dir_path,f))
+      threshold_f.append(os.path.join(predictions_dir_path,f))
   threhsold_files[threshold]=sorted(threshold_f)
   print(threshold,threshold_files[threshold])
   
