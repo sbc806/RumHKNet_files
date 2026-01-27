@@ -99,7 +99,7 @@ thresholds=[0.1,0.2,0.25,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
   predictions=df_07["prob"]>=threshold
   labels=train_df["label"]
-  correct=np.sum(predictions==labels)
+  correct=np.sum(predictions.values==labels.values)
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
@@ -111,7 +111,7 @@ step_1_non_kinases_preprocessed_dev_predicted_df=pd.read_csv(os.path.join(predic
 for threshold in thresholds:
   predictions=step_1_non_kinases_preprocessed_dev_predicted_df["prob"]>=threshold
   labels=step_1_dev_df["label"]
-  correct=np.sum(predictions==labels)
+  correct=np.sum(predictions.values==labels.values)
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
