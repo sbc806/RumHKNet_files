@@ -64,7 +64,13 @@ for threshold in threshold_df:
 """
 
 print("Training accuracy")
-df_02=threshold_df["02"]
+df_02=stack_csvs(threshold_files["02"])
+df_035=stack_csvs(threshold_files["035"])
+df_05=stack_csvs(threshold_files["05"])
+df_07=stack_csvs(threshold_files["07"])
+df_09=stack_csvs(threshold_files["09"])
+print(len(df_02),len(df_035),len(df_05),len(df_07),len(df_09))
+print()
 print(df_02)
 thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
 for threshold in thresholds:
@@ -75,7 +81,7 @@ for threshold in thresholds:
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
 print()
-
+"""
 print("Validation accuracy")
 step_2_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class/dev/dev.csv"))
 step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
@@ -90,3 +96,4 @@ for threshold in thresholds:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
+"""
