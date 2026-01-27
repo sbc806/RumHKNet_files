@@ -104,7 +104,8 @@ for i in range(0,len(all_df_0)-1):
     df_j=pd.read_csv(all_df_0[j])
     difference=df_i["prob"]-df_j["prob"]
     print(np.mean(difference),np.min(difference),np.max(difference))
-    
+print()
+
 split_dir_path=os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
