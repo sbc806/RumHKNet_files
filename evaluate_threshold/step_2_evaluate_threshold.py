@@ -1,7 +1,8 @@
 import numpy as np
 import os as os
 import pandas as pd
-impo rt re
+import re
+from sklearn.metrics import precision_score, recall_score
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 predictions_dir_path=os.path.join(dir_path,"predictions/predicted_results/step_2/both")
