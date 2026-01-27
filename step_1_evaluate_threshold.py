@@ -56,6 +56,7 @@ for threshold in thresholds:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
+print()
 
 print("Validation accuracy")
 step_1_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class/dev/dev.csv"))
