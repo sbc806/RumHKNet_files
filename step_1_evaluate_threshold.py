@@ -27,7 +27,9 @@ for threshold in thresholds:
   for f in prediction_csv:
     if re.search(rf"train_\d_predicted_{threshold}.csv"):
       threshold_files.append(os.path.join(predictions_dir_path,f))
-    
+  threhsold_files[threshold]=sorted(threshold_f)
+  print(threshold,threshold_files[threshold])
+  
 def stack_csvs(files):
   dfs=[]
   for f in files:
