@@ -1,10 +1,12 @@
 import numpy as np
 import os as os
 import pandas as pd
+import re
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 predictions_dir_path=os.path.join(dir_path,"predictions/predicted_results/step_1/both")
 prediction_csv=os.listdir(predictions_dir_path)
+"""
 prediction_csv_filtered=[ f for f in prediction_csv if "five_sequences" not in f]
 threshold_files={}
 for f in prediction_csv_filtered:
@@ -17,6 +19,7 @@ for f in prediction_csv_filtered:
 
 for threshold in threshold_files:
   threshold_files[threshold]=sorted(threshold_files[threshold])
+"""
 
 def stack_csvs(files):
   dfs=[]
