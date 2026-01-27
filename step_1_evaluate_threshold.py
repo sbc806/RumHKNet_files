@@ -44,6 +44,7 @@ for threshold in thresholds:
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
 
+print("Validation accuracy")
 step_1_dev_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class/dev/dev.csv")
 step_1_non_kinases_preprocessed_dev_predicted_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/step_1_non_kinases_preprocessed_dev_predicted_03_v2.csv")
 for threshold in thresholds:
