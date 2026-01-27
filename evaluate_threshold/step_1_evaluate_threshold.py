@@ -1,6 +1,7 @@
 import numpy as np
 import os as os
 import pandas as pd
+from sklearn.metrics import precision_score, recall_score
 
 """
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
