@@ -87,7 +87,7 @@ for i in range(0,len(all_dfs)-1):
     difference_argmin=np.argmin(difference)
     difference_argmax=np.argmax(difference)
     print(df_i.iloc[difference_argmin]["prob"],df_j.iloc[difference_argmin]["prob"])
-    print(df_i.iloc[difference_argmax]["prob"],df_j.iloc["difference_argmax]["prob"])
+    print(df_i.iloc[difference_argmax]["prob"],df_j.iloc[difference_argmax]["prob"])
 print()
 print("Training accuracy")
 print(df_02)
