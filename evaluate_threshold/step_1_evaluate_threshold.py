@@ -96,6 +96,8 @@ df_02=df_02.reset_index(drop=True)
 df_05=stack_csvs(threshold_files["05"])
 df_05=df_05.reset_index(drop=True)
 
+print(len(df_07),len(df_02),len(df_05))
+
 split_dir_path=os.path.join(dir_path,"kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class")
 train_path=os.path.join(split_dir_path,"train/train.csv")
 train_df=pd.read_csv(train_path)
@@ -110,7 +112,7 @@ for threshold in thresholds:
   correct=np.sum(predictions.values==labels.values)
   total=len(labels)
   accuracy=correct/total
-  print("Threshold:",threshold,"Accuracy:",accuracy)
+  print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall":,recall_score(labels.values,predictions.values))
 print()
 
 print("Validation accuracy")
@@ -122,5 +124,5 @@ for threshold in thresholds:
   correct=np.sum(predictions.values==labels.values)
   total=len(labels)
   accuracy=correct/total
-  print("Threshold:",threshold,"Accuracy:",accuracy)
+  print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
   
