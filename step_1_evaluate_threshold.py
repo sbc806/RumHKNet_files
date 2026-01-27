@@ -20,7 +20,9 @@ for f in prediction_csv_filtered:
 for threshold in threshold_files:
   threshold_files[threshold]=sorted(threshold_files[threshold])
 """
-
+thresholds=["02","05","07"]
+for f in prediction_csv:
+  if re.search(rf"train_\d_predicted_{threshold}.csv")
 def stack_csvs(files):
   dfs=[]
   for f in files:
