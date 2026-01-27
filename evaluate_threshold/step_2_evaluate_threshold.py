@@ -85,7 +85,7 @@ print()
 """
 print("Validation accuracy")
 step_2_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class/dev/dev.csv"))
-step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
+step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_dir_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
 print(step_2_dev_predicted_df)
 print(step_2_dev_df)
 print("Number of examples in validation set:",len(step_2_dev_df))
