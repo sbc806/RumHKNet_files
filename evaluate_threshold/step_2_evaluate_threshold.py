@@ -82,7 +82,12 @@ for i in range(0,len(all_dfs)-1):
     df_i=all_dfs[i]
     df_j=all_dfs[j]
     difference=df_i["prob"]-df_j["prob"]
-    print(i,j,len(df_i),len(df_j)
+    print(i,j,len(df_i),len(df_j),np.sum(df_i["seq_id"]==df_j["seq_id"]))
+    print(np.mean(difference),np.min(difference),np.max(difference))
+    difference_argmin=np.argmin(difference)
+    difference_argmax=np.argmax(difference)
+    print(df_i.iloc[difference_argmin]["prob"],df_j.iloc[difference_argmin]["prob"])
+    print(df_i.iloc[difference_argmax]["prob"],df_j.iloc["difference_argmax]["prob"])
 print()
 print("Training accuracy")
 print(df_02)
