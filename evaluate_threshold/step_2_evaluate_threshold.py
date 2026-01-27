@@ -60,6 +60,8 @@ for threshold in threshold_df:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy,"Correct:",correct,"Total:",total)
+
+print("Training accuracy")
 df_02=threshold_df["02"]
 print(df_02)
 thresholds=[0.2,0.3,0.35,0.4,0.5,0.7,0.9]
@@ -70,4 +72,18 @@ for threshold in thresholds:
   total=len(labels)
   accuracy=correct/total
   print("Threshold:",threshold,"Accuracy:",accuracy)
-
+print()
+print("Validation accuracy")
+step_2_dev_df=pd.read_csv(os.path.join(dir_path,"kinases_dataset/extra_p_2_class_v3_kinases_only/protein/binary_class/dev/dev.csv"))
+step_2_dev_predicted_df=pd.read_csv(os.path.join(predictions_path,"extra_p_2_class_v3_kinases_only_dev_predicted_03_v2.csv"))
+print(step_2_dev_predicted_df)
+print(step_2_dev_df)
+print("Number of examples in validation set:",len(step_2_dev_df))
+print("Number of examples in common:",lennp.sum(step_2_dev_df["seq_id"]==step_2_dev_predicted_df["seq_id"]))
+for threshold in thresholds:
+  predictions=step_2_dev_predicted_df["prob"]>=threshold
+  labels=step_2_dev_df["label"]
+  correct=np.sum(predictions==labels)
+  total=len(labels)
+  accuracy=correct/total
+  print("Threshold:",threshold,"Accuracy:",accuracy,"Precision:",precision_score(labels.values,predictions.values),"Recall:",recall_score(labels.values,predictions.values))
