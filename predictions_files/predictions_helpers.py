@@ -56,19 +56,21 @@ def get_interval(df,min_prob,max_prob,column="prob"):
   return selected_rows
 
 def get_total_ko_predictions():
-  small_df=get_dir_df("../../predictions/predicted_results/step_2/both/clustered/total_ko_small_kinase")
+  complete_small_df=get_dir_df("../../predictions/predicted_results/step_2/both/clustered/total_ko_small_kinase")
   large_df=pd.read_csv("../../../predictions/predicted_results/step_2/both/clustered/2025_01_20_new_ko_shared_large_predicted_03.csv")
-  complete_df=pd.concat(small_df,large_df])
+  complete_df=pd.concat([complete_small_df,large_df])
   return complete_df
 
 def get_total_blastp3050_predictions():
   small_dfs=[]
   for i in range(0,2):
-    small_df=get_dir_df(os.path.join("../../predictions/predicted_results/step_2/both/clustered_/total_blastp3050_small_kinase_{i}")
+    small_df=get_dir_df(f"../../predictions/predicted_results/step_2/both/clustered_/total_blastp3050_small_kinase_{i}")
     small_dfs.append(sall_df)
+  complete_small_df=pd.concat(small_dfs)
   large_df=pd.read_csv("../../../predictions/predicted_results/step_2/both/clustered/2025_01_20_new_blastp3050_shared_large_predicted_03.csv")
-  complete_df=pd.concat([small_df,large_df])
+  complete_df=pd.concat([complete_small_df,large_df])
   return complete_df
+
 
 
 
