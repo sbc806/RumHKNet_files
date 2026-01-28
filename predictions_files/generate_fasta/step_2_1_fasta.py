@@ -22,6 +22,7 @@ complete_small_df=pd.concat(small_dfs)
 
 large_dir_path=os.path.join(predictions_path,"step_1_clustered_newrun_rbags_02_not_contained_large_predicted_03_v2.csv")
 large_df=pd.read_csv(large_dir_path)
+large_df.columns=complete_small_df.columns
 
 step_1_02_not_contained_df=pd.concat([complete_small_df,large_df])
 predictions_information(step_1_02_not_contained_df)
@@ -33,5 +34,6 @@ predictions_information(step_2_predicted_df)
 step_1_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
 
 print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
+
 
 
