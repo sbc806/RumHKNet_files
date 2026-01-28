@@ -85,7 +85,10 @@ small_remaining=step_3_predicted_02_remaining_df["seq"].str.len()<=1500
 large_remaining=step_3_predicted_02_remaining_df["seq"].str.len()>1500
 step_3_predicted_02_remaining_small_df=step_3_predicted_02_remaining_df[small_remaining]
 step_3_predicted_02_remaining_large_df=step_3_predicted_02_remaining_df[large_remaining]
-step_3_predicted_02_remaining_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_remaining.csv",index=False)
+# step_3_predicted_02_remaining_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_remaining.csv",index=False)
+print(len(step_3_predicted_02_remaining_df),len(step_3_predicted_02_remaining_small_df),len(step_3_predicted_02_remaining_large_df),len(step_3_predicted_02_remaining_small_df)+len(step_3_predicted_02_remaining_large_df))
+step_3_predicted_02_remaining_small_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_small_remaining.csv",index=False)
+step_3_predicted_02_remaining_large_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_large_remaining.csv",index=False)
 
 
 
