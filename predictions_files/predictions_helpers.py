@@ -99,7 +99,9 @@ def analyze_method_histidine(df):
   print("Number of predictions in common between KO and Blast:",shared_ko_blastp3050)
   print("Number of predictions in common between RumHKNet and KO:",shared_rumhknet_ko)
   print("Number of predictions in common between RumHKNet and Blast:",shared_rumhknet_blastp3050)
+  print("Number of predictions in common between RumHKNet and KO and Blast:",shared_rumhknet_ko_blastp3050)
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
+  print("Number of predictions in common by RumHKNet and KO or in common between RumHKNet and Blast:",rumhknet_ko_blastp3050)
 
 
 
