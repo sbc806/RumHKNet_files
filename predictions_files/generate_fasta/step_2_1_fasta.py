@@ -56,9 +56,9 @@ def df_to_fasta(df,save_path):
 
 # df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
 print()
-analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.3)
+analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.3])
 print()
-analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.2)
+analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.2])
 print()
 
 step_3_predicted_03_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.3]
@@ -77,6 +77,7 @@ print()
 print("Threshold: 0.2")
 analyze_method_histidine(step_3_predicted_02_df)
 print()
+
 
 
 
