@@ -94,12 +94,13 @@ def analyze_method_histidine(df):
   shared_ko_blastp=np.sum(total_ko_df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
   shared_rumhknet_ko=np.sum(df["seq_id"].isin(total_ko_df["seq_id"].values))
   shared_rumhknet_blast=np.sum(df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
-  rumhknet_only=np.sum(~df["seq_id"].isin(total_ko_df["seq_id"].values&~df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
+  rumhknet_only=np.sum(~df["seq_id"].isin(total_ko_df["seq_id"].values)&~df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
   
   print("Number of predictions in common between KO and Blast:",shared_ko_blast)
   print("Number of predictions in common between RumHKNet and KO:",shared_rumhknet_ko)
   print("Number of predictions in common between RumHKNet and Blast:",shared_rumhknet_blast)
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
+
 
 
 
