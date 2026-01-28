@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sys
 sys.path.append("..")
-from predictions_helpers import predictions_information
+from predictions_helpers import predictions_information, analyze_method_histidine
 
 dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
 predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
@@ -61,6 +61,13 @@ step_3_predicted_02_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.2]
 print("Number of histidine kinases for a threshold of 0.3:",np.sum(step_3_predicted_03_df["prob"]>=0.3))
 print("Number of histidine kinases for a threshold of 0.2:",np.sum(step_3_predicted_02_df["prob"]>=0.2))
 
+print("Threshold: 0.3")
+analyze_method_histidine(step_3_predicted_03_df)
+print()
+
+print("Threshold: 0.2")
+analyze_method_histidine(step_3_predicted_02_df)
+print()
 
 
 
