@@ -71,6 +71,14 @@ def get_total_blastp3050_predictions():
   complete_df=pd.concat([complete_small_df,large_df])
   return complete_df
 
+def get_dir_df(dir_path):
+  dfs=[]
+  for f in os.listdir(dir_path):
+    df=pd.read_csv(os.path.join(dir_path,f))
+    dfs.append(df)
+  complete_df=pd.concat(dfs)
+  return complete_df
+  
 def analyze_method_histidine(df):
   total_ko_df=get_total_ko_predictions()
   total_blastp3050_df=get_total_blastp3050_predictions()
@@ -92,6 +100,7 @@ def analyze_method_histidine(df):
   print("Number of predictions in common between RumHKNet and KO:",shared_rumhknet_ko)
   print("Number of predictions in common between RumHKNet and Blast:",shared_rumhknet_blast)
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
+
 
 
 
