@@ -81,7 +81,12 @@ step_3_current_df=pd.read_csv("../../../RumHKNet_csv/step_3_03/step_3_clustered_
 remaining=~step_3_predicted_02_df["seq_id"].isin(step_3_current_df["seq_id"].values)
 step_3_predicted_02_remaining_df=step_3_predicted_02_df[remaining][["seq","seq_id"]]
 print(step_3_predicted_02_remaining_df)
+small_remaining=step_3_predicted_02_remaining_df["seq"].str.len()<=1500
+large_remaining=step_3_predicted_02_remaining_df["seq"].str.len()>1500
+step_3_predicted_02_remaining_small_df=step_3_predicted_02_remaining_df[small_remaining]
+step_3_predicted_02_remaining_large_df=step_3_predicted_02_remaining_df[large_remaining]
 step_3_predicted_02_remaining_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_remaining.csv",index=False)
+
 
 
 
