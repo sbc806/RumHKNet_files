@@ -71,6 +71,15 @@ def get_total_blastp3050_predictions():
   complete_df=pd.concat([complete_small_df,large_df])
   return complete_df
 
+def analyze_method_histidine(df):
+  total_ko_df=get_total_ko_predictions()
+  total-blastp3050_df=get_total_blastp3050_predictions()
+  print("Number of histidine kinases predicted using RumHKNet:",len(df))
+  print("Number of histidine kinases predicted using KO:",len(total_ko_df))
+  print("Number of histidine kinases predicted using Blast:",len(total_blastp3050))
+  print("Number of predictions in common between KO and Blast:",shared_ko_blast)
+  print("Number of predictions in common between RumHKnNet and Blast:",shared_rumhknet_blast)
+    
 
 
 
