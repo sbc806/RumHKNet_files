@@ -77,8 +77,9 @@ print()
 print("Threshold: 0.2")
 analyze_method_histidine(step_3_predicted_02_df)
 print()
-
+step_3_current_df=pd.read_csv("../../../RumHkKNet_csv/step_3_clustered/newrun?rbags_predicted_03.csv")
 step_3_predicted_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
+
 
 
 
