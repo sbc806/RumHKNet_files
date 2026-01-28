@@ -54,10 +54,11 @@ def df_to_fasta(df,save_path):
       if i<len(df)-1:
         f.write("\n")
 
-df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_2_clustered_newrun_rbags")
+df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
 
 print("Number of histidine kinases for a threshold of 0.3:",np.sum(step_2_predicted_df["prob"]>=0.3))
 print("Number of histidine kinases for a threshold of 0.2:",np.sum(step_2_predicted_df["prob"]>=0.2))
+
 
 
 
