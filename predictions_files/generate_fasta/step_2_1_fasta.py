@@ -5,6 +5,9 @@ import sys
 sys.path.append("..")
 from predictions_helpers import predictions_information
 
+dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
+predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
+
 def create_df(dir_path):
   dfs=[]
   for f in os.listdir(dir_path):
@@ -34,6 +37,7 @@ predictions_information(step_2_predicted_df)
 step_1_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
 
 print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
+
 
 
 
