@@ -88,7 +88,7 @@ def analyze_method_histidine(df):
   
   print("Number of histidine kinases predicted using RumHKNet:",len(df))
   print("Number of histidine kinases predicted using KO:",len(total_ko_df))
-  print("Number of histidine kinases predicted using Blast:",len(total_blastp3050))
+  print("Number of histidine kinases predicted using Blast:",len(total_blastp3050_df))
   print()
 
   shared_ko_blastp=np.sum(total_ko_df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
@@ -100,6 +100,7 @@ def analyze_method_histidine(df):
   print("Number of predictions in common between RumHKNet and KO:",shared_rumhknet_ko)
   print("Number of predictions in common between RumHKNet and Blast:",shared_rumhknet_blast)
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
+
 
 
 
