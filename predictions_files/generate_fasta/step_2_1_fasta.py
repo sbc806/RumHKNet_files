@@ -42,7 +42,7 @@ predictions_information(step_2_predicted_df)
 
 # print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
 
-step_2_predicted_df.to_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_02.csv",index=False)
+# step_2_predicted_df.to_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_02.csv",index=False)
 
 def df_to_fasta(df,save_path):
   with open(save_path,"a") as f:  
@@ -54,11 +54,12 @@ def df_to_fasta(df,save_path):
       if i<len(df)-1:
         f.write("\n")
 
-df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
+# df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
 
 step_3_predicted_03_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.3]
 step_3_predicted_02_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.2]
 step_3_predicted_01_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.1]
+print()
 print("Number of histidine kinases for a threshold of 0.3:",np.sum(step_3_predicted_03_df["prob"]>=0.3))
 print("Number of histidine kinases for a threshold of 0.2:",np.sum(step_3_predicted_02_df["prob"]>=0.2))
 print("Number of histidine kinases for a threshold of 0.1:",np.sum(step_3_predicted_01_df["prob"]>=0.1))
@@ -71,6 +72,7 @@ print()
 print("Threshold: 0.2")
 analyze_method_histidine(step_3_predicted_02_df)
 print()
+
 
 
 
