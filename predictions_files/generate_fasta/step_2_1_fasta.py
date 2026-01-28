@@ -60,6 +60,7 @@ step_3_predicted_03_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.3]
 step_3_predicted_02_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.2]
 print("Number of histidine kinases for a threshold of 0.3:",np.sum(step_3_predicted_03_df["prob"]>=0.3))
 print("Number of histidine kinases for a threshold of 0.2:",np.sum(step_3_predicted_02_df["prob"]>=0.2))
+print()
 
 print("Threshold: 0.3")
 analyze_method_histidine(step_3_predicted_03_df)
@@ -68,6 +69,7 @@ print()
 print("Threshold: 0.2")
 analyze_method_histidine(step_3_predicted_02_df)
 print()
+
 
 
 
