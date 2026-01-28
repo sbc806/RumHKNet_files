@@ -5,7 +5,13 @@ import sys
 sys.path.append("..")
 from predictions_helpers import predictions_information
 
-
+def create_df(dir_path):
+  dfs=[]
+  for f in os.listdir(dir_path):
+    df=pd.read_csv(os.path.join(dir_path,f))
+    dfs.append(df)
+  return pd.concat(dfs)
+  
 small_dfs=[]
 for i in range(0,3):
   smmall_dir="clustered_newrun_rbags_02_not_contained_small_{i}"
@@ -18,3 +24,4 @@ large_df=pd.read_csv(large_dir_path)
 
 step_1_not_contained_02_df=pd.concat([complete_small_df,large_df])
 step_1_df=pd.read_csv("../../../")
+
