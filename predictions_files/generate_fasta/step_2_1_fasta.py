@@ -28,9 +28,10 @@ predictions_information(step_1_02_not_contained_df)
 
 step_1_03_df=pd.read_csv("../../../RumHKNet_csv/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
 step_2_predicted_df=pd.concat([step_1_03_df,step_1_02_not_contained_df])
-
 predictions_information(step_2_predicted_df)
+
 step_1_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
 
+print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
 
 
