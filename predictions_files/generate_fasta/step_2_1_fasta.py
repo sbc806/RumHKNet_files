@@ -24,6 +24,13 @@ large_dir_path=os.path.join(predictions_path,"step_1_clustered_newrun_rbags_02_n
 large_df=pd.read_csv(large_dir_path)
 
 step_1_02_not_contained_df=pd.concat([complete_small_df,large_df])
-step_1_df=pd.read_csv("../../../")
+predictions_information(step_1_02_not_contained_df)
+
+step_1_03_df=pd.read_csv("../../../RumHKNet_csv/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
+step_2_predicted_df=pd.concat([step_1_03_df,step_1_02_not_contained_df])
+
+predictions_information(step_2_predicted_df)
+step_1_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
+
 
 
