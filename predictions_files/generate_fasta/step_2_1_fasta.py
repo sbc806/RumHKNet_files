@@ -78,6 +78,7 @@ print("Threshold: 0.2")
 analyze_method_histidine(step_3_predicted_02_df)
 print()
 
+step_3_predicted_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
 
 
