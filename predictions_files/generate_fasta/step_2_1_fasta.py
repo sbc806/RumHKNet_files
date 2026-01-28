@@ -42,6 +42,10 @@ predictions_information(step_2_predicted_df)
 
 # print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
 
+step_2_predicted_df.to_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_02.csv",index=False)
+
+print("Number of histidine kinases for a threshold of 0.3:",np.sum(step_2_predicted_df["prob"]>=0.3))
+print("Number of histidine kinases for a threshold of 0.2:",np.sum(step_2_predicted_df["prob"]>=0.2))
 
 
 
