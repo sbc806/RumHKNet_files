@@ -55,11 +55,11 @@ def df_to_fasta(df,save_path):
         f.write("\n")
 
 # df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
-print()
-analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.3])
-print()
-analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.2])
-print()
+# print()
+# analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.3])
+# print()
+# analyze_method_histidine(step_1_03_df[step_1_03_df["prob"]>=0.2])
+# print()
 
 step_3_predicted_03_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.3]
 step_3_predicted_02_df=step_2_predicted_df[step_2_predicted_df["prob"]>=0.2]
@@ -82,6 +82,7 @@ remaining=~step_3_predicted_02_df["seq_id"].isin(step_3_current_df["seq_id"].val
 step_3_predicted_02_remaining_df=step_3_predicted_02_df[remaining][["seq","seq_id"]]
 print(step_3_predicted_02_remaining_df)
 step_3_predicted_02_remaining_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_remaining.csv",index=False)
+
 
 
 
