@@ -17,7 +17,7 @@ def create_df(dir_path):
   
 small_dfs=[]
 for i in range(0,3):
-  small_dir="clustered_newrun_rbags_02_not_contained_small_{i}"
+  small_dir=f"clustered_newrun_rbags_02_not_contained_small_{i}"
   small_dir_path=os.path.join(predictions_path,small_dir)
   small_df=create_df(small_dir_path)
   small_dfs.append(small_df)
@@ -37,6 +37,7 @@ predictions_information(step_2_predicted_df)
 step_1_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
 
 print(np.sum(step_2_predicted_df["seq_id"].isin(step_1_df["seq_id"].values)))
+
 
 
 
