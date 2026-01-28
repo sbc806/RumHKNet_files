@@ -64,7 +64,7 @@ def get_total_ko_predictions():
 def get_total_blastp3050_predictions():
   small_dfs=[]
   for i in range(0,2):
-    small_df=get_dir_df(f"/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered_/total_blastp3050_small_kinase_{i}")
+    small_df=get_dir_df(f"/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered/total_blastp3050_small_kinase_{i}")
     small_dfs.append(sall_df)
   complete_small_df=pd.concat(small_dfs)
   large_df=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered/2025_01_20_new_blastp3050_shared_large_predicted_03.csv")
@@ -100,6 +100,7 @@ def analyze_method_histidine(df):
   print("Number of predictions in common between RumHKNet and KO:",shared_rumhknet_ko)
   print("Number of predictions in common between RumHKNet and Blast:",shared_rumhknet_blast)
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
+
 
 
 
