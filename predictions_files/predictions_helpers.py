@@ -56,8 +56,8 @@ def get_interval(df,min_prob,max_prob,column="prob"):
   return selected_rows
 
 def get_total_ko_predictions():
-  complete_small_df=get_dir_df("../../predictions/predicted_results/step_2/both/clustered/total_ko_small_kinase")
-  large_df=pd.read_csv("../../../predictions/predicted_results/step_2/both/clustered/2025_01_20_new_ko_shared_large_predicted_03.csv")
+  complete_small_df=get_dir_df("../../../predictions/predicted_results/step_2/both/clustered/total_ko_small_kinase")
+  large_df=pd.read_csv("../../../../predictions/predicted_results/step_2/both/clustered/2025_01_20_new_ko_shared_large_predicted_03.csv")
   complete_df=pd.concat([complete_small_df,large_df])
   return complete_df
 
@@ -73,13 +73,21 @@ def get_total_blastp3050_predictions():
 
 def analyze_method_histidine(df):
   total_ko_df=get_total_ko_predictions()
-  total-blastp3050_df=get_total_blastp3050_predictions()
+  total_blastp3050_df=get_total_blastp3050_predictions()
   print("Number of histidine kinases predicted using RumHKNet:",len(df))
   print("Number of histidine kinases predicted using KO:",len(total_ko_df))
   print("Number of histidine kinases predicted using Blast:",len(total_blastp3050))
+  print()
+
+  shared_ko_blastp=np.sum(total_ko_df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
+  shared_rumhknet_ko=np.sum(df["seq_id"].isin(total_ko_df["seq_id"].values))
+  shared_rumhknet_blast=np.sum(df["seq_id"].isin(total_blastp3050_df["seq_id"].values))
+  rumhknet_only=np.sum(~df["seq_id"].isin(total_ko_df["seq_id"].values&~df["seq_id"].isin(total_blastp3050_df["seq_id"].values)))
+  
   print("Number of predictions in common between KO and Blast:",shared_ko_blast)
   print("Number of predictions in common between RumHKnNet and Blast:",shared_rumhknet_blast)
     
+
 
 
 
