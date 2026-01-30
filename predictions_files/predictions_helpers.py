@@ -32,7 +32,7 @@ def add_label(df,other_label):
   pred_other=[]
   for each_pred in pred:
     pred_other.append(other_label[each_pred])
-  df["pred_other"]=pred_other
+  df.loc[:,"pred_other"]=pred_other
   return df
 
 def get_probs(full_df,desired_seq_id):
@@ -105,6 +105,7 @@ def analyze_method_histidine(df):
   print("Number of predictions only common to RumHKNet and not predicted by KO and not predicted by Blast:",rumhknet_only)
   print("Number of predictions in common between RumHKNet and KO or in common between RumHKNet and Blast:",rumhknet_ko_blastp3050)
   print(len(df),rumhknet_only+rumhknet_ko_blastp3050)
+
 
 
 
