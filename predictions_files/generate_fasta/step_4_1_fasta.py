@@ -22,7 +22,7 @@ def df_to_fasta(df,fasta_path):
       pred_other=df.iloc[:,3].iloc[i]
       f.write(f">{seq_id},{pred},{pred_other}\n")
       f.write(seq)
-      if i<len(df)-1:
+      if i<len(df):
         f.write("\n")
 
 step_4_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_4_03/step_4_clustered_newrun_rbags_predicted_03.csv")
@@ -47,6 +47,7 @@ print(np.unique(step_4_02_df["pred"]))
 print(np.unique(step_4_02_df["pred_other"]))
 
 df_to_fasta(step_4_02_df,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
