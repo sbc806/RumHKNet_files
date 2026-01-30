@@ -180,7 +180,7 @@ df_to_fasta(step_3_histidine_df,step_3_fasta_path)
 # step_1_02_df=pd.read_csv("../../../RumHKNet_csv/")
 step_3_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
 
-step_3_02_remaining_small_df=pd.read_csv(os.path.join(predictions_path,"step_3_clustered_newrun_rbags_predicted_02_small_remaining_predicted_03_1500_v4_0.csv"))
+step_3_02_remaining_small_df=pd.read_csv(os.path.join(predictions_path,"step_3_clustered_newrun_rbags_predicted_02_small_remaining_predicted_03.csv"))
 step_3_02_remaining_large_df=pd.read_csv(os.path.join(predictions_path,"step_3_clustered_newrun_rbags_predicted_02_large_remaining_predicted_03.csv"))
 print(step_3_02_remaining_small_df.columns)
 print(step_3_02_remaining_large_df.columns)
@@ -193,6 +193,7 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
