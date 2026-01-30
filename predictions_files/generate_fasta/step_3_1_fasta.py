@@ -189,10 +189,11 @@ step_3_02_remaining_small_df=step_3_02_remaining_small_df.iloc[:,0:4]
 step_3_02_remaining_large_df=step_3_02_remaining_large_df.iloc[:,0:4]
 step_3_02_remaining_large_df.columns=step_3_02_remaining_small_df.columns
 
-step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaining_large_d])
+step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaining_large_df])
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
