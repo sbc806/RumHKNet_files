@@ -115,33 +115,34 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
 
-df_to_fasta(step_3_02_df,"../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun_rbags_674002.fasta")
+# df_to_fasta(step_3_02_df,"../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun_rbags_674002.fasta")
 
 step_3_02_df_new=add_label(step_3_02_df[["seq_id","seq","pred"]],reverse_dict(other_label))
 print(step_3_02_df_new)
 
 # step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
-# df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
 
 step_3_02_small_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()<=1500]
 step_3_02_large_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()>1500]
 
-step_3_02_small_df_new["batch"]=step_3_02_small_df_new["pred_other"].values
-step_3_02_large_df_new["batch"]=step_3_02_large_df_new["pred_other"].values
+step_3_02_small_df_new["batch"]=step_3_02_small_df_new["pred"].values
+step_3_02_large_df_new["batch"]=step_3_02_large_df_new["pred"].values
 
-other_families_small=step_3_02_small_df_new["pred_other"]==10
-other_families_large=step_3_02_large_df_new["pred_other"]==10
+other_families_small=step_3_02_small_df_new["pred"]==10
+other_families_large=step_3_02_large_df_new["pred"]==10
 print(np.sum(other_families_small))
 print(np.sum(other_families_large))
-step_3_02_small_df_new["batch"][other_families_small]=-1
-step_3_02_large_df_new["batch"][other_families_large]=-1
+step_3_02_small_df_new.loc[other_families_small,"batch"]=-1
+step_3_02_large_df_new.loc[other_families_large,"batch"]=-1
 
 print(step_3_02_small_df_new)
 print(step_3_02_large_df_new)
 
 step_3_02_small_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining.csv",index=False)
 step_3_02_large_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining.csv",index=False)
+
 
 
 
