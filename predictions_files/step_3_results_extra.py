@@ -27,6 +27,7 @@ print(step_3_small_0.iloc[difference_argmin,2],step_3_small_1.iloc[difference_ar
 print(step_3_small_0.iloc[difference_argmax,2],step_3_small_1.iloc[difference_argmax,2])
 print()
 
+print(np.sum(step_3_small_0.iloc[:,3]==step_3_small_1.iloc[:,3]))
 
 
 
