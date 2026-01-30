@@ -43,10 +43,11 @@ predictions_information(step_4_02_df)
 
 # step_4_02_df.to_csv("../../../RumHKNet_csv/step_4_clustered_newrun_rbags_predicted_02.csv",index=False)
 
-print(np.unique(step_4_02_df_new["pred"]))
-print(np.unique(step_4_02_df_new["pred_other"]))
+print(np.unique(step_4_02_df["pred"]))
+print(np.unique(step_4_02_df["pred_other"]))
 
-# df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+# df_to_fasta(step_4_02_df,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
