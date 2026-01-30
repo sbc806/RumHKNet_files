@@ -32,21 +32,22 @@ step_4_02_large_remaining_df=pd.read_csv(os.path.join(predictions_path,"step_4_c
 print(step_4_02_small_remaining_df.columns)
 print(step_4_02_large_remaining_df.columns)
 step_4_02_remaining_df=pd.concat([step_4_02_small_remaining_df,step_4_02_large_remaining_df])
-step_4_02_remaining_df.columns=step_4_03_df.columns
-print(step_4_02_remaining_df)
+step_4_02_remaining_df.columns=step_4_03_df.columns[0:3]
 print(step_4_03_df)
-step_4_02_df=pd.concat([step_4_03_df,step_4_02_remaining_df])
+print(step_4_02_remaining_df)
+step_4_02_remaining_df_new=add_label(step_4_02_remaining_df,reverse_dict(ko_label))
+print(step_4_02_remaining_df_new)
+step_4_02_df=pd.concat([step_4_03_df,step_4_02_remaining_df_new])
+print(step_4_02_df)
 predictions_information(step_4_02_df)
 
 step_4_02_df.to_csv("../../../RumHKNet_csv/step_4_clustered_newrun_rbags_predicted_02.csv",index=False)
 
-step_4_02_df_selected=step_4_02_df.loc[:,["seq_id","seq","pred"]]
-step_4_02_df_new=add_label(step_4_02_df_selected,reverse_dict(ko_label))
-print(step_4_02_df_new)
 print(np.unique(step_4_02_df_new["pred"]))
 print(np.unique(step_4_02_df_new["pred_other"]))
 
 df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
