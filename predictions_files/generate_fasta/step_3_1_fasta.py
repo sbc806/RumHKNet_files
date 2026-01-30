@@ -35,15 +35,15 @@ predictions_information(clustered_large_histidine_df)
 # Match seq_id, get numerical batcko label then actual ko label then get family label
 
 other_label={}
-train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
-dev_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
-test_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
+train_df=pd.read_csv("../../../kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
+dev_df=pd.read_csv("../../../kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
+test_df=pd.read_csv("../../../kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
 histidine_full_df=pd.concat([train_df,dev_df,test_df])
 # print("Number of histidine kinases:",len(histidine_full_df))
 
-step_3_train_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
-step_3_dev_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
-step_3_test_df=pd.read_csv("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
+step_3_train_df=pd.read_csv("../../../kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
+step_3_dev_df=pd.read_csv("../../../kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
+step_3_test_df=pd.read_csv("../../../RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
 step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_test_df])
 # print("Number of histidine kinases for step 3:",len(step_3_full_df))
 # print(step_3_full_df.columns)
@@ -175,4 +175,5 @@ step_3_histidine_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun_rbags.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
 """
+
 
