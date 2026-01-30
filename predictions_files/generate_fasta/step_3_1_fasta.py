@@ -75,44 +75,7 @@ print(other_label)
 
 with open("../../../kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
-"""
-clustered_small_histidine_df_selected=clustered_small_histidine_df.iloc[:,0:2]
-clustered_small_histidine_df_selected["pred"]=clustered_small_histidine_df.iloc[:,3]
-clustered_small_histidine_df_new=add_label(clustered_small_histidine_df_selected,reverse_dict(other_label))
-print(clustered_small_histidine_df_new.columns)
-clustered_large_histidine_df_selected=clustered_large_histidine_df.iloc[:,0:2]
 
-def df_to_fasta(df,fasta_path):
-  with open(fasta_path,"a") as f:
-    for i in range(0,len(df)):  
-      seq_id=df["seq_id"].iloc[i]
-      seq=df["seq"].iloc[i]
-      label=df.iloc[:,2].iloc[i]
-      label_other=df.iloc[:,3].iloc[i]
-      f.write(f">{seq_id},{label},{label_other}"+"\n")
-      f.write(seq)
-      if i < len(df)-1:
-        f.write("\n")
-# step_3_histidine_df=pd.concat([clustered_histidine_all_df,newrun_histidine_all_df])
-
-step_2_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_2_clustered_newrun_rbags_predicted_03.csv")
-step_2_predicted_rbag_histidine_df=step_2_predicted_rbag_df[step_2_predicted_rbag_df.iloc[:,3]==1]
-
-contained_1=clustered_histidine_all_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
-clustered_histidine_new_df=clustered_histidine_all_df[contained_1]
-contained_2=newrun_histidine_all_df["seq_id"].isin(step_2_predicted_rbag_histidine_df["seq_id"].values)
-newrun_histidine_new_df=newrun_histidine_all_df[contained_2]
-print(len(step_2_predicted_rbag_histidine_df),len(clustered_histidine_new_df),len(newrun_histidine_new_df),len(clustered_histidine_new_df)+len(newrun_histidine_new_df))
-
-step_3_histidine_df=pd.concat([clustered_histidine_new_df,newrun_histidine_new_df])
-predictions_information(step_3_histidine_df)
-print(np.unique(step_3_histidine_df.iloc[:,2]))
-print(np.unique(step_3_histidine_df.iloc[:,3]))
-step_3_histidine_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_03.csv",index=False)
-# step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun.fasta"
-step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun_rbags.fasta"
-df_to_fasta(step_3_histidine_df,step_3_fasta_path)
-"""
 
 # step_1_02_df=pd.read_csv("../../../RumHKNet_csv/")
 step_3_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_3_03/step_3_clustered_newrun_rbags_predicted_03.csv")
@@ -132,6 +95,7 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
