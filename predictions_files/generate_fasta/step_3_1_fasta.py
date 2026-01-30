@@ -81,62 +81,7 @@ clustered_small_histidine_df_selected["pred"]=clustered_small_histidine_df.iloc[
 clustered_small_histidine_df_new=add_label(clustered_small_histidine_df_selected,reverse_dict(other_label))
 print(clustered_small_histidine_df_new.columns)
 clustered_large_histidine_df_selected=clustered_large_histidine_df.iloc[:,0:2]
-clustered_large_histidine_df_selected["pred"]=clustered_large_histidine_df.iloc[:,3]
-clustered_large_histidine_df_new=add_label(clustered_large_histidine_df_selected,reverse_dict(other_label))
-print(clustered_large_histidine_df_new.columns)
 
-clustered_histidine_all_df=pd.concat([clustered_small_histidine_df_new,clustered_large_histidine_df_new])
-print(clustered_histidine_all_df)
-predictions_information(clustered_histidine_all_df)
-"""
-# print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
-# print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
-# print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
-# print(small_histidine_df["pred"])
-# print(large_histidine_df["top1_label"])
-"""
-# small_histidine_df_selected=small_histidine_df.iloc[:,0:2]
-# small_histidine_df_selected["pred"]=small_histidine_df["pred"]
-# small_histidine_df_batch.iloc[np.where(small_histidine_df_batch["batch"]==10)[0],2]=-1
-# print(small_histidine_df_batch)
-# print(np.unique(small_histidine_df_batch["batch"]))
-# large_histidine_df_selected=large_histidine_df.iloc[:,0:2]
-# large_histidine_df_selected["pred"]=large_histidine_df["top1_label"]
-# large_histidine_df_batch.iloc[np.where(large_histidine_df_batch["batch"]==10)[0],2]=-1
-# print(large_histidine_df_batch)
-# print(np.unique(large_histidine_df_batch["batch"]))
-
-
-
-print("newrun_seqs")
-newrun_small_histidine_df=make_df(os.path.join(predictions_path,"newrun_seqs_small_histidine_kinase"))
-predictions_information(newrun_small_histidine_df)
-
-newrun_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"newrun_seqs_large_histidine_kinase_predicted_03.csv"))
-predictions_information(newrun_large_histidine_df)
-"""
-# small_histidine_df_batch=small_histidine_df.iloc[:,0:2]
-# small_histidine_df_batch["batch"]=small_histidine_df["pred"]
-# small_histidine_df_batch.iloc[np.where(small_histidine_df_batch["batch"]==10)[0],2]=-1
-# print(small_histidine_df_batch)
-# print(np.unique(small_histidine_df_batch["batch"]))
-# large_histidine_df_batch=large_histidine_df.iloc[:,0:2]
-# large_histidine_df_batch["batch"]=large_histidine_df["top1_label"]
-# large_histidine_df_batch.iloc[np.where(large_histidine_df_batch["batch"]==10)[0],2]=-1
-# print(large_histidine_df_batch)
-# print(np.unique(large_histidine_df_batch["batch"]))
-"""
-newrun_small_histidine_df_selected=newrun_small_histidine_df.iloc[:,0:2]
-newrun_small_histidine_df_selected["pred"]=newrun_small_histidine_df.iloc[:,3]
-newrun_small_histidine_df_new=add_label(newrun_small_histidine_df_selected,reverse_dict(other_label))
-print(newrun_small_histidine_df_new.columns)
-newrun_large_histidine_df_selected=newrun_large_histidine_df.iloc[:,0:2]
-newrun_large_histidine_df_selected["pred"]=newrun_large_histidine_df.iloc[:,3]
-newrun_large_histidine_df_new=add_label(newrun_large_histidine_df_selected,reverse_dict(other_label))
-print(newrun_large_histidine_df_new.columns)
-newrun_histidine_all_df=pd.concat([newrun_small_histidine_df_new,newrun_large_histidine_df_new])
-print(newrun_histidine_all_df)
-print()
 def df_to_fasta(df,fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):  
@@ -187,6 +132,7 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
