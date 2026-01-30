@@ -5,6 +5,8 @@ import numpy as np
 dataset_path="../../predictions/predictions_dataset/step_3/"
 predictions_path="../../predictions/predicted_results/step_3/both"
 
+
+step_3_dev=pd.read_csv(os.path.join(dataset_path,"step_3_11_family_dev.csv"))
 step_3_dev_0=pd.read_csv(os.path.join(predictions_path,"step_3_11_family_dev_predicted_03.csv"))
 step_3_dev_1=pd.read_csv(os.path.join(predictions_path,"step_3_11_family_dev_predicted_03_3432_v4_0.csv"))
 
@@ -34,6 +36,7 @@ for df in dfs:
   total=len(df)
   accuracy=correct/total
   print("Accuracy:",accuracy)
+
 
 
 
