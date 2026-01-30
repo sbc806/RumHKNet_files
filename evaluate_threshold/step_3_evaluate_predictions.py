@@ -6,7 +6,7 @@ dataset_path="../../predictions/predictions_dataset/step_3/"
 predictions_path="../../predictions/predicted_results/step_3/both"
 
 
-step_3_dev=pd.read_csv(os.path.join(dataset_path,"step_3_11_family_dev.csv"))
+step_3_dev=pd.read_csv("../../kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
 step_3_dev_0=pd.read_csv(os.path.join(predictions_path,"step_3_11_family_dev_predicted_03.csv"))
 step_3_dev_1=pd.read_csv(os.path.join(predictions_path,"step_3_11_family_dev_predicted_03_3432_v4_0.csv"))
 
@@ -31,11 +31,12 @@ print()
 dfs=[step_3_dev_0,step_3_dev_1]
 for df in dfs:
   predictions=df.iloc[:,3]
-  labels=step_3_dev.iloc[:,3]
+  labels=step_3_dev["label"]
   correct=predictions==labels
   total=len(df)
   accuracy=correct/total
   print("Accuracy:",accuracy)
+
 
 
 
