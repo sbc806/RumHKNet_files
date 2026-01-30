@@ -131,21 +131,22 @@ step_3_02_df_new_remaining=step_3_02_df[remaining]
 step_3_02_small_remaining_df_new=step_3_02_df_new[step_3_02_df_new_remaining["seq"].str.len()<=1500]
 step_3_02_large_remaining_df_new=step_3_02_df_new[step_3_02_df_new_remaining["seq"].str.len()>1500]
 
-step_3_02_small_df_new["batch"]=step_3_02_small_df_new["pred"].values
-step_3_02_large_df_new["batch"]=step_3_02_large_df_new["pred"].values
+step_3_02_small_remaining_df_new["batch"]=step_3_02_small_remaining_df_new["pred"].values
+step_3_02_large_remaining_df_new["batch"]=step_3_02_large_remaining_df_new["pred"].values
 
-other_families_small=step_3_02_small_df_new["pred"]==10
-other_families_large=step_3_02_large_df_new["pred"]==10
+other_families_small=step_3_02_small_remaining_df_new["pred"]==10
+other_families_large=step_3_02_large_remaining_df_new["pred"]==10
 print(np.sum(other_families_small))
 print(np.sum(other_families_large))
-step_3_02_small_df_new.loc[other_families_small,"batch"]=-1
-step_3_02_large_df_new.loc[other_families_large,"batch"]=-1
+step_3_02_small_remaining_df_new.loc[other_families_small,"batch"]=-1
+step_3_02_large_remaining_df_new.loc[other_families_large,"batch"]=-1
 
-print(step_3_02_small_df_new)
-print(step_3_02_large_df_new)
+print(step_3_02_small_remaining_df_new)
+print(step_3_02_large_remaining_df_new)
 
 step_3_02_small_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining.csv",index=False)
 step_3_02_large_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining.csv",index=False)
+
 
 
 
