@@ -34,7 +34,7 @@ large_df.columns=complete_small_df.columns
 step_1_02_not_contained_df=pd.concat([complete_small_df,large_df])
 predictions_information(step_1_02_not_contained_df)
 
-step_1_03_df=pd.read_csv("../../../RumHKNet_csv/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
+step_1_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
 step_2_predicted_df=pd.concat([step_1_03_df,step_1_02_not_contained_df])
 predictions_information(step_2_predicted_df)
 
@@ -88,6 +88,7 @@ print(len(step_3_predicted_02_remaining_df),len(step_3_predicted_02_remaining_sm
 step_3_predicted_02_remaining_small_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_small_remaining.csv",index=False)
 step_3_predicted_02_remaining_large_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_large_remaining.csv",index=False)
 """
+
 
 
 
