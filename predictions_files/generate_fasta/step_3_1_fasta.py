@@ -127,8 +127,8 @@ print(step_3_02_df_new)
 step_3_02_small_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()<=1500]
 step_3_02_large_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()>1500]
 
-step_3_02_small_df_new["batch"]=step_3_02_large_df_new["pred_other"].values
-step_3_02_large_df_new["batch"]=step_3_02_small_df_new["pred_other"].values
+step_3_02_small_df_new["batch"]=step_3_02_small_df_new["pred_other"].values
+step_3_02_large_df_new["batch"]=step_3_02_large_df_new["pred_other"].values
 
 other_families_small=step_3_02_small_df_new["pred_other"]==10
 other_families_large=step_3_02_large_df_new["pred_other"]==10
@@ -140,6 +140,7 @@ print(step_3_02_large_df_new)
 
 step_3_02_small_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun02_remaining_small.csv",index=False)
 step_3_02_large_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clremaining_large.csv",index=False)
+
 
 
 
