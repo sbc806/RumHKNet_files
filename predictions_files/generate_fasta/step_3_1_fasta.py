@@ -15,16 +15,8 @@ def make_df(dir_path):
   return pd.concat(dfs)
 
 
-# print("clustered_rep_seq95")
 dataset_path="../../../predictions/predictions_dataset/step_3/clustered"
 predictions_path="../../../predictions/predicted_results/step_3/both/clustered"
-"""
-clustered_small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
-predictions_information(clustered_small_histidine_df)
-
-clustered_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
-predictions_information(clustered_large_histidine_df)
-"""
 
 # Want to piar family to KO
 # TGet full dataset of histidne kinases used for training, train, dev, and test
@@ -195,6 +187,7 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
