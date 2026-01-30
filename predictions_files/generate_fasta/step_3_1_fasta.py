@@ -123,7 +123,7 @@ print(step_3_02_df_new)
 
 # step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
-df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+# df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
 
 remaining=step_3_02_df["seq_id"].isin(step_3_02_remaining_df["seq_id"].values)
 step_3_02_df_new_remaining=step_3_02_df[remaining]
@@ -146,6 +146,7 @@ print(step_3_02_large_remaining_df_new)
 
 step_3_02_small_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining.csv",index=False)
 step_3_02_large_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining.csv",index=False)
+
 
 
 
