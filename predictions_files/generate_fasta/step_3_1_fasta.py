@@ -176,5 +176,8 @@ step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
 """
 
+step_3_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_2_03/step_2_clustered_newrun_rbags_predicted_03.csv")
+step_3_03_remaining_small_df=pd.read_csv(os.path.join(predictions_path,"step_3_11_family_clustered_predicted_02_small_remaining_predicted_03_1500_v4_0.csv"))
+
 
 
