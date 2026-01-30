@@ -76,6 +76,15 @@ print(other_label)
 with open("../../../kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
 
+def df_to_fasta(df,fasta_path):
+  with open(fasta_path,"a") as f:
+    for i in range(0,len(df)):
+      seq_id=df["seq_id"].iloc[i]
+      seq=df["seq"].iloc[i]
+      f.write(f">{seq_id}"+"\n")
+      f.write(f"{seq}"+"\n")
+
+"""
 def df_to_fasta(df, fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
@@ -85,7 +94,8 @@ def df_to_fasta(df, fasta_path):
       pred_other=df["pred_other"].iloc[i]
       f.write(f"{seq_id},{pred},{pred_other}"+"\n")
       f.write(f"{seq}\n")
-      
+"""
+
 # step_1_02_df=pd.read_csv("../../../RumHKNet_csv/")
 step_3_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_3_03/step_3_clustered_newrun_rbags_predicted_03.csv")
 print(len(step_3_03_df))
@@ -108,9 +118,10 @@ predictions_information(step_3_02_df)
 step_3_02_df_new=add_label(step_3_02_df[["seq_id","seq","pred"]],reverse_dict(other_label))
 print(step_3_02_df_new)
 
-step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
+# step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
-df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+# df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+
 
 
 
