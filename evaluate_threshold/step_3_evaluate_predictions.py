@@ -16,3 +16,12 @@ print()
 
 print("Number of seq_id in common:",np.sum(step_3_dev_0["seq_id"]==step_3_dev_1["seq_id"]))
 print("Number of seq in common:",np.sum(step_3_dev_0["seq"]==step_3_dev_1["seq"]))
+
+dfs=[step_3_dev_0,step_3_dev_1]
+for df in dfs:
+  predictions=df.iloc[:,3]
+  labels=step_3_dev["label"]
+  correct=predictions==labels
+  total=len(df)
+  accuracy=correct/total
+  print("Accuracy:",accuracy)
