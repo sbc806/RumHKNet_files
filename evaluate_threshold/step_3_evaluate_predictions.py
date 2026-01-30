@@ -16,6 +16,15 @@ print()
 
 print("Number of seq_id in common:",np.sum(step_3_dev_0["seq_id"]==step_3_dev_1["seq_id"]))
 print("Number of seq in common:",np.sum(step_3_dev_0["seq"]==step_3_dev_1["seq"]))
+print()
+
+prob_difference=step_3_dev_1.iloc[:,2]-step_3_dev_0.iloc[:,2]
+print(np.mean(prob_difference),np.argmin(prob_difference),np.max(difference))
+difference_argmin=np.argmin(prob_difference)
+difference_argmax=np.argmax(prob_difference)
+print(step_3_dev_1.iloc[difference_argmin,2],step_3_dev_1.iloc[difference_argmin,2])
+print(step_3_dev_0.iloc[difference_argmax,2],step_3_dev_1.iloc[difference_argmax,2])
+print()
 
 dfs=[step_3_dev_0,step_3_dev_1]
 for df in dfs:
@@ -25,3 +34,4 @@ for df in dfs:
   total=len(df)
   accuracy=correct/total
   print("Accuracy:",accuracy)
+
