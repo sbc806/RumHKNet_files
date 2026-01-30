@@ -115,12 +115,15 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
 
+df_to_fasta(step_3_02_df,"../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun_rbags_674002.fasta")
+
 step_3_02_df_new=add_label(step_3_02_df[["seq_id","seq","pred"]],reverse_dict(other_label))
 print(step_3_02_df_new)
 
 # step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
 # df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+
 
 
 
