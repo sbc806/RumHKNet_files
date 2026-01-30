@@ -44,7 +44,8 @@ step_4_02_df_new=add_label(step_4_02_df_selected,reverse_dict(ko_label))
 
 print(step_4_02_df_new)
 
-df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_clustere
+df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
