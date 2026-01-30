@@ -27,12 +27,13 @@ def df_to_fasta(df,fasta_path):
 
 step_4_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_4_03/step_4_clustered_newrun_rbags_predicted_03.csv")
 
-step_4_02_small_remaining_df=pd.read_csv("step_4_clustered_newrun_rbags_02_small_remaining_batch_predicted_03_v2.csv")
-step_4_02_large_remaining_df=pd.read_csv("step_4_clustered_newrun_rbags_02_large_remaining_batch_predicted_03.csv")
+step_4_02_small_remaining_df=pd.read_csv(os.path.join(predictions_path,"step_4_clustered_newrun_rbags_02_small_remaining_batch_predicted_03_v2.csv"))
+step_4_02_large_remaining_df=pd.read_csv(os.path.join(predictions_path,"step_4_clustered_newrun_rbags_02_large_remaining_batch_predicted_03.csv"))
 step_4_02_remaining_df=pd.concat([step_4_02_small_remaining_df,step_4_02_large_remaining_df])
 
 step_4_02_df=pd.concat([step_4_03_df,step_4_02_remaining_df])
 predictions_information(step_4_02_df)
+
 
 
 
