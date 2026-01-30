@@ -41,10 +41,12 @@ step_4_02_df.to_csv("../../../RumHKNet_csv/step_4_clustered_newrun_rbags_predict
 
 step_4_02_df_selected=step_4_02_df.loc[:,["seq_id","seq","pred"]]
 step_4_02_df_new=add_label(step_4_02_df_selected,reverse_dict(ko_label))
-
 print(step_4_02_df_new)
+print(np.unique(step_4_02_df_new["pred"]))
+print(np.unique(step_4_02_df_new["pred_other"]))
 
 df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
