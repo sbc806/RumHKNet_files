@@ -14,10 +14,11 @@ def make_df(dir_path):
     dfs.append(df)
   return pd.concat(dfs)
 
-"""
-print("clustered_rep_seq95")
+
+# print("clustered_rep_seq95")
 dataset_path="../../../predictions/predictions_dataset/step_3/clustered"
 predictions_path="../../../predictions/predicted_results/step_3/both/clustered"
+"""
 clustered_small_histidine_df=make_df(os.path.join(predictions_path,"small_histidine_kinase"))
 predictions_information(clustered_small_histidine_df)
 
@@ -192,6 +193,7 @@ step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaini
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
 predictions_information(step_3_02_df)
+
 
 
 
