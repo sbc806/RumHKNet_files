@@ -92,7 +92,7 @@ def df_to_fasta(df, fasta_path):
       seq=df["seq"].iloc[i]
       pred=df["pred"].iloc[i]
       pred_other=df["pred_other"].iloc[i]
-      f.write(f"{seq_id},{pred},{pred_other}"+"\n")
+      f.write(f">{seq_id},{pred},{pred_other}"+"\n")
       f.write(f"{seq}\n")
 """
 
@@ -124,6 +124,19 @@ print(step_3_02_df_new)
 
 # df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
 
+step_3_02_small_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()<=1500]
+step_3_02_large_df_new=step_3_02_df_new[step_3_02_df_new["seq"].str.len()>1500]
+step_3_02_small_df_new["batch"]=step_3_02_large_df_new["pred_other"].values
+step_3_02_large_df_new["batch"]=step_3_02_small_df_new["pred_other"].values
+other_families_small=step_3_02_small_df_new["pred_other"]==10
+other_families_large=step_3_02_large_df_new["pred_other"]==10
+step_3_02_small_df_new["batch"][other_families_small]=-1
+step_3_02_large_df_new["batch"][other_families_large]=-1
+print(step_3_02_small_df_new)
+print(step_3_02_large_df_new)
+
+step_3_02_small_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun02_remaining_small.csv",index=False)
+step_3_02_large_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clremaining_large.csv",index=False)
 
 
 
