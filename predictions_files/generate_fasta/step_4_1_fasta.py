@@ -33,7 +33,8 @@ print(step_4_02_small_remaining_df.columns)
 print(step_4_02_large_remaining_df.columns)
 step_4_02_remaining_df=pd.concat([step_4_02_small_remaining_df,step_4_02_large_remaining_df])
 step_4_02_remaining_df.columns=step_4_03_df.columns
-
+print(step_4_02_remaining_df)
+print(step_4_03_df)
 step_4_02_df=pd.concat([step_4_03_df,step_4_02_remaining_df])
 predictions_information(step_4_02_df)
 
@@ -46,6 +47,7 @@ print(np.unique(step_4_02_df_new["pred"]))
 print(np.unique(step_4_02_df_new["pred_other"]))
 
 df_to_fasta(step_4_02_df_new,"../../../RumHKNet_fasta/step_4_histidine_kinase_ko_clustered_newrun_rbags_674002.fasta")
+
 
 
 
