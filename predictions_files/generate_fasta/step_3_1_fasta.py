@@ -144,8 +144,9 @@ step_3_02_large_remaining_df_new.loc[other_families_large,"batch"]=-1
 print(step_3_02_small_remaining_df_new)
 print(step_3_02_large_remaining_df_new)
 
-step_3_02_small_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining.csv",index=False)
-step_3_02_large_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining.csv",index=False)
+step_3_02_small_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining_batch.csv",index=False)
+step_3_02_large_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining_batch.csv",index=False)
+
 
 
 
