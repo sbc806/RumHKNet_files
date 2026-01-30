@@ -14,6 +14,7 @@ def make_df(dir_path):
     dfs.append(df)
   return pd.concat(dfs)
 
+"""
 print("clustered_rep_seq95")
 dataset_path="../../../predictions/predictions_dataset/step_3/clustered"
 predictions_path="../../../predictions/predicted_results/step_3/both/clustered"
@@ -22,6 +23,7 @@ predictions_information(clustered_small_histidine_df)
 
 clustered_large_histidine_df=pd.read_csv(os.path.join(predictions_path,"clustered_rep_seq95_large_histidine_kinase_predicted_03.csv"))
 predictions_information(clustered_large_histidine_df)
+"""
 
 # Want to piar family to KO
 # TGet full dataset of histidne kinases used for training, train, dev, and test
@@ -60,7 +62,7 @@ print("Contained:",np.sum(step_3_full_df["seq_id"].isin(histidine_full_df["seq_i
 
 print("ko_family:",ko_family,len(ko_family))
 print("Number of families:",np.unique(np.array(list(ko_family.values()))).shape)
-with open("../../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+with open("../../../kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
@@ -78,7 +80,7 @@ for each_family in np.unique(step_3_full_df["label"]):
   print()
 print(other_label)
 
-with open("../../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
+with open("../../../kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
 """
 clustered_small_histidine_df_selected=clustered_small_histidine_df.iloc[:,0:2]
@@ -173,3 +175,4 @@ step_3_histidine_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_
 step_3_fasta_path="../../../RumHKNet_fasta/step_3_kinase_family_clustered_newrun_rbags.fasta"
 df_to_fasta(step_3_histidine_df,step_3_fasta_path)
 """
+
