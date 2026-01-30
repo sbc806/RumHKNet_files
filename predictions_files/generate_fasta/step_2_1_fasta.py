@@ -51,8 +51,6 @@ def df_to_fasta(df,save_path):
       seq=df["seq"].iloc[i]
       f.write(f">{seq_id}"+"\n")
       f.write(seq+"\n")
-      if i<len(df)-1:
-        f.write("\n")
 
 df_to_fasta(step_2_predicted_df,"../../../RumHKNet_fasta/step_1_kinase_clustered_newrun_rbags_10247381.fasta")
 # print()
@@ -90,6 +88,7 @@ print(len(step_3_predicted_02_remaining_df),len(step_3_predicted_02_remaining_sm
 step_3_predicted_02_remaining_small_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_small_remaining.csv",index=False)
 step_3_predicted_02_remaining_large_df.to_csv("../../../predictions/predictions_dataset/step_3/clustered/step_3_clustered_newrun_rbags_predicted_02_large_remaining.csv",index=False)
 """
+
 
 
 
