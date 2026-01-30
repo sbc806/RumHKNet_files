@@ -99,6 +99,7 @@ def df_to_fasta(df, fasta_path):
 
 # step_1_02_df=pd.read_csv("../../../RumHKNet_csv/")
 step_3_03_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/step_3_03/step_3_clustered_newrun_rbags_predicted_03.csv")
+print(step_3_03_df)
 print(len(step_3_03_df))
 
 step_3_02_remaining_small_df=pd.read_csv(os.path.join(predictions_path,"step_3_clustered_newrun_rbags_predicted_02_small_remaining_predicted_03_1500_v4_0.csv"))
@@ -112,8 +113,10 @@ step_3_02_remaining_large_df=step_3_02_remaining_large_df.iloc[:,0:4]
 step_3_02_remaining_large_df.columns=step_3_02_remaining_small_df.columns
 
 step_3_02_remaining_df=pd.concat([step_3_02_remaining_small_df,step_3_02_remaining_large_df])
+print(step_3_02_remaining_df)
 
 step_3_02_df=pd.concat([step_3_03_df,step_3_02_remaining_df])
+print(step_3_02_df)
 predictions_information(step_3_02_df)
 
 # df_to_fasta(step_3_02_df,"../../../RumHKNet_fasta/step_2_histidine_kinase_clustered_newrun_rbags_674002.fasta")
@@ -146,6 +149,7 @@ print(step_3_02_large_remaining_df_new)
 
 step_3_02_small_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_small_remaining_batch.csv",index=False)
 step_3_02_large_remaining_df_new[["seq_id","seq","batch"]].to_csv("../../../predictions/predictions_dataset/step_4/clustered/step_4_clustered_newrun_rbags_02_large_remaining_batch.csv",index=False)
+
 
 
 
