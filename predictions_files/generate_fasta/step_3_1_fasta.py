@@ -101,7 +101,8 @@ print(step_3_02_df_new)
 
 step_3_02_df_new.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
-df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_clustered_newrun_rbags_histidine_674002.fasta")
+df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+
 
 
 
