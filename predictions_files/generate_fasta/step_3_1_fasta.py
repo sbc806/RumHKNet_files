@@ -79,7 +79,7 @@ with open("../../../kinases_dataset/step_3_11_family/protein/multi_class/label.j
 def df_to_fasta(df, fasta_path):
   with open(fasta_path,"a") as f:
     for i in range(0,len(df)):
-      seq_id=df["seq-id"].iloc[i]
+      seq_id=df["seq_id"].iloc[i]
       seq=df["seq"].iloc[i]
       pred=df["pred"].iloc[i]
       pred_other=df["pred_other"].iloc[i]
@@ -108,9 +108,10 @@ predictions_information(step_3_02_df)
 step_3_02_df_new=add_label(step_3_02_df[["seq_id","seq","pred"]],reverse_dict(other_label))
 print(step_3_02_df_new)
 
-step_3_02_df_new.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
+step_3_02_df.to_csv("../../../RumHKNet_csv/step_3_clustered_newrun_rbags_predicted_02.csv")
 
 df_to_fasta(step_3_02_df_new,"../../../RumHKNet_fasta/step_3_histidine_kinase_family_clustered_newrun_rbags_674002.fasta")
+
 
 
 
