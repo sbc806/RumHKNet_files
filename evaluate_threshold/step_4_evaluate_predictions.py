@@ -31,13 +31,14 @@ print()
 dfs=[step_4_dev_0]
 for df in dfs:
   predictions=df.iloc[:,3]
-  labels=step_3_dev["label"]
+  labels=step_4_dev["label"]
   print(predictions)
   print(labels)
   correct=np.sum(predictions==labels)
   total=len(df)
   accuracy=correct/total
   print("Accuracy:",accuracy)
+
 
 
 
