@@ -2,8 +2,8 @@ import pandas as pd
 import os as os
 import numpy as np
 
-dataset_path="../../predictions/predictions_dataset/step_3/"
-predictions_path="../../predictions/predicted_results/step_3/both"
+dataset_path="../../predictions/predictions_dataset/step_4/"
+predictions_path="../../predictions/predicted_results/step_4/both"
 
 
 step_4_dev=pd.read_csv("../../kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
@@ -38,6 +38,7 @@ for df in dfs:
   total=len(df)
   accuracy=correct/total
   print("Accuracy:",accuracy)
+
 
 
 
