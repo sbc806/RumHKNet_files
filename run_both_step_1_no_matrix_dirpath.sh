@@ -17,7 +17,7 @@ cd /home/schen123/projects/rrg-guanuofa/schen123/kinases/virtual_environments
 source TEST/bin/activate
 
 
-cd ../sbc806/RumHKNet/src/training/V3
+cd ../sbc806/RumHKNet/src/training/both
 cat both_step_1_no_matrix_dirpath.sh > /home/schen123/projects/rrg-guanuofa/schen123/kinases/sbc806/RumHKNet/bash_scripts_nibi/step_1/both/output/both_step_1_no_matrix_dirpath_$SLURM_JOB_ID.txt
 ./both_step_1_no_matrix_dirpath.sh
 
