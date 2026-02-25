@@ -5,8 +5,8 @@ import sys
 sys.path.append("..")
 from predictions_helpers import predictions_information, get_interval
 
-dataset_path="../../../predictions/predictions_dataset/step_1/clustered"
-predictions_path="../../../predictions/predicted_results/step_1/both/clustered"
+dataset_path="../../../predictions/predictions_dataset/step_2/clustered"
+predictions_path="../../../predictions/predicted_results/step_2/both/clustered"
 
 step_1_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_1_clustered_newrun_rbags_predicted_03.csv")
 step_1_predicted_rbag_kinase_df=step_1_predicted_rbag_df[step_1_predicted_rbag_df.iloc[:,3]==1]
@@ -92,6 +92,7 @@ step_1_predicted_rbag_kinase_02_df=step_1_predicted_rbag_df[step_1_predicted_rba
 not_contained=~step_1_predicted_rbag_kinase_02_df["seq_id"].isin(step_1_predicted_rbag_kinase_df["seq_id"].values)
 print("Number of kinases not contained:",np.sum(not_contained))
 # step_1_predicted_rbag_kinase_02_df[not_contained].to_csv("../../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv",index=False)
+
 
 
 
