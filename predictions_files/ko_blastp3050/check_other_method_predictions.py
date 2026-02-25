@@ -1,6 +1,8 @@
 import numpy as np
 import os as os
 import pandas as pd
+import sys
+sys.path.append("..")
 from predictions_helpers import predictions_information
 
 predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
@@ -32,6 +34,7 @@ for each_method in other_methods:
   print(len(new_seqs_df),len(each_method_df),np.sum(contained_4),np.where(~contained_4))
   clustered_df[contained_3].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_step_1_shared.txt",index=False)
   new_seqs_df[contained_4].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_step_1_shared.txt",index=False)
+
 
 
 
