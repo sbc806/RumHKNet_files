@@ -29,8 +29,8 @@ step_1_predicted_rbag_df.index=list(step_1_predicted_rbag_df["seq_id"])
 print(step_1_predicted_rbag_df)
 print()
 
-print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df.index)))
-print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df.index)))
+print(len(total_ko_df),np.sum(total_ko_df[0].isin(step_1_predicted_rbag_df.index)))
+print(len(total_blastp3050_df),np.sum(total_blastp3050_df[0].isin(step_1_predicted_rbag_df.index)))
 total_ko_df["prob_step_1"]=step_1_predicted_rbag_df.loc[total_ko_df["seq_id"].values]["prob"].values
 total_blastp3050_df["prob_step_1"]=step_1_predicted_rbag_df.loc[total_blastp3050_df["seq_id"].values]["prob"].values
 
@@ -76,6 +76,7 @@ not_contained=~step_1_predicted_rbag_kinase_02_df["seq_id"].isin(step_1_predicte
 print("Number of kinases not contained:",np.sum(not_contained))
 # step_1_predicted_rbag_kinase_02_df[not_contained].to_csv("../../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv",index=False)
 """
+
 
 
 
