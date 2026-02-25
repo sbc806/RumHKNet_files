@@ -7,6 +7,7 @@ predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered
 clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
 new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
 # predictions_information(clustered_df)
+print(len(clustered_df),len(new_seqs_df))
 # predictions_information(new_seqs_df)
 
 total_ko=pd.read_csv("../../histidine_other_software/total_KO.txt",header=None)
@@ -29,8 +30,9 @@ for each_method in other_methods:
   contained_4=new_seqs_df["seq_id"].isin(each_method_df[0])
   print(len(clustered_df),len(each_method_df),np.sum(contained_3),np.where(~contained_3))
   print(len(new_seqs_df),len(each_method_df),np.sum(contained_4),np.where(~contained_4))
-  clustered_df[contained_3].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_shared.txt",index=False)
-  new_seqs_df[contained_4].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_shared.txt",index=False)
+  clustered_df[contained_3].to_csv(f"../../histidine_other_software/{each_method}_clustered_rep_seq95_step_1_shared.txt",index=False)
+  new_seqs_df[contained_4].to_csv(f"../../histidine_other_software/{each_method}_newrun_seqs_step_1_shared.txt",index=False)
+
 
 
 
