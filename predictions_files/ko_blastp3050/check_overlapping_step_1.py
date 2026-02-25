@@ -26,11 +26,19 @@ print()
 # predictions_information(step_1_predicted_rbag_df)
 
 step_1_predicted_rbag_df.index=list(step_1_predicted_rbag_df["seq_id"])
+print()
+
 print(len(total_ko_df),np.sum(total_ko_df["seq_id"].isin(step_1_predicted_rbag_df.index)))
 print(len(total_blastp3050_df),np.sum(total_blastp3050_df["seq_id"].isin(step_1_predicted_rbag_df.index)))
 total_ko_df["prob_step_1"]=step_1_predicted_rbag_df.loc[total_ko_df["seq_id"].values]["prob"].values
 total_blastp3050_df["prob_step_1"]=step_1_predicted_rbag_df.loc[total_blastp3050_df["seq_id"].values]["prob"].values
 
+print()
+
+total_ko_02=total_ko_df["prob_step_1"]>=0.2
+total_blastp3050_02=total_blastp3050_df["prob_step_1"]>=0.2
+print(len(total_ko_df),np.sum(total_ko_02),np.sum(~total_ko_02))
+print(len(total_blastp3050),np.sum(total_blastp3050_02),np.sum(~total_blastp3050_02))
 """"
 print()
 print("Number of kinases predicted in step 1 using RumHKNet and threshold 0.3:",np.sum(step_1_predicted_rbag_df.iloc[:,3]==1))
@@ -67,6 +75,7 @@ not_contained=~step_1_predicted_rbag_kinase_02_df["seq_id"].isin(step_1_predicte
 print("Number of kinases not contained:",np.sum(not_contained))
 # step_1_predicted_rbag_kinase_02_df[not_contained].to_csv("../../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv",index=False)
 """
+
 
 
 
