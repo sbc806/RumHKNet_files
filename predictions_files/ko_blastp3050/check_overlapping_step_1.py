@@ -14,12 +14,14 @@ step_1_predicted_rbag_df=pd.read_csv("../../../RumHKNet_csv/step_1_03_step_2_03/
 # step_2_predicted_rbag_histidine_df=step_2_predicted_rbag_df[step_2_predicted_rbag_df.iloc[:,3]==1]
 
 print("total_KO")
-total_ko_df=pd.read_csv("../../../histidine_other_software/total_KO.txt",header=None)
+# total_ko_df=pd.read_csv("../../../histidine_other_software/total_KO.txt",header=None)
+total_ko_df=pd.read_csv("../../../histidine_other_software/total_KO_95%.txt",header=None)
 print(len(total_ko_df))
 print()
 
 print("total_blastp3050")
-total_blastp3050_df=pd.read_csv("../../../histidine_other_software/total_blastp3050.txt",header=None)
+# total_blastp3050_df=pd.read_csv("../../../histidine_other_software/total_blastp3050.txt",header=None)
+total_blastp3050_df=pd.read_csv("../../../histidine_other_software/final_Blastp_HK95%_3050100.txt",header=None)
 print(len(total_blastp3050_df))
 print()
 
@@ -76,6 +78,7 @@ not_contained=~step_1_predicted_rbag_kinase_02_df["seq_id"].isin(step_1_predicte
 print("Number of kinases not contained:",np.sum(not_contained))
 # step_1_predicted_rbag_kinase_02_df[not_contained].to_csv("../../../predictions/predictions_dataset/step_2/clustered/step_1_clustered_newrun_rbags_02_not_contained.csv",index=False)
 """
+
 
 
 
