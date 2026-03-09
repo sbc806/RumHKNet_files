@@ -81,7 +81,7 @@ def generate_dataset(all_data, train_proportion, save_path=""):
     return datasets
 
 
-kinases_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/kinases_dataset_unzipped"
+kinases_path = "../../kinases_dataset/kinases_dataset_unzipped"
 
 histidine_kinase_file = "Final_Histidine_Kinase_668191.fasta"
 non_kinase_file = "Non_Kinase_527009.fasta"
@@ -122,4 +122,5 @@ print(train)
 print(dev)
 print(test)
 """
+
 
