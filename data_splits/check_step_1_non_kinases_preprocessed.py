@@ -20,6 +20,8 @@ print("80% is:",0.80*len(all_df))
 print("10% is:",0.10*len(all_df))
 
 dfs=[train_df,dev_df,test_df,all_df]
+prots=["histidine_kinase_","non_kinase_","other_kinase_"]
 for df in dfs:
   for prot in prots:
     print(np.sum(df["seq_id"].str.contains(prot)))
+
