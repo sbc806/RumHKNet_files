@@ -18,3 +18,8 @@ print("Number for dev:",len(dev_df))
 print("Number for test:",len(test_df))
 print("80% is:",0.80*len(all_df))
 print("10% is:",0.10*len(all_df))
+
+dfs=[train_df,dev_df,test_df,all_df]
+for df in dfs:
+  for prot in prots:
+    print(np.sum(df["seq_id"].str.contains(prot)))
