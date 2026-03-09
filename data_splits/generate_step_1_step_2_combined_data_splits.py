@@ -95,11 +95,13 @@ other_kinase_data = parse_fasta(os.path.join(kinases_path, other_kinase_file), "
 all_data = {"Histidine_kinase": histidine_data,
             "Non_kinase": non_kinase_data,
             "Other_kinase": other_kinase_data}
+all_sequences=[]
 
 total_sequences = 0
 for each_data in all_data:
     num_sequences_individual = len(all_data[each_data])
     sequences = [prot_data["seq"] for prot_data in all_data[each_data]]
+    all_sequences.append(sequences)
     total_sequences = total_sequences + num_sequences_individual
     minimum_individual = get_minimum_sequence_data(all_data[each_data])
     maximum_individual = get_maximum_sequence_data(all_data[each_data])
@@ -124,6 +126,7 @@ print(train)
 print(dev)
 print(test)
 """
+
 
 
 
