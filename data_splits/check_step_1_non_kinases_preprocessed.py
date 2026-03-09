@@ -25,3 +25,10 @@ for df in dfs:
   for prot in prots:
     print(np.sum(df["seq_id"].str.contains(prot)))
 
+histidine_df=all_df[all_df["seq_id"].str.contains("histidine_kinase_")]
+non_df=all_df[all_df["seq_id"].str.contains("non_kinase_")]
+other_df=all_df[all_df["seq_id"].str.contains("other_kinase_")]
+
+print(np.sum(histidine_df["seq"].isin(non_df["seq"].values)))
+print(np.sum(histidine_df["seq"].isin(other_df["seq"].values)))
+print(np.sum(non_df["seq"].isin(other_df["seq"].values)))
