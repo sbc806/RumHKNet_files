@@ -2,7 +2,7 @@ import os as os
 import numpy as np
 import pandas as pd
 
-dir_path="../sbc806/RumHKNet_develop/kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class"
+dir_path="../../sbc806/RumHKNet_develop/kinases_dataset/step_1_non_kinases_preprocessed/protein/binary_class"
 train_path=os.path.join(dir_path,"train/train.csv")
 dev_path=os.path.join(dir_path,"dev/dev.csv")
 test_path=os.path.join(dir_path,"test/test.csv")
@@ -32,4 +32,5 @@ other_df=all_df[all_df["seq_id"].str.contains("other_kinase_")]
 print(np.sum(histidine_df["seq"].isin(non_df["seq"].values)))
 print(np.sum(histidine_df["seq"].isin(other_df["seq"].values)))
 print(np.sum(non_df["seq"].isin(other_df["seq"].values)))
+
 
