@@ -99,12 +99,13 @@ all_data = {"Histidine_kinase": histidine_data,
 total_sequences = 0
 for each_data in all_data:
     num_sequences_individual = len(all_data[each_data])
+    sequences = [prot_data["seq"] for prot_data in all_data[each_data]]
     total_sequences = total_sequences + num_sequences_individual
     minimum_individual = get_minimum_sequence_data(all_data[each_data])
     maximum_individual = get_maximum_sequence_data(all_data[each_data])
     print(each_data)
     print("Number of sequences:", num_sequences_individual)
-    print("Number of unique sequences:", np.unique(all_data[each_data]))
+    print("Number of unique sequences:", np.unique(sequences))
     print("Minimum sequence_size:", len(minimum_individual["seq"]))
     print("Maximum sequence size:", len(maximum_individual["seq"]))
     print()
@@ -123,6 +124,7 @@ print(train)
 print(dev)
 print(test)
 """
+
 
 
 
