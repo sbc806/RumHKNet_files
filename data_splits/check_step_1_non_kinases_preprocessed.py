@@ -37,11 +37,15 @@ print(np.sum(non_df["seq"].isin(other_df["seq"].values)))
 save_path = "/home/schen123/scratch/kinases/kinases_dataset/step_1_step_2_combined"
 
 train_other=train_df["seq_id"].str.contains("other_kinase_")
-dev_df=dev_df["seq_id"].str.contains("other_kinase_")
+dev_other=dev_df["seq_id"].str.contains("other_kinase_")
+test_other=test_df["seq_id"].str.contains("other_kinase_")
+
+print(np.sum(train_other),np.sum(dev_other),np.sum(test_other))
 
 train_df.loc[train_other,"label"]=0
 dev_df.loc[dev_other,"label"]=0
-test_df.loc[test_other","label"]=-0
+test_df.loc[test_other,"label"]=0
+
 print(train_df)
 print(dev_df)
 print(test_df)
@@ -49,6 +53,7 @@ print(test_df)
 train_df.to_csv(os.path.join(save_path,"train/train.csv"),index=False)
 dev_df.to_csv(os.path.join(save_path,"dev/dev.csv",index=False)
 test_df.to_csv(os.path.join(save_path,"test/tes.csv"),index=False)
+
 
 
 
