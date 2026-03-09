@@ -113,6 +113,12 @@ for each_data in all_data:
     print()
 print("Total number of sequences:", total_sequences)
 print()
+
+for i in range(0,len(all_sequences)-1):
+    for j in range(i+1,len(all_sequences)):
+        print(i,j)
+        print(np.sum(pd.Series(all_sequences[i]).isin(all_sequences[j])))
+        
 """
 train_proportion = 0.8
 save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_1_data_splits"
@@ -126,6 +132,7 @@ print(train)
 print(dev)
 print(test)
 """
+
 
 
 
