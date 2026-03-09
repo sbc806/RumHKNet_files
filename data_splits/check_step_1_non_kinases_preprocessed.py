@@ -34,7 +34,7 @@ print(np.sum(histidine_df["seq"].isin(other_df["seq"].values)))
 print(np.sum(non_df["seq"].isin(other_df["seq"].values)))
 
 
-save_path = "/home/schen123/scratch/kinases/kinases_dataset/step_1_step_2_combined"
+save_path = "/home/schen123/scratch/kinases/kinases_dataset/step_1_step_2_combined/protein/binary_class"
 
 train_other=train_df["seq_id"].str.contains("other_kinase_")
 dev_other=dev_df["seq_id"].str.contains("other_kinase_")
@@ -53,6 +53,7 @@ print(test_df)
 train_df.to_csv(os.path.join(save_path,"train/train.csv"),index=False)
 dev_df.to_csv(os.path.join(save_path,"dev/dev.csv"),index=False)
 test_df.to_csv(os.path.join(save_path,"test/test.csv"),index=False)
+
 
 
 
