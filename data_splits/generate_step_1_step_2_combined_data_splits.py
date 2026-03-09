@@ -103,12 +103,13 @@ for each_data in all_data:
     maximum_individual = get_maximum_sequence_data(all_data[each_data])
     print(each_data)
     print("Number of sequences:", num_sequences_individual)
+    print("Number of unique sequences:", np.unique(all_data[each_data])
     print("Minimum sequence_size:", len(minimum_individual["seq"]))
     print("Maximum sequence size:", len(maximum_individual["seq"]))
     print()
 print("Total number of sequences:", total_sequences)
 print()
-
+"""
 train_proportion = 0.8
 save_path = "/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_1_data_splits"
 datasets = generate_dataset(all_data, train_proportion, save_path=save_path)
@@ -120,3 +121,4 @@ test = pd.read_csv(os.path.join(save_path, "test/test.csv"))
 print(train)
 print(dev)
 print(test)
+"""
