@@ -105,7 +105,7 @@ for each_data in all_data:
     maximum_individual = get_maximum_sequence_data(all_data[each_data])
     print(each_data)
     print("Number of sequences:", num_sequences_individual)
-    print("Number of unique sequences:", np.unique(sequences))
+    print("Number of unique sequences:", np.unique(sequences).shape)
     print("Minimum sequence_size:", len(minimum_individual["seq"]))
     print("Maximum sequence size:", len(maximum_individual["seq"]))
     print()
@@ -124,6 +124,7 @@ print(train)
 print(dev)
 print(test)
 """
+
 
 
 
