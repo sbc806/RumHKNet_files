@@ -48,8 +48,8 @@ def get_sequences(full_df,seq_id):
   return selected
 
 ko_clustered=get_sequences(clustered,ko)
-ko_newrun=get_sequences(newrun_seqs,ko)
-ko_sequences=pd.concat([ko_clustered,ko_newrun])
+ko_newrun_seqs=get_sequences(newrun_seqs,ko)
+ko_sequences=pd.concat([ko_clustered,ko_newrun_seqs])
 print(ko_sequences)
 ko_sequences.to_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"),index=False)
                     
@@ -57,3 +57,4 @@ blastp_clustered=get_sequences(clustered,blastp)
 blastp_newrun_seqs=get_sequences(newrun_seqs,blastp)
 blastp_sequences=pd.concat([blastp_clustered,blastp_newrun_seqs])
 print(blastp_sequences)
+blastp_sequences.to_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100_sequences.csv"),index=False)
