@@ -14,6 +14,12 @@ print("Number of histidine kinases predicted by KO:",len(ko),np.unique(ko[0]).sh
 print("Number of histidine kinases predicted by Blastp:",len(blastp),np.unique(blastp[0].shape))
 print(histidine_02[["seq_id","seq"]])
 # histidine_02[["seq_id","seq"]].to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02.csv"),index=None)
+histidine_02_small=histidine_02[histidine_02["seq"].str.len()<=1500][["seq_id","seq"]]
+histidine_02_large=histidine_02[histidine_02["seq"].str.len()>1500][["seq_id","seq"]]
+print(histidine_02_small)
+print(histidine_02_large)
+histidine_02_small.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_small.csv"),index=None)
+histidine_02_large.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_large.csv"),index=None)
 
 ko_rumhknet=ko[0].isin(histidine_02["seq_id"])
 blastp_rumhknet=blastp[0].isin(histidine_02["seq_id"])
