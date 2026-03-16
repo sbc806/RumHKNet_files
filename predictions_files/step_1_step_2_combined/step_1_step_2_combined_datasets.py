@@ -39,7 +39,7 @@ print("Blastp and not RumHKNet:",len(blastp_selected))
 print(np.unique(np.hstack((histidine_02["seq_id"].values,ko[0].values,blastp[0].values))).shape)
 print(np.unique(np.hstack((histidine_02["seq_id"].values,ko_only[0].values,blastp_selected[0].values))).shape)
 
-clustered=pd.read_csv(os.path.join(dir_path,"predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
+clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
 newrun_seqs=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
 
 def get_sequences(full_df,seq_id):
