@@ -7,14 +7,14 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 histidine_02=pd.read_csv(os.path.join(dir_path,"step_1_02_step_2_02/step_3_clustered_newrun_rbags_predicted_02.csv"))
 
 ko=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%.txt"))
-total_blastp3050=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100.txt"))
+blastp=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100.txt"))
 
 print("Number of histidine kinases predicted by RumHKNet:",len(histidine_02))
 print("Number of histidine kinases predicted by KO:",len(ko))
-print("Number of histidine kinases predicted by blastp:",len(blastp))
+print("Number of histidine kinases predicted by Blastp:",len(blastp))
 
 ko_rumhknet=ko[0].isin(histidine_02["seq_id"])
-total_blastp3050=blastp.isin(histidine_02["seq_id"])
+blastp_rumhknet=blastp.isin(histidine_02["seq_id"])
 
 print("RumHKNet and KO:",np.sum(ko_rumhknet))
 print("RumHKNet and Blastp:",np.sum(blastp_rumhknet))
@@ -26,3 +26,5 @@ ko_only=ko[~ko_rumhknet&~ko_blastp]
 print("KO only:",len(ko_only))
 
 blastp_selected=blastp[~blastp_rumhknet]
+print("Blastp and not RumHKNet:",len(blastp_selected))
+
