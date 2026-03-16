@@ -6,8 +6,8 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 
 histidine_02=pd.read_csv(os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02/step_3_clustered_newrun_rbags_predicted_02.csv"))
 
-ko=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%.txt"))
-blastp=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100.txt"))
+ko=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%.txt"),header=None)
+blastp=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100.txt"),header=None)
 
 print("Number of histidine kinases predicted by RumHKNet:",len(histidine_02))
 print("Number of histidine kinases predicted by KO:",len(ko))
