@@ -13,6 +13,8 @@ print("Number of histidine kinases predicted by RumHKNet:",len(histidine_02))
 print("Number of histidine kinases predicted by KO:",len(ko))
 print("Number of histidine kinases predicted by Blastp:",len(blastp))
 
+histidine_02[["seq_id","seq"]].to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02.csv"),index=None)
+
 ko_rumhknet=ko[0].isin(histidine_02["seq_id"])
 blastp_rumhknet=blastp.isin(histidine_02["seq_id"])
 
