@@ -21,7 +21,7 @@ blastp_rumhknet=blastp.isin(histidine_02["seq_id"])
 print("RumHKNet and KO:",np.sum(ko_rumhknet))
 print("RumHKNet and Blastp:",np.sum(blastp_rumhknet))
 
-ko_blastp=ko.isin(totalblastp[0])
+ko_blastp=ko.isin(blastp[0])
 print("KO and Blastp:",np.sum(ko_blastp))
 
 ko_only=ko[~ko_rumhknet&~ko_blastp]
