@@ -18,8 +18,8 @@ histidine_02_small=histidine_02[histidine_02["seq"].str.len()<=1500][["seq_id","
 histidine_02_large=histidine_02[histidine_02["seq"].str.len()>1500][["seq_id","seq"]]
 print(histidine_02_small)
 print(histidine_02_large)
-histidine_02_small.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_small.csv"),index=None)
-histidine_02_large.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_large.csv"),index=None)
+# histidine_02_small.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_small.csv"),index=None)
+# histidine_02_large.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02_large.csv"),index=None)
 
 ko_rumhknet=ko[0].isin(histidine_02["seq_id"])
 blastp_rumhknet=blastp[0].isin(histidine_02["seq_id"])
@@ -38,3 +38,6 @@ print("Blastp and not RumHKNet:",len(blastp_selected))
 
 print(np.unique(np.hstack((histidine_02["seq_id"].values,ko[0].values,blastp[0].values))).shape)
 print(np.unique(np.hstack((histidine_02["seq_id"].values,ko_only[0].values,blastp_selected[0].values))).shape)
+
+clustered=pd.read_csv(os.path.join(dir_path,"predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
+newrun_seqs=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
