@@ -30,4 +30,5 @@ print("KO only:",len(ko_only))
 blastp_selected=blastp[~blastp_rumhknet]
 print("Blastp and not RumHKNet:",len(blastp_selected))
 
-print(np.unique(np.hstack((histidine_02["seq_id"].values,ko[0].values,blastp[0].values))))
+print(np.unique(np.hstack((histidine_02["seq_id"].values,ko[0].values,blastp[0].values))).shape)
+print(np.unique(np.hstack((histidine_02["seq_id"].values,ko_only[0].values,blastp_selected[0].values))).shape)
