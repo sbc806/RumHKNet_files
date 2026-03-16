@@ -53,3 +53,7 @@ ko_sequences=pd.concat([ko_clustered,ko_newrun])
 print(ko_sequences)
 ko_sequences.to_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"),index=False)
                     
+blastp_clustered=get_sequences(clustered,blastp)
+blastp_newrun_seqs=get_sequences(newrun_seqs,blastp)
+blastp_sequences=pd.concat([blastp_clustered,blastp_newrun_seqs])
+print(blastp_sequences)
