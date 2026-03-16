@@ -9,9 +9,9 @@ histidine_02=pd.read_csv(os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02
 ko=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%.txt"),header=None)
 blastp=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100.txt"),header=None)
 
-print("Number of histidine kinases predicted by RumHKNet:",len(histidine_02))
-print("Number of histidine kinases predicted by KO:",len(ko))
-print("Number of histidine kinases predicted by Blastp:",len(blastp))
+print("Number of histidine kinases predicted by RumHKNet:",len(histidine_02),np.unique(histidine_02["seq_id"]).shape)
+print("Number of histidine kinases predicted by KO:",len(ko),np.unique(ko[0]).shape)
+print("Number of histidine kinases predicted by Blastp:",len(blastp),np.unique(blastp[0].shape))
 print(histidine_02[["seq_id","seq"]])
 # histidine_02[["seq_id","seq"]].to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02.csv"),index=None)
 
