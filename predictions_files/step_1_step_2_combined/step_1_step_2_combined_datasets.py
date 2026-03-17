@@ -70,7 +70,7 @@ print(len(ko_sequences),len(ko_sequences_selected))
 print(len(blastp_sequences),len(blastp_sequences_selected))
 print(ko_sequences_selected.columns,blastp_sequences_selected.columns)
 
-def split_chunks(df,save_path,save_name):
+def split_chunks(df,chunk_size,save_path,save_name):
   small=df["seq"].str.len()<=1500
   large=df["seq"].str.len()>1500
   print(np.sum(small),np.sum(large))
@@ -83,7 +83,9 @@ def split_chunks(df,save_path,save_name):
     end=start+chunk_size
     print("Start:",start,"End:",end)
     df_small_i=df_small[start:end]
-    df.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
+    df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
 
-split_chunks(ko_sequences_selected,os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered","histidine_ko_only")
+chunk_size=300000
+split_chunks(ko_sequences_selected,chunk_size,os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered"),"histidine_ko_only")
+split_chunks(blastp_sequences_selected,chunk_size,os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered"),"blastp_no_rumhknet")
