@@ -61,7 +61,7 @@ blastp_sequences.to_csv(os.path.join(dir_path,"histidine_other_software/final_Bl
 """
 
 ko_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"))
-blastp_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"))
+blastp_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100_sequences.csv"))
 
 ko_sequences_selected=ko_sequences[ko_sequences["seq_id"].isin(ko_only[0])]
 blastp_sequences_selected=blastp_sequences[blastp_sequences["seq_id"].isin(blastp_selected[0])]
@@ -69,3 +69,16 @@ blastp_sequences_selected=blastp_sequences[blastp_sequences["seq_id"].isin(blast
 print(len(ko_sequences),len(ko_sequences_selected))
 print(len(blastp_sequences),len(blastp_sequences_selected))
 print(ko_sequences_selected.columns,blastp_sequences_selected.columns)
+
+def split_chunks(df):
+  small=df["seq"].str.len()<=1500
+  large=df["seq"].str.len()>1500
+  print(np.sum(small),np.sum(large))
+        
+  df_small=df[small]
+  df_large=df[large]
+  num_splits=len(df)//chunk_size+1
+  for i in range(num_splits):
+    start=i*num_splits
+    end=start+num_splize
+    df_small_i=df_small[start:end]
