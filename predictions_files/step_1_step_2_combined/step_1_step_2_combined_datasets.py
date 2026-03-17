@@ -16,8 +16,8 @@ print(histidine_02[["seq_id","seq"]])
 # histidine_02[["seq_id","seq"]].to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/histidine_rumhknet_predicted_02_02.csv"),index=None)
 histidine_02_small=histidine_02[histidine_02["seq"].str.len()<=1500][["seq_id","seq"]]
 histidine_02_large=histidine_02[histidine_02["seq"].str.len()>1500][["seq_id","seq"]]
-print(histidine_02_small)
-print(histidine_02_large)
+# print(histidine_02_small)
+# print(histidine_02_large)
 # histidine_02_small.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered/histidine_rumhknet_predicted_02_02_small.csv"),index=False)
 # histidine_02_large.to_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered/histidine_rumhknet_predicted_02_02_large.csv"),index=False)
 
@@ -60,8 +60,8 @@ print(blastp_sequences)
 blastp_sequences.to_csv(os.path.join(dir_path,"histidine_other_software/final_Blastp_HK95%_3050100_sequences.csv"),index=False)
 """
 
-ko_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"),index=False)
-blastp_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"),index=False)
+ko_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"))
+blastp_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/total_KO_95%_sequences.csv"))
 
 ko_sequences_selected=ko_sequences[ko_sequences["seq_id"].isin(ko_only[0])]
 blastp_sequences_selected=blastp_sequences[blastp_sequences["seq_id"].isin(blastp_selected[0])]
