@@ -83,3 +83,7 @@ def split_chunks(df,save_path,save_name):
     end=start+chunk_size
     print("Start:",start,"End:",end)
     df_small_i=df_small[start:end]
+    df.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
+  df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
+
+split_chunks(ko_sequences_selected,os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered","histidine_ko_only")
