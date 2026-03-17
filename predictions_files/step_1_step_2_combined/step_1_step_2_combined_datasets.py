@@ -80,5 +80,5 @@ def split_chunks(df):
   num_splits=len(df)//chunk_size+1
   for i in range(num_splits):
     start=i*num_splits
-    end=start+num_splize
+    end=start+chunk_size
     df_small_i=df_small[start:end]
