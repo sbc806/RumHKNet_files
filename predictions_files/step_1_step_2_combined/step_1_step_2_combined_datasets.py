@@ -66,4 +66,6 @@ blastp_sequences=pd.read_csv(os.path.join(dir_path,"histidine_other_software/tot
 ko_sequences_selected=ko_sequences[ko_sequences["seq_id"].isin(ko_only[0])]
 blastp_sequences_selected=blastp_sequences[blastp_sequences["seq_id"].isin(blastp_selected[0])]
 
-print(
+print(len(ko_sequences),len(ko_sequences_selected))
+print(len(blastp_sequences),len(blastp_sequences_selected))
+print(ko_sequences_selected.columns,blastp_sequences_selected.columns)
