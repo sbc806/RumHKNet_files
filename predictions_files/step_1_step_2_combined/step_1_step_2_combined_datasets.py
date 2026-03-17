@@ -70,7 +70,7 @@ print(len(ko_sequences),len(ko_sequences_selected))
 print(len(blastp_sequences),len(blastp_sequences_selected))
 print(ko_sequences_selected.columns,blastp_sequences_selected.columns)
 
-def split_chunks(df):
+def split_chunks(df,save_path,save_name):
   small=df["seq"].str.len()<=1500
   large=df["seq"].str.len()>1500
   print(np.sum(small),np.sum(large))
