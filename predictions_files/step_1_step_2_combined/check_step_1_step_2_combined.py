@@ -10,7 +10,7 @@ def check_specific(dir_path,f_name):
   for f in selected_files:
     df=pd.read_csv(os.path.join(dir_path,f))
     df.columns=["seq_id","seq","prob","pred"]
-    print(df.columns)
+    # print(df.columns)
     print(f,len(df))
     dfs.append(df)
   return pd.concat(dfs)
