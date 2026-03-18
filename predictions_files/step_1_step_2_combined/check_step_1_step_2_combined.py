@@ -23,5 +23,5 @@ blastp=check_specific(dir_path,"histidine_blastp_ko_no_rumhknet")
 print("KO:",len(ko))
 print("Blastp:",len(blastp))
 
-print("KO histidine:",np.sum(blastp["prob"]>=0.2),np.sum(ko["pred"]))
+print("KO histidine:",np.sum(ko["prob"]>=0.2),np.sum(ko["pred"]))
 print("Blastp histidine:",np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
