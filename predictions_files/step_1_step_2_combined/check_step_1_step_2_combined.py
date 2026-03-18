@@ -25,6 +25,6 @@ print("RumHKNet:",len(rumhknet))
 print("KO:",len(ko))
 print("Blastp:",len(blastp))
 
-print("RumHKNet histidine:",np.sum(rumhknet["prob"]>=0.2),np.sum(rumhknet["pred"]))
+print("RumHKNet histidine:",np.sum(rumhknet["prob"]>=0.1),np.sum(rumhknet["prob"]>=0.2),np.sum(rumhknet["pred"]))
 print("KO histidine:",np.sum(ko["prob"]>=0.1),np.sum(ko["prob"]>=0.2),np.sum(ko["pred"]))
 print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
