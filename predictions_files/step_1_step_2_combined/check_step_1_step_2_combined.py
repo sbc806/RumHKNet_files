@@ -12,7 +12,7 @@ def check_specific(dir_path,f_name):
     dfs.append(df)
   return pd.concat(dfs)
 
-dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicteed_results/step_1_step_2_combined/both/clustered"
+dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1_step_2_combined/both/clustered"
 
 ko=check_specific(dir_path,"histidine_ko_no_blastp_no_rumhknet")
 blastp=check_specific(dir_path,"histidine_blastp_ko_no_rumhknet")
