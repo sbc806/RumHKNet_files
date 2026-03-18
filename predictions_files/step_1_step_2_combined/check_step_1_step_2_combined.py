@@ -24,4 +24,4 @@ print("KO:",len(ko))
 print("Blastp:",len(blastp))
 
 print("KO histidine:",np.sum(ko["prob"]>=0.1),np.sum(ko["prob"]>=0.2),np.sum(ko["pred"]))
-print("Blastp histidine:",np.sum(blastp["prob"]>=1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
+print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
