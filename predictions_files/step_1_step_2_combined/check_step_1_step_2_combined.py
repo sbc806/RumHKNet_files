@@ -45,4 +45,4 @@ print(len(method),np.sum(clustered_contained)+len(new_seqs_contained))
 clustered_df_remaining=clustered_df[~clustered_contained][["seq_id","seq"]]
 new_seqs_df_remaining=new_seqs_df[~new_seqs_contained][["seq_id","seq"]]
 chunk_size=300000
-spltit_chunks(clustered_df_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"clustered_reo_sq95_remaining")
+spltit_chunks(clustered_df_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"clustered_rep_seq95_remaining")
