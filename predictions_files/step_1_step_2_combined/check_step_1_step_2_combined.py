@@ -36,3 +36,6 @@ clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_se
 new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
 # predictions_information(clustered_df)
 # predictions_information(new_seqs_df)
+
+clustered_contained=clustered_df["seq_id"].isin(method["seq_id"].values)
+new_seqs_contained=new_seqs_df["seq_id"].isin(method["seq_id"].values)
