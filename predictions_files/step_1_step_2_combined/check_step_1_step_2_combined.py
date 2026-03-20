@@ -28,3 +28,11 @@ print("Blastp:",len(blastp))
 print("RumHKNet histidine:",np.sum(rumhknet["prob"]>=0.1),np.sum(rumhknet["prob"]>=0.2),np.sum(rumhknet["pred"]))
 print("KO histidine:",np.sum(ko["prob"]>=0.1),np.sum(ko["prob"]>=0.2),np.sum(ko["pred"]))
 print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
+
+# from predictions_helpers import predictions_information
+
+predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
+clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
+new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
+# predictions_information(clustered_df)
+# predictions_information(new_seqs_df)
