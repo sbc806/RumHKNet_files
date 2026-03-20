@@ -32,12 +32,13 @@ print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2
 
 # from predictions_helpers import predictions_information
 
-predictions_dataset_path="../../predictions/predictions_dataset/step_1/clustered"
+predictions_dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
 clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_seq95.csv"))
 new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv"))
 # predictions_information(clustered_df)
 # predictions_information(new_seqs_df)
 
+dataset_dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions"
 clustered_contained=clustered_df["seq_id"].isin(method["seq_id"].values)
 new_seqs_contained=new_seqs_df["seq_id"].isin(method["seq_id"].values)
 print(len(method),np.sum(clustered_contained)+len(new_seqs_contained))
