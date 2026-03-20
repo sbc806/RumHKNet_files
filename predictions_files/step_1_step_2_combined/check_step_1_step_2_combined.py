@@ -43,7 +43,7 @@ method=pd.concat([rumhknet,ko,blastp])
 dataset_dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions"
 clustered_contained=clustered_df["seq_id"].isin(method["seq_id"].values)
 new_seqs_contained=new_seqs_df["seq_id"].isin(method["seq_id"].values)
-print(len(method),np.sum(clustered_contained)+len(new_seqs_contained))
+print(len(method),np.sum(clustered_contained)+np.sum(new_seqs_contained))
 print(clustered_df.shape,new_seqs_df.shape)
 print(np.unique(method["seq_id"].values).shape,np.unique(clustered_df["seq_id"].values).shape,np.unique(new_seqs_df["seq_id"].values).shape)
 print(np.unique(np.concatenate([clustered_df["seq_id"].values,new_seqs_df["seq_id"].values])).shape)
