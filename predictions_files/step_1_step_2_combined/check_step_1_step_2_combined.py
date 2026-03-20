@@ -44,3 +44,5 @@ print(len(method),np.sum(clustered_contained)+len(new_seqs_contained))
 
 clustered_df_remaining=clustered_df[~clustered_contained][["seq_id","seq"]]
 new_seqs_df_remaining=new_seqs_df[~new_seqs_contained][["seq_id","seq"]]
+chunk_size=300000
+spltit
