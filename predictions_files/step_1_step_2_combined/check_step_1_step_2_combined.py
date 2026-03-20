@@ -39,3 +39,7 @@ new_seqs_df=pd.read_csv(os.path.join(predictions_dataset_path,"newrun_seqs.csv")
 
 clustered_contained=clustered_df["seq_id"].isin(method["seq_id"].values)
 new_seqs_contained=new_seqs_df["seq_id"].isin(method["seq_id"].values)
+print(len(method),np.sum(clustered_contained)+len(new_seqs_contained))
+
+clustered_remaining=clustered_df[~clustered_contained]
+new_seqs_df_remaining=new_seqs_df[~new_seqs_contained]
