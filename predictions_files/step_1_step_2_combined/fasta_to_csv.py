@@ -5,7 +5,7 @@ import pandas as pd
 from Bio import SeqIO
 
 
-def convert_fasta_to_csv(dir_path,fasta_name,save_path,label):
+def convert_fasta_to_csv(dir_path,fasta_name,save_path,label=None):
   print(f"Converting {dir_path}/{fasta_name}.fasta")
   fasta_count=0
   
@@ -30,5 +30,5 @@ parser.add_argument("--label",type=int)
 args=parser.parse_args()
 """
 # convert_fasta_to_csv(args.dir_path,args.fasta_name,args.save_path,args.label)
-dir_path
-convert_fasta_to_csv(
+dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
+convert_fasta_to_csv(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.fasta",dir_path)
