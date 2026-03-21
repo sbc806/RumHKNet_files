@@ -14,8 +14,8 @@ def convert_fasta_to_csv(dir_path,fasta_name,save_path,label):
     f.write("seq_id,seq_type,seq,label\n")
     for i, fasta in enumerate(fasta_content):
       name,sequence=fasta.id,str(fasta.seq)
-      if len(sequence)<1000 or len(sequence)>5000:
-        print("Unexpected sequence length:",name, len(sequence))
+      # if len(sequence)<1000 or len(sequence)>5000:
+        # print("Unexpected sequence length:",name, len(sequence))
       f.write(f"{name},prot,{sequence},{label}\n")
       fasta_count=fasta_count+1
   
