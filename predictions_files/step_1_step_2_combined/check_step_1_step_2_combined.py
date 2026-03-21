@@ -65,4 +65,4 @@ print(len(method),np.sum(final_sequences_contained))
 
 final_sequences_remaining=final_sequences[~final_sequences_contained]
 print(final_sequences_remaining.shape)
-split_chunks(final_sequences_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"unique_clustered_rep_All140086RBAGs_95_90_remaining")
+split_chunks(final_sequences_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining")
