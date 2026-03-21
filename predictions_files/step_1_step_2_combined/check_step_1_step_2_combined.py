@@ -56,4 +56,8 @@ chunk_size=2_450_000
 # split_chunks(new_seqs_df_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"newrun_seqs_remaining")
 
 final_sequences=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/unique_clustered_rep_seq_All140086RBAGs_95_90.csv")
+print(final_sequences.shape)
 print(np.unique(final_sequences["seq_id"].values).shape,np.unique(final_sequences["seq"]).values).shape)
+
+final_sequences_contained=final_sequences["seq_id"].isin(method["seq_id"].values)
+print(len(method),np.sum(final_sequences_contained))
