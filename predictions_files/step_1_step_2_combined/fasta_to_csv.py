@@ -30,3 +30,5 @@ parser.add_argument("--label",type=int)
 args=parser.parse_args()
 """
 # convert_fasta_to_csv(args.dir_path,args.fasta_name,args.save_path,args.label)
+dir_path
+convert_fasta_to_csv(
