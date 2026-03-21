@@ -40,7 +40,7 @@ clustered_df=pd.read_csv(os.path.join(predictions_dataset_path,"clustered_rep_se
 
 method=pd.concat([rumhknet,ko,blastp])
 
-# dataset_dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions"
+dataset_dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions"
 # clustered_contained=clustered_df["seq_id"].isin(method["seq_id"].values)
 # new_seqs_contained=new_seqs_df["seq_id"].isin(method["seq_id"].values)
 """
@@ -56,8 +56,13 @@ chunk_size=2_450_000
 # split_chunks(new_seqs_df_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"newrun_seqs_remaining")
 
 final_sequences=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/unique_clustered_rep_seq_All140086RBAGs_95_90.csv")
+print(final_sequences)
 print(final_sequences.shape)
 print(np.unique(final_sequences["seq_id"].values).shape,np.unique(final_sequences["seq"].values).shape)
 
 final_sequences_contained=final_sequences["seq_id"].isin(method["seq_id"].values)
 print(len(method),np.sum(final_sequences_contained))
+
+final_sequences_remaining=final_sequences[~final_sequences_contained]
+print(final_sequences_remaining.shape)
+split_chunks(final_sequences_remaining,chunk_size,os.path.join(dataset_dir_path,"predictions_dataset/step_1_step_2_combined/clustered"),"unique_clustered_rep_All140086RBAGs_95_90_remaining")
