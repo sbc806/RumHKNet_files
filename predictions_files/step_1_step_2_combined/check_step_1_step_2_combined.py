@@ -57,7 +57,7 @@ chunk_size=2_450_000
 
 final_sequences=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/unique_clustered_rep_seq_All140086RBAGs_95_90.csv")
 print(final_sequences.shape)
-print(np.unique(final_sequences["seq_id"].values).shape,np.unique(final_sequences["seq"]).values).shape)
+print(np.unique(final_sequences["seq_id"].values).shape,np.unique(final_sequences["seq"].values).shape)
 
 final_sequences_contained=final_sequences["seq_id"].isin(method["seq_id"].values)
 print(len(method),np.sum(final_sequences_contained))
