@@ -19,6 +19,9 @@ def check_specific(dir_path,f_name):
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1_step_2_combined/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1_step_2_combined/both/clustered"
 
+small_27=pd.read_csv(os.path.join(dataset_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_small_27.csv"))
+print(len(small_27))
+
 selected_i=[27]
 i_df={}
 total_predicted_kinases=0
