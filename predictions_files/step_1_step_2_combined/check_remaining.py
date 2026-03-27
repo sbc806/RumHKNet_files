@@ -36,3 +36,5 @@ large_predicted=pd.read_csv(os.path.join(predictions_path,"unique_clustered_rep_
 print(len(large),len(large_predicted))
 large_predicted.columns=i_df[0].columns
 print("Number of predicted large kinases:",np.sum(large_predicted["prob"]>=0.1),np.sum(large_predicted["prob"]>=0.2),np.sum(large_predicted["pred"]))
+large_contained=large["seq_id"].isin(large_predicted["seq_id"].values)
+print(np.sum(large_contained),np.sum(~large_contained))
