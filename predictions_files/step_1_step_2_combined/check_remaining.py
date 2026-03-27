@@ -30,7 +30,11 @@ for i in selected_i:
   i_df[i]=df_i
   print(i,len(df_i),"Number of predicted kinases:",np.sum(df_i["prob"]>=0.1),np.sum(df_i["prob"]>=0.2),np.sum(df_i["pred"]))
   total_predicted_kinases=total_predicted_kinases+np.sum(df_i["pred"])
-  
+
+small_contained=small_27.isin(i_df[27]["seq_id"].values)
+print(np.sum(small_contained),np.sum(~small_contained))
+small_27[~small_contained].to_csv(os.path.join(dataset_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_small_27_1.csv"),index=False)
+
 large=pd.read_csv(os.path.join(dataset_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_large.csv"))
 large_predicted=pd.read_csv(os.path.join(predictions_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_large_predicted_02_v2.csv"))
 print(len(large),len(large_predicted))
