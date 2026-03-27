@@ -12,7 +12,7 @@ def check_specific(dir_path,f_name):
     df=pd.read_csv(os.path.join(dir_path,f))
     df.columns=["seq_id","seq","prob","pred"]
     # print(df.columns)
-    print(f,len(df))
+    # print(f,len(df))
     dfs.append(df)
   return pd.concat(dfs)
 
@@ -32,6 +32,8 @@ print("Blastp:",len(blastp))
 print("RumHKNet histidine:",np.sum(rumhknet["prob"]>=0.1),np.sum(rumhknet["prob"]>=0.2),np.sum(rumhknet["pred"]))
 print("KO histidine:",np.sum(ko["prob"]>=0.1),np.sum(ko["prob"]>=0.2),np.sum(ko["pred"]))
 print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
+
+print()
 
 print("Remaining sequences")
 
