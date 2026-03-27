@@ -34,6 +34,13 @@ print("KO histidine:",np.sum(ko["prob"]>=0.1),np.sum(ko["prob"]>=0.2),np.sum(ko[
 print("Blastp histidine:",np.sum(blastp["prob"]>=0.1),np.sum(blastp["prob"]>=0.2),np.sum(blastp["pred"]))
 
 print("Remaining sequences")
+
+selected_i=[i for i in range(0,10)]
+i_df={}
+total_predicted_kinases=0
+for i in selected_i:
+  df_i=check_speicific(predictions_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_small")
+  i_df[i]=df_i
 large=pd.read_csv(os.path.join(dataset_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_large.csv"))
 large_predicted=pd.read_csv(os.path.join(predictions_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_remaining_large_predicted_02_v2.csv"))
 print(len(large),len(large_predicted))
