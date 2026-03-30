@@ -36,6 +36,6 @@ def split_chunks(df,chunk_size,save_path,save_name):
     df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
 
-chunk_size=300000
-# split_chunks(ko_sequences_selected,chunk_size,os.path.join(dir_path,"predictions/predictions_dataset/step_1_step_2_combined/clustered"),"histidine_ko_no_blastp_no_rumhknet")
+chunk_size=2450000
+split_chunks(seq_data_df,chunk_size,dataset_path,"newadd_155098MAGs")
 
