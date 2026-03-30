@@ -8,7 +8,7 @@ fasta_path=os.path.join(dir_path,"newadd_155098MAGs.fasta")
 fasta_content=SeqIO.parse(open(fasta_path),"fasta")
 seq_data=[]
 for i, fasta in enumerate(fasta_content):
-  seq_id,seq=fasta.id,fasta.seq
+  seq_id,seq=fasta.id,str(fasta.seq)
   seq_data.append({"seq_id":seq_id,"seq":seq})
 
 seq_data_df=pd.DataFrame(seq_data)
