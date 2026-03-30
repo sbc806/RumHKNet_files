@@ -4,6 +4,9 @@ import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data"
 fasta_path=os.path.join(dir_path,"newadd_155098MAGs.fasta")
+dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
+predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
+
 """
 fasta_content=SeqIO.parse(open(fasta_path),"fasta")
 seq_data=[]
