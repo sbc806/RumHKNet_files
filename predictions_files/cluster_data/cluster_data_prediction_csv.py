@@ -37,6 +37,6 @@ def split_chunks(df,chunk_size,save_path,save_name):
     df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
 
-chunk_size=2450000
+chunk_size=400000
 split_chunks(seq_data_df,chunk_size,dataset_path,"newadd_155098MAGs")
 
