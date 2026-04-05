@@ -9,7 +9,7 @@ predictions_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic
 
 i_df={}
 for i in range(0,5):
-  df_i=check_specific(predictions_path,"newadd_155098MAGs_small_{i}")
+  df_i=check_specific(predictions_path,f"newadd_155098MAGs_small_{i}")
   print(len(df_i))
   i_df[i]=df_i
   
