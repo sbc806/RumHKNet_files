@@ -106,10 +106,9 @@ def analyze_method_histidine(df):
   print("Number of predictions in common between RumHKNet and KO or in common between RumHKNet and Blast:",rumhknet_ko_blastp3050)
   print(len(df),rumhknet_only+rumhknet_ko_blastp3050)
 
-import os as os
-import numpy as np
-import pandas as pd
-# from step_1_step_2_combined_datasets import split_chunks
+
+
+
 
 def check_specific(dir_path,f_name):
   files=os.listdir(dir_path)
