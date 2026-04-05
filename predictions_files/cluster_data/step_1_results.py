@@ -12,7 +12,7 @@ predictions_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic
 i_df={}
 for i in range(0,5):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_small_{i}")
-  print(len(df_i))
+  print(i,len(df_i))
   i_df[i]=df_i
   
 large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/newadd_155098MAGs_large_predicted_02_v2.csv"))
