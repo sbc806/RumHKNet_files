@@ -21,8 +21,9 @@ for i in i_df:
   print(i,np.sum(df_i["prob"]>=0.2),np.sum(df_i["pred"]))
   kinase_dfs.append(df_i[df_i["pred"]==1])
 
-kinase_small-df=pd.concat(kinase-dfs)
-print(len(kinase_small-df))
+kinase_small_df=pd.concat(kinase_dfs)[["seq_id","seq"]]
+print(len(kinase_small_df))
+print(kinase_small_df)
 kinase_small_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_small_step_1_kinase.csv",index=False)
 
 large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/newadd_155098MAGs_large_predicted_02_v2.csv"))
@@ -30,4 +31,7 @@ print(len(large_df))
 large_df.columns=i_df[0].columns
 print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["pred"]))
 
-kinase_large_df=large_df[large_df["pred"]==1]
+kinase_large_df=large_df[large_df["pred"]==1][["seq_id","seq"]]
+print(len(kinase_large_df))
+print(kinase_large_df)
+kinase_large_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_large_step_1_kinase.csv",index=False)
