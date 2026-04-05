@@ -25,3 +25,5 @@ large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123
 print(len(large_df))
 large_df.columns=i_df[0].columns
 print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["pred"]))
+
+kinase_large_df=large_df[large_df["pred"]==1]
