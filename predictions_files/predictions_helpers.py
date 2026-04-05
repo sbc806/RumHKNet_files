@@ -107,29 +107,6 @@ def analyze_method_histidine(df):
   print(len(df),rumhknet_only+rumhknet_ko_blastp3050)
 
 
-from Bio import SeqIO
-import numpy as np
-import os
-import pandas as pd
-
-dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data"
-fasta_path=os.path.join(dir_path,"newadd_155098MAGs.fasta")
-dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
-predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
-
-"""
-fasta_content=SeqIO.parse(open(fasta_path),"fasta")
-seq_data=[]
-for i, fasta in enumerate(fasta_content):
-  seq_id,seq=fasta.id,str(fasta.seq)
-  seq_data.append({"seq_id":seq_id,"seq":seq})
-
-seq_data_df=pd.DataFrame(seq_data)
-print(seq_data_df)
-seq_data_df.to_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"),index=False)
-"""
-seq_data_df=pd.read_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"))
-
 def split_chunks(df,chunk_size,save_path,save_name):
   small=df["seq"].str.len()<=1500
   large=df["seq"].str.len()>1500
