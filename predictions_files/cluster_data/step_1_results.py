@@ -26,7 +26,7 @@ kinase_small_df=pd.concat(kinase_dfs)[["seq_id","seq"]]
 print(len(kinase_small_df))
 print(kinase_small_df)
 chunk_size=200000
-split_chunks(kinase_small_df,chunk_size,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered","newadd_155098MAGs_small_step_1_kinase")
+split_chunks(kinase_small_df,chunk_size,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered","newadd_155098MAGs_step_1_kinase")
 # kinase_small_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_small_step_1_kinase.csv",index=False)
 
 large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/newadd_155098MAGs_large_predicted_02_v2.csv"))
