@@ -9,3 +9,5 @@ large=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_1_
 print(large)
 large_histidine=large["label"]==1
 print("large",np.sum(large["prob"]>=0.2),np.sum(large_histidine))
+
+large[large_histidine][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered")
