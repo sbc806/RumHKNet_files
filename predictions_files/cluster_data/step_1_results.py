@@ -9,6 +9,7 @@ from predictions_helpers import split_chunks
 dataset_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
 predictions_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
 
+
 i_df={}
 for i in range(0,5):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_small_{i}")
@@ -24,7 +25,9 @@ for i in i_df:
 kinase_small_df=pd.concat(kinase_dfs)[["seq_id","seq"]]
 print(len(kinase_small_df))
 print(kinase_small_df)
-kinase_small_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_small_step_1_kinase.csv",index=False)
+chunk_size=200000
+split_chunks(kinase_small_df,chunk_size,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered","newadd_155098MAGs_small_step_1_kinase")
+# kinase_small_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_small_step_1_kinase.csv",index=False)
 
 large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/newadd_155098MAGs_large_predicted_02_v2.csv"))
 print(len(large_df))
@@ -34,4 +37,4 @@ print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["pred"]))
 kinase_large_df=large_df[large_df["pred"]==1][["seq_id","seq"]]
 print(len(kinase_large_df))
 print(kinase_large_df)
-kinase_large_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_large_step_1_kinase.csv",index=False)
+# kinase_large_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_large_step_1_kinase.csv",index=False)
