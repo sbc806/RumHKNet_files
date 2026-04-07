@@ -10,4 +10,4 @@ print(large)
 large_histidine=large["label"]==1
 print("large",np.sum(large["prob"]>=0.2),np.sum(large_histidine))
 
-large[large_histidine][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/newadd_155098MAGs_large_step_2_histidine_kinase.csv")
+large[large_histidine][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/newadd_155098MAGs_large_step_2_histidine_kinase.csv",index=False)
