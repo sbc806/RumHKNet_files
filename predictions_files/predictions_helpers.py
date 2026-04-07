@@ -122,7 +122,7 @@ def split_chunks(df,chunk_size,save_path,save_name):
     df_small_i=df_small[start:end]
     df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   if len(df_large) > 0:
-    
+    print("Saving large")
     df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
 
 
