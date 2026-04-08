@@ -16,6 +16,8 @@ for i in range(0,5):
   print(i,len(df_i))
   i_df[i]=df_i
 
+print("Number of predictions for sequences <= 1500:", np.concat(i_df.values()))
+
 kinase_dfs=[]
 for i in i_df:
   df_i=i_df[i]
