@@ -18,7 +18,7 @@ for i in range(0,4):
   if i == 0:
     specific_total=specific_total+np.sum(df_i["prob"]>=0.2)
   else:
-    specific_total=specific_total+np.sum(df_i["prob"]>=0.2)
+    specific_total=specific_total+np.sum(df_i["prob"]>=0.3)
 kinase_small_df=pd.concat(small_dfs)
 print(len(kinase_small_df))
 
