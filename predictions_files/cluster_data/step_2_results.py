@@ -8,7 +8,7 @@ from predictions_helpers import check_specific
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered"
 
-i_df={}
+# i_df={}
 small_dfs=[]
 for i in range(0,4):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_step_1_kinase_small_{i}")
