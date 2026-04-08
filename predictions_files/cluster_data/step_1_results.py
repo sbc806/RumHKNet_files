@@ -5,6 +5,7 @@ import sys
 sys.path.append("..")
 from predictions_helpers import check_specific
 from predictions_helpers import split_chunks
+from prediction_helpers import df_to_fasta
 
 dataset_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
 predictions_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
@@ -19,6 +20,7 @@ for i in range(0,5):
   small_dfs.append(df_i)
   
 print("Number of predictions for sequences <= 1500:", len(pd.concat(small_dfs)))
+print(np.unique(pd.concat(small_dfs)["seq_id"]).shape,np.unique(pd.concat(small_dfs)["seq"]).shape)
 
 kinase_dfs=[]
 for i in i_df:
@@ -35,6 +37,7 @@ chunk_size=200000
 
 large_df=pd.read_csv(os.path.join("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/newadd_155098MAGs_large_predicted_02_v2.csv"))
 print("Number of predictions for sequences > 1500:",len(large_df))
+print(np.unique(large_df["seq_id"]).shape,np.unique(large_df["seq"]).shape)
 large_df.columns=i_df[0].columns
 print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["pred"]))
 
