@@ -18,7 +18,7 @@ for i in range(0,5):
   i_df[i]=df_i
   small_dfs.append(df_i)
   
-print("Number of predictions for sequences <= 1500:", np.concat(small_dfs))
+print("Number of predictions for sequences <= 1500:", pd.concat(len(small_dfs)))
 
 kinase_dfs=[]
 for i in i_df:
