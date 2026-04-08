@@ -46,6 +46,7 @@ print("Number of predicted kinases for sequences > 1500:",len(kinase_large_df))
 print(kinase_large_df)
 # kinase_large_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/newadd_155098MAGs_large_step_1_kinase.csv",index=False)
 
+print()
 print(kinase_small_df.columns,kinase_large_df.columns)
 kinase_df=pd.concat([kinase_small_df,kinase_large_df])
 print(len(kinase_df))
