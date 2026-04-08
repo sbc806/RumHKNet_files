@@ -22,6 +22,7 @@ for i in range(0,4):
     specific_total=specific_total+np.sum(df_i["prob"]>=0.3)
 kinase_small_df=pd.concat(small_dfs)
 print(len(kinase_small_df))
+print(np.unique(kinase_small_df["seq_id"]).shape,np.unique(kinase_small_df["seq"]).shape)
 
 chosen=kinase_small_df["prob"]>=0.2
 histidine_kinase_small_df=kinase_small_df[chosen]
@@ -29,6 +30,7 @@ print("small",len(histidine_kinase_small_df),np.sum(kinase_small_df["prob"]>=0.2
       
 large=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_1_kinase_predicted_02_v2.csv"))
 print(large)
+print(np.unique(large["seq_id"]).shape,np.unique(large["seq"]).shape)
 large_histidine=large["label"]==1
 print("large",np.sum(large["prob"]>=0.2),np.sum(large_histidine))
 
