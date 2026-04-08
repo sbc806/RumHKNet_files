@@ -51,11 +51,11 @@ def fasta_to_df(fasta_path):
 
 def df_to_fasta(df,save_path):
   for i in range(0,len(df)):
-    with open(save_path,"w") as f:
+    with open(save_path,"w") as fasta_file:
       seq_id=df["seq_id"][i]
       seq=df["seq"][i]
-      f.write(f">{seq_id}\n")
-      f.write(f"{seq}\n")
+      fasta_file.write(f">{seq_id}\n")
+      fasta_file.write(f"{seq}\n")
 
 def get_interval(df,min_prob,max_prob,column="prob"):
   min_rows=df[column]>min_prob
