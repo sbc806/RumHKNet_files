@@ -12,10 +12,14 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 small_dfs=[]
 for i in range(0,4):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_step_1_kinase_small_{i}")
+  print(i,len(df_i))
   small_dfs.append(df_i)
 
-print(len(pd.concat(small_dfs))
-print("small",np.sum(),np.sum())
+kinase_small_df=pd.concat(small_dfs)
+print(len(pd.concat(kinase_small_df))
+
+histidine_kinase_small_df=kinase_small_df[kinase_small_df["pred"]==1]
+print("small",len(histidine_kinase_small_df),np.sum(kinase_small_df["prob"]>=0.2),np.sum(kinase_small_df["pred"]==1))
       
 large=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_1_kinase_predicted_02_v2.csv"))
 print(large)
