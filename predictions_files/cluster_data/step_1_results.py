@@ -11,12 +11,14 @@ predictions_path = "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic
 
 
 i_df={}
+small_dfs=[]
 for i in range(0,5):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_small_{i}")
   print(i,len(df_i))
   i_df[i]=df_i
-
-print("Number of predictions for sequences <= 1500:", np.concat(list(i_df.values())))
+  small_dfs.append(df_i)
+  
+print("Number of predictions for sequences <= 1500:", np.concat(small_dfs))
 
 kinase_dfs=[]
 for i in i_df:
