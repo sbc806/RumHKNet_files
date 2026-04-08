@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import sys
-sys
+sys.path.append("..")
 from predictions_helpers import check_specific
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered"
