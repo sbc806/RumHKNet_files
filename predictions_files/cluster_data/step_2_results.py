@@ -14,7 +14,10 @@ for i in range(0,4):
   df_i=check_specific(predictions_path,f"newadd_155098MAGs_step_1_kinase_small_{i}")
   print(i,len(df_i))
   small_dfs.append(df_i)
-
+  if i == 0:
+    specific_total=specific_total+np.sum(df_i["prob"]>=0.2)
+  else:
+    specific_total=specific_total+np.sum(df_i["prob"]>=0.2)
 kinase_small_df=pd.concat(small_dfs)
 print(len(kinase_small_df))
 
