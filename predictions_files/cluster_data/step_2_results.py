@@ -22,6 +22,7 @@ for i in range(0,4):
 kinase_small_df=pd.concat(small_dfs)
 print(len(kinase_small_df))
 
+chosen=kinase_small_df["prob"]>=0.2
 histidine_kinase_small_df=kinase_small_df[kinase_small_df["pred"]==1]
 print("small",len(histidine_kinase_small_df),np.sum(kinase_small_df["prob"]>=0.2),specific_total,np.sum(kinase_small_df["pred"]==1))
       
