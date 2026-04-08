@@ -36,7 +36,7 @@ print("large",np.sum(large["prob"]>=0.2),np.sum(large_histidine))
 
 # large[large_histidine][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/newadd_155098MAGs_large_step_2_histidine_kinase.csv",index=False)
 
-histidine_kinase_df=pd.concat(kinase_small_df[["seq_id","seq"]],large[large_histidine][["seq_id","seq"])
+histidine_kinase_df=pd.concat(histidine_kinase_small_df[["seq_id","seq"]],large[large_histidine][["seq_id","seq"])
 print(len(histidine_kinase_df))
 histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_2_histidine_kinase_02.csv",index=False)
 df_to_fasta(histidine_kinase_df,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_2_histidine_kinase_02.fasta")
