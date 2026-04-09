@@ -28,7 +28,7 @@ chosen=kinase_small_df["prob"]>=0.2
 histidine_kinase_small_df=kinase_small_df[chosen]
 print("small",len(histidine_kinase_small_df),np.sum(kinase_small_df["prob"]>=0.2),specific_total,np.sum(kinase_small_df["pred"]==1))
 
-histidine_kinase_small_df.to_csv("/home/schen123/projects/rrg-guaanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/newadd_155098MAGs_small_step_2_histidine_kinase.csv",index=False)
+histidine_kinase_small_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/newadd_155098MAGs_small_step_2_histidine_kinase.csv",index=False)
 
 large=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_1_kinase_predicted_02_v2.csv"))
 print(large)
