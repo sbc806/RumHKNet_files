@@ -12,3 +12,6 @@ large_step_3=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_
 print(large_step_3.columns)
 print(large_step_3["top1_label"])
 print(large_step_3)
+
+family=large_step_3["top1_label"]
+family[family==10]=-1
