@@ -16,7 +16,7 @@ cd /home/schen123/projects/rrg-guanuofa/schen123/kinases/virtual_environments
 source TEST/bin/activate
 
 
-cd ../home/schen123/RumHKNet_files/predictions_files/cluster_data
+cd /home/schen123/RumHKNet_files/predictions_files/cluster_data
 cat both_step_1_no_matrix_dirpath.sh > /home/schen123/scratch/kinases/RumHKNet_output/step_1/both/both_step_1_no_matrix_dirpath_$SLURM_JOB_ID.txt
 ./both_step_1_no_matrix_dirpath.sh
 
