@@ -15,6 +15,5 @@ print(large_step_3)
 
 large_step_3_selected=large_step_3[["seq_id","seq","top1_label"]]
 large_step_3_selected.columns=["seq_id","seq","batch"]
-large_step_3_selected["batch"]=large_step_3_selected["batch"].astype(int).values
-large_step_3_selected[large_step_3_selected["batch"]==10]=-1
+large_step_3_selected[np.where(large_step_3_selected["batch"]==10)[]=-1
 print(large_step_3_selected)
