@@ -13,6 +13,6 @@ print(large_step_3.columns)
 print(large_step_3["top1_label"])
 print(large_step_3)
 
-large_step_3_selected=[[
+large_step_3_selected=large_step_3[["seq_id","seq","top1_label"]]
 family=large_step_3["top1_label"]
 family[family==10]=-1
