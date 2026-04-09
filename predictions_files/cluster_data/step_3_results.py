@@ -14,5 +14,6 @@ print(large_step_3["top1_label"])
 print(large_step_3)
 
 large_step_3_selected=large_step_3[["seq_id","seq","top1_label"]]
-large_step_3_selected.loc[["top1_label"]
+large_step_3_selected.columns=["seq_id","seq","batch"]
+large_step_3_selected.loc[["batch"]
 family[family==10]=-1
