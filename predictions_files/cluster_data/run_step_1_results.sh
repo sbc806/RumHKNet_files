@@ -3,7 +3,7 @@
 #SBATCH --mem=100G
 #SBATCH --time=1-0
 #SBATCH --job-name=step-1-results
-#SBATCH --output=/scratch/schen123/kinases/RumHKNet_output/step_1/both/both_step_1_no_matrix_dirpath_%j.out
+#SBATCH --output=..output/step_1/both/both_step_1_no_matrix_dirpath_%j.out
 #SBATCH --err=/scratch/schen123/kinases/RumHKNet_output/step_1/both/both_step_1_no_matrix_dirpath_%j.err
 
 
