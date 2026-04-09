@@ -4,3 +4,5 @@ import numpy as np
 import sys
 sys.path.append("..")
 from predictions_helpers import check_specific, df_to_fasta
+
+dataset_path="/home/schen123/projects/rrg-guanuofa/schen123
