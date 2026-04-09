@@ -10,5 +10,5 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 large_step_3=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_2_histidine_kinase_predicted_02.csv"))
 print(large_step_3.columns)
-print(large_step_3["top_1_label"])
+print(large_step_3["top1_label"])
 print(large_step_3)
