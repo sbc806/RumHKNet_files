@@ -37,4 +37,5 @@ print(step_3)
 other_label=json.load("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json")
 print(other_label)
 
-setp_3=add_label(step_3,reverse_dict(other_label))
+step_3=add_label(step_3,reverse_dict(other_label))
+print(step_3)
