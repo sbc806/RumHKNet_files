@@ -72,7 +72,7 @@ with open("/home/schen123/kinases/kinases_dataset/step_3_11_family/protein/multi
   json.dump(other_label,f)
 
 
-print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("/home/schen123/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
 
