@@ -40,4 +40,5 @@ print(other_label)
 
 step_3=add_label(step_3,reverse_dict(other_label))
 print(step_3)
-step_3.to_csv(
+step_3.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_3_histidine_kinase_family.csv",index=False)
+df.to_fasta(step_3,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_3_histidine_kinase_family.fasta",extra_column="pred_other")
