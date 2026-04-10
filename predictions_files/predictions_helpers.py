@@ -49,12 +49,15 @@ def fasta_to_df(fasta_path):
     all_fasta.append({"seq_id":seq_id,"seq":seq})
   return pd.DataFrame(all_fasta)
 
-def df_to_fasta(df,save_path):
+def df_to_fasta(df,save_path,extra_column=None):
   with open(save_path,"w") as fasta_file:
     for i in range(0,len(df)):
       seq_id=df["seq_id"].iloc[i]
       seq=df["seq"].iloc[i]
-      fasta_file.write(f">{seq_id}\n")
+      extra=""
+      if extra_column is not None:
+        extra=df[extra].iloc[i]
+      fasta_file.write(f">{seq_id},{extra}\n")
       fasta_file.write(f"{seq}\n")
 
 def get_interval(df,min_prob,max_prob,column="prob"):
