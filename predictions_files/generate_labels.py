@@ -50,7 +50,7 @@ print("Contained:",np.sum(step_3_full_df["seq_id"].isin(histidine_full_df["seq_i
 
 print("ko_family:",ko_family,len(ko_family))
 print("Number of families:",np.unique(np.array(list(ko_family.values()))).shape)
-with open("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print("ko_label:",ko_label)
 label_ko=reverse_dict(ko_label)
@@ -68,7 +68,7 @@ for each_family in np.unique(step_3_full_df["label"]):
   print()
 print(other_label)
 
-with open("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
+with open("/home/schen123/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
 
 
