@@ -27,3 +27,5 @@ step_4=pd.concat(smal_selected,large_selected])
 with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 print(ko_label)
+
+step_4=add_label(step_4,reverse_dict(ko_label))
