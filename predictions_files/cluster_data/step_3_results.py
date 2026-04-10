@@ -34,4 +34,5 @@ step_3=pd.concat([small_step_3[["seq_id","seq","top1_label"]],large_step_3[["seq
 step_3.columns=["seq_id","seq","pred"]
 print(step_3)
 
-other_label=json.load("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_clsass/label.sjson")
+other_label=json.load("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json")
+print(other_label)
