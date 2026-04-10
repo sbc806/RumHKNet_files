@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --account=def-guanuofa
-#SBATCH --mem=100G
-#SBATCH --time=1-0
-#SBATCH --job-name=step-1-results
+#SBATCH --mem=64G
+#SBATCH --time=3:0:0
+#SBATCH --job-name=step-2-results
 #SBATCH --output=output/step_1_results_%j.out
 #SBATCH --err=output/step_1_results_%j.err
 
