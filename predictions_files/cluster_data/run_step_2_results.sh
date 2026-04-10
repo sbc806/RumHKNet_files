@@ -3,8 +3,8 @@
 #SBATCH --mem=64G
 #SBATCH --time=3:0:0
 #SBATCH --job-name=step-2-results
-#SBATCH --output=output/step_1_results_%j.out
-#SBATCH --err=output/step_1_results_%j.err
+#SBATCH --output=output/step_2_results_%j.out
+#SBATCH --err=output/step_2_results_%j.err
 
 
 module load python/3.11
@@ -17,7 +17,7 @@ source TEST/bin/activate
 
 
 cd /home/schen123/scratch/kinases/RumHKNet_files/predictions_files/cluster_data
-python step_1_results.py
+python step_2_results.py
 
 
 deactivate
