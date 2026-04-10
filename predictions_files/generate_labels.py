@@ -31,7 +31,7 @@ print("Number of histidine kinases:",len(histidine_full_df))
 
 step_3_train_df=pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
 step_3_dev_df=pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/dev/dev.csv")
-step_3_test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
+step_3_test_df=pd.read_csv("/home/schen123/scratch/RumHKNet/kinases_dataset/step_3_11_family/protein/multi_class/test/test.csv")
 step_3_full_df=pd.concat([step_3_train_df,step_3_dev_df,step_3_test_df])
 print("Number of histidine kinases for step 3:",len(step_3_full_df))
 print(step_3_full_df.columns)
