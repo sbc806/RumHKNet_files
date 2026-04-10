@@ -30,3 +30,5 @@ print(ko_label)
 
 step_4=add_label(step_4,reverse_dict(ko_label))
 print(step_4)
+step_4.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_pedictions/step_1_02_step_2_02/newadd_155098MAGs_step_4_ko.csv",index=Fals)
+df_to_fasta(step_4,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/clsuter_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_4_ko.fasta",index=False)
