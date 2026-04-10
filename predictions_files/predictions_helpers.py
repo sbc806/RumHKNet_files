@@ -50,8 +50,8 @@ def fasta_to_df(fasta_path):
   return pd.DataFrame(all_fasta)
 
 def df_to_fasta(df,save_path):
-  for i in range(0,len(df)):
-    with open(save_path,"w") as fasta_file:
+  with open(save_path,"w") as fasta_file:
+    for i in range(0,len(df)):
       seq_id=df["seq_id"].iloc[i]
       seq=df["seq"].iloc[i]
       fasta_file.write(f">{seq_id}\n")
