@@ -13,7 +13,9 @@ print(small_step_3.columns)
 print(small_step_3["top1_label"])
 print(small_step_3)
 
-small_step_3_selected
+small_step_3_selected=small_step_3[["seq_id","seq","top1_label"]]
+small_step_3_selected.columns=["seq_id","seq","batch"]
+
 large_step_3=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_2_histidine_kinase_predicted_02.csv"))
 print(large_step_3.columns)
 print(large_step_3["top1_label"])
