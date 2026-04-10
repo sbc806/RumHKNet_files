@@ -32,3 +32,4 @@ print(large_step_3_selected)
 
 step_3=pd.concat([small_step_3[["seq_id","seq","top1_label"]],large_step_3[["seq_id","seq","top1_label"]])
 step_3.columns=["seq_id","seq","pred"]
+print(step_3)
