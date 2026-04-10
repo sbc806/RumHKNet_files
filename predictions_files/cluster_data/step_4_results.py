@@ -29,3 +29,4 @@ with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_v3_batch/p
 print(ko_label)
 
 step_4=add_label(step_4,reverse_dict(ko_label))
+print(step_4)
