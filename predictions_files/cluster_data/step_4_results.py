@@ -13,9 +13,12 @@ small=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_small_step_3_
 print(small)
 print(small.columns)
 small_selected=small[["seq_id","seq","top1_label"]]
+small_selected.columns=["seq_id","seq","pred"]
 
 print()
 
 large=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_3_histidine_kinase_family_predicted_02.csv"))
 print(large)
 print(large.columns)
+large_selected=large[["seq_id","seq","top1_label"]]
+large_selected.columns=["seq_id","seq","pred"]
