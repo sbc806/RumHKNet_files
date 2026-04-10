@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import sys
 sys.path.append("..")
-from predictions_helpers import check_specific, df_to_fasta, add_label
+from predictions_helpers import check_specific, df_to_fasta, reverse_dict, add_label
 
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_3/both/clustered"
