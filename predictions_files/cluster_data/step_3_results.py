@@ -15,6 +15,8 @@ print(small_step_3)
 
 small_step_3_selected=small_step_3[["seq_id","seq","top1_label"]]
 small_step_3_selected.columns=["seq_id","seq","batch"]
+small_step_3_selected.iloc[np.where(small_step_3_selected["batch"]==10)[0],2]=-1
+print(small_step_3_selected)
 
 large_step_3=pd.read_csv(os.path.join(predictions_path,"newadd_155098MAGs_large_step_2_histidine_kinase_predicted_02.csv"))
 print(large_step_3.columns)
