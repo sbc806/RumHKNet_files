@@ -56,7 +56,7 @@ def df_to_fasta(df,save_path,extra_column=None):
       seq=df["seq"].iloc[i]
       extra=""
       if extra_column is not None:
-        extra=df[extra].iloc[i]
+        extra=df[extra_column].iloc[i]
       fasta_file.write(f">{seq_id},{extra}\n")
       fasta_file.write(f"{seq}\n")
 
