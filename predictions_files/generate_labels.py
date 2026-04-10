@@ -23,7 +23,7 @@ def make_df(dir_path):
 # Match seq_id, get numerical batcko label then actual ko label then get family label
 
 other_label={}
-train_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
+train_df=pd.read_csv("/home/schen123/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
 dev_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")
 test_df=pd.read_csv("../../sbc806/RumHKNet/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")
 histidine_full_df=pd.concat([train_df,dev_df,test_df])
