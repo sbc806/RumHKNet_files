@@ -11,4 +11,4 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 
 isolate=fasta_to_df(os.path.join(dir_path,"5_isolate.faa"))
 print(isolate)
-print(np.unique(isolate["seq_id"]).shape,
+print(np.unique(isolate["seq_id"]).shape,np.unique(isolate["seq"]).shape)
