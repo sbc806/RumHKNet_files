@@ -30,4 +30,5 @@ large_step_3_selected.iloc[np.where(large_step_3_selected["batch"]==10)[0],2]=-1
 print(large_step_3_selected)
 # large_step_3_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/newadd_155098MAGs_large_step_3_histidine_kinase_family.csv",index=False)
 
-step_3=
+step_3=pd.concat([small_step_3_selected,large_step_3_selected])
+
