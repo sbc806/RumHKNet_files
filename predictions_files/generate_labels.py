@@ -68,11 +68,11 @@ for each_family in np.unique(step_3_full_df["label"]):
   print()
 print(other_label)
 
-with open("/home/schen123/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
+with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","w") as f:
   json.dump(other_label,f)
 
 
-print("batch:",np.unique(pd.read_csv("/home/schen123/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
+print("batch:",np.unique(pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("/home/schen123/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/dev/dev.csv")["batch"]))
 print("batch:",np.unique(pd.read_csv("/home/schen123/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/test/test.csv")["batch"]))
 
