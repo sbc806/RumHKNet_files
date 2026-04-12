@@ -1,6 +1,10 @@
 import os
 import pandas as pd
 import numpy as np
+import sys
+sys.path.append("..")
+from predictions_helpers import df_to_fasta
+
 
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clstered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
