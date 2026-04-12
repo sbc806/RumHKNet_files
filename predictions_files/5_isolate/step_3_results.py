@@ -16,4 +16,4 @@ small_selected.columns=["seq_id","seq","batch"]
 small_selected.iloc[np.where(small_selected["batch"]==10)[0],2]=-1
 print(small_selected)
 
-small_selected.to_csv(?"/home/schen123/projects/rrg-guanuofa")
+small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered",index=False)
