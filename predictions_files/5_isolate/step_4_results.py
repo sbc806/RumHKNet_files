@@ -17,7 +17,7 @@ small_selected=small[["seq_id","seq","top1_label"]]
 small_selected.columns=["seq_id","seq","pred"]
 print(small_selected)
 
-with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3/protein/multi_class/label.json","r") as f:
+with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 
 small_selected=add_label(small_selected,reverse_dict(ko_label))
