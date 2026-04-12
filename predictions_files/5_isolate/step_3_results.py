@@ -14,3 +14,4 @@ print(small.columns)
 small_selected=small[["seq_id","seq","top1_label"]]
 small_selected.columns=["seq_id","seq","batch"]
 small_selected.iloc[np.where(small_selected["batch"]==-10)[0],2]=-1
+print(small_selected)
