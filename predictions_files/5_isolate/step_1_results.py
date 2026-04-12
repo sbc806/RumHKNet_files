@@ -10,7 +10,7 @@ small_v3=pd.read_csv(os.path.join(predictions_path,"5_isolate_small_predicted_02
 
 print(len(small_v2),len(small_v3))
 print(np.mean(small_v3["prob"]-small_v2["prob"]))
-print(np.mean(round(small_v3["prob"],235)-small_v2["prob"]))
+print(np.mean(round(small_v3["prob"],5)-round(small_v2["prob"],5)))
 
 large=pd.read_csv(os.path.join(predictions_path,"5_isolate_large_predicted_02_v2.csv"))
 print(len(large))
