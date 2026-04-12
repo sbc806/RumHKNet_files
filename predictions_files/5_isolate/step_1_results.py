@@ -26,4 +26,5 @@ large=pd.read_csv(os.path.join(predictions_path,"5_isolate_large_predicted_02_v2
 print(len(large))
 print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
 
-small_v2[small_v2["label"]==1][["seq_id","seq"]].to_csv("
+small_v2[small_v2["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.csv",index=False)
+df_to_fasta(small_v2[small_v2["label"]==1][["seq_id","seq"]],"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.fasta")
