@@ -22,7 +22,7 @@ def predictions_information(df):
 def reverse_dict(original):
   reversed={}
   for each_key in original:
-    each_value=str(original[str(each_key)])
+    each_value=str(original[each_key])
     reversed[each_value]=each_key
   return reversed
   
@@ -31,7 +31,7 @@ def add_label(df,other_label):
   print(pred)
   pred_other=[]
   for each_pred in pred:
-    pred_other.append(other_label[each_pred])
+    pred_other.append(other_label[str(each_pred)])
   df.loc[:,"pred_other"]=pred_other
   return df
 
