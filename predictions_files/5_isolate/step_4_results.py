@@ -16,4 +16,4 @@ print(small_selected)
 with open("/home/schen23/scratch/kinases/kinases_dataset/extra_p_133_class_v3/protein/multi_class/label.json","r") ads fL:
   label_ko=json.load(f)
 small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic5_isolate_predictions/RumHKnet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.csv")
-df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.fasta"extra)
+df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.fasta",extra)
