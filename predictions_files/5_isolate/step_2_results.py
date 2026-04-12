@@ -9,4 +9,4 @@ small=pd.read_csv(os.path.join(predictions_path,"5_isolate_step_1_kinase_small_p
 print(len(small))
 print(np.sum(small["prob"]>=0.2),np.sum(small["label"]==1))
 
-small[small["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/",index=False)
+small[small["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/5_isolate_step_2_histidine_kinase_small.csv",index=False)
