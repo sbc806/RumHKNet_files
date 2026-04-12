@@ -8,3 +8,5 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 small=pd.read_csv(os.path.join(predictions_path,"5_isolate_step_1_kinase_small_predicted_02_v2.csv"))
 print(len(small))
 print(np.sum(small["prob"]>=0.2),np.sum(small["label"]==1))
+
+small[small["label"]==1]
