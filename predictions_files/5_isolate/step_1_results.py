@@ -13,5 +13,6 @@ print(np.mean(small_v3["prob"]-small_v2["prob"]))
 print(np.mean(round(small_v3["prob"],5)-round(small_v2["prob"],5)))
 print(np.sum(small_v2["label"].values!=small_v3["pred"].values))
 
+print(small_v2["prob"]
 large=pd.read_csv(os.path.join(predictions_path,"5_isolate_large_predicted_02_v2.csv"))
 print(len(large))
