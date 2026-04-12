@@ -7,3 +7,6 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small=pd.read_csv(os.path.join(predictions_path,"5_isolate_step_3_histidine_kinase_family_small_predicted_02_v2.csv"))
 print(small)
+
+small_selected=small[["seq_id","seq","top1_label"]]
+small
