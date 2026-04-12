@@ -31,4 +31,4 @@ small_selected=add_label(small_selected,reverse_dict(label_family))
 print(small_selected)
 
 small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.csv",index=Flse)
-df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinsse_family.fasta",extra_column="pred_other")
+df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.fasta",extra_column="pred_other")
