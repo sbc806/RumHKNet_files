@@ -14,3 +14,6 @@ print(len(small))
 print(np.sum(small["prob"]>=0.2),np.sum(small["label"]==1))
 
 small[small["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/5_isolate_step_2_histidine_kinase_small.csv",index=False)
+
+small[small["label"]==1][["seq++id",seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_2_histidine_kinase_02.csv",index=False)
+                          
