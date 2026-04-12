@@ -22,7 +22,7 @@ def predictions_information(df):
 def reverse_dict(original):
   reversed={}
   for each_key in original:
-    each_value=original[str(each_key)]
+    each_value=str(original[str(each_key)])
     reversed[each_value]=each_key
   return reversed
   
