@@ -20,7 +20,7 @@ print(small_selected)
 with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3/protein/multi_class/label.json","r") as f:
   ko_label=json.load(f)
 
-small_selected=add_label(small_selected,reverse_dict(label_ko))
+small_selected=add_label(small_selected,reverse_dict(ko_label))
 print(small_selected)
 
 # small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.csv",index=False)
