@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import sys
 sys.path.append("..")
-from predictions_helpers import add_label, reverse_dict, dft_to_fasta
+from predictions_helpers import add_label, reverse_dict, df_to_fasta
 
 
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered"
@@ -23,5 +23,5 @@ with open("/home/schen23/scratch/kinases/kinases_dataset/extra_p_133_class_v3/pr
 small_selected=add_label(small_selected,reverse_dict(label_ko))
 print(small_selected)
 
-small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.csv",index=False)
-df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.fasta",extra_column="pred_other")
+# small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predic5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.csv",index=False)
+# df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.fasta",extra_column="pred_other")
