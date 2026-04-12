@@ -1,5 +1,5 @@
 import os
-impotr numpy as np
+import numpy as np
 import pandas aspd
 
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered"
