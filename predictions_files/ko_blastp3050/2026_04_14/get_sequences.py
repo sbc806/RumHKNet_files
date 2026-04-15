@@ -29,8 +29,10 @@ def get_sequences(predictions,desired_ids):
   print(len(selected))
   return selected
 
-daaset_predictions=
-blastp_contained=get_sequences(rumhknet,blastp)
-blastp_contained.to_csv(os.path.join(dir_path,"2026_04_14_kofamscan/cluster_data/RumHKNet_csv_blastp_sequences.csv"),index=False)
-kofam_contained=get_sequences(rumhknet,kofamscan)
-kofam_contained.to_csv(os.path.join(dir_path,"2026_04_13_blastp_kofamscan/cluster_data/RumHKNet_csv_kofamscan_sequences.csv"),index=False)
+daaset_predictions={"RumHKNet_csv":rumhknet}
+for each_dataset in dataset_predictions:
+  predictions=dataset_predictions[each_dataset]
+  blastp_contained=get_sequences(predictions,blastp)
+  blastp_contained.to_csv(os.path.join(dir_path,f"2026_04_14_kofamscan/cluster_data/{each_dataset}_blastp_sequences.csv"),index=False)
+  kofamscan_contained=get_sequences(predictions,kofamscan)
+  kofamscan_contained.to_csv(os.path.join(dir_path,f"2026_04_13_blastp_kofamscan/cluster_data/{each_dataset}_kofamscan_sequences.csv"),index=False)
