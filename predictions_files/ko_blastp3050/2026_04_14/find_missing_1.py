@@ -10,10 +10,9 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 # newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
 # print(len(newrun))
 
-unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"),usecols=["seq_id"])
-print(len(unique))
-print(unique)
-"""
+# unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"),usecols=["seq_id"])
+# print(len(unique))
+# print(unique)
 
 newadd=pd.read_csv(os.path.join(dir_path,"cluster_data/newadd_155098MAGs.csv"))
 print(len(newadd))
@@ -22,7 +21,7 @@ print(newadd)
 isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
 print(len(isolate))
 print(isolate)
-"""
+
 
 blastp_missing=pd.read_csv("blastp_missing_1.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing_1.csv",header=None)
@@ -52,11 +51,11 @@ def get_sequences(df,method_missing):
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
 
 # get_sequences(unique,method_missing)
-blastp_contained=blastp_missing.isin(unique["seq_id"].values)
-kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
-print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
-print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
+# blastp_contained=blastp_missing.isin(unique["seq_id"].values)
+# kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
+# print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
+# print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
 
-# get_contained_information(newadd,all_missing)
-# print()
-# get_contained_information(isolate,all_missing)
+get_contained_information(newadd,all_missing)
+print()
+get_contained_information(isolate,all_missing)
