@@ -12,6 +12,16 @@ unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAG
 print(len(unique))
 print(unique)
 
+"""
+newadd=pd.read_csv(os.path.join(dir_path,"cluster_data/newadd15098_MAGs.csv"))
+print(len(newadd))
+print(newadd)
+
+isolate=pd.read_csv(os.path.join(dir_path,"5_isolate.csv"))
+print(len(isolate))
+print(isolate)
+"""
+
 blastp_missing=pd.read_csv("blastp_missing.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
