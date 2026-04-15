@@ -26,14 +26,17 @@ print(isolate)
 blastp_missing=pd.read_csv("blastp_missing_1.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing_1.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
-print(blastp_missing,kofamscan_missing)
+print(blastp_missing,"\n",kofamscan_missing)
 all_missing=[blastp_missing,kofamscan_missing]
 method_missing={"blastp":blastp_missing,"kofamscan":kofamscan_missing}
 
-def get_contained_information(df,missing):
-  for each_missing in missing:
+def get_contained_information(df,method_missing):
+  print()
+  for each_method in method_missing:
+    each_missing=method_missing[each_method]
     print(np.sum(each_missing.isin(df["seq_id"].values)))
-
+  print()
+  
 def get_sequences(df,method_missing):
   for method in method_missing:
     missing=method_missing[method]
