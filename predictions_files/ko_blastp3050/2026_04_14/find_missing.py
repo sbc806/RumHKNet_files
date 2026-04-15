@@ -27,7 +27,7 @@ print(isolate)
 blastp_missing=pd.read_csv("blastp_missing_replaced.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing_replaced.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
-print(blastp_missing,"\n"kofamscan_missing)
+print(blastp_missing,"\n",kofamscan_missing)
 all_missing=[blastp_missing,kofamscan_missing]
 method_missing={"blastp":blastp_missing,"kofamscan":kofamscan_missing}
 
