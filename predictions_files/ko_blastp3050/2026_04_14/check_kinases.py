@@ -24,6 +24,10 @@ def get_df(dir_path,desired_file=""):
     if "missing" in f:
       df["seq_id"]=df["seq_id"].str.replace("IBODOACJ","IBODOACL")
     dfs.append(df)
+  for i in range(0,len(chosen)):
+    for j in range(i,len(chosen)):
+      contained=np.sum(dfs[i]["seq_id"].isin(dfs[j]["seq_id"].values))
+      print(chosen[i],chosen[j],np.sum(contained),np.sum(~contained))
   return pd.concat(dfs)
 
 blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
