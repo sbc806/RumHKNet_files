@@ -19,3 +19,5 @@ blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
 def get_information(predictions):
   print(len(preditions))
   print(np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
+
+get_information(blastp_predictions)
