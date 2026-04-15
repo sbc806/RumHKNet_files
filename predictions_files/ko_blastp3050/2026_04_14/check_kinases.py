@@ -18,8 +18,8 @@ def get_df(dir_path,desired_file=""):
 blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
 kofamscan_predictions=get_df(blastp_kofamscan_path,"kofamscan")
 def get_information(predictions):
-  print(len(predictions))
-  print(np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
+  print("Total:",len(predictions))
+  print("Unique:",np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
 
 get_information(blastp_predictions)
 get_information(kofamscan_predictions)
