@@ -26,7 +26,19 @@ kofamscan_predictions=get_df(blastp_kofamscan_path,"kofamscan")
 def get_information(predictions):
   print("Total:",len(predictions))
   print("Unique:",np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
-
+  seq_id_information={}
+  for i in range(0,len(predictions)):
+    seq-ipredictions["seq_id"].iloc[i]
+    seq=predictions["seq"].iloc[i]
+    prob=predictions["prob"].iloc[i]
+    pred=predictions["pred"].iloc[i]
+    if seq_id not in seq_id_information:
+      seq_id_information["seq_id"]={"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred}
+    else:
+      previous_information=seq_id_information[seq_id]
+      if previous_information["seq"]!=seq:
+        print(f"Sequences not the same for {seq_id}")
+        print(previous_information["prob"],prob,previous_information["pred"],pred)
 get_information(blastp_predictions)
 get_information(kofamscan_predictions)
 
