@@ -4,11 +4,11 @@ import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 
-# clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
-# print(len(clustered))
+clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
+print(len(clustered))
 
-newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
-print(len(newrun))
+# newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
+# print(len(newrun))
 
 # unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"))
 # print(len(unique))
@@ -41,12 +41,13 @@ def get_sequences(df,method_missing):
     contained=df["seq_id"].isin(missing[0])
     df_contained=df[contained]
     print(method,np.sum(contained),len(df_contained))
-    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/newrun_seqs_{method}_missing_sequences.csv"),index=False)
-    
+    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/clustered_rep_seq95_{method}_missing_sequences.csv"),index=False)
+
+get_sequences(clustered,method_missing)
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(clustered["seq_id"].values)))
 
-get_sequences(newrun,method_missing)
+# get_sequences(newrun,method_missing)
 # print(np.sum(blastp_missing.isin(newrun["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
 """
