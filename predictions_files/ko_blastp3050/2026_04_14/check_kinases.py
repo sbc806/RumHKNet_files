@@ -13,7 +13,9 @@ print(len(blastp),len(kofamscan))
 blastp_kofamscan_path=os.path.join(dir_path,"2026_04_14_blastp_kofamscan/cluster_data")
 
 def get_df(dir_path,desired_file=""):
-  chosen=[f for f in os.listdir(dir_path) if desired_file in f and "sequences" in f and "clustered_rep_seq95" not in f and "newrun_seqs" not in f]
+  chosen=[f for f in os.listdir(dir_path) if desired_file in f and "sequences" in f and "missing" not in f]
+  chosen_1=[f for f in os.listdir(dir_path) if desired_file in f and "5_isolate" in f and "missing" in f]
+  chosen=chosen+chosen_1
   print(desired_file,chosen)
   dfs=[]
   for f in chosen:
