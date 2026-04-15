@@ -10,3 +10,6 @@ kofamscan=pd.read_csv(os.path.join(dir_path,"kofam_HK_cluster95.txt"),header=Non
 print(len(blastp),len(kofamscan))
 
 print(np.unique(blastp[0]).shape,np.unique(kofamscan[0]).shape)
+
+print(blastp)
+print(kofamscan)
