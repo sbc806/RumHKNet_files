@@ -11,8 +11,15 @@ kofamscan=pd.read_csv(os.path.join(blastp_kofamscan_dir_path,"kofam_HK_cluster95
 print(len(blastp),len(kofamscan))
 
 rumhknet_path=os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02")
-rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv")
+rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv"))
 print(len(rumhknet))
+
+rumhknet_cluster_data_path=os.path.join(dir_path,"cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02")
+rumhknet_cluster_data=pd.read_csv(os.path.join(rumhknet_cluster_data_path,"newadd_155098MAGs_step_1_kinase_02.csv"))
+print(len(rumhknet_cluster_data))
+
+isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
+isolate=os.path.join(isolate_path,"")
 
 def get_sequences(predictions,desired_ids):
   contained=predictions["seq_id"].isin(desired_ids[0])
