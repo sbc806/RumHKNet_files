@@ -10,11 +10,11 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 # newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
 # print(len(newrun))
 
-# unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"))
-# print(len(unique))
-# print(unique)
+unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"))
+print(len(unique))
+print(unique)
 
-
+"""
 newadd=pd.read_csv(os.path.join(dir_path,"cluster_data/newadd_155098MAGs.csv"))
 print(len(newadd))
 print(newadd)
@@ -22,7 +22,7 @@ print(newadd)
 isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
 print(len(isolate))
 print(isolate)
-
+"""
 
 blastp_missing=pd.read_csv("missing_sequence_ids/blastp_missing_replaced.csv",header=None)
 kofamscan_missing=pd.read_csv("missing_sequence_ids/kofamscan_missing_replaced.csv",header=None)
