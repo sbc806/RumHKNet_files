@@ -40,7 +40,7 @@ def get_information(predictions):
       previous_information=seq_id_information[seq_id]
       if previous_information["seq"]!=seq:
         print(f"Sequences not the same for {seq_id}")
-        print(previous_information["prob"],prob,previous_information["pred"],pred)
+      print(seq_id,previous_information["prob"],prob,previous_information["pred"],pred)
     return seq_id_information
 
 get_information(blastp_predictions)
