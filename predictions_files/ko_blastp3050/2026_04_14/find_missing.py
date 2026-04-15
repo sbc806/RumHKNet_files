@@ -39,11 +39,11 @@ def get_contained_information(df,missing):
 # print(np.sum(blastp_missing.isin(newrun["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
 
-# blastp_contained=blastp_missing.isin(unique["seq_id"].values)
-# kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
-# print(np.sum(blastp_contained))
-# print(np.sum(kofamscan_contained))
+blastp_contained=blastp_missing.isin(unique["seq_id"].values)
+kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
+print(np.sum(blastp_contained))
+print(np.sum(kofamscan_contained))
 
-get_contained_information(newadd,all_missing)
-print()
-get_contained_information(isolate,all_missing)
+# get_contained_information(newadd,all_missing)
+# print()
+# get_contained_information(isolate,all_missing)
