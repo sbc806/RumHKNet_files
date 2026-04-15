@@ -17,6 +17,7 @@ print(len(blastp),len(kofamscan))
 rumhknet_cluster_data_path=os.path.join(dir_path,"cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02")
 rumhknet_cluster_data=pd.read_csv(os.path.join(rumhknet_cluster_data_path,"newadd_155098MAGs_step_1_kinase_02.csv"))
 print(len(rumhknet_cluster_data))
+print(rumhknet_cluster_data.columns)
 """
 rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
 rumhkent_isolate=pd.read_csv(os.path.join(rumhknet_isolate_path,"5_isolate_step_1_kinase_02.csv"))
