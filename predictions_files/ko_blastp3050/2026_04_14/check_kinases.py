@@ -30,7 +30,7 @@ kofamscan_predictions=get_df(blastp_kofamscan_path,"kofamscan")
 print()
 
 
-def get_information(predictions):
+def get_information(predictions,method):
   print("Total:",len(predictions))
   print("Unique:",np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
   seq_id_information={}
@@ -53,7 +53,10 @@ def get_information(predictions):
   df=pd.DataFrame(seq_id_records)
   print(len(df))
   print(df.columns)
-  print(np.sum(df["prob"]>0.2),np.sum(df["pred"]==1))
+  print(np.sum(df["prob"]>=0.2),np.sum(df["pred"]==1),np.sum(df["pred"]==0)
+  df_not_kinase=df[~(df["prob"]>=0.2)]
+  print(len(df_not_kinase))
+  df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
   return seq_id_information
 
 get_information(blastp_predictions)
