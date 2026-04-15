@@ -54,4 +54,7 @@ print(kinase_df)
 # kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_1_kinase_02.csv",index=False)
 # df_to_fasta(kinase_df,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02/newadd_155098MAGs_step_1_kinase_02.fasta")
 
-small_df
+small_df=pd.concat(small_dfs)
+print(small_df.columns,large_df.columns)
+full_df=pd.concat([small_df,large_df])
+full_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/newadd_155098MAGs_step_1_kinase_02_predictions_full.csv",index=False)
