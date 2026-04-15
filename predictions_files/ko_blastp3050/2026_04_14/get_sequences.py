@@ -29,6 +29,7 @@ def get_sequences(predictions,desired_ids):
   print(len(selected))
   return selected
 
+daaset_predictions=
 blastp_contained=get_sequences(rumhknet,blastp)
 blastp_contained.to_csv(os.path.join(dir_path,"2026_04_14_kofamscan/cluster_data/RumHKNet_csv_blastp_sequences.csv"),index=False)
 kofam_contained=get_sequences(rumhknet,kofamscan)
