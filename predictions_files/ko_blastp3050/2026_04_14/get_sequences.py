@@ -36,6 +36,6 @@ dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
 for each_dataset in dataset_predictions:
   predictions=dataset_predictions[each_dataset]
   blastp_contained=get_sequences(predictions,blastp)
-  blastp_contained.to_csv(os.path.join(dir_path,f"2026_04_14_kofamscan/cluster_data/{each_dataset}_blastp_sequences.csv"),index=False)
+  blastp_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/{each_dataset}_blastp_sequences.csv"),index=False)
   kofamscan_contained=get_sequences(predictions,kofamscan)
   kofamscan_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/{each_dataset}_kofamscan_sequences.csv"),index=False)
