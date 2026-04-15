@@ -16,3 +16,5 @@ print(kofamscan)
 
 contained=blastp.isin(kofamscan[0])
 print(np.sum(contained),np.sum(~contained))
+contained_1=kofamscan.isin(blastp[0])
+print(np.sum(contained_1),np.sum(~contained_1))
