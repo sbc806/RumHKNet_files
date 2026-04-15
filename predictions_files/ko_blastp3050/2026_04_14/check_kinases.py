@@ -29,3 +29,9 @@ def get_information(predictions):
 
 get_information(blastp_predictions)
 get_information(kofamscan_predictions)
+
+blastp_contained=blastp.isin(blastp_predictions["seq_id"].values)
+kofamscan_contained=kofamscan.isin(kofamscan_predictions["seq_id"].values)
+
+print("BLASTP:",np.sum(blastp_contained),np.sum(~blastp_contained))
+print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
