@@ -33,3 +33,4 @@ print(small_v2.columns,large.columns)
 full_df=pd.concat([small_v2,large])
 full_df.columns=["seq_id","seq","prob","pred"]
 print("Unique:",np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"]).shape)
+full_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_step_1_kinase_02_predictions_full.csv",index=False)
