@@ -41,11 +41,19 @@ def get_information(predictions):
       if previous_information["seq"]!=seq:
         print(f"Sequences not the same for {seq_id}")
       print(seq_id,previous_information["prob"],prob,previous_information["pred"],pred)
+    
+    df=pd.DataFrame(list(seq_id_information.values()))
+    print(len(df))
+    print(df.columns)
+    print(np.sum(df["prob"]>0.2),np.sum(df["pred"]==1))
     return seq_id_information
 
 get_information(blastp_predictions)
+print()
 get_information(kofamscan_predictions)
 
+
+"""
 blastp_contained=blastp.isin(blastp_predictions["seq_id"].values)
 kofamscan_contained=kofamscan.isin(kofamscan_predictions["seq_id"].values)
 
@@ -54,3 +62,4 @@ print("KofamScan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
 print(blastp.values[~blastp_contained])
 pd.DataFrame(blastp.values[~blastp_contained]).to_csv("blastp_missing.csv",index=False,header=None)
 pd.DataFrame(kofamscan.values[~kofamscan_contained]).to_csv("kofamscan_missing.csv",index=False,header=None)
+"""
