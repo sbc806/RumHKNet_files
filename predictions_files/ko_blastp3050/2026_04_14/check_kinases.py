@@ -59,8 +59,10 @@ def get_information(predictions,method):
       print(seq_id,previous_information["prob"],prob)
     
   df=pd.DataFrame(seq_id_records)
-  print("Legnth of created dataframe:",len(df),"Unique sequence IDs:",np.unique(["seq_id"]).shape,"Unique sequences:",np.unique(df["seq"]).shape)
+  print("Length of created dataframe:",len(df),"Unique sequence IDs:",np.unique(["seq_id"]).shape,"Unique sequences:",np.unique(df["seq"]).shape)
   print(df.columns)
+  contained=df["seq_id"].isin(method_sequence_ids[method][0])
+  print("Contained:",np.sum(contained),"Not contained:",np.sum(~contained))
   print("Number of sequences with prob>=0.2:",np.sum(df["prob"]>=0.2),"Number of sequences with pred==1:",np.sum(df["pred"]==1),"Number of sequences with pred==0:",np.sum(df["pred"]==0))
   kinase=df["prob"]>=0.2
   df_not_kinase=df[~kinase]
