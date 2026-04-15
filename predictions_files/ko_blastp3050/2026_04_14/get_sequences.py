@@ -19,7 +19,8 @@ rumhknet_cluster_data=pd.read_csv(os.path.join(rumhknet_cluster_data_path,"newad
 print(len(rumhknet_cluster_data))
 
 isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
-isolate=os.path.join(isolate_path,"")
+isolate=pd.read_csv(os.path.join(isolate_path,"5_isolate_step_1_kinase_02.csv"))
+print(len(isolate))
 
 def get_sequences(predictions,desired_ids):
   contained=predictions["seq_id"].isin(desired_ids[0])
