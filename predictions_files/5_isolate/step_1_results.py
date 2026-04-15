@@ -26,5 +26,10 @@ large=pd.read_csv(os.path.join(predictions_path,"5_isolate_large_predicted_02_v2
 print(len(large))
 print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
 
-small_v2[small_v2["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.csv",index=False)
-df_to_fasta(small_v2[small_v2["label"]==1][["seq_id","seq"]],"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.fasta")
+# small_v2[small_v2["label"]==1][["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.csv",index=False)
+# df_to_fasta(small_v2[small_v2["label"]==1][["seq_id","seq"]],"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_1_kinase_02.fasta")
+
+print(small_v2.columns,large.columns)
+full_df=pd.concat([small_v2,large])
+full_df.columns=["seq_id","seq","prob","pred"]
+print("Unique:",np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"]).shape)
