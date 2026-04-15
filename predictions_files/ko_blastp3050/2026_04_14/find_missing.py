@@ -46,15 +46,16 @@ def get_sequences(df,method_missing):
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(clustered["seq_id"].values)))
 
+get_sequences(newrun,method_mising)
 # print(np.sum(blastp_missing.isin(newrun["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
-
+"""
 get_sequences(unique,method_missing)
 blastp_contained=blastp_missing.isin(unique["seq_id"].values)
 kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
 print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
 print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
-
+"""
 # get_contained_information(newadd,all_missing)
 # print()
 # get_contained_information(isolate,all_missing)
