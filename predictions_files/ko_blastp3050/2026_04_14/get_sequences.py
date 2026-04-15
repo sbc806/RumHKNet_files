@@ -25,7 +25,7 @@ print(len(isolate))
 def get_sequences(predictions,desired_ids):
   contained=predictions["seq_id"].isin(desired_ids[0])
   print("Number of contained sequences:",np.sum(contained))
-  selected=predctions[contained]
+  selected=predictions[contained]
   print(len(selected))
   return selected
 
