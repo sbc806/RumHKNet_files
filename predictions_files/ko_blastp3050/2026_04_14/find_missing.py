@@ -4,8 +4,8 @@ import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 
-clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
-print(len(clustered))
+# clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
+# print(len(clustered))
 
 # newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
 # print(len(newrun))
@@ -13,7 +13,7 @@ print(len(clustered))
 # unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"))
 # print(len(unique))
 # print(unique)
-"""
+
 
 newadd=pd.read_csv(os.path.join(dir_path,"cluster_data/newadd_155098MAGs.csv"))
 print(len(newadd))
@@ -22,7 +22,7 @@ print(newadd)
 isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
 print(len(isolate))
 print(isolate)
-"""
+
 
 blastp_missing=pd.read_csv("blastp_missing_replaced.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing_replaced.csv",header=None)
@@ -35,7 +35,7 @@ def get_contained_information(df,method_missing):
   print()
   for each_method in method_missing:
     each_missing=method_missing[each_method]
-    print(np.sum(each_missing.isin(df["seq_id"].values)))
+    print(each_method,"Contained:",np.sum(each_missing.isin(df["seq_id"].values)))
   print()
   
 def get_sequences(df,method_missing):
@@ -46,7 +46,7 @@ def get_sequences(df,method_missing):
     print(method,np.sum(contained),len(df_contained))
     df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/clustered_rep_seq95_{method}_missing_sequences.csv"),index=False)
 
-get_sequences(clustered,method_missing)
+# get_sequences(clustered,method_missing)
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(clustered["seq_id"].values)))
 
@@ -60,6 +60,6 @@ kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
 print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
 print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
 """
-# get_contained_information(newadd,all_missing)
-# print()
-# get_contained_information(isolate,all_missing)
+get_contained_information(newadd,all_missing)
+print()
+get_contained_information(isolate,all_missing)
