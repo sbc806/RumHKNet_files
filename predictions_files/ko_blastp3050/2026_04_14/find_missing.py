@@ -19,7 +19,7 @@ newadd=pd.read_csv(os.path.join(dir_path,"cluster_data/newadd15098_MAGs.csv"))
 print(len(newadd))
 print(newadd)
 
-isolate=pd.read_csv(os.path.join(dir_path,"5_isolate.csv"))
+isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
 print(len(isolate))
 print(isolate)
 """
