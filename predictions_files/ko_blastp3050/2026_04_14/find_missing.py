@@ -27,14 +27,23 @@ print(isolate)
 blastp_missing=pd.read_csv("blastp_missing.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
+all_missing=[blastp_missing,kofamscan_missing]
 
+def get_contained_information(df,missing):
+  for each_missing in missing:
+    print(np.sum(each_missing.isin(df["seq_id"].values)))
+    
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(clustered["seq_id"].values)))
 
 # print(np.sum(blastp_missing.isin(newrun["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
 
-blastp_contained=blastp_missing.isin(unique["seq_id"].values)
-kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
-print(np.sum(blastp_contained))
-print(np.sum(kofamscan_contained))
+# blastp_contained=blastp_missing.isin(unique["seq_id"].values)
+# kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
+# print(np.sum(blastp_contained))
+# print(np.sum(kofamscan_contained))
+
+get_contained_information(newadd,all_missing)
+print()
+get_contained_information(isolate,all_missing)
