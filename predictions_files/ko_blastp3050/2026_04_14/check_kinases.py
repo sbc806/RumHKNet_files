@@ -14,3 +14,5 @@ def get_df(dir_path,desired_file="")
     print(df.columns)
     dfs.append(df)
   return pd.concat(dfs)
+
+get_df(blastp_kofamscan_path,"cluster_data_RumHKNet")
