@@ -34,7 +34,7 @@ def get_contained_information(df,method_missing):
   print()
   for each_method in method_missing:
     each_missing=method_missing[each_method]
-    print(np.sum(each_missing.isin(df["seq_id"].values)))
+    print(each_method,"Contained:",np.sum(each_missing.isin(df["seq_id"].values)))
   print()
   
 def get_sequences(df,method_missing):
