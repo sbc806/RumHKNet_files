@@ -24,6 +24,7 @@ def get_df(dir_path,desired_file=""):
     print(df.columns)
     if "missing" in f:
       df["seq_id"]=df["seq_id"].str.replace("IBODOACJ","IBODOACL")
+    fs.append(f)
     dfs.append(df)
   return pd.concat(dfs)
 
