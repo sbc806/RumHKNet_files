@@ -53,7 +53,7 @@ def get_information(predictions,method):
   df=pd.DataFrame(seq_id_records)
   print(len(df))
   print(df.columns)
-  print(np.sum(df["prob"]>=0.2),np.sum(df["pred"]==1),np.sum(df["pred"]==0)
+  print(np.sum(df["prob"]>=0.2),np.sum(df["pred"]==1),np.sum(df["pred"]==0))
   df_not_kinase=df[~(df["prob"]>=0.2)]
   print(len(df_not_kinase))
   df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
