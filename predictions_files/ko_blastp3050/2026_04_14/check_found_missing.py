@@ -24,5 +24,5 @@ other=["newrun_seqs","unique_clustered_rep_seq_All10086RBAGs_95_90"]
 
 for each_method in methods:
   for each_other in other:
-    desired_str=f"{each_method}_{each_other}"
+    desired_str=f"{each_other}_{each_method}"
     get_missing(dir_path,method_missing[each_method],desired_str)
