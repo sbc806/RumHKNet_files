@@ -59,9 +59,9 @@ def get_information(predictions,method):
   df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
   return seq_id_information
 
-get_information(blastp_predictions)
+get_information(blastp_predictions,"blastp")
 print()
-get_information(kofamscan_predictions)
+get_information(kofamscan_predictions,"kofamscan")
 
 
 """
