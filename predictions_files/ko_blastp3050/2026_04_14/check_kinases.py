@@ -35,6 +35,6 @@ kofamscan_contained=kofamscan.isin(kofamscan_predictions["seq_id"].values)
 
 print("BLASTP:",np.sum(blastp_contained),np.sum(~blastp_contained))
 print("KofamScan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
-print(~blastp[blastp_contained])
+print(blastp[~blastp_contained])
 # blastp[~blastp_contained].to_csv("blastp_missing.csv",index=False)
 # kofamscan[~kofamscan_contained].to_csv("kofamscan_missing.csv",index=False)
