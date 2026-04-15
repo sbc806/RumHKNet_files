@@ -24,10 +24,10 @@ def get_df(dir_path,desired_file=""):
     if "missing" in f:
       df["seq_id"]=df["seq_id"].str.replace("IBODOACJ","IBODOACL")
     dfs.append(df)
-  for i in range(0,len(chosen)):
-    for j in range(i,len(chosen)):
-      contained=np.sum(dfs[i]["seq_id"].isin(dfs[j]["seq_id"].values))
-      print(chosen[i],chosen[j],np.sum(contained),np.sum(~contained))
+  # for i in range(0,len(chosen)):
+    # for j in range(i,len(chosen)):
+      # contained=np.sum(dfs[i]["seq_id"].isin(dfs[j]["seq_id"].values))
+      # print(chosen[i],chosen[j],np.sum(contained),np.sum(~contained))
   return pd.concat(dfs)
 
 blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
@@ -54,12 +54,14 @@ def get_information(predictions,method):
       previous_information=seq_id_information[seq_id]
       if previous_information["seq"]!=seq:
         print(f"Sequences not the same for {seq_id}")
-      print(seq_id,previous_information["prob"],prob,previous_information["pred"],pred)
+      if previous_information["pred"]!=pred:
+        print(f"Predictions not the same for {pred}")
+      print(seq_id,previous_information["prob"],prob)
     
   df=pd.DataFrame(seq_id_records)
   print(len(df))
   print(df.columns)
-  print(np.sum(df["prob"]>=0.2),np.sum(df["pred"]==1),np.sum(df["pred"]==0))
+  print("Number of sequences with prob>=0.2:",np.sum(df["prob"]>=0.2),"Number of sequences with pred==1:",np.sum(df["pred"]==1),"Number of sequences with pred==0:",np.sum(df["pred"]==0))
   kinase=df["prob"]>=0.2
   df_not_kinase=df[~kinase]
   print(len(df_not_kinase))
