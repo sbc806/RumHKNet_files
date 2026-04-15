@@ -17,14 +17,12 @@ def get_df(dir_path,desired_file=""):
   chosen_1=[f for f in os.listdir(dir_path) if desired_file in f and "5_isolate" in f and "missing" in f]
   chosen=chosen+chosen_1
   print(desired_file,chosen)
-  fs=[]
   dfs=[]
   for f in chosen:
     df=pd.read_csv(os.path.join(dir_path,f))
     print(df.columns)
     if "missing" in f:
       df["seq_id"]=df["seq_id"].str.replace("IBODOACJ","IBODOACL")
-    fs.append(f)
     dfs.append(df)
   return pd.concat(dfs)
 
