@@ -25,5 +25,5 @@ contained=unique["seq_id"].isin(rumhknet["seq_id"].values)
 print(np.sum(contained),np.sum(~contained))
 
 selected=rumhknet["seq_id"].isin(unique["seq_id"].values)
-print(np.sum(selected)
+print(np.sum(selected))
 rumhknet[selected].to_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_step_1_predictions_02.csv"),index=False)
