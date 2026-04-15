@@ -11,4 +11,12 @@ kofamscan=pd.read_csv(os.path.join(blastp_kofamscan_dir_path,"kofam_HK_cluster95
 print(len(blastp),len(kofamscan))
 
 rumhknet_path=os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02")
-rumhknet=pd.read_csv(os.path.join(rumhknet_path,"")
+rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv")
+print(len(rumhknet))
+
+def get_sequences(predictions,desired_ids):
+  contained=predictions["seq_id"].isin(desired_ids[0])
+  print("Number of contained sequences:",np.sum(contained))
+  selected=predctions[contained]
+  print(len(selected))
+  return selected
