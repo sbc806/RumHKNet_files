@@ -16,7 +16,7 @@ def get_df(dir_path,desired_file=""):
   return pd.concat(dfs)
 
 blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
-kofamscam_predictions=get_df(blastp_kofamscan_path,"kofamscan")
+kofamscan_predictions=get_df(blastp_kofamscan_path,"kofamscan")
 def get_information(predictions):
   print(len(predictions))
   print(np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
