@@ -54,14 +54,15 @@ def get_sequences(df,method_missing,dataset):
 # get_sequences(newrun,method_missing)
 # print(np.sum(blastp_missing.isin(newrun["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(newrun["seq_id"].values)))
-"""
-get_sequences(unique,method_missing)
-blastp_contained=blastp_missing.isin(unique["seq_id"].values)
-kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
-print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
-print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
-"""
-get_contained_information(newadd,method_missing,"newadd")
-print()
-get_contained_information(isolate,method_missing,"isolate")
-get_sequences(isolate,method_missing,"5_isolate")
+
+get_contained_information(unique,method_missing,"unique")
+get_sequences(unique,method_missing,"unique_clustered_rep_seq_All140086RBAGs_95_90")
+# blastp_contained=blastp_missing.isin(unique["seq_id"].values)
+# kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
+# print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
+# print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
+
+# get_contained_information(newadd,method_missing,"newadd")
+# print()
+# get_contained_information(isolate,method_missing,"isolate")
+# get_sequences(isolate,method_missing,"5_isolate")
