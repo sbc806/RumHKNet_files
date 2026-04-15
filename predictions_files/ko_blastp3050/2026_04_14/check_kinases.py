@@ -36,7 +36,7 @@ def get_information(predictions):
     seq=predictions["seq"].iloc[i]
     prob=predictions["prob"].iloc[i]
     pred=predictions["pred"].iloc[i]
-    if seq_id not in seq_information:
+    if seq_id not in seq_id_information:
       seq_id_records.append({"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred})
       seq_id_information[seq_id]={"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred}
     else:
