@@ -8,7 +8,7 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_14_blast
 blastp_missing=pd.read_csv("blastp_missing_replaced.csv",header=None)
 kofamscan_missing=pd.read_csv("kofamscan_missing_replaced.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
-print(blastp_missing,kofamscan_missing)
+print(blastp_missing,"\n",kofamscan_missing)
 all_missing=[blastp_missing,kofamscan_missing]
 method_missing={"blastp":blastp_missing,"kofamscan":kofamscan_missing}
 
@@ -17,7 +17,7 @@ def get_missing(dir_path,missing,desired_str):
   assert len(files)==1
   df=pd.read_csv(os.path.join(dir_path,files[0]))
   contained=missing.isin(df["seq_id"].values)
-  print(missing[~contained])
+  print(missing.values[~contained])
 
 methods=["blastp","kofamscan"]
 other=["newrun_seqs","unique_clustered_rep_seq_All10086RBAGs_95_90"]
