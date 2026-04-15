@@ -20,7 +20,7 @@ def get_missing(dir_path,missing,desired_str):
   print(missing.values[~contained])
 
 methods=["blastp","kofamscan"]
-other=["newrun_seqs","unique_clustered_rep_seq_All10086RBAGs_95_90"]
+other=["newrun_seqs","unique_clustered_rep_seq_All140086RBAGs_95_90"]
 
 for each_method in methods:
   for each_other in other:
