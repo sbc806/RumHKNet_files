@@ -28,24 +28,24 @@ kofamscan_predictions=get_df(blastp_kofamscan_path,"kofamscan")
 def get_information(predictions):
   print("Total:",len(predictions))
   print("Unique:",np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
-  seq_id_information=[]
-  seq_ids=[]
+  seq_id_information={}
+  seq_id_records=[]
   
   for i in range(0,len(predictions)):
     seq_id=predictions["seq_id"].iloc[i]
     seq=predictions["seq"].iloc[i]
     prob=predictions["prob"].iloc[i]
     pred=predictions["pred"].iloc[i]
-    if seq_id not in seq_ids:
-      seq_id_information.append({"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred})
-      seq_ids.append(seq_id)
+    if seq_id not in seq_information:
+      seq_id_records.append({"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred})
+      seq_id_information[seq_id]={"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred}
     else:
       previous_information=seq_id_information[seq_id]
       if previous_information["seq"]!=seq:
         print(f"Sequences not the same for {seq_id}")
       print(seq_id,previous_information["prob"],prob,previous_information["pred"],pred)
     
-  df=pd.DataFrame(seq_id_information)
+  df=pd.DataFrame(seq_id_records)
   print(len(df))
   print(df.columns)
   print(np.sum(df["prob"]>0.2),np.sum(df["pred"]==1))
