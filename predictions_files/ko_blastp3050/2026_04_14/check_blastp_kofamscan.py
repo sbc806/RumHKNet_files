@@ -13,3 +13,6 @@ print(np.unique(blastp[0]).shape,np.unique(kofamscan[0]).shape)
 
 print(blastp)
 print(kofamscan)
+
+contained=blastp.isin(kofamscan[0])
+print(np.sum(contained))
