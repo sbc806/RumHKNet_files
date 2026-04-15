@@ -31,7 +31,7 @@ def get_sequences(predictions,desired_ids):
   print(len(selected))
   return selected
 
-dataset_predictions={"RumHKNet_csv":rumhknet}
+# dataset_predictions={"RumHKNet_csv":rumhknet}
 dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
 for each_dataset in dataset_predictions:
   predictions=dataset_predictions[each_dataset]
