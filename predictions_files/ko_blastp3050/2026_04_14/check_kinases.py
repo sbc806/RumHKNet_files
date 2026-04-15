@@ -42,11 +42,11 @@ def get_information(predictions):
         print(f"Sequences not the same for {seq_id}")
       print(seq_id,previous_information["prob"],prob,previous_information["pred"],pred)
     
-    df=pd.DataFrame(list(seq_id_information.values()))
-    print(len(df))
-    print(df.columns)
-    print(np.sum(df["prob"]>0.2),np.sum(df["pred"]==1))
-    return seq_id_information
+  df=pd.DataFrame(list(seq_id_information.values()))
+  print(len(df))
+  print(df.columns)
+  print(np.sum(df["prob"]>0.2),np.sum(df["pred"]==1))
+  return seq_id_information
 
 get_information(blastp_predictions)
 print()
