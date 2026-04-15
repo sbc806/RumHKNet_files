@@ -59,6 +59,6 @@ def get_sequences(df,method_missing):
 # print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
 # print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
 
-get_contained_information(newadd,all_missing)
+get_contained_information(newadd,method_missing)
 print()
-get_contained_information(isolate,all_missing)
+get_contained_information(isolate,method_missing)
