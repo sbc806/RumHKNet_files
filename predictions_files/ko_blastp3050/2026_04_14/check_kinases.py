@@ -15,4 +15,5 @@ def get_df(dir_path,desired_file="")
     dfs.append(df)
   return pd.concat(dfs)
 
-blastp=get_df(blastp_kofamscan_path,"cluster_data_RumHKNet")
+blastp_predictions=get_df(blastp_kofamscan_path,"blastp")
+def get_information)predictions):
