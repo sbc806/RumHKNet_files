@@ -41,7 +41,7 @@ def get_sequences(df,method_missing):
     contained=df["seq_id"].isin(missing[0])
     df_contained=df[contained]
     print(method,np.sum(contained),len(df_contained))
-    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/unique_clustered_rep_seq_All140086RBAGs_95_90_{method}_missing_sequences.csv"),index=False)
+    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/newrun_{method}_missing_sequences.csv"),index=False)
     
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
 # print(np.sum(kofamscan_missing.isin(clustered["seq_id"].values)))
