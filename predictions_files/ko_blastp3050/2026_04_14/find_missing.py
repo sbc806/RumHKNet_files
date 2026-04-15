@@ -24,8 +24,8 @@ print(len(isolate))
 print(isolate)
 
 
-blastp_missing=pd.read_csv("blastp_missing.csv",header=None)
-kofamscan_missing=pd.read_csv("kofamscan_missing.csv",header=None)
+blastp_missing=pd.read_csv("blastp_missing_replaced.csv",header=None)
+kofamscan_missing=pd.read_csv("kofamscan_missing_replaced.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
 all_missing=[blastp_missing,kofamscan_missing]
 
