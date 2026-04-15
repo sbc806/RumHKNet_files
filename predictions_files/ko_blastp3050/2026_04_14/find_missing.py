@@ -24,27 +24,28 @@ print(len(isolate))
 print(isolate)
 
 
-blastp_missing=pd.read_csv("blastp_missing_replaced.csv",header=None)
-kofamscan_missing=pd.read_csv("kofamscan_missing_replaced.csv",header=None)
+blastp_missing=pd.read_csv("missing_sequence_ids/blastp_missing_replaced.csv",header=None)
+kofamscan_missing=pd.read_csv("missing_sequence_ids/kofamscan_missing_replaced.csv",header=None)
 print(len(blastp_missing),len(kofamscan_missing))
 print(blastp_missing,"\n",kofamscan_missing)
 all_missing=[blastp_missing,kofamscan_missing]
 method_missing={"blastp":blastp_missing,"kofamscan":kofamscan_missing}
 
-def get_contained_information(df,method_missing):
+def get_contained_information(df,method_missing,dataset):
   print()
+  print(dataset)
   for each_method in method_missing:
     each_missing=method_missing[each_method]
     print(each_method,"Contained:",np.sum(each_missing.isin(df["seq_id"].values)))
   print()
   
-def get_sequences(df,method_missing):
+def get_sequences(df,method_missing,dataset):
   for method in method_missing:
     missing=method_missing[method]
     contained=df["seq_id"].isin(missing[0])
     df_contained=df[contained]
     print(method,np.sum(contained),len(df_contained))
-    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/clustered_rep_seq95_{method}_missing_sequences.csv"),index=False)
+    df_contained.to_csv(os.path.join(dir_path,f"2026_04_14_blastp_kofamscan/cluster_data/{dataset}_{method}_missing_sequences.csv"),index=False)
 
 # get_sequences(clustered,method_missing)
 # print(np.sum(blastp_missing.isin(clustered["seq_id"].values)))
@@ -60,6 +61,6 @@ kofamscan_contained=kofamscan_missing.isin(unique["seq_id"].values)
 print("Blastp:",np.sum(blastp_contained),np.sum(~blastp_contained))
 print("Kofamscan:",np.sum(kofamscan_contained),np.sum(~kofamscan_contained))
 """
-get_contained_information(newadd,method_missing)
+get_contained_information(newadd,method_missing,"newadd")
 print()
-get_contained_information(isolate,method_missing)
+get_contained_information(isolate,method_missing,"isolate")
