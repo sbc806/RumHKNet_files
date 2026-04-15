@@ -9,7 +9,7 @@ dir_path_1="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_14_bla
 blastp=pd.read_csv(os.path.join(dir_path_1,"blastp_HK_cluster95.txt"),header=None)
 kofamscan=pd.read_csv(os.path.join(dir_path_1,"kofam_HK_cluster95.txt"),header=None)
 print(len(blastp),len(kofamscan))
-
+method_sequence_ids={"blastp":blastp,"kofamscan":kofamscan}
 blastp_kofamscan_path=os.path.join(dir_path,"2026_04_14_blastp_kofamscan/cluster_data")
 
 def get_df(dir_path,desired_file=""):
