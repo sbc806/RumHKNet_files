@@ -6,8 +6,10 @@ dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases"
 
 # clustered=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/clustered_rep_seq95.csv"))
 # print(len(clustered))
+
 # newrun=pd.read_csv(os.path.join(dir_path,"predictions/predictions_dataset/step_1/clustered/newrun_seqs.csv"))
 # print(len(newrun))
+
 unique=pd.read_csv(os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90.csv"))
 print(len(unique))
 print(unique)
