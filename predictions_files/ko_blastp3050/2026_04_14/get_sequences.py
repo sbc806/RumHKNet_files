@@ -29,7 +29,7 @@ def get_sequences(predictions,desired_ids):
   print(len(selected))
   return selected
 
-daaset_predictions={"RumHKNet_csv":rumhknet}
+dataset_predictions={"RumHKNet_csv":rumhknet}
 for each_dataset in dataset_predictions:
   predictions=dataset_predictions[each_dataset]
   blastp_contained=get_sequences(predictions,blastp)
