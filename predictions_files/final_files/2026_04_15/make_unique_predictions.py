@@ -15,6 +15,7 @@ def get_information(df):
   print("Number of unique sequence IDs:",np.unique(df["seq_id"]).shape)
   print("Number of unique sequences:",np.unique(df["seq"]).shape)
 
+print()
 get_information(rumhknet)
 print()
 get_information(unique)
