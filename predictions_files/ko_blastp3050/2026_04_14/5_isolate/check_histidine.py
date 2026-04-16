@@ -24,8 +24,12 @@ print("Replaced IBODOACJ with IBODOACL")
 isolate["seq_id_1"]=isolate["seq_id"].str.replace("IBODOACJ,","IBODOACL")
 print("Contains IBODOACL:",np.sum(isolate["seq_id_1"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id_1"].str.contains("IBODOACJ")))
 
-blastp_contained=blastp.isin(isolate["seq_id_1"].values)
-kofamscan_contained=kofamscan.isin(isolate["seq_id_1"].values)
+columns=["seq_id","seq_id_1"]
+for each_column in columns:
+  print(each_column)
+  blastp_contained=blastp.isin(isolate[each_column].values)
+  kofamscan_contained=kofamscan.isin(isolate[each_column].values)
 
-print("BLASTP and 5_isolate:",np.sum(blastp_contained))
-print("KofamScan and 5_isolate:",np.sum(kofamscan_contained))
+  print("BLASTP and 5_isolate:",np.sum(blastp_contained))
+  print("KofamScan and 5_isolate:",np.sum(kofamscan_contained))
+  print()
