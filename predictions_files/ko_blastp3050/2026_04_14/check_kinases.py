@@ -63,7 +63,7 @@ def get_information(predictions,method):
   kinase=df["prob"]>=0.2
   df_not_kinase=df[~kinase]
   print(len(df_not_kinase))
-  df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
+  # df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
   return seq_id_information
 
 get_information(blastp_predictions,"blastp")
