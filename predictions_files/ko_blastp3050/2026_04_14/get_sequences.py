@@ -14,9 +14,9 @@ print(len(blastp),len(kofamscan))
 # rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv"))
 # print(len(rumhknet))
 
-unique_path=os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_step_1_predictions_02.csv")
-unique=pd.read_csv(unique_path)
-print(len(unique))
+# unique_path=os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_step_1_predictions_02.csv")
+# unique=pd.read_csv(unique_path)
+# print(len(unique))
 
 """
 rumhknet_cluster_data_path=os.path.join(dir_path,"cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02")
@@ -25,11 +25,12 @@ print(len(rumhknet_cluster_data))
 print(rumhknet_cluster_data.columns)
 print("Unique:",np.unique(rumhknet_cluster_data["seq_id"]).shape,np.unique(rumhknet_cluster_data["seq"]).shape)
 """
-# rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
-# rumhknet_isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
-# print(len(rumhknet_isolate))
-
-
+rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
+rumhknet_isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
+print(len(rumhknet_isolate))
+rumhknet_isolate["seq_id"]=(rumhknet_isolate["seq_id"].str.replace("IBODOACLJ","IBODOACL")).values
+print("Contains IBODOACJ:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACJ")),"Contains IBODOACL:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACL")))
+      
 def get_sequences(predictions,desired_ids):
   contained=predictions["seq_id"].isin(desired_ids[0])
   print("Number of contained sequences:",np.sum(contained))
