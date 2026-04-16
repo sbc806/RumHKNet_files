@@ -16,12 +16,13 @@ print(kofamscan)
 
 isolate=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_step_1_kinase_02_predictions_full.csv")
 print("Length of 5_isolate:",len(isolate))
-print(np.unique(isolate["seq_id"]),np.unique(isolate["seq_id"].values))
+print(np.unique(isolate["seq_id"]).shape,np.unique(isolate["seq_id"].values).shape)
 
 print("Contains IBODOACL:",np.sum(isolate["seq_id"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id"].str.contains("IBODOACJ")))
 
 print("Replaced IBODOACJ with IBODOACL")
 isolate["seq_id"]=isolate["seq_id"].str.replace("IBODOACJ,","IBODOACL")
+print("Contains IBODOACL:",np.sum(isolate["seq_id"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id"].str.contains("IBODOACJ")))
 
 blastp_contained=blastp.isin(isolate["seq_id"].values)
 kofamscan_contained=kofamscan.isin(isolate["seq_id"].values)
