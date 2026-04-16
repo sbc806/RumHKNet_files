@@ -52,8 +52,8 @@ def get_information(predictions,method):
       seq_id_information[seq_id]={"seq_id":seq_id,"seq":seq,"prob":prob,"pred":pred}
     else:
       previous_information=seq_id_information[seq_id]
-      assert previous_information["seq"]!=seq, print(f"Sequences not the same for {seq_id}")
-      assert previous_information["pred"]!=pred, print(f"Predictions not the same for {pred}")
+      assert previous_information["seq"]==seq, print(f"Sequences not the same for {seq_id}")
+      assert previous_information["pred"]==pred, print(f"Predictions not the same for {pred}")
       print(seq_id,previous_information["prob"],prob)
     
   df=pd.DataFrame(seq_id_records)
