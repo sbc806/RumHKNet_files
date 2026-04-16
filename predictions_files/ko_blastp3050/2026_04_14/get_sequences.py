@@ -39,9 +39,9 @@ def get_sequences(predictions,desired_ids):
   return selected
 
 # dataset_predictions={"RumHKNet_csv":rumhknet}
-dataset_predictions={"unique_clustered_rep_seq_All140086RBAGs_95_90":unique}
+# dataset_predictions={"unique_clustered_rep_seq_All140086RBAGs_95_90":unique}
 # dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
-# dataset_predictions={"5_isolate_RumHKNet":rumhknet_isolate}
+dataset_predictions={"5_isolate_RumHKNet_replaced":rumhknet_isolate}
 for each_dataset in dataset_predictions:
   predictions=dataset_predictions[each_dataset]
   blastp_contained=get_sequences(predictions,blastp)
