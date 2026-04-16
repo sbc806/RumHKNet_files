@@ -13,9 +13,7 @@ method_sequence_ids={"blastp":blastp,"kofamscan":kofamscan}
 blastp_kofamscan_path=os.path.join(dir_path,"2026_04_14_blastp_kofamscan/cluster_data")
 
 def get_df(dir_path,desired_file=""):
-  chosen=[f for f in os.listdir(dir_path) if desired_file in f and "sequences" in f and "missing" not in f]
-  chosen_1=[f for f in os.listdir(dir_path) if desired_file in f and "5_isolate" in f and "missing" in f]
-  chosen=chosen+chosen_1
+  chosen=[f for f in os.listdir(dir_path) if desired_file in f and "sequences" in f]
   print(desired_file,chosen)
   dfs=[]
   for f in chosen:
