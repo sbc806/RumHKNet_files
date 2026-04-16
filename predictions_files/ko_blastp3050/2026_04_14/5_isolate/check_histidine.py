@@ -21,7 +21,7 @@ print(np.unique(isolate["seq_id"]).shape,np.unique(isolate["seq_id"].values).sha
 print("Contains IBODOACL:",np.sum(isolate["seq_id"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id"].str.contains("IBODOACJ")))
 
 print("Replaced IBODOACJ with IBODOACL")
-isolate["seq_id_1"]=list(isolate["seq_id"].str.replace("IBODOACL,","IBODOACJ").values)
+isolate["seq_id_1"]=list(isolate["seq_id"].str.replace("IBODOACJ","IBODOACL").values)
 print("Contains IBODOACL:",np.sum(isolate["seq_id_1"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id_1"].str.contains("IBODOACJ")))
 
 columns=["seq_id","seq_id_1"]
