@@ -28,7 +28,7 @@ print("Unique:",np.unique(rumhknet_cluster_data["seq_id"]).shape,np.unique(rumhk
 rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
 rumhknet_isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
 print(len(rumhknet_isolate))
-rumhknet_isolate["seq_id"]=(rumhknet_isolate["seq_id"].str.replace("IBODOACLJ","IBODOACL")).values
+rumhknet_isolate["seq_id"]=(rumhknet_isolate["seq_id"].str.replace("IBODOACJ","IBODOACL")).values
 print("Contains IBODOACJ:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACJ")),"Contains IBODOACL:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACL")))
       
 def get_sequences(predictions,desired_ids):
