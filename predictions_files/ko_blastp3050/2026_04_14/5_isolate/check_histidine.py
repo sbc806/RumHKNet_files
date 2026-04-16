@@ -19,11 +19,11 @@ print("Length of 5_isolate:",len(isolate))
 
 print("Contains IBODOACL:",np.sum(isolate["seq_id"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id"].str.contains("IBODOACJ")))
 
-print("Replaced IBODOACJ with IBODOACL")
-isolate["seq_id"]=isolate["seq_id"].str.replace("IBODOACJ,","IBODOACL")
+# print("Replaced IBODOACJ with IBODOACL")
+# isolate["seq_id"]=isolate["seq_id"].str.replace("IBODOACJ,","IBODOACL")
 
-blastp_contained=blastp.isin(isolate["seq_id"])
-kofamscan_contained=kofamscan.isin(isolate["seq_id"])
+blastp_contained=blastp.isin(isolate["seq_id"].values)
+kofamscan_contained=kofamscan.isin(isolate["seq_id"].values)
 
 print("BLASTP and 5_isolate:",np.sum(blastp_contained))
 print("KofamScan and 5_isolate:",np.sum(kofamscan_contained))
