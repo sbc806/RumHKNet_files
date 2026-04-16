@@ -39,7 +39,7 @@ def get_information(predictions,method):
   print("Unique:",np.unique(predictions["seq_id"]).shape,np.unique(predictions["seq"]).shape)
   seq_id_information={}
   seq_id_records=[]
-  
+  """
   for i in range(0,len(predictions)):
     seq_id=predictions["seq_id"].iloc[i]
     seq=predictions["seq"].iloc[i]
@@ -53,8 +53,9 @@ def get_information(predictions,method):
       assert previous_information["seq"]==seq, print(f"Sequences not the same for {seq_id}")
       assert previous_information["pred"]==pred, print(f"Predictions not the same for {pred}")
       print(seq_id,previous_information["prob"],prob)
-    
-  df=pd.DataFrame(seq_id_records)
+  """
+  # df=pd.DataFrame(seq_id_records)
+  df=predictions
   print("Length of created dataframe:",len(df),"Unique sequence IDs:",np.unique(df["seq_id"]).shape,"Unique sequences:",np.unique(df["seq"]).shape)
   print(df.columns)
   contained=df["seq_id"].isin(method_sequence_ids[method][0])
@@ -63,7 +64,7 @@ def get_information(predictions,method):
   kinase=df["prob"]>=0.2
   df_not_kinase=df[~kinase]
   print(len(df_not_kinase))
-  # df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02.csv"),index=False)
+  # df_not_kinase.to_csv(os.path.join(dir_path_1,f"step_1_kinase_02/{method}_RumHKNet_step_1_not_kinase_02_5_isolates_replaced_IBODOACJ.csv"),index=False)
   return seq_id_information
 
 get_information(blastp_predictions,"blastp")
