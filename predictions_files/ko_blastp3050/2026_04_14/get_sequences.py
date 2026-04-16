@@ -18,18 +18,18 @@ print(len(blastp),len(kofamscan))
 # unique=pd.read_csv(unique_path)
 # print(len(unique))
 
-"""
+
 rumhknet_cluster_data_path=os.path.join(dir_path,"cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02")
 rumhknet_cluster_data=pd.read_csv(os.path.join(dir_path,"newadd_155098MAGs_step_1_kinase_02_predictions_full.csv"))
 print(len(rumhknet_cluster_data))
 print(rumhknet_cluster_data.columns)
 print("Unique:",np.unique(rumhknet_cluster_data["seq_id"]).shape,np.unique(rumhknet_cluster_data["seq"]).shape)
-"""
-rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
-rumhknet_isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
-print(len(rumhknet_isolate))
-rumhknet_isolate["seq_id"]=(rumhknet_isolate["seq_id"].str.replace("IBODOACJ","IBODOACL")).values
-print("Contains IBODOACJ:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACJ")),"Contains IBODOACL:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACL")))
+
+# rumhknet_isolate_path=os.path.join(dir_path,"5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02")
+# rumhknet_isolate=pd.read_csv(os.path.join(dir_path,"5_isolate_step_1_kinase_02_predictions_full.csv"))
+# print(len(rumhknet_isolate))
+# rumhknet_isolate["seq_id"]=(rumhknet_isolate["seq_id"].str.replace("IBODOACJ","IBODOACL")).values
+# print("Contains IBODOACJ:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACJ")),"Contains IBODOACL:",np.sum(rumhknet_isolate["seq_id"].str.contains("IBODOACL")))
       
 def get_sequences(predictions,desired_ids):
   contained=predictions["seq_id"].isin(desired_ids[0])
@@ -40,8 +40,8 @@ def get_sequences(predictions,desired_ids):
 
 # dataset_predictions={"RumHKNet_csv":rumhknet}
 # dataset_predictions={"unique_clustered_rep_seq_All140086RBAGs_95_90":unique}
-# dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
-dataset_predictions={"5_isolate_RumHKNet_replaced":rumhknet_isolate}
+dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
+# dataset_predictions={"5_isolate_RumHKNet_replaced":rumhknet_isolate}
 for each_dataset in dataset_predictions:
   predictions=dataset_predictions[each_dataset]
   blastp_contained=get_sequences(predictions,blastp)
