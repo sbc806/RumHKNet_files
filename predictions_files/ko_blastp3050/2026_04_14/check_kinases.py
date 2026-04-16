@@ -19,8 +19,6 @@ def get_df(dir_path,desired_file=""):
   for f in chosen:
     df=pd.read_csv(os.path.join(dir_path,f))
     print(df.columns)
-    if "missing" in f:
-      df["seq_id"]=df["seq_id"].str.replace("IBODOACJ","IBODOACL")
     dfs.append(df)
   # for i in range(0,len(chosen)):
     # for j in range(i,len(chosen)):
