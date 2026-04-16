@@ -16,6 +16,7 @@ print(kofamscan)
 
 isolate=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_step_1_kinase_02_predictions_full.csv")
 print("Length of 5_isolate:",len(isolate))
+print(np.unique(isolate["seq_id"]),np.unique(isolate["seq_id"].values))
 
 print("Contains IBODOACL:",np.sum(isolate["seq_id"].str.contains("IBODOACL")),"Contains IBODOACJ:",np.sum(isolate["seq_id"].str.contains("IBODOACJ")))
 
