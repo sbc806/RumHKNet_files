@@ -10,9 +10,14 @@ kofamscan=pd.read_csv(os.path.join(blastp_kofamscan_path,"kofam_HK_cluster95.txt
 
 print(len(blastp),len(kofamscan))
 
-rumhknet_path=os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02")
-rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv"))
-print(len(rumhknet))
+# rumhknet_path=os.path.join(dir_path,"RumHKNet_csv/step_1_02_step_2_02")
+# rumhknet=pd.read_csv(os.path.join(rumhknet_path,"step_1_clustered_newrun_rbags_predicted_02.csv"))
+# print(len(rumhknet))
+
+unique_path=os.path.join(dir_path,"unique_clustered_rep_seq_All140086RBAGs_95_90_step_1_predictions_02.csv")
+unique=pd.read_csv(unique_path)
+print(len(unique))
+
 """
 rumhknet_cluster_data_path=os.path.join(dir_path,"cluster_data_predictions/RumHKNet_predictions/step_1_02_step_2_02")
 rumhknet_cluster_data=pd.read_csv(os.path.join(dir_path,"newadd_155098MAGs_step_1_kinase_02_predictions_full.csv"))
@@ -32,7 +37,8 @@ def get_sequences(predictions,desired_ids):
   print(len(selected))
   return selected
 
-dataset_predictions={"RumHKNet_csv":rumhknet}
+# dataset_predictions={"RumHKNet_csv":rumhknet}
+dataset_predictions={"unique_clustered_rep_seq_All140086RBAGs_95_90":unique}
 # dataset_predictions={"cluster_data_RumHKNet":rumhknet_cluster_data}
 # dataset_predictions={"5_isolate_RumHKNet":rumhknet_isolate}
 for each_dataset in dataset_predictions:
