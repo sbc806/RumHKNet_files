@@ -14,7 +14,7 @@ print("Unique:",np.unique(blastp[0]).shape,np.unique(kofamscan[0]).shape)
 print(blastp)
 print(kofamscan)
 
-isolate=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_step_1_kinases_02_predictions_full.csv")
+isolate=pd.read_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_step_1_kinase_02_predictions_full.csv")
 print(len(isolate))
 
 print(np.sum(isolate["seq_id"].str.contains("IBODOACL_")),np.sum(isolate["seq_id"].str.contains("IBODOACJ_")))
