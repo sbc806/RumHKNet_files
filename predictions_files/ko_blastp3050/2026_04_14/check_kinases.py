@@ -20,6 +20,8 @@ def get_df(dir_path,desired_file=""):
     df=pd.read_csv(os.path.join(dir_path,f))
     print(df.columns)
     dfs.append(df)
+    if "5_isolate" in f:
+      print(np.sum(df["seq_id"].str.contains("IBODOACJ")),np.sum(df["seq_id"].str.contains("IBODOACL")))
   # for i in range(0,len(chosen)):
     # for j in range(i,len(chosen)):
       # contained=np.sum(dfs[i]["seq_id"].isin(dfs[j]["seq_id"].values))
