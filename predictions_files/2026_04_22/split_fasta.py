@@ -35,6 +35,7 @@ def split_chunks(df,chunk_size,save_path,save_name):
     df_small_i=df_small[start:end]
     df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
-
+  print(max(df_small["seq"].str.len()),max(df_large["seq"].str.len()))
+  
 chunk_size=1200000
-split_chunks(seq_data_df,chunk_size,dataset_path,"2026_04_22_clustered_95_rep_seq")
+split_chunks(seq_data_df,chunk_size,dataset_path,"2026_04_22_clustered95_rep_seq")
