@@ -14,7 +14,7 @@ for i, fasta in enumerate(fasta_content):
   seq_id,seq=fasta.id,str(fasta.seq)
   seq_data.append({"seq_id":seq_id,"seq":seq})
 
-# seq_data_df=pd.DataFrame(seq_data)
+seq_data_df=pd.DataFrame(seq_data)
 print(seq_data_df)
 # seq_data_df.to_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"),index=False)
 
