@@ -18,3 +18,6 @@ print(test)
 print(len(train)+len(dev)+len(test))
 
 dfs={"train":train,"dev":dev,"test":test}
+for df in dfs:
+  print(df)
+  chosen_df=dfs[df]
