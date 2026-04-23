@@ -21,7 +21,7 @@ dfs={"train":train,"dev":dev,"test":test}
 for df in dfs:
   print(df)
   chosen_df=dfs[df]
-  print("Unique labels:",np.unique(chosen_df["label"]))
+  print("Unique labels:",np.unique(chosen_df["label"]).shape)
   labels=np.unique(chosen_df["label"])
   for label in labels:
     print(f"Count for {label}:",np.sum(chosen_df["label"]==label))
