@@ -11,3 +11,7 @@ test_path=os.path.join(dataset_path,"test/test.csv")
 train=pd.read_csv(train_path)
 dev=pd.read_csv(dev_path)
 test=pd.read_csv(test_path)
+
+print(train)
+print(dev)
+print(test)
