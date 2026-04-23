@@ -1,5 +1,5 @@
 import os
-import numpyas np
+import numpy as np
 import pandas as pd
 
 dataset_path="../../kinases/extra_p_133_class_v3_batch/protein/multi_class"
