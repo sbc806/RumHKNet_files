@@ -15,3 +15,6 @@ test=pd.read_csv(test_path)
 print(train)
 print(dev)
 print(test)
+print(len(train)+len(dev)+len(test))
+
+dfs={"train":train,"dev":dev,"test":test}
