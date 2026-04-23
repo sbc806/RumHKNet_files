@@ -2,7 +2,7 @@ import os
 import numpyas np
 import pandas as pd
 
-dataset_path="../../kinases/step_3_11_family/protein/multi_class"
+dataset_path="../../kinases/extra_p_133_class_v3_batch/protein/multi_class"
 
 train_path=os.path.join(dataset_path,"train/train.csv")
 dev_path=os.path.join(dataset_path,"dev/dev.csv")
