@@ -14,5 +14,5 @@ y_scores = np.array([
 ])
 print(average_precision_score(y_true, y_scores))
 
-print(roc_auc_score(y_true, y_scores),average=None,multi_class="ovr")
+print(roc_auc_score(y_true, y_scores,average=None,multi_class="ovr"))
 
