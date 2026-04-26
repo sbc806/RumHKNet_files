@@ -144,6 +144,7 @@ def check_specific(dir_path,f_name):
   dfs=[]
   for f in selected_files:
     df=pd.read_csv(os.path.join(dir_path,f))
+    assert len(df.columns)==4
     df.columns=["seq_id","seq","prob","pred"]
     # print(df.columns)
     # print(f,len(df))
