@@ -11,7 +11,7 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 i_df={}
 small=[]
 small_total=0
-for i in range(0,5):
+for i in range(0,4):
   df=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv")
   df_selected=df.iloc[800000:]
   print(df_selected)
