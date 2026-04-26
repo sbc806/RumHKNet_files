@@ -15,7 +15,7 @@ for i in range(0,7):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_")
   print(i,len(df))
   small_total=small_total+len(df)
-print(small_total)
+print("Number of predictions for sequences with length <=1500:",small_total)
 
 large=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_predicted_02_v2.csv"))
 print("Number of predictions for sequences with length >1500:",len(large))
