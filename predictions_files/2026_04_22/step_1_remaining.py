@@ -15,4 +15,4 @@ for i in range(0,4):
   df=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
   df_selected=df.iloc[800000:]
   # print(df_selected)
-  df_selected.to_csv
+  df_selected.to_csv(os.path.join(dataset_path,f"2026_04_22-clustered95_rep_seq_small_{i}_remaining.csv"))
