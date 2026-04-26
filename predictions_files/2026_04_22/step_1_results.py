@@ -5,3 +5,11 @@ import pandas as pd
 dataset_path= "/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
 
+i_df={}
+small=[]
+small_total=0
+for i in range(0,7):
+  df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_")
+  print(i,len(df))
+  small_total=small_total+len(df)
+print(small_total)
