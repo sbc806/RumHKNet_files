@@ -14,8 +14,15 @@ small_total=0
 for i in range(0,7):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_")
   print(i,len(df))
+  small.append(df)
   small_total=small_total+len(df)
+  
 print("Number of predictions for sequences with length <=1500:",small_total)
+small_all=pd.concat(small)
+threshold=0.2
+small_kinase=small["prob"]<=threshold
+print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase),np.sum(small_all["label"]==1))
+small_all_kinase=small_all[small_kinase]
 
 large=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_predicted_02_v2.csv"))
 print("Number of predictions for sequences with length >1500:",len(large))
