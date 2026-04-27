@@ -18,3 +18,5 @@ large_argsort_2=large_argsort[~less_equal_10000]
 print(len(large_argsort_1)+len(large_argsort_2),len(large_argsort_1),len(large_argsort_2))
 print(large_argsort_1)
 print(large_argsort_2)
+large_argsort_1.to_csv(os.path.join(dataset_path,"2026_04_22_clustered95_rep_seq_large_1.csv"),index=False)
+large_argsort_2.to_csv(os.path.join(dataset_path,"2026_04_22_clustered95_rep_seq_large_2.csv"),index=False)
