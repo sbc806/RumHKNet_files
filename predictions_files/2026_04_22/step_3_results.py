@@ -10,7 +10,7 @@ from predictions_helpers import add_label, reverse_dict, df_to_fasta
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_3/both/clustered"
 
-small=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_predicted_02_v2.csv"))
+small=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_predicted_02.csv"))
 print(len(small))
 
 print(small)
