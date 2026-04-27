@@ -46,7 +46,7 @@ print(small_all_kinase)
 
 small_remaining_all_1=pd.concat(small_remaining)
 small_kinase_remaining_1=small_remaining_all_1["prob"]>=threshold
-print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase_remaining_1),np.sum([small_remaining_all_1["pred"]==1))
+print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase_remaining_1),np.sum(small_remaining_all_1["pred"]==1))
 small_remaining_all_kinase_1=small_remaining_all_1[small_kinase_remaining_1][["seq_id","seq"]]
 print(small_remaining_all_kinase_1)
 
