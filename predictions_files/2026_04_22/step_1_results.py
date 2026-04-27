@@ -24,7 +24,7 @@ for i in range(0,7):
     small_remaining.append(df_remaining)
     print(f"{i}_remaining",len(small_remaining))
     small-dataset=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
-    contained=
+    contained=small_full["seq_id"].isin(small_datsaset["seq_id"].vlues)
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
 threshold=0.2
