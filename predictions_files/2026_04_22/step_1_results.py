@@ -54,6 +54,6 @@ print(small_remaining_all_kinase_1)
 
 # large=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_predicted_02_v2.csv"))
 # print("Number of predictions for sequences with length >1500:",len(large))
-large_2=pd.read_csv(os.path.joni(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
+large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
 print(np.sum(large_2["prob"]>=threshold),np.sum(large_2["pred"]==1))
