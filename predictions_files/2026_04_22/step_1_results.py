@@ -18,7 +18,13 @@ for i in range(0,7):
   print(i,len(df))
   small.append(df)
   small_total=small_total+len(df)
-  
+  if i in selected:
+    df_remaining=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_remaining")
+    small_total=small_total+len(df_remaining)
+    small_remaining.append(df_remaining)
+    print(f"{i}_remaining",len(small_remaining))
+    small-dataset=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
+    contained=
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
 threshold=0.2
