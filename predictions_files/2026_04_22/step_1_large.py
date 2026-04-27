@@ -15,3 +15,5 @@ less_equal_10000=large_argsort["seq"].str.len()<=10000
 
 large_argsort_1=large_argsort[less_equal_10000]
 large_argsort_2=large_argsort[~less_equal_10000]
+print(large_argsort_1)
+print(large_argsort_2)
