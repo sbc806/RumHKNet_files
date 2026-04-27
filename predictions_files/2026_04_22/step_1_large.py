@@ -9,7 +9,7 @@ large=pd.read_csv(os.path.join(dataset_path,"2026_04_22_clustered95_rep_seq_larg
 print(large)
 lengths_argsort=np.argsort(large["seq"].str.len())
 print(lengths_argsort)
-large_argsort=lengths_argsort.iloc[lengths_argsort.values]
+large_argsort=large.iloc[lengths_argsort.values]
 print(large_argsort["seq"].str.len())
 less_equal_10000=large_argsort.str.len()<=10000
 
