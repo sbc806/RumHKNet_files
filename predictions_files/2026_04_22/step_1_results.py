@@ -14,6 +14,7 @@ small_total=0
 selected=[0,1]
 small_i=[]
 small_remaining=[]
+small_remaining_i=[]
 for i in range(0,7):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_predicted")
   print(i,len(df))
@@ -24,6 +25,7 @@ for i in range(0,7):
     df_remaining=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_remaining")
     small_total=small_total+len(df_remaining)
     small_remaining.append(df_remaining)
+    small_remaining_i.append(df_remaining)
     print(f"{i}_remaining",len(df_remaining))
     
     small_dataset=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
@@ -31,6 +33,7 @@ for i in range(0,7):
     print("Length:",len(small_dataset),len(small_full))
     print("Equal:",np.sum(small_dataset["seq_id"].values==small_full["seq_id"].values),np.sum(small_dataset["seq"].values==small_full["seq"].values))
     small_i=[]
+    small_remaining_i=[]
     
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
