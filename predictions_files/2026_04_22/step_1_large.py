@@ -11,7 +11,7 @@ lengths_argsort=np.argsort(large["seq"].str.len())
 print(lengths_argsort)
 large_argsort=large.iloc[lengths_argsort.values]
 print(large_argsort["seq"].str.len())
-less_equal_10000=large_argsort.str.len()<=10000
+less_equal_10000=large_argsort["seq"].str.len()<=10000
 
 large_argsort_1=large_argsort[less_equal_10000]
 large_argsort_2=large_argsort[~less_equal_10000]
