@@ -23,7 +23,7 @@ for i in range(0,7):
     df_remaining=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_remaining")
     small_total=small_total+len(df_remaining)
     small_remaining.append(df_remaining)
-    print(f"{i}_remaining",len(small_remaining))
+    print(f"{i}_remaining",len(df_remaining))
     
     small_dataset=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
     small_full=pd.concat([pd.concat(small),pd.concat(small_remaining)])
