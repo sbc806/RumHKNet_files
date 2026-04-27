@@ -7,3 +7,5 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 large=pd.read_csv(os.path.join(dataset_path,"2026_04_22_clustered95_rep_seq_large.csv"))
 print(large)
+lengths_argsort=np.argsort(large["seq"].str.len())
+print(lengths_argsort)
