@@ -27,7 +27,8 @@ for i in range(0,7):
     
     small_dataset=pd.read_csv(os.path.join(dataset_path,f"2026_04_22_clustered95_rep_seq_small_{i}.csv"))
     small_full=pd.concat([pd.concat(small),pd.concat(small_remaining)])
-    print(len(small_dataset),len(small_full),np.sum(small_dataset["seq_id"].values==small_full["seq_id"].values),np.sum(small_dataset["seq"].values==small_full["seq_id"].values))
+    print(len(small_dataset),len(small_full))
+    print(np.sum(small_dataset["seq_id"].values==small_full["seq_id"].values),np.sum(small_dataset["seq"].values==small_full["seq_id"].values))
     
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
