@@ -16,4 +16,11 @@ small_1_kinase=small_1["prob"]>=0.2
 print(f"Threshold {threshold}:",np.sum(small_1_kinase),np.sum(small_1["pred"]==1))
 small_1_kinase_chosen=small_1[small_1_kinase][["seq_id","seq"]]
 print(small_1_kinase_chosen)
-small_1_kinase_chosen.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small.csv",index=False)
+# small_1_kinase_chosen.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small.csv",index=False)
+
+small_0_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_small_remaining_1_predicted_02_1500_v3_0.csv"))
+print(len(small_0_1))
+small_0_1_kinase=small_0_1["prob"]>=0.2
+print(f"Threshold {threshold}:",np.sum(small_0_1_kinase),np.sum(small_0_1["pred"]==1))
+small_0_1_kinase_chosen=small_0_1[small_0_1_kinase][["seq_id","seq"]]
+print(small_0_1_kinase_chosen)
