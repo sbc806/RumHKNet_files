@@ -14,7 +14,7 @@ small=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_
 print(len(small))
 print(small)
 print(small.columns)
-small_0_1=pd.read_csv(os.path.join(preidctions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_0_1_predicted_02.csv"))
+small_0_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_0_1_predicted_02.csv"))
 print(len(small_0_1))
 
 def adjusted_df(df):
