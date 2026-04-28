@@ -23,6 +23,7 @@ print(len(large_1))
 print()
 complete=pd.concat([small,small_0_1,small_2_3,large_1])
 print("Number of predictions",len(complete))
+print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 print()
 
 complete_selected=complete[["seq_id","seq","top1_label"]]
