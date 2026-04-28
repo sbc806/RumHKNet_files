@@ -28,6 +28,7 @@ small_selected=adjusted_df(small)
 # small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small.csv",index=False)
 
 small_0_1_selected=adjusted_df(small_0_1)
+small_0_1_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small_0_1.csv",index=False)
 
 """
 small_selected=small[["seq_id","seq","top1_label"]]
