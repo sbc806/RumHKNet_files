@@ -53,7 +53,7 @@ complete=pd.concat([small,small_0_1,small_2_3,large_1])
 print("Number of predictions:",len(complete))
 print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 
-complete_selected=small[["seq_id","seq","top1_label"]]
+complete_selected=complete[["seq_id","seq","top1_label"]]
 complete_selected.columns=["seq_id","seq","pred"]
 with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
   label_family=json.load(f)
