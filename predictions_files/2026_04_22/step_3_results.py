@@ -62,5 +62,5 @@ print(complete_selected)
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
 save_name="2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family"
-complete.to_csv(os.path.join(save_path,f"{save_name}.csv",index=False)
+complete.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
 df_to_fasta(small_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
