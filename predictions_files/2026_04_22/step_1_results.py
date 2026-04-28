@@ -32,7 +32,9 @@ for i in range(0,4):
     small_full=pd.concat([df,df_remaining])
     print("Length:",len(small_dataset),len(small_full))
     print("Equal:",np.sum(small_dataset["seq_id"].values==small_full["seq_id"].values),np.sum(small_dataset["seq"].values==small_full["seq"].values))
-    
+    i_df[i]=small_full
+  else:
+    i_df[i]=df
     
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
