@@ -37,6 +37,6 @@ complete_selected=add_label(complete_selected,reverse_dict(ko_label))
 print(complete_selected)
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
-save_name="2026_04_22_clustered95_rep_seq_step_4_histidine_kinase_ko_label"
+save_name="2026_04_22_clustered95_rep_seq_step_4_histidine_kinase_ko"
 complete_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.csv",index=False)
 df_to_fasta(complete_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_4_histidine_kinase_ko.fasta",extra_column="pred_other")
