@@ -42,13 +42,23 @@ print(len(large_1))
 large_1_selected=adjusted_df(large_1)
 # large_1_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_large_1.csv",index=False)
 
-"""
-small_selected=small[["seq_id","seq","top1_label"]]
-small_selected.columns=["seq_id","seq","pred"]
+print()
+print(small.columns)
+print(small_0_1.columns)
+print(small_2_3.columns)
+print(large_1.columns)
+print()
+
+complete=pd.concat([small,small_0_1,small_2_3,large_1])
+print("Number of predictions:",len(complete))
+print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
+
+complete_selected=small[["seq_id","seq","top1_label"]]
+complete_selected.columns=["seq_id","seq","pred"]
 with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
   label_family=json.load(f)
-small_selected=add_label(small_selected,reverse_dict(label_family))
-print(small_selected)
-"""
+complete_selected=add_label(complete_selected,reverse_dict(label_family))
+print(complete_selected)
+
 # small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.csv",index=False)
 # df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.fasta",extra_column="pred_other")
