@@ -36,8 +36,8 @@ for i in range(0,7):
   else:
     i_df[i]=df
     
-print("Number of predictions for sequences with length <=1500:",small_total)
-small_all=pd.concat(small)
+# print("Number of predictions for sequences with length <=1500:",small_total)
+# small_all=pd.concat(small)
 threshold=0.2
 # small_kinase=small_all["prob"]>=threshold
 # print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase),np.sum(small_all["pred"]==1))
@@ -56,15 +56,13 @@ print(small_remaining_all_kinase_1)
 # small_remaining_all_kinase_1.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered95_rep_seq_step_1_kinase_small_remaining_1.csv",index=False)
 # small_remaining_all_kinase_1.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered95_rep_seq_step_1_kinase_small_2_3.csv",index=False)
 
-# large=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_predicted_02_v2.csv"))
-# print("Number of predictions for sequences with length >1500:",len(large))
 large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_1_predicted_02_v2.csv"))
 print(len(large_1))
 print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["label"]==1))
 print(max(large_1["seq"].str.len()))
 large_1_kinase=large_1[large_1["prob"]>=threshold][["seq_id","seq"]]
 print(large_1_kinase)
-large_1_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered95_rep_seq_step_1_kinase_large_1.csv",index=False)
+# large_1_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered95_rep_seq_step_1_kinase_large_1.csv",index=False)
 
 large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
