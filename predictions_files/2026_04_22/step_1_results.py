@@ -15,7 +15,7 @@ selected=[2,3]
 small_i=[]
 small_remaining=[]
 small_remaining_i=[]
-for i in range(0,0):
+for i in range(0,1):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_predicted")
   print(i,len(df))
   small.append(df)
