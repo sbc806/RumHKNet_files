@@ -84,5 +84,5 @@ complete_kinase_df=complete_df[complete_kinase][["seq_id","seq"]]
 print(complete_kinase_df)
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
-complete_kinase_df.to(os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_02.csv"),index=False)
+complete_kinase_df.to_csv(os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_02.csv"),index=False)
 df_to_fasta(complete_kinase_df,os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_02.fasta"))
