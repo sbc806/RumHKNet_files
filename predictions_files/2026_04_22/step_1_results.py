@@ -67,6 +67,7 @@ print(large_1_kinase)
 large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
 print(np.sum(large_2["prob"]>=threshold),np.sum(large_2["label"]==1))
+
 print()
 small_df=pd.concat(list(i_df.values()))
 large_df=pd.concat([large_1,large_2])
