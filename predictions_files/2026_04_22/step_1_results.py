@@ -76,8 +76,8 @@ print("Number of predictions for sequences with length <=1500:",len(small_df))
 print("Number of predictions for sequences with length > 1500:",len(large_df))
 complete_df=pd.concat([small_df,large_df])
 print("Number of total predictions:",len(complete_df))
-print("Number of unique sequence IDs:",np.unique(complete_df["seq_id"]))
-print("Number of unique sequences:",np.unique(complete_df["seq"]))
+print("Number of unique sequence IDs:",np.unique(complete_df["seq_id"]).shape)
+print("Number of unique sequences:",np.unique(complete_df["seq"]).shape)
 complete_kinase=complete_df["prob"]>=threshold
 print(f"Threshold {threshold}:",np.sum(complete_kinase),np.sum(complete_df["pred"]==1))
 complete_kinase_df=complete_df[complete_kinase][["seq_id","seq"]]
