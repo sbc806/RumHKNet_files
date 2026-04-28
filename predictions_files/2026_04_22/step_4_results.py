@@ -11,7 +11,7 @@ dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_4/both/clustered"
 
 small=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small_predicted_02_v2.csv"))
-print(small)
+print(len(small))
 small_0_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small_0_1_predicted_02_v2.csv"))
 print(len(small_0_1))
 
