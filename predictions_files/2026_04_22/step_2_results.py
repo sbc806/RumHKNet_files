@@ -30,3 +30,6 @@ large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_se
 print(len(large_1))
 print(max(large_1["seq"].str.len()))
 print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["label"]==1))
+large_1_kinase=large_1[large_1["prob"]>=threshold][["seq_id","seq"]]
+print(large_1_kinase)
+large_1_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_large_1.csv",index=False)
