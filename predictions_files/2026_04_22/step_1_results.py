@@ -15,7 +15,7 @@ selected=[2,3]
 small_i=[]
 small_remaining=[]
 small_remaining_i=[]
-for i in range(0,7):
+for i in range(0,0):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_predicted")
   print(i,len(df))
   small.append(df)
@@ -55,6 +55,9 @@ small_remaining_all_kinase_1.to_csv("/home/schen123/projects/rrg-guanuofa/schen1
 
 # large=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_predicted_02_v2.csv"))
 # print("Number of predictions for sequences with length >1500:",len(large))
+large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_1_predicted_02_v2.csv"))
+print(len(large_1))
+print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["label"]==1))
 large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
 print(np.sum(large_2["prob"]>=threshold),np.sum(large_2["label"]==1))
