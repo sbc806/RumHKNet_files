@@ -32,6 +32,8 @@ small_0_1_selected=adjusted_df(small_0_1)
 
 large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_large_1_predicted_02_v2.csv"))
 print(len(large_1))
+large_1_selected=adjusted_df(large_1)
+large_1_selected.to_csv("/home/schen123/prjects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clusteerd/2026_04_22_clsutered95_rep_seq_step_3_histidine_kinase_family_large_1.csv",index=False)
 
 """
 small_selected=small[["seq_id","seq","top1_label"]]
