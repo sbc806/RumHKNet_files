@@ -28,4 +28,4 @@ print(small_0_1_kinase_chosen)
 
 large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_large_1_predicted_02_v2.csv"))
 print(len(large_1))
-print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["pred"]==1))
+print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["label"]==1))
