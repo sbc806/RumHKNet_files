@@ -51,6 +51,6 @@ print(np.sum(complete["prob"]>=threshold),np.sum(complete["pred"]==1),len(comple
 print(np.unique(complete_kinase["seq_id"]).shape,np.unique(complete_kinase["seq"]).shape)
 print(complete_kinase)
 
-save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
 complete_kinase.to_csv(os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.csv"))
 df_to_fasta(complete_kinase,os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.fasta"))
