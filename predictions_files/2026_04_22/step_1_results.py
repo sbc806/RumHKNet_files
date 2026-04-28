@@ -63,6 +63,7 @@ print(max(large_1["seq"].str.len()))
 large_1_kinase=large_1[large_1["prob"]>=threshold][["seq_id","seq"]]
 print(large_1_kinase)
 large_1_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered_step_1_kinase_large_1.csv",index=False)
+
 large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
 print(np.sum(large_2["prob"]>=threshold),np.sum(large_2["label"]==1))
