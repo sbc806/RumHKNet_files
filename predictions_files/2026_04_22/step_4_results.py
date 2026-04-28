@@ -16,7 +16,7 @@ small_0_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_
 print(len(small_0_1))
 
 large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_large_1_predicted_02_v2.csv"))
-print(large_1)
+print(len(large_1))
 
 small_selected=small[["seq_id","seq","top1_label"]]
 small_selected.columns=["seq_id","seq","pred"]
