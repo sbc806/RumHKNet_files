@@ -67,3 +67,15 @@ print(large_1_kinase)
 large_2=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_large_2_predicted_02_v2.csv"))
 print(len(large_2))
 print(np.sum(large_2["prob"]>=threshold),np.sum(large_2["label"]==1))
+print()
+small_df=pd.concat(list(i_df.values()))
+large_df=pd.concat([large_1,large_2])
+large_df.columns=small_df.columns
+print("Number of predictions for sequences with length <=1500:",len(small_df))
+print("Number of predictions for sequences with length > 1500:",len(large_df))
+complete_df=pd.concat(small_df[small_df,large_df])
+print("Number of total predictions:",len(complete_df))
+complete_kinase=complete_df["prob"]>=threshold
+print(f"Threshold {threshold}:",np.sum(complete_kinase),np.sum(complete_df["pred"]==1))
+complete_kinase_df=complete_df[complete_kinase][["seq_id","seq"]]
+print(complete_kinase_df)
