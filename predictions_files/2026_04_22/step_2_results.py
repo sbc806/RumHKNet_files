@@ -46,11 +46,12 @@ print()
 large_1.columns=small_1.columns
 complete=pd.concat([small_1,small_0_1,small_2_3,large_1])
 print("Number of predictions:",len(complete))
+print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 complete_kinase=pd.concat([small_1_kinase_chosen,small_0_1_kinase_chosen,small_2_3_kinase_chosen,large_1_kinase])
 print(np.sum(complete["prob"]>=threshold),np.sum(complete["pred"]==1),len(complete_kinase))
 print(np.unique(complete_kinase["seq_id"]).shape,np.unique(complete_kinase["seq"]).shape)
 print(complete_kinase)
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
-complete_kinase.to_csv(os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.csv"))
-df_to_fasta(complete_kinase,os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.fasta"))
+# complete_kinase.to_csv(os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.csv"))
+# df_to_fasta(complete_kinase,os.path.join(save_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_02.fasta"))
