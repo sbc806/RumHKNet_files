@@ -16,6 +16,7 @@ small_0_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_
 print(len(small_0_1))
 small_2_3=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small_2_3_predicted_02_v2.csv"))
 print(len(small_2_3))
+
 large_1=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_large_1_predicted_02_v2.csv"))
 print(len(large_1))
 
