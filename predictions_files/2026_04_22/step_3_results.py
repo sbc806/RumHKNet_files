@@ -12,16 +12,23 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_predicted_02.csv"))
 print(len(small))
-
 print(small)
 print(small.columns)
+small_0_1=pd.read_csv(os.path.join(preidctions_path,"2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_0_1_predicted_02.csv"))
+print(len(small_0_1))
 
-small_selected=small[["seq_id","seq","top1_label"]]
-small_selected.columns=["seq_id","seq","batch"]
-small_selected.iloc[np.where(small_selected["batch"]==10)[0],2]=-1
-print(small_selected)
+def adjusted_df(df):
+  df_selected=df[["seq_id","seq","top1_label"]]
+  df_selected.columns=["seq_id","seq","batch"]
+  df_selected.iloc[np.where(df_selected["batch"]==10)[0],2]=-1
+  print(df_selected)
+  return df_selected
 
-small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small.csv",index=False)
+small_selected=adjusted_df(small)
+# small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family_small.csv",index=False)
+
+small_0_1_selected=adjusted_df(small_0_1)
+
 """
 small_selected=small[["seq_id","seq","top1_label"]]
 small_selected.columns=["seq_id","seq","pred"]
