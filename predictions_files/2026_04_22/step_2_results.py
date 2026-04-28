@@ -41,3 +41,7 @@ print(np.sum(large_1["prob"]>=threshold),np.sum(large_1["label"]==1))
 large_1_kinase=large_1[large_1["prob"]>=threshold][["seq_id","seq"]]
 print(large_1_kinase)
 # large_1_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_large_1.csv",index=False)
+
+large_1.columns=small_1.columns
+complete=pd.concat([small_1,small_0_1,small_2_2,large_1])
+complete_kinase=pd.concat([small_1_kinase_chosen,small_0_1_kinase_chosen,small_2_3_kinase_chosen,large_1_kinase])
