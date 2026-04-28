@@ -45,7 +45,7 @@ print(large_1_kinase)
 print()
 large_1.columns=small_1.columns
 complete=pd.concat([small_1,small_0_1,small_2_3,large_1])
-print("Number of predictions:",len(completed))
+print("Number of predictions:",len(complete))
 complete_kinase=pd.concat([small_1_kinase_chosen,small_0_1_kinase_chosen,small_2_3_kinase_chosen,large_1_kinase])
 print(np.sum(complete["prob"]>=threshold),np.sum(complete["pred"]==1),len(complete_kinase))
 print(complete_kinase)
