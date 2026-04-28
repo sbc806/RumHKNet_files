@@ -27,7 +27,7 @@ print(small_0_1_kinase_chosen)
 # small_0_1_kinase_chosen.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/2026_04_22_clustered95_rep_seq_step_2_histidine_kinase_small_0_1.csv",index=False)
 
 small_2_3=pd.read_csv(os.path.join(predictions_path,"2026_04_22_clustered95_rep_seq_step_1_kinase_small_2_3_predicted_02_1500_v3_0.csv"))
-print(len(small(2_3))
+print(len(small_2_3))
 small_2_3_kinase=small_2_3["prob"]>=threshold
 print(f"Threshold {threshold}:",np.sum(small_2_3_kinase),np.sum(small_2_3["pred"]==1))
 small_2_3_kinase_chosen=small_2_3[small_2_3_kinase][["seq_id","seq"]]
