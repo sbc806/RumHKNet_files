@@ -60,5 +60,7 @@ with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/prote
 complete_selected=add_label(complete_selected,reverse_dict(label_family))
 print(complete_selected)
 
-# small_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.csv",index=False)
-# df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.fasta",extra_column="pred_other")
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
+save_name="2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family"
+complete.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.csv",index=False)
+df_to_fasta(small_selected,"/home/schen123/projects/rrg-guanuofa/schen123/kinases/5_isolate_predictions/RumHKNet_predictions/step_1_02_step_2_02/5_isolate_step_3_histidine_kinase_family.fasta",extra_column="pred_other")
