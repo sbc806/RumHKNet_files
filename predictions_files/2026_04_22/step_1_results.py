@@ -11,11 +11,11 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 i_df={}
 small=[]
 small_total=0
-selected=[2,3]
+selected=[0,1,2,3]
 small_i=[]
 small_remaining=[]
 small_remaining_i=[]
-for i in range(0,1):
+for i in range(0,4):
   df=check_specific(predictions_path,f"2026_04_22_clustered95_rep_seq_small_{i}_predicted")
   print(i,len(df))
   small.append(df)
@@ -37,10 +37,10 @@ for i in range(0,1):
 print("Number of predictions for sequences with length <=1500:",small_total)
 small_all=pd.concat(small)
 threshold=0.2
-small_kinase=small_all["prob"]>=threshold
-print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase),np.sum(small_all["pred"]==1))
-small_all_kinase=small_all[small_kinase][["seq_id","seq"]]
-print(small_all_kinase)
+# small_kinase=small_all["prob"]>=threshold
+# print(f"Number of predicted kinases with threshold {threshold}:",np.sum(small_kinase),np.sum(small_all["pred"]==1))
+# small_all_kinase=small_all[small_kinase][["seq_id","seq"]]
+# print(small_all_kinase)
 # small_all_kinase.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/2026_04_22_clustered95_rep_seq_step_1_kinase_small.csv",index=False)
 
 """
