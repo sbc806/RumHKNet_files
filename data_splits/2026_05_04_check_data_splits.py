@@ -31,3 +31,14 @@ dir_path="/home/schen123/scratch/kinases"
 step_1="step_1_non_kinases_preprocessed/protein/binary_class"
 dir_path_1=os.path.join(dir_path,f"kinases_dataset/{step_1}")
 dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_1}")
+
+dfs_1=get_dfs(dir_path_1)
+dfs_2=get_dfs(dir_path_2)
+unique_labels=np.unique(train_1["label"])
+for label in unique_labels:
+  for i in range(0,3):
+    print(label,np.sum(dfs_1[i]["label"]==label),np.sum(dfs_2[i]["label"]==label))
+print()
+df_1=pd.concat(dfs_1)
+df_2=pd.concat(dfs_2)
+get_unique_infromation(df
