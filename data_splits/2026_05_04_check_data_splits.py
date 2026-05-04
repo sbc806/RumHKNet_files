@@ -3,10 +3,17 @@ import numpy as np
 import pandas as pd
 
 
+def get_dfs(dir_path):
+  train=pd.read_csv(os.path.join(dir_path,"train/train.csv"))
+  dev=pd.read_csv(os.path.join(dir_path,"dev/dev.csv"))
+  test=pd.read_csv(os.path.join(dir_path,"test/test.csv"))
+  print(len(train),len(dev),len(test))
+  return train, dev, test
+  
 def get_unique_information(df):
   print("Number of unique sequences:",len(df))
   print("Number of unique sequence IDs:",np.unique(df["seq_id"]).shape)
-  print("Number of unique sequences:",np.unique(df["seq"])/shape)
+  print("Number of unique sequences:",np.unique(df["seq"]).shape)
 
 def compare(df_1,df_2)
   get_unique_information(df_1)
@@ -19,3 +26,8 @@ def compare(df_1,df_2)
   df_2=df_2.iloc[seq_argsort_2]
   for column in df_1.columns:
     print(np.sum(df_1[column].values==df_2[column]).values,np.sum(df_1[column].values!=df_2[column].values))
+
+dir_path="/home/schen123/scratch/kinases"
+step_1="step_1_non_kinases_preprocessed/protein/binary_class"
+dir_path_1=os.path.join(dir_path,f"kinases_dataset/{step_1}")
+dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_1}")
