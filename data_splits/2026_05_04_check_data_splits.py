@@ -34,7 +34,7 @@ step_2="extra_p_2_class_v3_kinases_only/protein/binary_class"
 step_2_1="step_2/protein/binary_class"
 step_3="step_3_11_family/protein/multi_class"
 step_4="extra_p_133_class_v3_batch/protein/multi_class"
-step_dir=step_3
+step_dir=step_4
 dir_path_1=os.path.join(dir_path,f"kinases_dataset/{step_dir}")
 dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_dir}")
 
