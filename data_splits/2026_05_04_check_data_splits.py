@@ -35,6 +35,7 @@ dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_1}")
 
 dfs_1=get_dfs(dir_path_1)
 dfs_2=get_dfs(dir_path_2)
+print()
 
 protein_types=["non_kinase_","other_kinase_","histidine_kinase_"]
 for i in range(0,3):
