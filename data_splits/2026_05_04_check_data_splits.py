@@ -40,8 +40,9 @@ protein_types=["non_kinase_","other_kinase_","histidine_kinase_"]
 for i in range(0,3):
   for each_type in protein_types:
     print(each_type,np.sum(dfs_1[i]["seq_id"].str.contains(each_type)),np.sum(dfs_2[i]["seq_id"].str.contains(each_type)))
-        
-unique_labels=np.unique(train_1["label"])
+print()
+
+unique_labels=np.unique(dfs_1[0]["label"])
 for label in unique_labels:
   for i in range(0,3):
     print(label,np.sum(dfs_1[i]["label"]==label),np.sum(dfs_2[i]["label"]==label))
