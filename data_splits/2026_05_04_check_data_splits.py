@@ -34,6 +34,12 @@ dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_1}")
 
 dfs_1=get_dfs(dir_path_1)
 dfs_2=get_dfs(dir_path_2)
+
+protein_types=["non_kinase_","other_kinase_","histidine_kinase_"]
+for i in range(0,3):
+  for each_type in protein_types:
+    print(each_type,np.sum(dfs_1[i]["seq_id"].str.contains(each_type),np.sum(dfs_2[i]["seq_id"].str.contains(each_type)))
+        
 unique_labels=np.unique(train_1["label"])
 for label in unique_labels:
   for i in range(0,3):
@@ -41,4 +47,7 @@ for label in unique_labels:
 print()
 df_1=pd.concat(dfs_1)
 df_2=pd.concat(dfs_2)
-get_unique_infromation(df
+get_unique_information(df_1)
+get_unique_information(df_2)
+print()
+compare(df_1,df_2)
