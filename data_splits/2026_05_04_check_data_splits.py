@@ -30,19 +30,22 @@ def compare(df_1,df_2):
 
 dir_path="/home/schen123/scratch/kinases"
 step_1="step_1_non_kinases_preprocessed/protein/binary_class"
-dir_path_1=os.path.join(dir_path,f"kinases_dataset/{step_1}")
-dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_1}")
+step_2="extra_p_2_class_v3_kinases_only/protein/binary_class"
+step_2_1="step_2/protein/binary_class"
+step_dir=step_2
+dir_path_1=os.path.join(dir_path,f"kinases_dataset/{step_dir}")
+dir_path_2=os.path.join(dir_path,f"test_code/kinases_dataset/{step_2_1}")
 
 dfs_1=get_dfs(dir_path_1)
 dfs_2=get_dfs(dir_path_2)
 print()
-
+"""
 protein_types=["non_kinase_","other_kinase_","histidine_kinase_"]
 for i in range(0,3):
   for each_type in protein_types:
     print(each_type,np.sum(dfs_1[i]["seq_id"].str.contains(each_type)),np.sum(dfs_2[i]["seq_id"].str.contains(each_type)))
 print()
-
+"""
 unique_labels=np.unique(dfs_1[0]["label"])
 for label in unique_labels:
   for i in range(0,3):
