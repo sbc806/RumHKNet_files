@@ -26,7 +26,7 @@ def compare(df_1,df_2):
   df_2=df_2.iloc[seq_argsort_2]
   for column in df_1.columns:
     if column!="seq_id":
-      print(np.sum(df_1[column].values==df_2[column]).values,np.sum(df_1[column].values!=df_2[column].values))
+      print(np.sum(df_1[column].values==df_2[column].values),np.sum(df_1[column].values!=df_2[column].values))
 
 dir_path="/home/schen123/scratch/kinases"
 step_1="step_1_non_kinases_preprocessed/protein/binary_class"
@@ -39,7 +39,7 @@ dfs_2=get_dfs(dir_path_2)
 protein_types=["non_kinase_","other_kinase_","histidine_kinase_"]
 for i in range(0,3):
   for each_type in protein_types:
-    print(each_type,np.sum(dfs_1[i]["seq_id"].str.contains(each_type),np.sum(dfs_2[i]["seq_id"].str.contains(each_type)))
+    print(each_type,np.sum(dfs_1[i]["seq_id"].str.contains(each_type)),np.sum(dfs_2[i]["seq_id"].str.contains(each_type)))
         
 unique_labels=np.unique(train_1["label"])
 for label in unique_labels:
