@@ -26,7 +26,7 @@ def compare(df_1,df_2):
   df_2=df_2.iloc[seq_argsort_2]
   for column in df_1.columns:
     if column!="seq_id":
-      print(np.sum(df_1[column].values==df_2[column].values),np.sum(df_1[column].values!=df_2[column].values))
+      print(column,"Same:",np.sum(df_1[column].values==df_2[column].values),"Different:",np.sum(df_1[column].values!=df_2[column].values))
 
 dir_path="/home/schen123/scratch/kinases"
 step_1="step_1_non_kinases_preprocessed/protein/binary_class"
