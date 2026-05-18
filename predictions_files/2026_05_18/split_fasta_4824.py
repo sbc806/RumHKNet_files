@@ -16,6 +16,8 @@ for i, fasta in enumerate(fasta_content):
 
 seq_data_df=pd.DataFrame(seq_data)
 print(seq_data_df)
+print("Number of unique sequence IDs:",np.unique(seq_data_df["seq_id"]).shape)
+print("Number of unique sequences:",np.unique(seq_data_df["seq"]).shape)
 # seq_data_df.to_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"),index=False)
 
 # seq_data_df=pd.read_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"))
