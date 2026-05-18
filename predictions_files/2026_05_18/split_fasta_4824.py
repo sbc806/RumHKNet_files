@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 dir_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data"
-fasta_path=os.path.join(dir_path,"4824human_newrun.fasta")
+fasta_path=os.path.join(dir_path,"4824human_newrun.faa")
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
 
