@@ -16,6 +16,8 @@ for i, fasta in enumerate(fasta_content):
 
 seq_data_df=pd.DataFrame(seq_data)
 print(seq_data_df)
+print('Number of unique sequence IDs:',np.unique(seq_data_df["seq_id"]).shape)
+print('Number of unique sequences:',np.unique(seq_data_df["seq"]).shape)
 # seq_data_df.to_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"),index=False)
 
 # seq_data_df=pd.read_csv(os.path.join(dir_path,"newadd_155098MAGs.csv"))
@@ -36,6 +38,11 @@ def split_chunks(df,chunk_size,save_path,save_name):
     df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
   df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
   print(max(df_small["seq"].str.len()),max(df_large["seq"].str.len()))
-  
-chunk_size=1200000
-# split_chunks(seq_data_df,chunk_size,dataset_path,"2026_04_22_clustered95_rep_seq")
+
+seq_data_df_1=seq_data_df.iloc[0:8400000]
+seq_data_df_2=seq_data_df.iloc[8400000:]
+print(seq_data_df_1.shape,seq_data_df_2.shape)
+chunk_size_1=1200000
+chunk_size_2=800000
+split_chunks(seq_data_df_1,chunk_size_1,dataset_path,"9342_all_proteins_newrun_1")
+split_chunks(seq_data_df_2,chunk_size_2,dataset_path,"9342_all_proteins_newrun_2")
