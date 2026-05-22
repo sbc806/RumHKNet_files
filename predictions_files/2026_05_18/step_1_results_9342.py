@@ -12,8 +12,8 @@ small_1_dfs=[]
 for i in range(0,4):
   df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_1_small_{i}_predicted")
   print(i, len(df_i))
-  small_dfs.append(df_i)
-small_df=pd.concat(small_dfs)
+  small_1_dfs.append(df_i)
+small_1_df=pd.concat(small_1_dfs)
 
 threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_1_df["prob"]>=threshold),np.sum(small_1_df["pred"]==1))
