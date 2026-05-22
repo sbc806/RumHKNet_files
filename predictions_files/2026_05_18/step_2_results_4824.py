@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sys
 sys.path.append("..")
-from predictions_helpers import check_speicifc, df_to-fasta
+from predictions_helpers import check_specific, df_to_fasta
 
 
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered"
