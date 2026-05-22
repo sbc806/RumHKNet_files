@@ -10,13 +10,13 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small_1_dfs=[]
 for i in range(0,8):
-  df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_1_small_{i}")
+  df_i=check_specific(dataset_path,f"9342_all_proteins_newrun_1_small_{i}")
   print(i, len(df_i))
 
 small_2_dfs=[]
 selected=[0,1,2,3,4,5]
 for i in selected:
-  df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_{i}")
+  df_i=check_specific(dataset_path,f"9342_all_proteins_newrun_2_small_{i}")
   print(i,len(df_i))
 
 
