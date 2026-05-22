@@ -22,6 +22,14 @@ for i in selected:
 
 large_1_df=pd.read_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_1_large.csv"))
 print(len(large_1_df))
+large_1_df_argsort=np.argsort(large_1_df["seq"].str.len())
+large_1_df_sorted=large_1_df.iloc[large_1_df_argsort]
+print(large_1_df_sorted)
+large_1_df_sorted.to_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_1_large_sorted.csv"),index=False)
 
 large_2_df=pd.read_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_2_large.csv"))
 print(len(large_2_df))
+large_2_df_argsort=np.argsort(large_2_df["seq"].str.len())
+large_2_df_sorted=large_2_df.iloc[large_2_df_argsort]
+print(large_2_df_sorted)
+large_2_df_sorted.to_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_2_large_sorted.csv"),index=False)
