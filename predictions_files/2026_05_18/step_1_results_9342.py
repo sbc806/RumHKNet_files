@@ -28,6 +28,12 @@ small_2_df=pd.concat(small_2_dfs)
 print(len(small_2_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_2_df["prob"]>=threshold),np.sum(small_2_df["pred"]))
 
+small_df=pd.concat([small_1_df,small_2_df])
+small_kinase_df=small_df[small_df["pred"]][["seq_id","seq"]]
+print(small_kinase_df)
+small_kinase_df.iloc[0:270000].to_csv("/home/schen123/proejcts/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_0.csv",index=False)
+small_kinase_df.iloc[270000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_2_step_1_kinase_small_1.csv",index=False)
+
 large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_predicted_02_v2.csv"))
 print(len(large_1_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_1_df["prob"]>=threshold),np.sum(large_1_df["label"]))
