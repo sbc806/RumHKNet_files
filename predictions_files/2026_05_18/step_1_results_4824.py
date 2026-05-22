@@ -18,7 +18,7 @@ small_df=pd.concat(small_df)
 threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_df["prob"]>=threshold),np.sum(small_df["pred"]==1))
 
-large_df=pd.read_csv(os.path.join(predictions_path,"4924human_newrun_large_predicted_02_v2.csv"))
+large_df=pd.read_csv(os.path.join(predictions_path,"4824human_newrun_large_predicted_02_v2.csv"))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_df["prob"]>=threshold),np.sum(large_df["label"]))
 
 complete_df=pd.concat([small_df,large_df])
