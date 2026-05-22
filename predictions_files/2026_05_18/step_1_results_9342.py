@@ -18,6 +18,16 @@ small_1_df=pd.concat(small_1_dfs)
 threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_1_df["prob"]>=threshold),np.sum(small_1_df["pred"]==1))
 
+small_2_dfs=[]
+selected=[0,3,4]
+for i in selected:
+  df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_{i}_predicted")
+  print(i,len(df_i))
+  small_2_dfs.append(df_i)
+small_2_df=pd.concat(small_2_dfs)
+print(len(small_2_df))
+print(f"Number of predictions for threshold {threshold}:",np.sum(small_2_df["prob"]>=threshold),np.sum(small_2_df["pred"]))
+
 large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_predicted_02_v2.csv"))
 print(len(large_1_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_1_df["prob"]>=threshold),np.sum(large_1_df["label"]))
