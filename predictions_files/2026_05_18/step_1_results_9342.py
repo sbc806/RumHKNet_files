@@ -10,7 +10,7 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small_1_dfs=[]
 for i in range(0,4):
-  df_i=check_specific(predictions_path,f"93424_all_proteins_newrun_1_small_{i}_predicted")
+  df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_1_small_{i}_predicted")
   print(i, len(df_i))
   small_dfs.append(df_i)
 small_df=pd.concat(small_dfs)
