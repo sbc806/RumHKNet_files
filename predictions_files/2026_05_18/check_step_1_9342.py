@@ -20,7 +20,7 @@ for i in selected:
   print(i,len(df_i))
 
 
-large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large.csv"))
+large_1_df=pd.read_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_1_large.csv"))
 print(len(large_1_df))
 
 large_2_df=pd.read_csv(os.path.join(dataset_path,"9342_all_proteins_newrun_2_large.csv"))
