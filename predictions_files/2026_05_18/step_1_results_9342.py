@@ -19,8 +19,10 @@ threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_1_df["prob"]>=threshold),np.sum(small_1_df["pred"]==1))
 
 large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_predicted_02_v2.csv"))
+print(len(large_1_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_1_df["prob"]>=threshold),np.sum(large_1_df["label"]))
 large_2_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_2_large_predicted_02_v2.csv"))
+print(len(large_2_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_2_df["prob"]>=threshold),np.sum(large_2_df["label"]))
 
 """
