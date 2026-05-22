@@ -13,7 +13,7 @@ for i in range(0,3):
   df_i=check_specific(predictions_path,f"4824human_newrun_small_{i}_predicted")
   print(i, len(df_i))
   small_dfs.append(df_i)
-small_df=pd.concat(small_df)
+small_df=pd.concat(small_dfs)
 
 threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_df["prob"]>=threshold),np.sum(small_df["pred"]==1))
