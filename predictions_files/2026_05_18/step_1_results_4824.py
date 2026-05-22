@@ -24,3 +24,11 @@ print(f"Number of predictions for threshold {threshold}:",np.sum(large_df["prob"
 complete_df=pd.concat([small_df,large_df])
 print(len(complete_df),len(small_df),len(large_df),len(small_df)+len(large_df))
 print(np.unique(complete_df["seq_id"]).shape,np.unique(complete_df["seq"]).shape)
+
+small_kinase_df=small_df[small_df["pred"]==1][["seq_id","seq"]]
+print(small_kinase_df)
+small_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/4824human_newrun_step_1_kinase_small.csv")
+
+large_kinase_df=large_df[large_df["label"]==1][["seq_id","seq"]]
+print(large_kinase_df)
+large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/4824human_newrun_step_1_kinase_large.csv")
