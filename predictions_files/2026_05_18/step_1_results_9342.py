@@ -41,10 +41,10 @@ print(5,len(small_kinase_df_2_5))
 print(np.sum(small_kinase_df_2_5["prob"]>=0.2),np.sum(small_kinase_df_2_5["pred"]==1))
 print()
 
-large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_predicted_02_v2.csv"))
+large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_sorted_predicted_02_v2.csv"))
 print(len(large_1_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_1_df["prob"]>=threshold),np.sum(large_1_df["label"]))
-large_2_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_2_large_predicted_02_v2.csv"))
+large_2_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_2_large_sorted_predicted_02_v2.csv"))
 print(len(large_2_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_2_df["prob"]>=threshold),np.sum(large_2_df["label"]))
 
