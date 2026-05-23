@@ -19,7 +19,12 @@ print(len(large_df))
 print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["label"]==1))
 print(max(large_df["seq"].str.len()))
 
-histidine_kinase_df=pd.concat([small_df[["seq_id","seq"]],large_df[["seq_id","seq"]]])
-print(len(histidine_kinase_df),len(small_df)+len(large_df))
+small_histidine_kinase_df=small_df[small_df["pred"]==1]
+print(len(small_histidine_kinase_df))
+large_histidine_kinase_df=large_df[large_df["label"]==1]
+print(len(large_histidine_kinase_df)
+      
+histidine_kinase_df=pd.concat([histidine_kinase_small_df[["seq_id","seq"]],histidine_kinase_large_df[["seq_id","seq"]]])
+print(len(histidine_kinase_df),len(histidine_kinase_small_df)+len(histidine_kinase_large_df))
 print(histidine_kinase_df)
 histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/4824human_newrun_step_2_histidine_kinase_predicted.csv",index=False)
