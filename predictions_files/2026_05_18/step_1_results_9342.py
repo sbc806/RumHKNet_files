@@ -53,7 +53,7 @@ print(len(large_2_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_2_df["prob"]>=threshold),np.sum(large_2_df["label"]))
 
 large_2_histidine_kinase_df=large_2_df[large_2_df["label"]==1]
-print(max(large_2_hsitidine_kinase_df["seq"].str.len()))
+print(max(large_2_histidine_kinase_df["seq"].str.len()))
 
 """
 complete_df=pd.concat([small_df,large_df])
