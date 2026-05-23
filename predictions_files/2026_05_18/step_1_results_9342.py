@@ -61,7 +61,7 @@ print()
 
 large_kinase_df=pd.concat([large_kinase_df,large_2_kinase_df])[["seq_id","seq"]]
 print(large_kinase_df)
-large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered/9342_all_proteins_newrun_step_1_kinase_large.csv",index=False)
+large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_1/clustered/9342_all_proteins_newrun_step_1_kinase_large_1_2.csv",index=False)
 
 """
 complete_df=pd.concat([small_df,large_df])
