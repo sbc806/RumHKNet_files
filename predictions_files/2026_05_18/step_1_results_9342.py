@@ -39,7 +39,7 @@ print()
 small_df_2_5=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_5_predicted")
 print(5,len(small_df_2_5))
 print(np.sum(small_df_2_5["prob"]>=0.2),np.sum(small_df_2_5["pred"]==1))
-small_kinase_df_2_5=small_df_2_5[small_df_2_5["pred"]==1]
+small_kinase_df_2_5=small_df_2_5[small_df_2_5["pred"]==1][["seq_id","seq"]]
 print(small_kinase_df_2_5)
 small_kinase_df_2_5.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_2_5.csv",index=False)
 print()
