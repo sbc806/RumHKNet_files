@@ -44,11 +44,16 @@ print()
 large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_sorted_predicted_02_v2.csv"))
 print(len(large_1_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_1_df["prob"]>=threshold),np.sum(large_1_df["label"]))
-print(max(large_1_df["seq"].str.len()))
+
+large_1_histidine_kinase_df=large_1_df[large_1_df["label"]==1]
+print(max(large_1_histidine_kinase_df["seq"].str.len()))
+
 large_2_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_2_large_sorted_predicted_02_v2.csv"))
 print(len(large_2_df))
 print(f"Number of predictions for threshold {threshold}:",np.sum(large_2_df["prob"]>=threshold),np.sum(large_2_df["label"]))
-print(max(large_2_df["seq"].str.len()))
+
+large_2_histidine_kinase_df=large_2_df[large_2_df["label"]==1]
+print(max(large_2_hsitidine_kinase_df["seq"].str.len()))
 
 """
 complete_df=pd.concat([small_df,large_df])
