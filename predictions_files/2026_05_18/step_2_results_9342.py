@@ -9,7 +9,7 @@ dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered"
 
 small_dfs_034=[]
-for i in range(0,12):
+for i in range(0,2):
   df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_step_1_kinase_small_{i}_predicted")
   small_dfs_034.append(df_i)
 print(len(small_dfs_034))
