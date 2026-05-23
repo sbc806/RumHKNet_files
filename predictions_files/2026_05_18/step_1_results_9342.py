@@ -37,7 +37,7 @@ print(small_kinase_df)
 print()
 
 small_kinase_df_2_5=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_5_predicted")
-print(5,len(small_kinase_2_5))
+print(5,len(small_kinase_df_2_5))
 print(np.sum(small_kinase_df_2_5["prob"]>=0.2),np.sum(small_kinase_df_2_5["pred"]==1))
 print()
 
