@@ -21,4 +21,4 @@ print(max(large_df["seq"].str.len()))
 
 histidine_kinase_df=pd.concat([small_df[["seq_id","seq"]],large_df[["seq_id","seq"]]])
 print(histidine_kinase_df)
-histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/4824human_newrun_step_1_histidine_kinase_predicted.csv",index=False)
+histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/4824human_newrun_step_2_histidine_kinase_predicted.csv",index=False)
