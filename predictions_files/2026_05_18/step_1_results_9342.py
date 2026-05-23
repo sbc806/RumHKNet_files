@@ -17,6 +17,7 @@ small_1_df=pd.concat(small_1_dfs)
 
 threshold=0.2
 print(f"Number of predictions for threshold {threshold}:",np.sum(small_1_df["prob"]>=threshold),np.sum(small_1_df["pred"]==1))
+print()
 
 small_2_dfs=[]
 selected=[0,3,4]
@@ -33,10 +34,12 @@ small_kinase_df=small_df[small_df["pred"]==1][["seq_id","seq"]]
 print(small_kinase_df)
 # small_kinase_df.iloc[0:400000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_0.csv",index=False)
 # small_kinase_df.iloc[400000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_1.csv",index=False)
+print()
 
 small_kinase_df_2_5=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_5_predicted")
 print(5,len(small_kinase_2_5))
 print(np.sum(small_kinase_df_2_5["prob"]>=0.2),np.sum(small_kinase_df_2_5["pred"]==1))
+print()
 
 large_1_df=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_1_large_predicted_02_v2.csv"))
 print(len(large_1_df))
