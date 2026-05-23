@@ -22,7 +22,7 @@ print(max(large_df["seq"].str.len()))
 small_histidine_kinase_df=small_df[small_df["pred"]==1]
 print(len(small_histidine_kinase_df))
 large_histidine_kinase_df=large_df[large_df["label"]==1]
-print(len(large_histidine_kinase_df)
+print(len(large_histidine_kinase_df))
       
 histidine_kinase_df=pd.concat([histidine_kinase_small_df[["seq_id","seq"]],histidine_kinase_large_df[["seq_id","seq"]]])
 print(len(histidine_kinase_df),len(histidine_kinase_small_df)+len(histidine_kinase_large_df))
