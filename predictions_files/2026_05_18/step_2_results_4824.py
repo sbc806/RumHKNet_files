@@ -17,3 +17,4 @@ large_df=pd.read_csv(os.path.join(predictions_path,"4824human_newrun_step_1_kina
 
 print(len(large_df))
 print(np.sum(large_df["prob"]>=0.2),np.sum(large_df["label"]==1))
+print(max(large_df["seq"].str.len()))
