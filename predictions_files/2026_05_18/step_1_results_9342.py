@@ -45,7 +45,7 @@ small_df_2_12=pd.concat(small_dfs_2_12)
 print(len(small_df_2_12))
 print(f"Number of predictions for threshold {threshold}:", np.sum(small_df_2_12["prob"]>=threshold),np.sum(small_df_2_12["pred"]==1))
 
-small_kinase_df_2_12=small_kinase_df_2_12[small_kinase_df_2_12["pred"]==1][["seq_id","seq"]]
+small_kinase_df_2_12=small_df_2_12[small_df_2_12["pred"]==1][["seq_id","seq"]]
 print(small_kinase_df_2_12)
 small_kinase_df_2_12.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_2_12.csv",index=False)
 
