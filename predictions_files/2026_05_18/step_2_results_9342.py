@@ -42,3 +42,8 @@ print(np.sum(large_df_1_2["prob"]>=0.2),np.sum(large_df_1_2["label"]==1))
 large_histidine_kinase_df_1_2=large_df_1_2[large_df_1_2["label"]==1][["seq_id","seq"]]
 print(large_histidine_kinase_df_1_2)
 print(max(large_histidine_kinase_df_1_2["seq"].str.len()))
+print()
+
+histidine_kinase_df=pd.concat([small_histidine_kinase_df_2_12,small_histidine_kinase_df_2_5,large_histidine_kinase_df_1_2])
+print(len(histidine_kinase_df),histidine_kinase_df.columns)
+histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_newrun_step_2_histidine_kinase_remaining.csv",index=False)
