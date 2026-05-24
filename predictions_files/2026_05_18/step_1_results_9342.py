@@ -38,7 +38,7 @@ print()
 
 small_dfs_2_12=[]
 for i in [1,2]:
-  df_i=check_specific(predicions_path,f"9342_all_proteins_newrun_2_small_{i}_prediccted")
+  df_i=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_{i}_prediccted")
   print(i,len(df_i))
   small_dfs_2_12.append(df_i)
 small_df_2_12=pd.concat(small_dfs_2_12)
