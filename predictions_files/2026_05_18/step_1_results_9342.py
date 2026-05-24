@@ -47,7 +47,7 @@ print(f"Number of predictions for threshold {threshold}:", np.sum(small_df_2_12[
 
 small_kinase_df_2_12=small_df_2_12[small_df_2_12["pred"]==1][["seq_id","seq"]]
 print(small_kinase_df_2_12)
-small_kinase_df_2_12.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_2_12.csv",index=False)
+# small_kinase_df_2_12.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_2_12.csv",index=False)
 
 print()
 
@@ -80,7 +80,7 @@ print(large_kinase_df)
 print()
 
 full_df=pd.concat([small_1_df,small_2_df,small_df_2_12,small_df_2_5,large_1_df,large_2_df])
-print(len(full_df),np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"].shape))
+print(len(full_df),np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"]).shape)
 print()
 
 """
