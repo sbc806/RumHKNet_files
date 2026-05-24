@@ -23,16 +23,22 @@ print()
 small_df_2_12=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_1_kinase_small_2_12_predicted_02_v2.csv"))
 print(len(small_df_2_12))
 print(np.sum(small_df_2_12["prob"]>=0.2),np.sum(small_df_2_12["label"]==1))
+small_histidine_kinase_df_2_12=small_df_2_12[small_df_2_12["label"]==1][["seq_id","seq"]]
+print(small_histidine_kinase_df_2_12)
 
 print()
 
 small_df_2_5=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_1_kinase_small_2_5_predicted_02_v2.csv"))
 print(len(small_df_2_5))
 print(np.sum(small_df_2_5["prob"]>=0.2),np.sum(small_df_2_5["label"]==1))
+small_histidine_kinase_df_2_5=small_df_2_5[small_df_2_5["label"]==1][["seq_id","seq"]]
+print(small_histidine_kinase_df_2_5)
 
 print()
 
 large_df_1_2=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_1_kinase_large_1_2_predicted_02_v2.csv"))
 print(len(large_df_1_2))
 print(np.sum(large_df_1_2["prob"]>=0.2),np.sum(large_df_1_2["label"]==1))
-print(max(large_df_1_2["seq"].str.len()))
+large_histidine_kinase_df_1_2=large_df_1_2[large_df_1_2["label"]==1][["seq_id","seq"]]
+print(large_histidine_kinase_df_1_2)
+print(max(large_histidine_kinase_df_1_2["seq"].str.len()))
