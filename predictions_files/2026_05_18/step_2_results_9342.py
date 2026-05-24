@@ -22,7 +22,7 @@ print()
 
 small_df_2_12=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_1_kinase_small_2_12_predicted_02_v2.csv"))
 print(len(small_df_2_12))
-print(np.sum(small_df_2_12["prob"]>=0.2),np.sum(small_df_2_12["plabel"]==1))
+print(np.sum(small_df_2_12["prob"]>=0.2),np.sum(small_df_2_12["label"]==1))
 
 print()
 
