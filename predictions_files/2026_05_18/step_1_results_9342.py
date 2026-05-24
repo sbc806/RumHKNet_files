@@ -27,13 +27,24 @@ for i in selected:
   small_2_dfs.append(df_i)
 small_2_df=pd.concat(small_2_dfs)
 print(len(small_2_df))
-print(f"Number of predictions for threshold {threshold}:",np.sum(small_2_df["prob"]>=threshold),np.sum(small_2_df["pred"]))
+print(f"Number of predictions for threshold {threshold}:",np.sum(small_2_df["prob"]>=threshold),np.sum(small_2_df["pred"]==1))
 
 small_df=pd.concat([small_1_df,small_2_df])
 small_kinase_df=small_df[small_df["pred"]==1][["seq_id","seq"]]
 print(small_kinase_df)
 # small_kinase_df.iloc[0:400000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_0.csv",index=False)
 # small_kinase_df.iloc[400000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_small_1.csv",index=False)
+print()
+
+small_dfs_2_12=[]
+for i in [1,2]:
+  df_i=check_specific(predicions_path,f"9342_all_proteins_newrun_2_small_{i}_prediccted")
+  print(i,len(df_i))
+  small_dfs_2_12.append(df_i)
+small_df_2_12=pd.concat(small_df_2_123)
+print(len(small_df_2_12))
+print(f"Number of predictions for threshold {threshold}:", np.sum(small_df_2_12["prob"]>=threshold),np.sum(small_df_2_12["pred"]==1))
+
 print()
 
 small_df_2_5=check_specific(predictions_path,f"9342_all_proteins_newrun_2_small_5_predicted")
@@ -61,7 +72,7 @@ print()
 
 large_kinase_df=pd.concat([large_1_kinase_df,large_2_kinase_df])[["seq_id","seq"]]
 print(large_kinase_df)
-large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_large_1_2.csv",index=False)
+# large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_large_1_2.csv",index=False)
 
 """
 complete_df=pd.concat([small_df,large_df])
