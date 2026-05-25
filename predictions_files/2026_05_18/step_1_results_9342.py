@@ -79,20 +79,15 @@ print(large_kinase_df)
 # large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_newrun_step_1_kinase_large_1_2.csv",index=False)
 print()
 
+large_1_df.columns=small_1_df.columns
+large_2_df.columns=small_1_df.columns
 full_df=pd.concat([small_1_df,small_2_df,small_df_2_12,small_df_2_5,large_1_df,large_2_df])
 print(len(full_df),np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"]).shape)
 print()
 
-"""
-complete_df=pd.concat([small_df,large_df])
-print(len(complete_df),len(small_df),len(large_df),len(small_df)+len(large_df))
-print(np.unique(complete_df["seq_id"]).shape,np.unique(complete_df["seq"]).shape)
-
-small_kinase_df=small_df[small_df["pred"]==1][["seq_id","seq"]]
-print(small_kinase_df)
-small_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/4824human_newrun_step_1_kinase_small.csv",index=False)
-
-large_kinase_df=large_df[large_df["label"]==1][["seq_id","seq"]]
-print(large_kinase_df)
-large_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/4824human_newrun_step_1_kinase_large.csv",index=False)
-"""
+full_kinase_df=full_df[full_df["pred"]==1]
+print(f"Number of predicted kinases for threshold {threshold}:",len(full_kinase_df))
+                                                   
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/9342_all_proteins_newrun/step_1_02_step_2_02"
+full_df.to_csv(os.path.join(save_path,"9342_all_proteins_newrun_step_1_predictions_2.csv"),index=False)
+df_to_fasta(full_kinase_df,os.path.join(save_path,"9342_all_proteins_newrun_step_1_kinase_02.fasta"))
