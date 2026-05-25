@@ -14,31 +14,22 @@ all_predictions=pd.read_csv(os.path.join(predictions_path,"4824human_newrun_step
 print("Number of predictions:",len(all_predictions))
 print(all_predictions.columns)
 
+complete=all_predictions
 
-def adjusted_df(df):
-  df_selected=df[["seq_id","seq","top1_label"]]
-  df_selected.columns=["seq_id","seq","batch"]
-  df_selected.iloc[np.where(df_selected["batch"]==10)[0],2]=-1
-  print(df_selected)
-  return df_selected
-  
-all_predictions_selected=adjusted_df(all_predictions)
-
-
-"""
-complete=pd.concat([small,small_0_1,small_2_3,large_1])
-print("Number of predictions:",len(complete))
 print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
+print()
 
 complete_selected=complete[["seq_id","seq","top1_label"]]
 complete_selected.columns=["seq_id","seq","pred"]
-with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/label.json","r") as f:
-  label_family=json.load(f)
-complete_selected=add_label(complete_selected,reverse_dict(label_family))
 print(complete_selected)
 
-save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_04_22_clustered95_rep_seq_predictions/RumHKNet_predictions/step_1_02_step_2_02"
-save_name="2026_04_22_clustered95_rep_seq_step_3_histidine_kinase_family"
-# complete_selected.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
-# df_to_fasta(complete_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
-"""
+with open("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/label.json","r") as f:
+  ko_label=json.load(f)
+
+complete_selected=add_label(complete_selected,reverse_dict(ko_label))
+print(complete_selected)
+
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/4824human_newrun/step_1_02_step_2_02"
+save_name="2026_04_22_clustered95_rep_seq_step_4_histidine_kinase_ko"
+complete_selected.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
+df_to_fasta(complete_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
