@@ -35,8 +35,10 @@ def split_chunks(df,chunk_size,save_path,save_name):
     end=start+chunk_size
     print("Start:",start,"End:",end)
     df_small_i=df_small[start:end]
-    df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
-  df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
+    # df_small_i.to_csv(os.path.join(save_path,f"{save_name}_small_{i}.csv"),index=False)
+  # df_large.to_csv(os.path.join(save_path,f"{save_name}_large.csv"),index=False)
+  df_large_argsort=np.argsort(df_large["seq"].str.len())
+  df_large.iloc[df_large_argsort].to_csv(os.path.join(save_path,f"{save_name}_large_sorted.csv"),index=False)
   print(max(df_small["seq"].str.len()),max(df_large["seq"].str.len()))
   
 chunk_size=1200000
