@@ -46,4 +46,19 @@ print()
 
 histidine_kinase_df_remaining=pd.concat([small_histidine_kinase_df_2_12,small_histidine_kinase_df_2_5,large_histidine_kinase_df_1_2])
 print(len(histidine_kinase_df_remaining),histidine_kinase_df_remaining.columns)
-histidine_kinase_df_remaining.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_newrun_step_2_histidine_kinase_remaining.csv",index=False)
+# histidine_kinase_df_remaining.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_newrun_step_2_histidine_kinase_remaining.csv",index=False)
+print()
+
+small_df_2_12.columns=small_df_1_0123456_2_034.columns
+small_df_2_5.columns=small_df_1_0123456_2_034.columns
+large_df_1_2.columns=small_df_1_0123456_2_034.columns
+complete_df=pd.concat([small_df_1_0123456_2_034,small_df_2_12,small_df_2_5,large_df_1_2])
+print(f"Number of predictions:",len(complete_df))
+print(complete_df.columns)
+complete_histidine_kinase_df=pd.concat([small_histidine_kinase_df_1_0123456_2_034,histidine_kinase_df_remaining])
+print(f"Number of predicted histidine kinases with threshold 0.2:",np.sum(complete_histidine_kinase_df["pred"]==1)len(complete_histidine_kinase_df))
+print(complete_histidine_kinase_df.columns)
+
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18/RumHKNet_predictions/9342_all_proteins_newrun/step_1_02_step_2_02"
+complete_df.to_csv(os.path.join(save_path,"9342_all_proteins_newrun_step_2_predictions_02.csv"),index=False)
+df_to_fasta(complete_histidine_kinse_df,os.path.join(save_path,"9342_all_proteins_nerwun_step_2_histidine_kinase_02.fasta"))
