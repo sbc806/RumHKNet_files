@@ -57,7 +57,9 @@ def df_to_fasta(df,save_path,extra_column=None):
       extra=""
       if extra_column is not None:
         extra=df[extra_column].iloc[i]
-      fasta_file.write(f">{seq_id},{extra}\n")
+        fasta_file.write(f">{seq_id},{extra}\n")
+      else:
+        fasta_file.write(f">{seq_id}\n")
       fasta_file.write(f"{seq}\n")
 
 def get_interval(df,min_prob,max_prob,column="prob"):
