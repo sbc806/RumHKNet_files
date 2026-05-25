@@ -35,7 +35,7 @@ with open("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/prote
 all_predictions_selected=add_label(all_predictions_selected,reverse_dict(label_family))
 print(all_predictions_selected)
 
-save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_clustered_data/RumHKNet_predictions/4824human_newrun/step_1_02_step_2_02"
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/4824human_newrun/step_1_02_step_2_02"
 save_name="4824human_newrun_step_3_histidine_kinase_family"
 all_predictions_selected.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
 df_to_fasta(all_predictions_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
