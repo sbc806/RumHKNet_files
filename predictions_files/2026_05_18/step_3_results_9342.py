@@ -24,8 +24,9 @@ def adjusted_df(df):
   
 all_predictions_selected=adjusted_df(all_predictions)
 # all_predictions_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_newrun_step_3_histidine_kinase_family_small_1_0123456_2_034.csv",index=False)
+print()
 
-predictions_remaining=pd.read_cv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_2_histidine_kinase_remaining.csv"))
+predictions_remaining=pd.read_cv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_2_histidine_kinase_remaining_predicted_02.csv"))
 print("Number of predictions:",len(predictions_remaining))
 print(predictions_remaining.columns)
 
