@@ -27,4 +27,11 @@ print(len(large_histidine_kinase_df))
 histidine_kinase_df=pd.concat([small_histidine_kinase_df[["seq_id","seq"]],large_histidine_kinase_df[["seq_id","seq"]]])
 print(len(histidine_kinase_df),len(small_histidine_kinase_df)+len(large_histidine_kinase_df))
 print(histidine_kinase_df)
-histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/4824human_newrun_step_2_histidine_kinase.csv",index=False)
+# histidine_kinase_df.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/4824human_newrun_step_2_histidine_kinase.csv",index=False)
+print()
+
+complete_df=pd.concat([small_df,large_df])
+print("Number of predictions:",len(complete_df))
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/4824_newrun/step_1_02_step_2_02"
+complete_df.to_csv(os.path.join(save_path,"4824human_newrun_step_2_predictions_02.csv"),index=False)
+df_to_fasta(histidine_kinase_df,os.path.join(save_path,"4824human_newrun_step_2_histidine_kinase_02.fasta"))
