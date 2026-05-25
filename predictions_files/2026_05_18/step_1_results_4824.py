@@ -37,7 +37,7 @@ print()
 complete_predictions_df=pd.concat([small_df,large_df])
 print("Number of total predictions:",len(complete_predictions_df))
 complete_kinase_df=pd.concat([small_kinase_df,large_kinase_df])
-print(f"Number of predicted kinases for threshold {threshold}:",len(complete_kinase_df),len(small_kinase_df)+len(large_kinase_df))
+print(f"Number of predicted kinases for threshold {threshold}:",len(complete_kinase_df),len(small_kinase_df),len(large_kinase_df),len(small_kinase_df)+len(large_kinase_df))
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/4824human_newrun/step_1_02_step_2_02"
 # complete_kinase_df.to_csv(os.path.join(save_path,"4824human_newrun_step_1_predictions_02.csv"),index=False)
