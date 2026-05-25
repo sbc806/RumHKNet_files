@@ -37,7 +37,7 @@ print()
 large_df.columns=small_df.columns
 complete_predictions_df=pd.concat([small_df,large_df])
 print("Number of total predictions:",len(complete_predictions_df))
-print(complete_predictions.columns)
+print(complete_predictions_df.columns)
 complete_kinase_df=pd.concat([small_kinase_df,large_kinase_df])
 print(f"Number of predicted kinases for threshold {threshold}:",len(complete_kinase_df),len(small_kinase_df),len(large_kinase_df),len(small_kinase_df)+len(large_kinase_df))
 
