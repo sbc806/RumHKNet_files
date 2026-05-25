@@ -83,6 +83,7 @@ large_1_df.columns=small_1_df.columns
 large_2_df.columns=small_1_df.columns
 full_df=pd.concat([small_1_df,small_2_df,small_df_2_12,small_df_2_5,large_1_df,large_2_df])
 print(len(full_df),np.unique(full_df["seq_id"]).shape,np.unique(full_df["seq"]).shape)
+print(full_df.columns)
 print()
 
 full_kinase_df=full_df[full_df["pred"]==1]
