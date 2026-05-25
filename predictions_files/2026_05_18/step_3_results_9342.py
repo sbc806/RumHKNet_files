@@ -31,7 +31,7 @@ print("Number of predictions:",len(predictions_remaining))
 print(predictions_remaining.columns)
 
 predictions_remaining_selected=adjusted_df(predictions_remaining)
-predictions_remaining_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_newrun_step_3_histidine_kinase_family_remaining.csv",index=False)
+# predictions_remaining_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_newrun_step_3_histidine_kinase_family_remaining.csv",index=False)
 
 """
 complete=pd.concat([small,small_0_1,small_2_3,large_1])
