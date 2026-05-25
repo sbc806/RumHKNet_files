@@ -89,5 +89,5 @@ full_kinase_df=full_df[full_df["pred"]==1]
 print(f"Number of predicted kinases for threshold {threshold}:",len(full_kinase_df))
                                                    
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/9342_all_proteins_newrun/step_1_02_step_2_02"
-full_df.to_csv(os.path.join(save_path,"9342_all_proteins_newrun_step_1_predictions_2.csv"),index=False)
+full_df.to_csv(os.path.join(save_path,"9342_all_proteins_newrun_step_1_predictions_02.csv"),index=False)
 df_to_fasta(full_kinase_df,os.path.join(save_path,"9342_all_proteins_newrun_step_1_kinase_02.fasta"))
