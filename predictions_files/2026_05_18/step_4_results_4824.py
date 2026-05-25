@@ -10,7 +10,7 @@ from predictions_helpers import check_specific, df_to_fasta, add_label, reverse_
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_4/both/clustered"
 
-all_predictions=pd.read_csv(os.path.join(predictions_path,"4824human_newrun_step_3_histidine_kinase_family_predicted_02.csv"))
+all_predictions=pd.read_csv(os.path.join(predictions_path,"4824human_newrun_step_3_histidine_kinase_family_predicted_02_v2.csv"))
 print("Number of predictions:",len(all_predictions))
 print(all_predictions.columns)
 
