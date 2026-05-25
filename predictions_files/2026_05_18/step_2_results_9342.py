@@ -59,6 +59,6 @@ complete_histidine_kinase_df=pd.concat([small_histidine_kinase_df_1_0123456_2_03
 print(f"Number of predicted histidine kinases with threshold 0.2:",np.sum(complete_df["pred"]==1),len(complete_histidine_kinase_df))
 print(complete_histidine_kinase_df.columns)
 
-save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18/RumHKNet_predictions/9342_all_proteins_newrun/step_1_02_step_2_02"
+save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/9342_all_proteins_newrun/step_1_02_step_2_02"
 complete_df.to_csv(os.path.join(save_path,"9342_all_proteins_newrun_step_2_predictions_02.csv"),index=False)
 df_to_fasta(complete_histidine_kinase_df,os.path.join(save_path,"9342_all_proteins_nerwun_step_2_histidine_kinase_02.fasta"))
