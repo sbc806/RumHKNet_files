@@ -26,4 +26,4 @@ print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
 large_kinase=large[large["label"]==1]
 print(len(large_kinase),max(large_kinase["seq"].str.len()))
 
-large_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_large.csv",index=False)
+large_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_large.csv",index=False)
