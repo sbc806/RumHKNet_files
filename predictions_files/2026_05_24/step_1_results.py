@@ -17,6 +17,6 @@ print(len(small_3))
 print(np.sum(small_3["prob"]>=0.2),np.sum(small_3["pred"]==1))
 print()
 
-large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_large_sorted_predicted_02.csv"))
+large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_large_sorted_predicted_02_v2.csv"))
 print(len(large))
 print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
