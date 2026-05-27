@@ -22,6 +22,7 @@ large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_large
 print(len(large))
 print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
 large_kinase=large[large["label"]==1]
+print(max(large_kinase["seq"].str.len()))
 
 kinase_small_3_large=pd.concat([small_3_kinase[["seq_id","seq"]],large_kinase[["seq_id","seq"]]])
 print(len(kinase_small_3_large),len(small_3_kinase),len(large_kinase),len(small_3_kinase)+len(large_kinase))
