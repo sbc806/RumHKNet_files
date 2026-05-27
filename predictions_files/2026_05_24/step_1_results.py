@@ -15,8 +15,14 @@ small_individual=[]
 small_3=check_specific(predictions_path,"9342_all_proteins_remove2_small_3")
 print(len(small_3))
 print(np.sum(small_3["prob"]>=0.2),np.sum(small_3["pred"]==1))
+small_3_kinase=small_3[small_3["pred"]==1]
 print()
 
 large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_large_sorted_predicted_02_v2.csv"))
 print(len(large))
 print(np.sum(large["prob"]>=0.2),np.sum(large["label"]==1))
+large_kinase=large[large["label"]==1]
+
+kinase_small_3_large=pd.concat([small_3_kinase[["seq_id","seq"]],large_kinase[["seq_id","seq"]]])
+print(len(kinase_small_3_large),len(small_3_kinase),len(large_kinase),len(small_3_kinase)+len(large_kinase))
+print(kinase_small_3_large)
