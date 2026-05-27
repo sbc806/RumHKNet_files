@@ -11,6 +11,15 @@ dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_1/both/clustered"
 
 small_individual=[]
+for i in range(0,3):
+  small_i=check_specific(predictions_path,f"9342_all_proteins_remove2_small_{i}")
+  print(i,len(small_i))
+  small_individual.append(small_i)
+small_012=pd.concat(small_individual)
+print(len(small_012))
+print(np.sum(small_012["prob"]>=0.2),np.sum(small_012["pred"]==1))
+small_012_kinase=small_0123[small_012["pred"]==1]
+print(len(small_012_kinase))
 
 small_3=check_specific(predictions_path,"9342_all_proteins_remove2_small_3")
 print(len(small_3))
