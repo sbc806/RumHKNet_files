@@ -43,6 +43,10 @@ print(len(large_histidine_kinase),max(large_histidine_kinase["seq"].str.len()))
 # large_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_large.csv",index=False)
 print()
 
+small_3_large_histidine_kinase=pd.concat([small_3_histidine_kinase,large_histidine_kinase])
+print(len(small_3_large_histidine_kinase))
+small_3_large_histidine_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_remove2_step_1_kinase_small_3_large.csv",index=False)
+
 """
 large.columns=small_012.columns
 print(large.columns)
