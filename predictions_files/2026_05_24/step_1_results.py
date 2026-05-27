@@ -18,7 +18,7 @@ for i in range(0,3):
 small_012=pd.concat(small_individual)
 print(len(small_012))
 print(np.sum(small_012["prob"]>=0.2),np.sum(small_012["pred"]==1))
-small_012_kinase=small_0123[small_012["pred"]==1]
+small_012_kinase=small_012[small_012["pred"]==1]
 print(len(small_012_kinase))
 
 small_3=check_specific(predictions_path,"9342_all_proteins_remove2_small_3")
@@ -36,3 +36,9 @@ large_kinase=large[large["label"]==1]
 print(len(large_kinase),max(large_kinase["seq"].str.len()))
 
 # large_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_large.csv",index=False)
+print()
+
+large.columns=small_012.columns
+print(large.columns)
+complete=pd.concat([small_012,small_3,large])
+print(len(complete),np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
