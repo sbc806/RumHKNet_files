@@ -42,4 +42,4 @@ def split_chunks(df,chunk_size,save_path,save_name):
   print(max(df_small["seq"].str.len()),max(df_large["seq"].str.len()))
   
 chunk_size=1200000
-split_chunks(seq_data_df,chunk_size,dataset_path,"9342_all_proteins_remove2")
+# split_chunks(seq_data_df,chunk_size,dataset_path,"9342_all_proteins_remove2")
