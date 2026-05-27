@@ -20,6 +20,9 @@ print(len(small_012))
 print(np.sum(small_012["prob"]>=0.2),np.sum(small_012["pred"]==1))
 small_012_kinase=small_012[small_012["pred"]==1]
 print(len(small_012_kinase))
+small_012_kinase[["seq_id","seq"]].iloc[0:70000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_0.csv",index=False)
+small_012_kinase[["seq_id","seq"]].iloc[70000:140000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_1.csv",index=False)
+small_012_kinase[["seq_id","seq"]].iloc[140000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_2.csv",index=False)
 
 small_3=check_specific(predictions_path,"9342_all_proteins_remove2_small_3")
 print(len(small_3))
