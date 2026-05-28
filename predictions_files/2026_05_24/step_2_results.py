@@ -21,7 +21,7 @@ print(len(small_012))
 print(np.sum(small_012["prob"]>=0.2),np.sum(small_012["pred"]==1))
 small_012_histidine_kinase=small_012[small_012["pred"]==1]
 print(len(small_012_histidine_kinase))
-small_012_histidine_kinase[["seq_id","seq"]]to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_remove2_step_2_histidine_kinase_small_012.csv",index=False)
+small_012_histidine_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_remove2_step_2_histidine_kinase_small_012.csv",index=False)
 
 small_3=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_1_kinase_small_3_predicted_02_v2.csv"))
 print(len(small_3))
