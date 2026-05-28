@@ -58,7 +58,7 @@ large.columns=small_012.columns
 print(small_3.columns)
 print(large.columns)
 complete=pd.concat([small_012,small_3,large])
-print(len(complete))
+print(len(complete),len(small_012),len(small_3),len(large),len(small_012)+len(small_3)+len(large))
 print(np.sum(complete["pred"]>=1),len(small_012_histidine_kinase),len(small_3_histidine_kinase),len(large_histidine_kinase),len(small_012_histidine_kinase)+len(small_3_histidine_kinase)+len(large_histidine_kinase))
 complete_histidine_kinase=pd.concat([small_012_histidine_kinase,small_3_histidine_kinase,large_histidine_kinase])
 print(len(complete_histidine_kinase))
