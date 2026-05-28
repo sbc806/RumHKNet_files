@@ -10,6 +10,8 @@ from predictions_helpers import check_specific, df_to_fasta, add_label, reverse_
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_3/both/clustered"
 
+small_012=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_012_predicted_02.csv"))
+
 small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large_predicted_02.csv"))
 print("Number of predictions:",len(small_3_large))
 print(small_3_large.columns)
