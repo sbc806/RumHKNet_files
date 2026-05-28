@@ -12,7 +12,7 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large_predicted_02.csv"))
 print("Number of predictions:",len(small_3_large))
-print(all_predictions.columns)
+print(small_3_large.columns)
 
 
 def adjusted_df(df):
