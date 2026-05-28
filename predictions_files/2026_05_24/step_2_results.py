@@ -10,21 +10,21 @@ from predictions_helpers import check_specific
 dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered"
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_2/both/clustered"
 
-"""
+
 small_individual=[]
 for i in range(0,3):
-  small_i=check_specific(predictions_path,f"9342_all_proteins_remove2_small_{i}")
+  small_i=check_specific(predictions_path,f"9342_all_proteins_remove2_small_012_{i}")
   print(i,len(small_i))
   small_individual.append(small_i)
 small_012=pd.concat(small_individual)
 print(len(small_012))
 print(np.sum(small_012["prob"]>=0.2),np.sum(small_012["pred"]==1))
-small_012_kinase=small_012[small_012["pred"]==1]
-print(len(small_012_kinase))
-small_012_kinase[["seq_id","seq"]].iloc[0:70000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_0.csv",index=False)
-small_012_kinase[["seq_id","seq"]].iloc[70000:140000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_1.csv",index=False)
-small_012_kinase[["seq_id","seq"]].iloc[140000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_2.csv",index=False)
-"""
+small_012_histidine_kinase=small_012[small_012["pred"]==1]
+print(len(small_012_histidine_kinase))
+# small_012_kinase[["seq_id","seq"]].iloc[0:70000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_0.csv",index=False)
+# small_012_kinase[["seq_id","seq"]].iloc[70000:140000].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_1.csv",index=False)
+# small_012_kinase[["seq_id","seq"]].iloc[140000:].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_2/clustered/9342_all_proteins_remove2_step_1_kinase_small_012_2.csv",index=False)
+
 
 small_3=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_1_kinase_small_3_predicted_02_v2.csv"))
 print(len(small_3))
@@ -45,7 +45,7 @@ print()
 
 small_3_large_histidine_kinase=pd.concat([small_3_histidine_kinase,large_histidine_kinase])
 print(len(small_3_large_histidine_kinase))
-small_3_large_histidine_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large.csv",index=False)
+# small_3_large_histidine_kinase[["seq_id","seq"]].to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_3/clustered/9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large.csv",index=False)
 
 """
 large.columns=small_012.columns
