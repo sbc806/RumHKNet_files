@@ -35,5 +35,5 @@ complete_df=pd.concat([small_df,large_df])
 print("Number of predictions:",len(complete_df))
 print(complete_df.columns)
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_cluster_data/RumHKNet_predictions/4824human_newrun/step_1_02_step_2_02"
-complete_df.to_csv(os.path.join(save_path,"4824human_newrun_step_2_predictions_02.csv"),index=False)
+# complete_df.to_csv(os.path.join(save_path,"4824human_newrun_step_2_predictions_02.csv"),index=False)
 # df_to_fasta(histidine_kinase_df,os.path.join(save_path,"4824human_newrun_step_2_histidine_kinase_02.fasta"))
