@@ -11,7 +11,7 @@ dataset_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/
 predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predicted_results/step_3/both/clustered"
 
 small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large_predicted_02.csv"))
-print("Number of predictions:",len(all_predictions))
+print("Number of predictions:",len(small_3_large))
 print(all_predictions.columns)
 
 
@@ -22,7 +22,7 @@ def adjusted_df(df):
   print(df_selected)
   return df_selected
   
-all_predictions_selected=adjusted_df(all_predictions)
+small_3_large_selected=adjusted_df(small_3_large)
 # all_predictions_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_newrun_step_3_histidine_kinase_family_small_1_0123456_2_034.csv",index=False)
 print()
 
