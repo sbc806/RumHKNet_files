@@ -12,7 +12,7 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small_012=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_012_predicted_02.csv"))
 print("Number of predictions:",len(small_012))
-orint(small_012.columns)
+print(small_012.columns)
 small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_2_histidine_kinase_small_3_large_predicted_02.csv"))
 print("Number of predictions:",len(small_3_large))
 print(small_3_large.columns)
