@@ -61,10 +61,11 @@ large.columns=small_012.columns
 print(small_3.columns)
 print(large.columns)
 complete=pd.concat([small_012,small_3,large])
-print(np.sum(complete["pred"]>=1),len(small_012),len(small_3),len(large),len(small_012)+len(small_3)+len(large))
+print(len(complete))
+print(np.sum(complete["pred"]>=1),len(small_012),len(small_3_histidine),len(large_histidine),len(small_012_histidine)+len(small_3_histidine)+len(large_histidine))
 complete_histidine_kinase=pd.concat([small_012_histidine_kinase,small_3_histidine_kinase,large_histidine_kinase])
 print(len(complete_histidine_kinase))
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_24/RumHKNet_predictions/step_1_02_step_2_02"
-complete.to_csv(os.path.join(save_path,"9342_all_proteins_remove2_step_2_predictions_02.csv"),index=False)
-df_to_fasta(complete_histidine_kinase,os.path.join(save_path,"9342_all_proteins_remove2_step_2_histidine_kinase_02.fasta"))
+# complete.to_csv(os.path.join(save_path,"9342_all_proteins_remove2_step_2_predictions_02.csv"),index=False)
+# df_to_fasta(complete_histidine_kinase,os.path.join(save_path,"9342_all_proteins_remove2_step_2_histidine_kinase_02.fasta"))
