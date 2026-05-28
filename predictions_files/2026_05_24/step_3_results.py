@@ -23,7 +23,7 @@ def adjusted_df(df):
   return df_selected
   
 small_3_large_selected=adjusted_df(small_3_large)
-# all_predictions_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_newrun_step_3_histidine_kinase_family_small_1_0123456_2_034.csv",index=False)
+small_3_large_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_remove2_step_3_histidine_kinase_family_small_3_large.csv",index=False)
 print()
 
 
