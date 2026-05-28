@@ -13,7 +13,7 @@ predictions_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/predicti
 
 small_individual=[]
 for i in range(0,3):
-  small_i=check_specific(predictions_path,f"9342_all_proteins_remove2_small_012_{i}")
+  small_i=check_specific(predictions_path,f"9342_all_proteins_remove2_step_1_kinase_small_012_{i}")
   print(i,len(small_i))
   small_individual.append(small_i)
 small_012=pd.concat(small_individual)
