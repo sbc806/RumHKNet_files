@@ -50,4 +50,4 @@ print(len(complete_kinase),len(small_012_kinase),len(small_3_kinase),len(large_k
 
 save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_24/RumHKNet_predictions/step_1_02_step_2_02"
 complete.to_csv(os.path.join(save_path,"9342_all_proteins_remove2_step_1_predictions_02.csv"),index=False)
-df_to_fasta(complete,os.path.join(save_path,"9342_all_proteins_remove2_step_1_kinase_02.fasta"))
+df_to_fasta(complete_kinase,os.path.join(save_path,"9342_all_proteins_remove2_step_1_kinase_02.fasta"))
