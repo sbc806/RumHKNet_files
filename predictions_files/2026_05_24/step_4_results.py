@@ -18,8 +18,7 @@ small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remov
 print("Number of predictions:",len(small_3_large))
 print(small_3_large.columns)
 
-"""
-complete=pd.concat([all_predictions,all_predictions_remaining])
+complete=pd.concat([small_012,small_3_large])
 
 print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 print()
@@ -38,4 +37,3 @@ save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_clus
 save_name="9342_all_proteins_newrun_step_4_histidine_kinase_ko"
 complete_selected.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
 df_to_fasta(complete_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
-"""
