@@ -17,10 +17,6 @@ print(small_012.columns)
 small_3_large=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_remove2_step_3_histidine_kinase_family_small_3_large_predicted_02_v2def.csv"))
 print("Number of predictions:",len(small_3_large))
 print(small_3_large.columns)
-# all_predictions_remaining=pd.read_csv(os.path.join(predictions_path,"9342_all_proteins_newrun_step_3_histidine_kinase_family_remaining_predicted_02_v2.csv"))
-# print("Number of predictions:",len(all_predictions_remaining))
-# print(all_predictions_remaining.columns)
-
 
 """
 complete=pd.concat([all_predictions,all_predictions_remaining])
