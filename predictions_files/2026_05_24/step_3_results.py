@@ -32,7 +32,7 @@ small_3_large_selected=adjusted_df(small_3_large)
 print()
 
 
-complete=pd.concat([small_012_selected,small_3_large])
+complete=pd.concat([small_012,small_3_large])
 print("Number of predictions:",len(complete))
 print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 
