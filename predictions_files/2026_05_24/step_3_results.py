@@ -26,16 +26,13 @@ def adjusted_df(df):
   return df_selected
 
 small_012_selected=adjusted_df(small_012)
-small_012_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_remove2_step_3_histidine_kinase_family_small_012.csv",index=False)
+# small_012_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_remove2_step_3_histidine_kinase_family_small_012.csv",index=False)
 small_3_large_selected=adjusted_df(small_3_large)
 # small_3_large_selected.to_csv("/home/schen123/projects/rrg-guanuofa/schen123/kinases/predictions/predictions_dataset/step_4/clustered/9342_all_proteins_remove2_step_3_histidine_kinase_family_small_3_large.csv",index=False)
 print()
 
 
-print()
-
-"""
-complete=pd.concat([all_predictions,predictions_remaining])
+complete=pd.concat([small_012_selected,predictions_remaining])
 print("Number of predictions:",len(complete))
 print(np.unique(complete["seq_id"]).shape,np.unique(complete["seq"]).shape)
 
@@ -50,4 +47,4 @@ save_path="/home/schen123/projects/rrg-guanuofa/schen123/kinases/2026_05_18_clus
 save_name="9342_all_proteins_newrun_step_3_histidine_kinase_family"
 complete_selected.to_csv(os.path.join(save_path,f"{save_name}.csv"),index=False)
 df_to_fasta(complete_selected,os.path.join(save_path,f"{save_name}.fasta"),extra_column="pred_other")
-"""
+
