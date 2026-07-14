@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 
 dir_path="/home/schen123/scratch/kinases/kinases_dataset/extra_p_2_class_v3/protein/binary_class"
 train_multiclass = pd.read_csv(os.path.join(dir_path,"train/train.csv"))
