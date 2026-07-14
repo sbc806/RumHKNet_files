@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-train_multiclass = pd.read_csv("/home/schen123/projects/def-guanuofa/schen123/kinases/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
+train_multiclass = pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/step_3_11_family/protein/multi_class/train/train.csv")
 print(train_multiclass["label"].value_counts())
 for i in range(0,11):
     total=len(train_multiclass)
