@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-train_multiclass = pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/histidine_kinases_dataset_preprocessed/protein/multi_class/train/train.csv")
+train_multiclass = pd.read_csv("/home/schen123/scratch/kinases/kinases_dataset/extra_p_133_class_v3_batch/protein/multi_class/train/train.csv")
 print("Number of counts per label:", train_multiclass["label"].value_counts())
 for i in range(0,133):
     total=len(train_multiclass)
