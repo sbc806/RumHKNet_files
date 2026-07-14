@@ -6,6 +6,7 @@ train_multiclass = pd.read_csv(os.path.join(dir_path,"train/train.csv"))
 dev=pd.read_csv(os.path.join(dir_path,"dev/dev.csv"))
 test=pd.read_csv(os.path.join(dir_path,"test/test.csv"))
 full=pd.concat([train_multiclass,dev,test])
+print(full)
 print(len(full),np.sum(full["label"]==0),np.sum(full["label"]==1))
     
 neg=np.sum(train_multiclass["label"]==0)
